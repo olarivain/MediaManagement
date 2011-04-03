@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'MediaManagementComm' target in the 'MediaManagementComm' project
+//
+
+#ifdef __OBJC__
+  #import <Cocoa/Cocoa.h>
+#endif

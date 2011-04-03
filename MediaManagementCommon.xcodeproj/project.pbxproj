@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0025B59E1349240600CC1540 /* ContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B59C1349240600CC1540 /* ContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0025B59F1349240600CC1540 /* ContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0025B59D1349240600CC1540 /* ContentAssembler.m */; };
+		0025B5B5134927D700CC1540 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AB134927D700CC1540 /* JSON.h */; };
+		0025B5B6134927D700CC1540 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AB134927D700CC1540 /* JSON.h */; };
+		0025B5B7134927D700CC1540 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AB134927D700CC1540 /* JSON.h */; };
+		0025B5B8134927D700CC1540 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AB134927D700CC1540 /* JSON.h */; };
+		0025B5B9134927D700CC1540 /* NSObject+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AC134927D700CC1540 /* NSObject+JSON.h */; };
+		0025B5BA134927D700CC1540 /* NSObject+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AC134927D700CC1540 /* NSObject+JSON.h */; };
+		0025B5BB134927D700CC1540 /* NSObject+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AC134927D700CC1540 /* NSObject+JSON.h */; };
+		0025B5BC134927D700CC1540 /* NSObject+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AC134927D700CC1540 /* NSObject+JSON.h */; };
+		0025B5BD134927D700CC1540 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AD134927D700CC1540 /* SBJsonParser.h */; };
+		0025B5BE134927D700CC1540 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AD134927D700CC1540 /* SBJsonParser.h */; };
+		0025B5BF134927D700CC1540 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AD134927D700CC1540 /* SBJsonParser.h */; };
+		0025B5C0134927D700CC1540 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AD134927D700CC1540 /* SBJsonParser.h */; };
+		0025B5C1134927D700CC1540 /* SBJsonStreamParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AE134927D700CC1540 /* SBJsonStreamParser.h */; };
+		0025B5C2134927D700CC1540 /* SBJsonStreamParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AE134927D700CC1540 /* SBJsonStreamParser.h */; };
+		0025B5C3134927D700CC1540 /* SBJsonStreamParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AE134927D700CC1540 /* SBJsonStreamParser.h */; };
+		0025B5C4134927D700CC1540 /* SBJsonStreamParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AE134927D700CC1540 /* SBJsonStreamParser.h */; };
+		0025B5C5134927D700CC1540 /* SBJsonStreamParserAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AF134927D700CC1540 /* SBJsonStreamParserAdapter.h */; };
+		0025B5C6134927D700CC1540 /* SBJsonStreamParserAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AF134927D700CC1540 /* SBJsonStreamParserAdapter.h */; };
+		0025B5C7134927D700CC1540 /* SBJsonStreamParserAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AF134927D700CC1540 /* SBJsonStreamParserAdapter.h */; };
+		0025B5C8134927D700CC1540 /* SBJsonStreamParserAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AF134927D700CC1540 /* SBJsonStreamParserAdapter.h */; };
+		0025B5C9134927D700CC1540 /* SBJsonStreamWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B0134927D700CC1540 /* SBJsonStreamWriter.h */; };
+		0025B5CA134927D700CC1540 /* SBJsonStreamWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B0134927D700CC1540 /* SBJsonStreamWriter.h */; };
+		0025B5CB134927D700CC1540 /* SBJsonStreamWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B0134927D700CC1540 /* SBJsonStreamWriter.h */; };
+		0025B5CC134927D700CC1540 /* SBJsonStreamWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B0134927D700CC1540 /* SBJsonStreamWriter.h */; };
+		0025B5CD134927D700CC1540 /* SBJsonTokeniser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B1134927D700CC1540 /* SBJsonTokeniser.h */; };
+		0025B5CE134927D700CC1540 /* SBJsonTokeniser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B1134927D700CC1540 /* SBJsonTokeniser.h */; };
+		0025B5CF134927D700CC1540 /* SBJsonTokeniser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B1134927D700CC1540 /* SBJsonTokeniser.h */; };
+		0025B5D0134927D700CC1540 /* SBJsonTokeniser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B1134927D700CC1540 /* SBJsonTokeniser.h */; };
+		0025B5D1134927D700CC1540 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B2134927D700CC1540 /* SBJsonWriter.h */; };
+		0025B5D2134927D700CC1540 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B2134927D700CC1540 /* SBJsonWriter.h */; };
+		0025B5D3134927D700CC1540 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B2134927D700CC1540 /* SBJsonWriter.h */; };
+		0025B5D4134927D700CC1540 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B2134927D700CC1540 /* SBJsonWriter.h */; };
+		0025B5D5134927D700CC1540 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0025B5B4134927D700CC1540 /* libjson.a */; };
+		0025B5D6134927D700CC1540 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0025B5B4134927D700CC1540 /* libjson.a */; };
+		0025B5D7134927D700CC1540 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0025B5B4134927D700CC1540 /* libjson.a */; };
+		0025B5D8134927D700CC1540 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0025B5B4134927D700CC1540 /* libjson.a */; };
+		0025B5E313492BF400CC1540 /* ContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0025B59D1349240600CC1540 /* ContentAssembler.m */; };
+		0025B5E413492BF900CC1540 /* ContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0025B59D1349240600CC1540 /* ContentAssembler.m */; };
+		0025B5E513492C0400CC1540 /* ContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B59C1349240600CC1540 /* ContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00323DA1132C29A8003BED87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DA0132C29A8003BED87 /* Foundation.framework */; };
+		00323DAE132C2A12003BED87 /* Content.h in Headers */ = {isa = PBXBuildFile; fileRef = 00323DAC132C2A12003BED87 /* Content.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00323DAF132C2A12003BED87 /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = 00323DAD132C2A12003BED87 /* Content.m */; };
+		00323DB6132C2A96003BED87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DB5132C2A96003BED87 /* Cocoa.framework */; };
+		00323DC1132C2AD6003BED87 /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = 00323DAD132C2A12003BED87 /* Content.m */; };
+		00323DC2132C2ADC003BED87 /* Content.h in Headers */ = {isa = PBXBuildFile; fileRef = 00323DAC132C2A12003BED87 /* Content.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00323DC5132C2AEF003BED87 /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = 00323DAD132C2A12003BED87 /* Content.m */; };
+		00323DC7132C2AEF003BED87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DB5132C2A96003BED87 /* Cocoa.framework */; };
+		00323DC9132C2AEF003BED87 /* Content.h in Headers */ = {isa = PBXBuildFile; fileRef = 00323DAC132C2A12003BED87 /* Content.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00323DD0132C2B21003BED87 /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = 00323DAD132C2A12003BED87 /* Content.m */; };
+		00323DD2132C2B21003BED87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DA0132C29A8003BED87 /* Foundation.framework */; };
+		00323DD4132C2B21003BED87 /* Content.h in Headers */ = {isa = PBXBuildFile; fileRef = 00323DAC132C2A12003BED87 /* Content.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00C76DC113492C5C0057F9E6 /* ContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B59C1349240600CC1540 /* ContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00C76DC313492C6F0057F9E6 /* ContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B59C1349240600CC1540 /* ContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00C76DC413492C750057F9E6 /* ContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0025B59D1349240600CC1540 /* ContentAssembler.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0025B59C1349240600CC1540 /* ContentAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentAssembler.h; sourceTree = "<group>"; };
+		0025B59D1349240600CC1540 /* ContentAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentAssembler.m; sourceTree = "<group>"; };
+		0025B5AB134927D700CC1540 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		0025B5AC134927D700CC1540 /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
+		0025B5AD134927D700CC1540 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		0025B5AE134927D700CC1540 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		0025B5AF134927D700CC1540 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		0025B5B0134927D700CC1540 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		0025B5B1134927D700CC1540 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		0025B5B2134927D700CC1540 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		0025B5B4134927D700CC1540 /* libjson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjson.a; sourceTree = "<group>"; };
+		00323DA0132C29A8003BED87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		00323DA4132C29A8003BED87 /* MediaManagementCommon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaManagementCommon-Prefix.pch"; sourceTree = "<group>"; };
+		00323DAC132C2A12003BED87 /* Content.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Content.h; sourceTree = "<group>"; };
+		00323DAD132C2A12003BED87 /* Content.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Content.m; sourceTree = "<group>"; };
+		00323DB5132C2A96003BED87 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		00323DB8132C2A96003BED87 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		00323DB9132C2A96003BED87 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		00323DBA132C2A96003BED87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		00323DBD132C2A96003BED87 /* MediaManagementComm-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaManagementComm-Prefix.pch"; sourceTree = "<group>"; };
+		00B3F8A7132C2CC8003A4FCD /* libmedia-management-common-iphone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common-iphone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-ipad.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common-ipad.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B3F8A9132C2CF1003A4FCD /* libmedia-management-common-x86_64.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common-x86_64.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B3F8AA132C2D00003A4FCD /* libmedia-management-common-i386.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common-i386.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00323D9A132C29A8003BED87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00323DA1132C29A8003BED87 /* Foundation.framework in Frameworks */,
+				0025B5D5134927D700CC1540 /* libjson.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00323DB1132C2A96003BED87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00323DB6132C2A96003BED87 /* Cocoa.framework in Frameworks */,
+				0025B5D7134927D700CC1540 /* libjson.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00323DC6132C2AEF003BED87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00323DC7132C2AEF003BED87 /* Cocoa.framework in Frameworks */,
+				0025B5D8134927D700CC1540 /* libjson.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00323DD1132C2B21003BED87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00323DD2132C2B21003BED87 /* Foundation.framework in Frameworks */,
+				0025B5D6134927D700CC1540 /* libjson.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0025B5A8134927D700CC1540 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				0025B5A9134927D700CC1540 /* include */,
+				0025B5B3134927D700CC1540 /* x86 */,
+			);
+			name = JSON;
+			path = Frameworks/JSON;
+			sourceTree = "<group>";
+		};
+		0025B5A9134927D700CC1540 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				0025B5AA134927D700CC1540 /* JSON */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		0025B5AA134927D700CC1540 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				0025B5AB134927D700CC1540 /* JSON.h */,
+				0025B5AC134927D700CC1540 /* NSObject+JSON.h */,
+				0025B5AD134927D700CC1540 /* SBJsonParser.h */,
+				0025B5AE134927D700CC1540 /* SBJsonStreamParser.h */,
+				0025B5AF134927D700CC1540 /* SBJsonStreamParserAdapter.h */,
+				0025B5B0134927D700CC1540 /* SBJsonStreamWriter.h */,
+				0025B5B1134927D700CC1540 /* SBJsonTokeniser.h */,
+				0025B5B2134927D700CC1540 /* SBJsonWriter.h */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		0025B5B3134927D700CC1540 /* x86 */ = {
+			isa = PBXGroup;
+			children = (
+				0025B5B4134927D700CC1540 /* libjson.a */,
+			);
+			path = x86;
+			sourceTree = "<group>";
+		};
+		00323D92132C29A8003BED87 = {
+			isa = PBXGroup;
+			children = (
+				00323DD9132C2B21003BED87 /* Resources-iPad */,
+				00323DA2132C29A8003BED87 /* MediaManagementCommon */,
+				00323DBB132C2A96003BED87 /* MediaManagementComm */,
+				00323D9F132C29A8003BED87 /* Frameworks */,
+				00323D9E132C29A8003BED87 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00323D9E132C29A8003BED87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00B3F8A7132C2CC8003A4FCD /* libmedia-management-common-iphone.a */,
+				00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-ipad.a */,
+				00B3F8A9132C2CF1003A4FCD /* libmedia-management-common-x86_64.a */,
+				00B3F8AA132C2D00003A4FCD /* libmedia-management-common-i386.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00323D9F132C29A8003BED87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0025B5A8134927D700CC1540 /* JSON */,
+				00323DA0132C29A8003BED87 /* Foundation.framework */,
+				00323DB5132C2A96003BED87 /* Cocoa.framework */,
+				00323DB7132C2A96003BED87 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		00323DA2132C29A8003BED87 /* MediaManagementCommon */ = {
+			isa = PBXGroup;
+			children = (
+				00323DAA132C2A12003BED87 /* domain */,
+				00323DA3132C29A8003BED87 /* Supporting Files */,
+			);
+			path = MediaManagementCommon;
+			sourceTree = "<group>";
+		};
+		00323DA3132C29A8003BED87 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00323DA4132C29A8003BED87 /* MediaManagementCommon-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00323DAA132C2A12003BED87 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				00323DAB132C2A12003BED87 /* content */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		00323DAB132C2A12003BED87 /* content */ = {
+			isa = PBXGroup;
+			children = (
+				00323DAC132C2A12003BED87 /* Content.h */,
+				00323DAD132C2A12003BED87 /* Content.m */,
+				0025B59C1349240600CC1540 /* ContentAssembler.h */,
+				0025B59D1349240600CC1540 /* ContentAssembler.m */,
+			);
+			path = content;
+			sourceTree = "<group>";
+		};
+		00323DB7132C2A96003BED87 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00323DB8132C2A96003BED87 /* AppKit.framework */,
+				00323DB9132C2A96003BED87 /* CoreData.framework */,
+				00323DBA132C2A96003BED87 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		00323DBB132C2A96003BED87 /* MediaManagementComm */ = {
+			isa = PBXGroup;
+			children = (
+				00323DBC132C2A96003BED87 /* Supporting Files */,
+			);
+			path = MediaManagementComm;
+			sourceTree = "<group>";
+		};
+		00323DBC132C2A96003BED87 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00323DBD132C2A96003BED87 /* MediaManagementComm-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00323DD9132C2B21003BED87 /* Resources-iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Resources-iPad";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		00323D9B132C29A8003BED87 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00323DAE132C2A12003BED87 /* Content.h in Headers */,
+				0025B59E1349240600CC1540 /* ContentAssembler.h in Headers */,
+				0025B5B5134927D700CC1540 /* JSON.h in Headers */,
+				0025B5B9134927D700CC1540 /* NSObject+JSON.h in Headers */,
+				0025B5BD134927D700CC1540 /* SBJsonParser.h in Headers */,
+				0025B5C1134927D700CC1540 /* SBJsonStreamParser.h in Headers */,
+				0025B5C5134927D700CC1540 /* SBJsonStreamParserAdapter.h in Headers */,
+				0025B5C9134927D700CC1540 /* SBJsonStreamWriter.h in Headers */,
+				0025B5CD134927D700CC1540 /* SBJsonTokeniser.h in Headers */,
+				0025B5D1134927D700CC1540 /* SBJsonWriter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00323DB2132C2A96003BED87 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00323DC2132C2ADC003BED87 /* Content.h in Headers */,
+				00C76DC113492C5C0057F9E6 /* ContentAssembler.h in Headers */,
+				0025B5B7134927D700CC1540 /* JSON.h in Headers */,
+				0025B5BB134927D700CC1540 /* NSObject+JSON.h in Headers */,
+				0025B5BF134927D700CC1540 /* SBJsonParser.h in Headers */,
+				0025B5C3134927D700CC1540 /* SBJsonStreamParser.h in Headers */,
+				0025B5C7134927D700CC1540 /* SBJsonStreamParserAdapter.h in Headers */,
+				0025B5CB134927D700CC1540 /* SBJsonStreamWriter.h in Headers */,
+				0025B5CF134927D700CC1540 /* SBJsonTokeniser.h in Headers */,
+				0025B5D3134927D700CC1540 /* SBJsonWriter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00323DC8132C2AEF003BED87 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00323DC9132C2AEF003BED87 /* Content.h in Headers */,
+				0025B5E513492C0400CC1540 /* ContentAssembler.h in Headers */,
+				0025B5B8134927D700CC1540 /* JSON.h in Headers */,
+				0025B5BC134927D700CC1540 /* NSObject+JSON.h in Headers */,
+				0025B5C0134927D700CC1540 /* SBJsonParser.h in Headers */,
+				0025B5C4134927D700CC1540 /* SBJsonStreamParser.h in Headers */,
+				0025B5C8134927D700CC1540 /* SBJsonStreamParserAdapter.h in Headers */,
+				0025B5CC134927D700CC1540 /* SBJsonStreamWriter.h in Headers */,
+				0025B5D0134927D700CC1540 /* SBJsonTokeniser.h in Headers */,
+				0025B5D4134927D700CC1540 /* SBJsonWriter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00323DD3132C2B21003BED87 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00323DD4132C2B21003BED87 /* Content.h in Headers */,
+				00C76DC313492C6F0057F9E6 /* ContentAssembler.h in Headers */,
+				0025B5B6134927D700CC1540 /* JSON.h in Headers */,
+				0025B5BA134927D700CC1540 /* NSObject+JSON.h in Headers */,
+				0025B5BE134927D700CC1540 /* SBJsonParser.h in Headers */,
+				0025B5C2134927D700CC1540 /* SBJsonStreamParser.h in Headers */,
+				0025B5C6134927D700CC1540 /* SBJsonStreamParserAdapter.h in Headers */,
+				0025B5CA134927D700CC1540 /* SBJsonStreamWriter.h in Headers */,
+				0025B5CE134927D700CC1540 /* SBJsonTokeniser.h in Headers */,
+				0025B5D2134927D700CC1540 /* SBJsonWriter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		00323D9C132C29A8003BED87 /* media-management-common-iphone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00323DA7132C29A8003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-iphone" */;
+			buildPhases = (
+				00323D99132C29A8003BED87 /* Sources */,
+				00323D9A132C29A8003BED87 /* Frameworks */,
+				00323D9B132C29A8003BED87 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "media-management-common-iphone";
+			productName = MediaManagementCommon;
+			productReference = 00B3F8A7132C2CC8003A4FCD /* libmedia-management-common-iphone.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		00323DB3132C2A96003BED87 /* media-management-common-x86_64 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-x86_64" */;
+			buildPhases = (
+				00323DB0132C2A96003BED87 /* Sources */,
+				00323DB1132C2A96003BED87 /* Frameworks */,
+				00323DB2132C2A96003BED87 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "media-management-common-x86_64";
+			productName = MediaManagementComm;
+			productReference = 00B3F8A9132C2CF1003A4FCD /* libmedia-management-common-x86_64.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		00323DC3132C2AEF003BED87 /* media-management-common-32 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00323DCA132C2AEF003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-32" */;
+			buildPhases = (
+				00323DC4132C2AEF003BED87 /* Sources */,
+				00323DC6132C2AEF003BED87 /* Frameworks */,
+				00323DC8132C2AEF003BED87 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "media-management-common-32";
+			productName = MediaManagementComm;
+			productReference = 00B3F8AA132C2D00003A4FCD /* libmedia-management-common-i386.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		00323DCE132C2B21003BED87 /* media-management-common-ipad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-ipad" */;
+			buildPhases = (
+				00323DCF132C2B21003BED87 /* Sources */,
+				00323DD1132C2B21003BED87 /* Frameworks */,
+				00323DD3132C2B21003BED87 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "media-management-common-ipad";
+			productName = MediaManagementCommon;
+			productReference = 00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-ipad.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00323D94132C29A8003BED87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = kra;
+			};
+			buildConfigurationList = 00323D97132C29A8003BED87 /* Build configuration list for PBXProject "MediaManagementCommon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 00323D92132C29A8003BED87;
+			productRefGroup = 00323D9E132C29A8003BED87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00323D9C132C29A8003BED87 /* media-management-common-iphone */,
+				00323DCE132C2B21003BED87 /* media-management-common-ipad */,
+				00323DB3132C2A96003BED87 /* media-management-common-x86_64 */,
+				00323DC3132C2AEF003BED87 /* media-management-common-32 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00323D99132C29A8003BED87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00323DAF132C2A12003BED87 /* Content.m in Sources */,
+				0025B59F1349240600CC1540 /* ContentAssembler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00323DB0132C2A96003BED87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0025B5E313492BF400CC1540 /* ContentAssembler.m in Sources */,
+				00323DC1132C2AD6003BED87 /* Content.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00323DC4132C2AEF003BED87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0025B5E413492BF900CC1540 /* ContentAssembler.m in Sources */,
+				00323DC5132C2AEF003BED87 /* Content.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00323DCF132C2B21003BED87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00323DD0132C2B21003BED87 /* Content.m in Sources */,
+				00C76DC413492C750057F9E6 /* ContentAssembler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		00323DA5132C29A8003BED87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		00323DA6132C29A8003BED87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		00323DA8132C29A8003BED87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/MediaManagementCommon.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MediaManagementCommon/MediaManagementCommon-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "media-management-common-iphone";
+			};
+			name = Debug;
+		};
+		00323DA9132C29A8003BED87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/MediaManagementCommon.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MediaManagementCommon/MediaManagementCommon-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "media-management-common-iphone";
+			};
+			name = Release;
+		};
+		00323DBF132C2A96003BED87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MediaManagementComm/MediaManagementComm-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "media-management-common-x86_64";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		00323DC0132C2A96003BED87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MediaManagementComm/MediaManagementComm-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "media-management-common-x86_64";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		00323DCB132C2AEF003BED87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MediaManagementComm/MediaManagementComm-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "media-management-common-i386";
+				SDKROOT = macosx;
+				VALID_ARCHS = i386;
+			};
+			name = Debug;
+		};
+		00323DCC132C2AEF003BED87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MediaManagementComm/MediaManagementComm-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "media-management-common-i386";
+				SDKROOT = macosx;
+				VALID_ARCHS = i386;
+			};
+			name = Release;
+		};
+		00323DD6132C2B21003BED87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/MediaManagementCommon.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MediaManagementCommon/MediaManagementCommon-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "media-management-common-ipad";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		00323DD7132C2B21003BED87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/MediaManagementCommon.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MediaManagementCommon/MediaManagementCommon-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "media-management-common-ipad";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00323D97132C29A8003BED87 /* Build configuration list for PBXProject "MediaManagementCommon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00323DA5132C29A8003BED87 /* Debug */,
+				00323DA6132C29A8003BED87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00323DA7132C29A8003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-iphone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00323DA8132C29A8003BED87 /* Debug */,
+				00323DA9132C29A8003BED87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-x86_64" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00323DBF132C2A96003BED87 /* Debug */,
+				00323DC0132C2A96003BED87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00323DCA132C2AEF003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-32" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00323DCB132C2AEF003BED87 /* Debug */,
+				00323DCC132C2AEF003BED87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-ipad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00323DD6132C2B21003BED87 /* Debug */,
+				00323DD7132C2B21003BED87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00323D94132C29A8003BED87 /* Project object */;
+}
