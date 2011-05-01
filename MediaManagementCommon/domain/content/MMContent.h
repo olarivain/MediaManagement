@@ -18,7 +18,7 @@ typedef enum ContentKind
   UNKNOWN = 5
 }ContentKind;
 
-@interface Content : NSObject 
+@interface MMContent : NSObject 
 {
   @private
   NSString *contentId;

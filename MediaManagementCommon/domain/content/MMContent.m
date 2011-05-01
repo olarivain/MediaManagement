@@ -6,16 +6,16 @@
 //  Copyright 2011 kra. All rights reserved.
 //
 
-#import "Content.h"
+#import "MMContent.h"
 
-@interface Content(private)
+@interface MMContent(private)
 - (id) init: (ContentKind) kind;
 @end
-@implementation Content
+@implementation MMContent
 
 + (id) content: (ContentKind) kind
 {
-  return [[[Content alloc] init: kind] autorelease];
+  return [[[MMContent alloc] init: kind] autorelease];
 }
 
 - (id) init:(ContentKind) contentKind

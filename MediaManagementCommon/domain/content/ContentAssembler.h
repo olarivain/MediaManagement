@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class Content;
+@class MMContent;
 
 @interface ContentAssembler : NSObject 
 {
@@ -19,10 +19,10 @@
 + (id) sharedInstance;
 
 - (NSData*) writeObject: (NSObject*) object;
-- (NSDictionary*) writeContent: (Content*) content;
+- (NSDictionary*) writeContent: (MMContent*) content;
 - (NSArray*) writeContentArray: (NSArray*) contentList;
 
-- (Content*) createContent: (NSDictionary*) dictionary;
+- (MMContent*) createContent: (NSDictionary*) dictionary;
 - (NSArray*) createContentArray: (NSArray*) dictionary;
 
 @end
