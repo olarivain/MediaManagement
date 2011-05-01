@@ -15,6 +15,7 @@ static ContentAssembler *sharedInstance;
 
 @interface ContentAssembler(private)
 - (SBJsonWriter*) jsonWriter;
+- (void) setInDictionary: (NSMutableDictionary*) dictionary object: (id) object forKey: (id) key;
 @end
 
 
@@ -42,6 +43,17 @@ static ContentAssembler *sharedInstance;
   [super dealloc];
 }
 
+#pragma mark - Convenience methods
+- (void) setInDictionary: (NSMutableDictionary*) dictionary object: (id) object forKey: (id) key
+{
+  if(object == nil)
+  {
+    return;
+  }
+  
+  [dictionary setObject:object forKey: key];
+}
+
 - (SBJsonWriter*) jsonWriter
 {
   return [[[SBJsonWriter alloc] init] autorelease];
@@ -52,27 +64,26 @@ static ContentAssembler *sharedInstance;
 {
   NSMutableDictionary *dto = [NSMutableDictionary dictionary];
   
-  NSNumber *number = [NSNumber numberWithInt: content.contentId];
-  [dto setObject:number forKey:@"contentId"];
+  [self setInDictionary: dto object:content.contentId forKey:@"contentId"];
   
   NSNumber *kind = [NSNumber numberWithInt:content.kind];
-  [dto setObject:kind forKey:@"kind"];
+  [self setInDictionary: dto object:kind forKey:@"kind"];
   
-  NSNumber *episodeNumber = [NSNumber numberWithInt:content.episodeNumber];
-  [dto setObject:episodeNumber forKey:@"episodeNumber"];
+  NSNumber *episodeNumber = [NSNumber numberWithInteger:content.episodeNumber];
+  [self setInDictionary: dto object:episodeNumber forKey:@"episodeNumber"];
   
-  NSNumber *season = [NSNumber numberWithInt:content.season];  
-  [dto setObject:season forKey:@"season"];
+  NSNumber *season = [NSNumber numberWithInteger:content.season];  
+  [self setInDictionary: dto object:season forKey:@"season"];
   
-  NSNumber *trackNumber = [NSNumber numberWithInt:content.trackNumber];
-  [dto setObject:trackNumber forKey:@"trackNumber"];
+  NSNumber *trackNumber = [NSNumber numberWithInteger:content.trackNumber];
+  [self setInDictionary: dto object:trackNumber forKey:@"trackNumber"];
   
-  [dto setObject:content.album forKey:@"album"];
-  [dto setObject:content.artist forKey:@"artist"];
-  [dto setObject:content.description forKey:@"description"];
-  [dto setObject:content.genre forKey:@"genre"];
-  [dto setObject:content.name forKey:@"name"];
-  [dto setObject:content.show forKey:@"show"];
+  [self setInDictionary: dto object:content.album forKey:@"album"];
+  [self setInDictionary: dto object:content.artist forKey:@"artist"];
+  [self setInDictionary: dto object:content.description forKey:@"description"];
+  [self setInDictionary: dto object:content.genre forKey:@"genre"];
+  [self setInDictionary: dto object:content.name forKey:@"name"];
+  [self setInDictionary: dto object:content.show forKey:@"show"];
   
   return dto;
 }
@@ -113,7 +124,16 @@ static ContentAssembler *sharedInstance;
 #pragma mark - DTO -> Domain methods
 - (Content*) createContent: (NSDictionary*) dictionary
 {
+  NSNumber *kindNumber = [dictionary objectForKey:@"kind"];
+  if(kindNumber == nil)
+  {
+    return nil;
+  }
   
+  ContentKind kind = [kindNumber intValue];
+  Content *content = [Content content:kind];
+  
+  return content;
 }
 
 - (NSArray*) createContentArray: (NSArray*) dtoList

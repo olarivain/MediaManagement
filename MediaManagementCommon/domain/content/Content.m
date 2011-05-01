@@ -30,10 +30,13 @@
 
 - (void) dealloc
 {
+  [contentId release];
+  [artist release];
+  [album release];
+  [genre release];
   [name release];
-  [show release];
   [description release];
-//  [thumbnail release];
+  [show release];
   [super dealloc];
 }
 
