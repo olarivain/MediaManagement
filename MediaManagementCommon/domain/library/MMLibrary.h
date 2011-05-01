@@ -19,7 +19,7 @@
 }
 
 @property (nonatomic, readonly) NSString *uniqueId;
-@property (nonatomic, readwrite) NSString *name;
+@property (nonatomic, readwrite, retain) NSString *name;
 @property (nonatomic, readonly) NSArray *collections;
 
 - (void) updateContent: (MMContent*) content;
