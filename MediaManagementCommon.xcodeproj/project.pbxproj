@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0025B5E313492BF400CC1540 /* ContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0025B59D1349240600CC1540 /* ContentAssembler.m */; };
+		0025B5E313492BF400CC1540 /* MMContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0025B59D1349240600CC1540 /* MMContentAssembler.m */; };
 		00323DB6132C2A96003BED87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DB5132C2A96003BED87 /* Cocoa.framework */; };
 		00323DC1132C2AD6003BED87 /* MMContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 00323DAD132C2A12003BED87 /* MMContent.m */; };
 		00323DC2132C2ADC003BED87 /* MMContent.h in Headers */ = {isa = PBXBuildFile; fileRef = 00323DAC132C2A12003BED87 /* MMContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,18 +16,18 @@
 		00323DD4132C2B21003BED87 /* MMContent.h in Headers */ = {isa = PBXBuildFile; fileRef = 00323DAC132C2A12003BED87 /* MMContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		009EE519136DFE33008EEEA5 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE516136DFE33008EEEA5 /* JSONKit.h */; };
 		009EE51A136DFE33008EEEA5 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE517136DFE33008EEEA5 /* JSONKit.m */; };
-		009EE51E136E0A2A008EEEA5 /* ContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE51D136E0A2A008EEEA5 /* ContentCollection.h */; };
-		009EE51F136E0A2A008EEEA5 /* ContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE51D136E0A2A008EEEA5 /* ContentCollection.h */; };
+		009EE51E136E0A2A008EEEA5 /* MMContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE51D136E0A2A008EEEA5 /* MMContentCollection.h */; };
+		009EE51F136E0A2A008EEEA5 /* MMContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE51D136E0A2A008EEEA5 /* MMContentCollection.h */; };
 		009EE522136E0FDF008EEEA5 /* MMLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE520136E0FDF008EEEA5 /* MMLibrary.h */; };
 		009EE523136E0FDF008EEEA5 /* MMLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE521136E0FDF008EEEA5 /* MMLibrary.m */; };
-		00C76DC113492C5C0057F9E6 /* ContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B59C1349240600CC1540 /* ContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00C76DC313492C6F0057F9E6 /* ContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B59C1349240600CC1540 /* ContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00C76DC413492C750057F9E6 /* ContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0025B59D1349240600CC1540 /* ContentAssembler.m */; };
+		00C76DC113492C5C0057F9E6 /* MMContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B59C1349240600CC1540 /* MMContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00C76DC313492C6F0057F9E6 /* MMContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B59C1349240600CC1540 /* MMContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00C76DC413492C750057F9E6 /* MMContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0025B59D1349240600CC1540 /* MMContentAssembler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0025B59C1349240600CC1540 /* ContentAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentAssembler.h; sourceTree = "<group>"; };
-		0025B59D1349240600CC1540 /* ContentAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentAssembler.m; sourceTree = "<group>"; };
+		0025B59C1349240600CC1540 /* MMContentAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContentAssembler.h; sourceTree = "<group>"; };
+		0025B59D1349240600CC1540 /* MMContentAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMContentAssembler.m; sourceTree = "<group>"; };
 		00323DA0132C29A8003BED87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00323DA4132C29A8003BED87 /* MediaManagementCommon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaManagementCommon-Prefix.pch"; sourceTree = "<group>"; };
 		00323DAC132C2A12003BED87 /* MMContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContent.h; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		009EE516136DFE33008EEEA5 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		009EE517136DFE33008EEEA5 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		009EE518136DFE33008EEEA5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		009EE51D136E0A2A008EEEA5 /* ContentCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCollection.h; sourceTree = "<group>"; };
+		009EE51D136E0A2A008EEEA5 /* MMContentCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContentCollection.h; sourceTree = "<group>"; };
 		009EE520136E0FDF008EEEA5 /* MMLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLibrary.h; sourceTree = "<group>"; };
 		009EE521136E0FDF008EEEA5 /* MMLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLibrary.m; sourceTree = "<group>"; };
 		00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-ipad.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common-ipad.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,11 +147,11 @@
 		00323DAB132C2A12003BED87 /* content */ = {
 			isa = PBXGroup;
 			children = (
-				009EE51D136E0A2A008EEEA5 /* ContentCollection.h */,
+				009EE51D136E0A2A008EEEA5 /* MMContentCollection.h */,
 				00323DAC132C2A12003BED87 /* MMContent.h */,
 				00323DAD132C2A12003BED87 /* MMContent.m */,
-				0025B59C1349240600CC1540 /* ContentAssembler.h */,
-				0025B59D1349240600CC1540 /* ContentAssembler.m */,
+				0025B59C1349240600CC1540 /* MMContentAssembler.h */,
+				0025B59D1349240600CC1540 /* MMContentAssembler.m */,
 				009EE520136E0FDF008EEEA5 /* MMLibrary.h */,
 				009EE521136E0FDF008EEEA5 /* MMLibrary.m */,
 			);
@@ -337,8 +337,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				00323DC2132C2ADC003BED87 /* MMContent.h in Headers */,
-				00C76DC113492C5C0057F9E6 /* ContentAssembler.h in Headers */,
-				009EE51F136E0A2A008EEEA5 /* ContentCollection.h in Headers */,
+				00C76DC113492C5C0057F9E6 /* MMContentAssembler.h in Headers */,
+				009EE51F136E0A2A008EEEA5 /* MMContentCollection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,9 +347,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				00323DD4132C2B21003BED87 /* MMContent.h in Headers */,
-				00C76DC313492C6F0057F9E6 /* ContentAssembler.h in Headers */,
+				00C76DC313492C6F0057F9E6 /* MMContentAssembler.h in Headers */,
 				009EE519136DFE33008EEEA5 /* JSONKit.h in Headers */,
-				009EE51E136E0A2A008EEEA5 /* ContentCollection.h in Headers */,
+				009EE51E136E0A2A008EEEA5 /* MMContentCollection.h in Headers */,
 				009EE522136E0FDF008EEEA5 /* MMLibrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,7 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0025B5E313492BF400CC1540 /* ContentAssembler.m in Sources */,
+				0025B5E313492BF400CC1540 /* MMContentAssembler.m in Sources */,
 				00323DC1132C2AD6003BED87 /* MMContent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,7 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00323DD0132C2B21003BED87 /* MMContent.m in Sources */,
-				00C76DC413492C750057F9E6 /* ContentAssembler.m in Sources */,
+				00C76DC413492C750057F9E6 /* MMContentAssembler.m in Sources */,
 				009EE51A136DFE33008EEEA5 /* JSONKit.m in Sources */,
 				009EE523136E0FDF008EEEA5 /* MMLibrary.m in Sources */,
 			);

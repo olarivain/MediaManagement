@@ -10,7 +10,7 @@
 
 @class Content;
 
-@protocol ContentCollection <NSObject>
+@protocol MMContentCollection <NSObject>
 - (NSArray*) content;
 - (NSArray*) subContent;
 

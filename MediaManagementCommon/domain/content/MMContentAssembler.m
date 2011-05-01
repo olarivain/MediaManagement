@@ -6,26 +6,26 @@
 //  Copyright 2011 kra. All rights reserved.
 //
 
-#import "ContentAssembler.h"
+#import "MMContentAssembler.h"
 #import "MMContent.h"
 
 #import "JSONKit.h"
 
-static ContentAssembler *sharedInstance;
+static MMContentAssembler *sharedInstance;
 
-@interface ContentAssembler()
+@interface MMContentAssembler()
 - (void) setInDictionary: (NSMutableDictionary*) dictionary object: (id) object forKey: (id) key;
 @end
 
 
-@implementation ContentAssembler
+@implementation MMContentAssembler
 
 + (id) sharedInstance
 {
   @synchronized(self){
     if(sharedInstance == nil) 
     {
-      sharedInstance = [[ContentAssembler alloc] init];
+      sharedInstance = [[MMContentAssembler alloc] init];
     }
   }
   return sharedInstance;

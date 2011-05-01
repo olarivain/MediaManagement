@@ -10,7 +10,7 @@
 
 @class MMContent;
 
-@interface ContentAssembler : NSObject 
+@interface MMContentAssembler : NSObject 
 {
 @private
     
