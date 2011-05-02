@@ -6,16 +6,17 @@
 //  Copyright 2011 kra. All rights reserved.
 //
 
-#import "Content.h"
+#import "MMContent.h"
 
-@interface Content(private)
+@interface MMContent(private)
 - (id) init: (ContentKind) kind;
+- (BOOL) isSet: (NSString*) value;
 @end
-@implementation Content
+@implementation MMContent
 
 + (id) content: (ContentKind) kind
 {
-  return [[[Content alloc] init: kind] autorelease];
+  return [[[MMContent alloc] init: kind] autorelease];
 }
 
 - (id) init:(ContentKind) contentKind
@@ -54,5 +55,19 @@
 @synthesize episodeNumber;
 @synthesize season;
 
+#pragma mark - Business Logic
+- (BOOL) isSet: (NSString*) value
+{
+  return [[value stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]] length] > 0;
+}
+
+- (BOOL) isArtistSet
+{
+  return [self isSet: artist];
+}
+- (BOOL) isAlbumSet
+{
+  return [self isSet: album];  
+}
 
 @end

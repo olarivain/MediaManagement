@@ -6,27 +6,26 @@
 //  Copyright 2011 kra. All rights reserved.
 //
 
-#import "ContentAssembler.h"
-#import "Content.h"
+#import "MMContentAssembler.h"
+#import "MMContent.h"
 
-#import "SBJsonWriter.h"
+#import "JSONKit.h"
 
-static ContentAssembler *sharedInstance;
+static MMContentAssembler *sharedInstance;
 
-@interface ContentAssembler(private)
-- (SBJsonWriter*) jsonWriter;
+@interface MMContentAssembler()
 - (void) setInDictionary: (NSMutableDictionary*) dictionary object: (id) object forKey: (id) key;
 @end
 
 
-@implementation ContentAssembler
+@implementation MMContentAssembler
 
 + (id) sharedInstance
 {
   @synchronized(self){
     if(sharedInstance == nil) 
     {
-      sharedInstance = [[ContentAssembler alloc] init];
+      sharedInstance = [[MMContentAssembler alloc] init];
     }
   }
   return sharedInstance;
@@ -54,13 +53,8 @@ static ContentAssembler *sharedInstance;
   [dictionary setObject:object forKey: key];
 }
 
-- (SBJsonWriter*) jsonWriter
-{
-  return [[[SBJsonWriter alloc] init] autorelease];
-}
-
 #pragma mark - Domain -> DTO methods
-- (NSDictionary*) writeContent: (Content*) content
+- (NSDictionary*) writeContent: (MMContent*) content
 {
   NSMutableDictionary *dto = [NSMutableDictionary dictionary];
   
@@ -91,7 +85,7 @@ static ContentAssembler *sharedInstance;
 - (NSArray*) writeContentArray: (NSArray*) contentList
 {
   NSMutableArray *dtos = [NSMutableArray arrayWithCapacity:[contentList count]];
-  for(Content *content in contentList)
+  for(MMContent *content in contentList)
   {
     NSDictionary *dto = [self writeContent: content];
     if(dto != nil)
@@ -105,24 +99,25 @@ static ContentAssembler *sharedInstance;
 
 - (NSData*) writeObject: (NSObject*) object
 {
-  NSObject *data;
+  NSData *data;
   if([object isKindOfClass: [NSArray class] ])
   {
     NSArray *domains = (NSArray*) object;
-    data = [self writeContentArray: domains];  
+    NSArray *dtos = [self writeContentArray: domains];  
+    data = [dtos JSONData];
   }
-  else if([object isKindOfClass: [Content class]])
+  else if([object isKindOfClass: [MMContent class]])
   {
-    Content *domain = (Content*) object;
-    data = [self writeContent: domain];
+    MMContent *domain = (MMContent*) object;
+    NSDictionary *dtos = [self writeContent: domain];
+    data = [dtos JSONData];
   }
   
-  SBJsonWriter *writer = [self jsonWriter];  
-  return [writer dataWithObject:data];
+  return data;
 }
 
 #pragma mark - DTO -> Domain methods
-- (Content*) createContent: (NSDictionary*) dictionary
+- (MMContent*) createContent: (NSDictionary*) dictionary
 {
   NSNumber *kindNumber = [dictionary objectForKey:@"kind"];
   if(kindNumber == nil)
@@ -131,7 +126,7 @@ static ContentAssembler *sharedInstance;
   }
   
   ContentKind kind = [kindNumber intValue];
-  Content *content = [Content content:kind];
+  MMContent *content = [MMContent content:kind];
   
   return content;
 }
@@ -141,7 +136,7 @@ static ContentAssembler *sharedInstance;
   NSMutableArray *domains = [NSMutableArray arrayWithCapacity: [dtoList count]];
   for(NSDictionary *dto in dtoList)
   {
-    Content *content = [self createContent: dto];
+    MMContent *content = [self createContent: dto];
     if(content != nil)
     {
       [domains addObject: content];

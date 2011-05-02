@@ -7,57 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0025B5B6134927D700CC1540 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AB134927D700CC1540 /* JSON.h */; };
-		0025B5B7134927D700CC1540 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AB134927D700CC1540 /* JSON.h */; };
-		0025B5BA134927D700CC1540 /* NSObject+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AC134927D700CC1540 /* NSObject+JSON.h */; };
-		0025B5BB134927D700CC1540 /* NSObject+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AC134927D700CC1540 /* NSObject+JSON.h */; };
-		0025B5BE134927D700CC1540 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AD134927D700CC1540 /* SBJsonParser.h */; };
-		0025B5BF134927D700CC1540 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AD134927D700CC1540 /* SBJsonParser.h */; };
-		0025B5C2134927D700CC1540 /* SBJsonStreamParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AE134927D700CC1540 /* SBJsonStreamParser.h */; };
-		0025B5C3134927D700CC1540 /* SBJsonStreamParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AE134927D700CC1540 /* SBJsonStreamParser.h */; };
-		0025B5C6134927D700CC1540 /* SBJsonStreamParserAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AF134927D700CC1540 /* SBJsonStreamParserAdapter.h */; };
-		0025B5C7134927D700CC1540 /* SBJsonStreamParserAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5AF134927D700CC1540 /* SBJsonStreamParserAdapter.h */; };
-		0025B5CA134927D700CC1540 /* SBJsonStreamWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B0134927D700CC1540 /* SBJsonStreamWriter.h */; };
-		0025B5CB134927D700CC1540 /* SBJsonStreamWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B0134927D700CC1540 /* SBJsonStreamWriter.h */; };
-		0025B5CE134927D700CC1540 /* SBJsonTokeniser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B1134927D700CC1540 /* SBJsonTokeniser.h */; };
-		0025B5CF134927D700CC1540 /* SBJsonTokeniser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B1134927D700CC1540 /* SBJsonTokeniser.h */; };
-		0025B5D2134927D700CC1540 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B2134927D700CC1540 /* SBJsonWriter.h */; };
-		0025B5D3134927D700CC1540 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B5B2134927D700CC1540 /* SBJsonWriter.h */; };
-		0025B5D6134927D700CC1540 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0025B5B4134927D700CC1540 /* libjson.a */; };
-		0025B5D7134927D700CC1540 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0025B5B4134927D700CC1540 /* libjson.a */; };
-		0025B5E313492BF400CC1540 /* ContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0025B59D1349240600CC1540 /* ContentAssembler.m */; };
 		00323DB6132C2A96003BED87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DB5132C2A96003BED87 /* Cocoa.framework */; };
-		00323DC1132C2AD6003BED87 /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = 00323DAD132C2A12003BED87 /* Content.m */; };
-		00323DC2132C2ADC003BED87 /* Content.h in Headers */ = {isa = PBXBuildFile; fileRef = 00323DAC132C2A12003BED87 /* Content.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00323DD0132C2B21003BED87 /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = 00323DAD132C2A12003BED87 /* Content.m */; };
 		00323DD2132C2B21003BED87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DA0132C29A8003BED87 /* Foundation.framework */; };
-		00323DD4132C2B21003BED87 /* Content.h in Headers */ = {isa = PBXBuildFile; fileRef = 00323DAC132C2A12003BED87 /* Content.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00C76DC113492C5C0057F9E6 /* ContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B59C1349240600CC1540 /* ContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00C76DC313492C6F0057F9E6 /* ContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0025B59C1349240600CC1540 /* ContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00C76DC413492C750057F9E6 /* ContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0025B59D1349240600CC1540 /* ContentAssembler.m */; };
+		0046D852136E23FC00B8E57B /* MMMediaLibraryProtected.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D851136E23FC00B8E57B /* MMMediaLibraryProtected.h */; };
+		0046D854136E249B00B8E57B /* MMContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE527136E1215008EEEA5 /* MMContentAssembler.m */; };
+		0046D855136E249B00B8E57B /* MMContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE52D136E1215008EEEA5 /* MMContent.m */; };
+		0046D856136E249B00B8E57B /* MMLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE530136E1215008EEEA5 /* MMLibrary.m */; };
+		0046D857136E249B00B8E57B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE517136DFE33008EEEA5 /* JSONKit.m */; };
+		0046D85F136E2F2B00B8E57B /* MMMusicLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D85D136E2F2B00B8E57B /* MMMusicLibrary.h */; };
+		0046D860136E2F2B00B8E57B /* MMMusicLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D85D136E2F2B00B8E57B /* MMMusicLibrary.h */; };
+		0046D861136E2F2B00B8E57B /* MMMusicLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D85E136E2F2B00B8E57B /* MMMusicLibrary.m */; };
+		0046D862136E2F2B00B8E57B /* MMMusicLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D85E136E2F2B00B8E57B /* MMMusicLibrary.m */; };
+		0046D865136E2FF300B8E57B /* MMArtist.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D863136E2FF300B8E57B /* MMArtist.h */; };
+		0046D866136E2FF300B8E57B /* MMArtist.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D863136E2FF300B8E57B /* MMArtist.h */; };
+		0046D867136E2FF300B8E57B /* MMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D864136E2FF300B8E57B /* MMArtist.m */; };
+		0046D868136E2FF300B8E57B /* MMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D864136E2FF300B8E57B /* MMArtist.m */; };
+		0046D86B136E305700B8E57B /* MMAlbum.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D869136E305600B8E57B /* MMAlbum.h */; };
+		0046D86C136E305700B8E57B /* MMAlbum.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D869136E305600B8E57B /* MMAlbum.h */; };
+		0046D86D136E305700B8E57B /* MMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D86A136E305600B8E57B /* MMAlbum.m */; };
+		0046D86E136E305700B8E57B /* MMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D86A136E305600B8E57B /* MMAlbum.m */; };
+		0046D871136E3F8200B8E57B /* MMMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D86F136E3F8100B8E57B /* MMMediaLibrary.h */; };
+		0046D872136E3F8200B8E57B /* MMMediaLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D870136E3F8100B8E57B /* MMMediaLibrary.m */; };
+		009EE519136DFE33008EEEA5 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE516136DFE33008EEEA5 /* JSONKit.h */; };
+		009EE51A136DFE33008EEEA5 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE517136DFE33008EEEA5 /* JSONKit.m */; };
+		009EE531136E1215008EEEA5 /* MMContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE526136E1215008EEEA5 /* MMContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		009EE532136E1215008EEEA5 /* MMContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE527136E1215008EEEA5 /* MMContentAssembler.m */; };
+		009EE533136E1215008EEEA5 /* MMContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52A136E1215008EEEA5 /* MMContentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		009EE534136E1215008EEEA5 /* MMContent.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52C136E1215008EEEA5 /* MMContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		009EE535136E1215008EEEA5 /* MMContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE52D136E1215008EEEA5 /* MMContent.m */; };
+		009EE536136E1215008EEEA5 /* MMLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52F136E1215008EEEA5 /* MMLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		009EE537136E1215008EEEA5 /* MMLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE530136E1215008EEEA5 /* MMLibrary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0025B59C1349240600CC1540 /* ContentAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentAssembler.h; sourceTree = "<group>"; };
-		0025B59D1349240600CC1540 /* ContentAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentAssembler.m; sourceTree = "<group>"; };
-		0025B5AB134927D700CC1540 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		0025B5AC134927D700CC1540 /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
-		0025B5AD134927D700CC1540 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		0025B5AE134927D700CC1540 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
-		0025B5AF134927D700CC1540 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
-		0025B5B0134927D700CC1540 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
-		0025B5B1134927D700CC1540 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
-		0025B5B2134927D700CC1540 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		0025B5B4134927D700CC1540 /* libjson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjson.a; sourceTree = "<group>"; };
 		00323DA0132C29A8003BED87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00323DA4132C29A8003BED87 /* MediaManagementCommon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaManagementCommon-Prefix.pch"; sourceTree = "<group>"; };
-		00323DAC132C2A12003BED87 /* Content.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Content.h; sourceTree = "<group>"; };
-		00323DAD132C2A12003BED87 /* Content.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Content.m; sourceTree = "<group>"; };
 		00323DB5132C2A96003BED87 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		00323DB8132C2A96003BED87 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		00323DB9132C2A96003BED87 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		00323DBA132C2A96003BED87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		00323DBD132C2A96003BED87 /* MediaManagementComm-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaManagementComm-Prefix.pch"; sourceTree = "<group>"; };
+		0046D851136E23FC00B8E57B /* MMMediaLibraryProtected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMediaLibraryProtected.h; sourceTree = "<group>"; };
+		0046D85D136E2F2B00B8E57B /* MMMusicLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMMusicLibrary.h; path = music/MMMusicLibrary.h; sourceTree = "<group>"; };
+		0046D85E136E2F2B00B8E57B /* MMMusicLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMMusicLibrary.m; path = music/MMMusicLibrary.m; sourceTree = "<group>"; };
+		0046D863136E2FF300B8E57B /* MMArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMArtist.h; path = music/MMArtist.h; sourceTree = "<group>"; };
+		0046D864136E2FF300B8E57B /* MMArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMArtist.m; path = music/MMArtist.m; sourceTree = "<group>"; };
+		0046D869136E305600B8E57B /* MMAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMAlbum.h; path = music/MMAlbum.h; sourceTree = "<group>"; };
+		0046D86A136E305600B8E57B /* MMAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMAlbum.m; path = music/MMAlbum.m; sourceTree = "<group>"; };
+		0046D86F136E3F8100B8E57B /* MMMediaLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMediaLibrary.h; sourceTree = "<group>"; };
+		0046D870136E3F8100B8E57B /* MMMediaLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMediaLibrary.m; sourceTree = "<group>"; };
+		009EE4F2136DFE33008EEEA5 /* config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config; sourceTree = "<group>"; };
+		009EE4F3136DFE33008EEEA5 /* description */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = description; sourceTree = "<group>"; };
+		009EE4F4136DFE33008EEEA5 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
+		009EE4F6136DFE33008EEEA5 /* applypatch-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "applypatch-msg.sample"; sourceTree = "<group>"; };
+		009EE4F7136DFE33008EEEA5 /* commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "commit-msg.sample"; sourceTree = "<group>"; };
+		009EE4F8136DFE33008EEEA5 /* post-commit.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "post-commit.sample"; sourceTree = "<group>"; };
+		009EE4F9136DFE33008EEEA5 /* post-receive.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "post-receive.sample"; sourceTree = "<group>"; };
+		009EE4FA136DFE33008EEEA5 /* post-update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "post-update.sample"; sourceTree = "<group>"; };
+		009EE4FB136DFE33008EEEA5 /* pre-applypatch.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-applypatch.sample"; sourceTree = "<group>"; };
+		009EE4FC136DFE33008EEEA5 /* pre-commit.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-commit.sample"; sourceTree = "<group>"; };
+		009EE4FD136DFE33008EEEA5 /* pre-rebase.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-rebase.sample"; sourceTree = "<group>"; };
+		009EE4FE136DFE33008EEEA5 /* prepare-commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg.sample"; sourceTree = "<group>"; };
+		009EE4FF136DFE33008EEEA5 /* update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = update.sample; sourceTree = "<group>"; };
+		009EE500136DFE33008EEEA5 /* index */ = {isa = PBXFileReference; lastKnownFileType = file; path = index; sourceTree = "<group>"; };
+		009EE502136DFE33008EEEA5 /* exclude */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exclude; sourceTree = "<group>"; };
+		009EE504136DFE33008EEEA5 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
+		009EE507136DFE33008EEEA5 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master; sourceTree = "<group>"; };
+		009EE50B136DFE33008EEEA5 /* pack-cd237c70f152f557423559b2608e0edf0b29f042.idx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pack-cd237c70f152f557423559b2608e0edf0b29f042.idx"; sourceTree = "<group>"; };
+		009EE50C136DFE33008EEEA5 /* pack-cd237c70f152f557423559b2608e0edf0b29f042.pack */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pack-cd237c70f152f557423559b2608e0edf0b29f042.pack"; sourceTree = "<group>"; };
+		009EE50D136DFE33008EEEA5 /* packed-refs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "packed-refs"; sourceTree = "<group>"; };
+		009EE510136DFE33008EEEA5 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master; sourceTree = "<group>"; };
+		009EE513136DFE33008EEEA5 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
+		009EE515136DFE33008EEEA5 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		009EE516136DFE33008EEEA5 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		009EE517136DFE33008EEEA5 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		009EE518136DFE33008EEEA5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		009EE526136E1215008EEEA5 /* MMContentAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContentAssembler.h; sourceTree = "<group>"; };
+		009EE527136E1215008EEEA5 /* MMContentAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMContentAssembler.m; sourceTree = "<group>"; };
+		009EE52A136E1215008EEEA5 /* MMContentCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContentCollection.h; sourceTree = "<group>"; };
+		009EE52C136E1215008EEEA5 /* MMContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContent.h; sourceTree = "<group>"; };
+		009EE52D136E1215008EEEA5 /* MMContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMContent.m; sourceTree = "<group>"; };
+		009EE52F136E1215008EEEA5 /* MMLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLibrary.h; sourceTree = "<group>"; };
+		009EE530136E1215008EEEA5 /* MMLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLibrary.m; sourceTree = "<group>"; };
 		00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-ipad.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common-ipad.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B3F8A9132C2CF1003A4FCD /* libmedia-management-common-x86_64.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common-x86_64.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -68,7 +98,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00323DB6132C2A96003BED87 /* Cocoa.framework in Frameworks */,
-				0025B5D7134927D700CC1540 /* libjson.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,60 +106,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				00323DD2132C2B21003BED87 /* Foundation.framework in Frameworks */,
-				0025B5D6134927D700CC1540 /* libjson.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0025B5A8134927D700CC1540 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				0025B5A9134927D700CC1540 /* include */,
-				0025B5B3134927D700CC1540 /* x86 */,
-			);
-			name = JSON;
-			path = Frameworks/JSON;
-			sourceTree = "<group>";
-		};
-		0025B5A9134927D700CC1540 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				0025B5AA134927D700CC1540 /* JSON */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		0025B5AA134927D700CC1540 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				0025B5AB134927D700CC1540 /* JSON.h */,
-				0025B5AC134927D700CC1540 /* NSObject+JSON.h */,
-				0025B5AD134927D700CC1540 /* SBJsonParser.h */,
-				0025B5AE134927D700CC1540 /* SBJsonStreamParser.h */,
-				0025B5AF134927D700CC1540 /* SBJsonStreamParserAdapter.h */,
-				0025B5B0134927D700CC1540 /* SBJsonStreamWriter.h */,
-				0025B5B1134927D700CC1540 /* SBJsonTokeniser.h */,
-				0025B5B2134927D700CC1540 /* SBJsonWriter.h */,
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
-		0025B5B3134927D700CC1540 /* x86 */ = {
-			isa = PBXGroup;
-			children = (
-				0025B5B4134927D700CC1540 /* libjson.a */,
-			);
-			path = x86;
-			sourceTree = "<group>";
-		};
 		00323D92132C29A8003BED87 = {
 			isa = PBXGroup;
 			children = (
 				00323DD9132C2B21003BED87 /* Resources-iPad */,
 				00323DA2132C29A8003BED87 /* MediaManagementCommon */,
-				00323DBB132C2A96003BED87 /* MediaManagementComm */,
 				00323D9F132C29A8003BED87 /* Frameworks */,
 				00323D9E132C29A8003BED87 /* Products */,
 			);
@@ -148,7 +134,7 @@
 		00323D9F132C29A8003BED87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0025B5A8134927D700CC1540 /* JSON */,
+				009EE4EF136DFE33008EEEA5 /* JSONKit */,
 				00323DA0132C29A8003BED87 /* Foundation.framework */,
 				00323DB5132C2A96003BED87 /* Cocoa.framework */,
 				00323DB7132C2A96003BED87 /* Other Frameworks */,
@@ -159,7 +145,8 @@
 		00323DA2132C29A8003BED87 /* MediaManagementCommon */ = {
 			isa = PBXGroup;
 			children = (
-				00323DAA132C2A12003BED87 /* domain */,
+				009EE525136E1215008EEEA5 /* assembler */,
+				009EE528136E1215008EEEA5 /* domain */,
 				00323DA3132C29A8003BED87 /* Supporting Files */,
 			);
 			path = MediaManagementCommon;
@@ -173,25 +160,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		00323DAA132C2A12003BED87 /* domain */ = {
-			isa = PBXGroup;
-			children = (
-				00323DAB132C2A12003BED87 /* content */,
-			);
-			path = domain;
-			sourceTree = "<group>";
-		};
-		00323DAB132C2A12003BED87 /* content */ = {
-			isa = PBXGroup;
-			children = (
-				00323DAC132C2A12003BED87 /* Content.h */,
-				00323DAD132C2A12003BED87 /* Content.m */,
-				0025B59C1349240600CC1540 /* ContentAssembler.h */,
-				0025B59D1349240600CC1540 /* ContentAssembler.m */,
-			);
-			path = content;
-			sourceTree = "<group>";
-		};
 		00323DB7132C2A96003BED87 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,27 +170,235 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		00323DBB132C2A96003BED87 /* MediaManagementComm */ = {
-			isa = PBXGroup;
-			children = (
-				00323DBC132C2A96003BED87 /* Supporting Files */,
-			);
-			path = MediaManagementComm;
-			sourceTree = "<group>";
-		};
-		00323DBC132C2A96003BED87 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				00323DBD132C2A96003BED87 /* MediaManagementComm-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		00323DD9132C2B21003BED87 /* Resources-iPad */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "Resources-iPad";
+			sourceTree = "<group>";
+		};
+		0046D85C136E2F0200B8E57B /* music */ = {
+			isa = PBXGroup;
+			children = (
+				0046D869136E305600B8E57B /* MMAlbum.h */,
+				0046D86A136E305600B8E57B /* MMAlbum.m */,
+				0046D863136E2FF300B8E57B /* MMArtist.h */,
+				0046D864136E2FF300B8E57B /* MMArtist.m */,
+				0046D85D136E2F2B00B8E57B /* MMMusicLibrary.h */,
+				0046D85E136E2F2B00B8E57B /* MMMusicLibrary.m */,
+			);
+			name = music;
+			sourceTree = "<group>";
+		};
+		009EE4EF136DFE33008EEEA5 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				009EE4F0136DFE33008EEEA5 /* .git */,
+				009EE515136DFE33008EEEA5 /* CHANGELOG.md */,
+				009EE516136DFE33008EEEA5 /* JSONKit.h */,
+				009EE517136DFE33008EEEA5 /* JSONKit.m */,
+				009EE518136DFE33008EEEA5 /* README.md */,
+			);
+			name = JSONKit;
+			path = ../JSONKit;
+			sourceTree = "<group>";
+		};
+		009EE4F0136DFE33008EEEA5 /* .git */ = {
+			isa = PBXGroup;
+			children = (
+				009EE4F1136DFE33008EEEA5 /* branches */,
+				009EE4F2136DFE33008EEEA5 /* config */,
+				009EE4F3136DFE33008EEEA5 /* description */,
+				009EE4F4136DFE33008EEEA5 /* HEAD */,
+				009EE4F5136DFE33008EEEA5 /* hooks */,
+				009EE500136DFE33008EEEA5 /* index */,
+				009EE501136DFE33008EEEA5 /* info */,
+				009EE503136DFE33008EEEA5 /* logs */,
+				009EE508136DFE33008EEEA5 /* objects */,
+				009EE50D136DFE33008EEEA5 /* packed-refs */,
+				009EE50E136DFE33008EEEA5 /* refs */,
+			);
+			path = .git;
+			sourceTree = "<group>";
+		};
+		009EE4F1136DFE33008EEEA5 /* branches */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = branches;
+			sourceTree = "<group>";
+		};
+		009EE4F5136DFE33008EEEA5 /* hooks */ = {
+			isa = PBXGroup;
+			children = (
+				009EE4F6136DFE33008EEEA5 /* applypatch-msg.sample */,
+				009EE4F7136DFE33008EEEA5 /* commit-msg.sample */,
+				009EE4F8136DFE33008EEEA5 /* post-commit.sample */,
+				009EE4F9136DFE33008EEEA5 /* post-receive.sample */,
+				009EE4FA136DFE33008EEEA5 /* post-update.sample */,
+				009EE4FB136DFE33008EEEA5 /* pre-applypatch.sample */,
+				009EE4FC136DFE33008EEEA5 /* pre-commit.sample */,
+				009EE4FD136DFE33008EEEA5 /* pre-rebase.sample */,
+				009EE4FE136DFE33008EEEA5 /* prepare-commit-msg.sample */,
+				009EE4FF136DFE33008EEEA5 /* update.sample */,
+			);
+			path = hooks;
+			sourceTree = "<group>";
+		};
+		009EE501136DFE33008EEEA5 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				009EE502136DFE33008EEEA5 /* exclude */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		009EE503136DFE33008EEEA5 /* logs */ = {
+			isa = PBXGroup;
+			children = (
+				009EE504136DFE33008EEEA5 /* HEAD */,
+				009EE505136DFE33008EEEA5 /* refs */,
+			);
+			path = logs;
+			sourceTree = "<group>";
+		};
+		009EE505136DFE33008EEEA5 /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				009EE506136DFE33008EEEA5 /* heads */,
+			);
+			path = refs;
+			sourceTree = "<group>";
+		};
+		009EE506136DFE33008EEEA5 /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				009EE507136DFE33008EEEA5 /* master */,
+			);
+			path = heads;
+			sourceTree = "<group>";
+		};
+		009EE508136DFE33008EEEA5 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				009EE509136DFE33008EEEA5 /* info */,
+				009EE50A136DFE33008EEEA5 /* pack */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		009EE509136DFE33008EEEA5 /* info */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		009EE50A136DFE33008EEEA5 /* pack */ = {
+			isa = PBXGroup;
+			children = (
+				009EE50B136DFE33008EEEA5 /* pack-cd237c70f152f557423559b2608e0edf0b29f042.idx */,
+				009EE50C136DFE33008EEEA5 /* pack-cd237c70f152f557423559b2608e0edf0b29f042.pack */,
+			);
+			path = pack;
+			sourceTree = "<group>";
+		};
+		009EE50E136DFE33008EEEA5 /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				009EE50F136DFE33008EEEA5 /* heads */,
+				009EE511136DFE33008EEEA5 /* remotes */,
+				009EE514136DFE33008EEEA5 /* tags */,
+			);
+			path = refs;
+			sourceTree = "<group>";
+		};
+		009EE50F136DFE33008EEEA5 /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				009EE510136DFE33008EEEA5 /* master */,
+			);
+			path = heads;
+			sourceTree = "<group>";
+		};
+		009EE511136DFE33008EEEA5 /* remotes */ = {
+			isa = PBXGroup;
+			children = (
+				009EE512136DFE33008EEEA5 /* origin */,
+			);
+			path = remotes;
+			sourceTree = "<group>";
+		};
+		009EE512136DFE33008EEEA5 /* origin */ = {
+			isa = PBXGroup;
+			children = (
+				009EE513136DFE33008EEEA5 /* HEAD */,
+			);
+			path = origin;
+			sourceTree = "<group>";
+		};
+		009EE514136DFE33008EEEA5 /* tags */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = tags;
+			sourceTree = "<group>";
+		};
+		009EE525136E1215008EEEA5 /* assembler */ = {
+			isa = PBXGroup;
+			children = (
+				009EE526136E1215008EEEA5 /* MMContentAssembler.h */,
+				009EE527136E1215008EEEA5 /* MMContentAssembler.m */,
+			);
+			path = assembler;
+			sourceTree = "<group>";
+		};
+		009EE528136E1215008EEEA5 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				009EE529136E1215008EEEA5 /* collection */,
+				009EE52B136E1215008EEEA5 /* content */,
+				009EE52E136E1215008EEEA5 /* library */,
+				009EE538136E12D1008EEEA5 /* playlist */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		009EE529136E1215008EEEA5 /* collection */ = {
+			isa = PBXGroup;
+			children = (
+				009EE52A136E1215008EEEA5 /* MMContentCollection.h */,
+			);
+			path = collection;
+			sourceTree = "<group>";
+		};
+		009EE52B136E1215008EEEA5 /* content */ = {
+			isa = PBXGroup;
+			children = (
+				009EE52C136E1215008EEEA5 /* MMContent.h */,
+				009EE52D136E1215008EEEA5 /* MMContent.m */,
+			);
+			path = content;
+			sourceTree = "<group>";
+		};
+		009EE52E136E1215008EEEA5 /* library */ = {
+			isa = PBXGroup;
+			children = (
+				0046D85C136E2F0200B8E57B /* music */,
+				009EE52F136E1215008EEEA5 /* MMLibrary.h */,
+				009EE530136E1215008EEEA5 /* MMLibrary.m */,
+				0046D86F136E3F8100B8E57B /* MMMediaLibrary.h */,
+				0046D870136E3F8100B8E57B /* MMMediaLibrary.m */,
+				0046D851136E23FC00B8E57B /* MMMediaLibraryProtected.h */,
+			);
+			path = library;
+			sourceTree = "<group>";
+		};
+		009EE538136E12D1008EEEA5 /* playlist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = playlist;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,16 +408,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00323DC2132C2ADC003BED87 /* Content.h in Headers */,
-				00C76DC113492C5C0057F9E6 /* ContentAssembler.h in Headers */,
-				0025B5B7134927D700CC1540 /* JSON.h in Headers */,
-				0025B5BB134927D700CC1540 /* NSObject+JSON.h in Headers */,
-				0025B5BF134927D700CC1540 /* SBJsonParser.h in Headers */,
-				0025B5C3134927D700CC1540 /* SBJsonStreamParser.h in Headers */,
-				0025B5C7134927D700CC1540 /* SBJsonStreamParserAdapter.h in Headers */,
-				0025B5CB134927D700CC1540 /* SBJsonStreamWriter.h in Headers */,
-				0025B5CF134927D700CC1540 /* SBJsonTokeniser.h in Headers */,
-				0025B5D3134927D700CC1540 /* SBJsonWriter.h in Headers */,
+				0046D860136E2F2B00B8E57B /* MMMusicLibrary.h in Headers */,
+				0046D866136E2FF300B8E57B /* MMArtist.h in Headers */,
+				0046D86C136E305700B8E57B /* MMAlbum.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,16 +418,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00323DD4132C2B21003BED87 /* Content.h in Headers */,
-				00C76DC313492C6F0057F9E6 /* ContentAssembler.h in Headers */,
-				0025B5B6134927D700CC1540 /* JSON.h in Headers */,
-				0025B5BA134927D700CC1540 /* NSObject+JSON.h in Headers */,
-				0025B5BE134927D700CC1540 /* SBJsonParser.h in Headers */,
-				0025B5C2134927D700CC1540 /* SBJsonStreamParser.h in Headers */,
-				0025B5C6134927D700CC1540 /* SBJsonStreamParserAdapter.h in Headers */,
-				0025B5CA134927D700CC1540 /* SBJsonStreamWriter.h in Headers */,
-				0025B5CE134927D700CC1540 /* SBJsonTokeniser.h in Headers */,
-				0025B5D2134927D700CC1540 /* SBJsonWriter.h in Headers */,
+				009EE531136E1215008EEEA5 /* MMContentAssembler.h in Headers */,
+				009EE533136E1215008EEEA5 /* MMContentCollection.h in Headers */,
+				009EE534136E1215008EEEA5 /* MMContent.h in Headers */,
+				009EE536136E1215008EEEA5 /* MMLibrary.h in Headers */,
+				009EE519136DFE33008EEEA5 /* JSONKit.h in Headers */,
+				0046D852136E23FC00B8E57B /* MMMediaLibraryProtected.h in Headers */,
+				0046D85F136E2F2B00B8E57B /* MMMusicLibrary.h in Headers */,
+				0046D865136E2FF300B8E57B /* MMArtist.h in Headers */,
+				0046D86B136E305700B8E57B /* MMAlbum.h in Headers */,
+				0046D871136E3F8200B8E57B /* MMMediaLibrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,8 +499,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0025B5E313492BF400CC1540 /* ContentAssembler.m in Sources */,
-				00323DC1132C2AD6003BED87 /* Content.m in Sources */,
+				0046D854136E249B00B8E57B /* MMContentAssembler.m in Sources */,
+				0046D855136E249B00B8E57B /* MMContent.m in Sources */,
+				0046D856136E249B00B8E57B /* MMLibrary.m in Sources */,
+				0046D857136E249B00B8E57B /* JSONKit.m in Sources */,
+				0046D862136E2F2B00B8E57B /* MMMusicLibrary.m in Sources */,
+				0046D868136E2FF300B8E57B /* MMArtist.m in Sources */,
+				0046D86E136E305700B8E57B /* MMAlbum.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,8 +513,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00323DD0132C2B21003BED87 /* Content.m in Sources */,
-				00C76DC413492C750057F9E6 /* ContentAssembler.m in Sources */,
+				009EE51A136DFE33008EEEA5 /* JSONKit.m in Sources */,
+				009EE532136E1215008EEEA5 /* MMContentAssembler.m in Sources */,
+				009EE535136E1215008EEEA5 /* MMContent.m in Sources */,
+				009EE537136E1215008EEEA5 /* MMLibrary.m in Sources */,
+				0046D861136E2F2B00B8E57B /* MMMusicLibrary.m in Sources */,
+				0046D867136E2FF300B8E57B /* MMArtist.m in Sources */,
+				0046D86D136E305700B8E57B /* MMAlbum.m in Sources */,
+				0046D872136E3F8200B8E57B /* MMMediaLibrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,9 +564,9 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MediaManagementComm/MediaManagementComm-Prefix.pch";
+				GCC_PREFIX_HEADER = "MediaManagementCommon/MediaManagementCommon-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				LIBRARY_SEARCH_PATHS = (
@@ -408,9 +588,9 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MediaManagementComm/MediaManagementComm-Prefix.pch";
+				GCC_PREFIX_HEADER = "MediaManagementCommon/MediaManagementCommon-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				LIBRARY_SEARCH_PATHS = (
