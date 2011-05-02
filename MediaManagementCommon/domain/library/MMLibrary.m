@@ -7,6 +7,7 @@
 //
 
 #import "MMLibrary.h"
+#import "MMMediaLibrary.h"
 
 @implementation MMLibrary
 
@@ -16,6 +17,7 @@
   self = [super init];
   if (self) 
   {
+    mediaLibraries = [[NSMutableArray alloc] initWithCapacity:5];
   }
   
   return self;
@@ -25,19 +27,25 @@
 {
   [uniqueId release];
   self.name = nil;
-  [collections release];
+  [mediaLibraries release];
   [super dealloc];
 }
 
 @synthesize uniqueId;
 @synthesize name;
-@synthesize collections;
+@synthesize mediaLibraries;
 
 #pragma mark - Public business methods
-- (void) updateContent: (MMContent*) content 
-{
-#warning implement
-}
 
+- (void) addMedialibrary: (MMMediaLibrary*) mediaLibrary
+{
+  if([mediaLibraries containsObject: mediaLibrary])
+  {
+    return;
+  }
+  
+  [mediaLibraries addObject: mediaLibrary];
+  mediaLibrary.library = self;
+}
 
 @end

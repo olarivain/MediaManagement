@@ -9,14 +9,33 @@
 /* Begin PBXBuildFile section */
 		00323DB6132C2A96003BED87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DB5132C2A96003BED87 /* Cocoa.framework */; };
 		00323DD2132C2B21003BED87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DA0132C29A8003BED87 /* Foundation.framework */; };
+		0046D852136E23FC00B8E57B /* MMMediaLibraryProtected.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D851136E23FC00B8E57B /* MMMediaLibraryProtected.h */; };
+		0046D854136E249B00B8E57B /* MMContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE527136E1215008EEEA5 /* MMContentAssembler.m */; };
+		0046D855136E249B00B8E57B /* MMContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE52D136E1215008EEEA5 /* MMContent.m */; };
+		0046D856136E249B00B8E57B /* MMLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE530136E1215008EEEA5 /* MMLibrary.m */; };
+		0046D857136E249B00B8E57B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE517136DFE33008EEEA5 /* JSONKit.m */; };
+		0046D85F136E2F2B00B8E57B /* MMMusicLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D85D136E2F2B00B8E57B /* MMMusicLibrary.h */; };
+		0046D860136E2F2B00B8E57B /* MMMusicLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D85D136E2F2B00B8E57B /* MMMusicLibrary.h */; };
+		0046D861136E2F2B00B8E57B /* MMMusicLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D85E136E2F2B00B8E57B /* MMMusicLibrary.m */; };
+		0046D862136E2F2B00B8E57B /* MMMusicLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D85E136E2F2B00B8E57B /* MMMusicLibrary.m */; };
+		0046D865136E2FF300B8E57B /* MMArtist.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D863136E2FF300B8E57B /* MMArtist.h */; };
+		0046D866136E2FF300B8E57B /* MMArtist.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D863136E2FF300B8E57B /* MMArtist.h */; };
+		0046D867136E2FF300B8E57B /* MMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D864136E2FF300B8E57B /* MMArtist.m */; };
+		0046D868136E2FF300B8E57B /* MMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D864136E2FF300B8E57B /* MMArtist.m */; };
+		0046D86B136E305700B8E57B /* MMAlbum.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D869136E305600B8E57B /* MMAlbum.h */; };
+		0046D86C136E305700B8E57B /* MMAlbum.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D869136E305600B8E57B /* MMAlbum.h */; };
+		0046D86D136E305700B8E57B /* MMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D86A136E305600B8E57B /* MMAlbum.m */; };
+		0046D86E136E305700B8E57B /* MMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D86A136E305600B8E57B /* MMAlbum.m */; };
+		0046D871136E3F8200B8E57B /* MMMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D86F136E3F8100B8E57B /* MMMediaLibrary.h */; };
+		0046D872136E3F8200B8E57B /* MMMediaLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D870136E3F8100B8E57B /* MMMediaLibrary.m */; };
 		009EE519136DFE33008EEEA5 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE516136DFE33008EEEA5 /* JSONKit.h */; };
 		009EE51A136DFE33008EEEA5 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE517136DFE33008EEEA5 /* JSONKit.m */; };
-		009EE531136E1215008EEEA5 /* MMContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE526136E1215008EEEA5 /* MMContentAssembler.h */; };
+		009EE531136E1215008EEEA5 /* MMContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE526136E1215008EEEA5 /* MMContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		009EE532136E1215008EEEA5 /* MMContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE527136E1215008EEEA5 /* MMContentAssembler.m */; };
-		009EE533136E1215008EEEA5 /* MMContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52A136E1215008EEEA5 /* MMContentCollection.h */; };
-		009EE534136E1215008EEEA5 /* MMContent.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52C136E1215008EEEA5 /* MMContent.h */; };
+		009EE533136E1215008EEEA5 /* MMContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52A136E1215008EEEA5 /* MMContentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		009EE534136E1215008EEEA5 /* MMContent.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52C136E1215008EEEA5 /* MMContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		009EE535136E1215008EEEA5 /* MMContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE52D136E1215008EEEA5 /* MMContent.m */; };
-		009EE536136E1215008EEEA5 /* MMLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52F136E1215008EEEA5 /* MMLibrary.h */; };
+		009EE536136E1215008EEEA5 /* MMLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52F136E1215008EEEA5 /* MMLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		009EE537136E1215008EEEA5 /* MMLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE530136E1215008EEEA5 /* MMLibrary.m */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +46,15 @@
 		00323DB8132C2A96003BED87 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		00323DB9132C2A96003BED87 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		00323DBA132C2A96003BED87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0046D851136E23FC00B8E57B /* MMMediaLibraryProtected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMediaLibraryProtected.h; sourceTree = "<group>"; };
+		0046D85D136E2F2B00B8E57B /* MMMusicLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMMusicLibrary.h; path = music/MMMusicLibrary.h; sourceTree = "<group>"; };
+		0046D85E136E2F2B00B8E57B /* MMMusicLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMMusicLibrary.m; path = music/MMMusicLibrary.m; sourceTree = "<group>"; };
+		0046D863136E2FF300B8E57B /* MMArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMArtist.h; path = music/MMArtist.h; sourceTree = "<group>"; };
+		0046D864136E2FF300B8E57B /* MMArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMArtist.m; path = music/MMArtist.m; sourceTree = "<group>"; };
+		0046D869136E305600B8E57B /* MMAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMAlbum.h; path = music/MMAlbum.h; sourceTree = "<group>"; };
+		0046D86A136E305600B8E57B /* MMAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMAlbum.m; path = music/MMAlbum.m; sourceTree = "<group>"; };
+		0046D86F136E3F8100B8E57B /* MMMediaLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMediaLibrary.h; sourceTree = "<group>"; };
+		0046D870136E3F8100B8E57B /* MMMediaLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMediaLibrary.m; sourceTree = "<group>"; };
 		009EE4F2136DFE33008EEEA5 /* config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config; sourceTree = "<group>"; };
 		009EE4F3136DFE33008EEEA5 /* description */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = description; sourceTree = "<group>"; };
 		009EE4F4136DFE33008EEEA5 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
@@ -147,6 +175,19 @@
 			children = (
 			);
 			name = "Resources-iPad";
+			sourceTree = "<group>";
+		};
+		0046D85C136E2F0200B8E57B /* music */ = {
+			isa = PBXGroup;
+			children = (
+				0046D869136E305600B8E57B /* MMAlbum.h */,
+				0046D86A136E305600B8E57B /* MMAlbum.m */,
+				0046D863136E2FF300B8E57B /* MMArtist.h */,
+				0046D864136E2FF300B8E57B /* MMArtist.m */,
+				0046D85D136E2F2B00B8E57B /* MMMusicLibrary.h */,
+				0046D85E136E2F2B00B8E57B /* MMMusicLibrary.m */,
+			);
+			name = music;
 			sourceTree = "<group>";
 		};
 		009EE4EF136DFE33008EEEA5 /* JSONKit */ = {
@@ -318,6 +359,7 @@
 				009EE529136E1215008EEEA5 /* collection */,
 				009EE52B136E1215008EEEA5 /* content */,
 				009EE52E136E1215008EEEA5 /* library */,
+				009EE538136E12D1008EEEA5 /* playlist */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -342,10 +384,21 @@
 		009EE52E136E1215008EEEA5 /* library */ = {
 			isa = PBXGroup;
 			children = (
+				0046D85C136E2F0200B8E57B /* music */,
 				009EE52F136E1215008EEEA5 /* MMLibrary.h */,
 				009EE530136E1215008EEEA5 /* MMLibrary.m */,
+				0046D86F136E3F8100B8E57B /* MMMediaLibrary.h */,
+				0046D870136E3F8100B8E57B /* MMMediaLibrary.m */,
+				0046D851136E23FC00B8E57B /* MMMediaLibraryProtected.h */,
 			);
 			path = library;
+			sourceTree = "<group>";
+		};
+		009EE538136E12D1008EEEA5 /* playlist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = playlist;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +408,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0046D860136E2F2B00B8E57B /* MMMusicLibrary.h in Headers */,
+				0046D866136E2FF300B8E57B /* MMArtist.h in Headers */,
+				0046D86C136E305700B8E57B /* MMAlbum.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,11 +418,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				009EE519136DFE33008EEEA5 /* JSONKit.h in Headers */,
 				009EE531136E1215008EEEA5 /* MMContentAssembler.h in Headers */,
 				009EE533136E1215008EEEA5 /* MMContentCollection.h in Headers */,
 				009EE534136E1215008EEEA5 /* MMContent.h in Headers */,
 				009EE536136E1215008EEEA5 /* MMLibrary.h in Headers */,
+				009EE519136DFE33008EEEA5 /* JSONKit.h in Headers */,
+				0046D852136E23FC00B8E57B /* MMMediaLibraryProtected.h in Headers */,
+				0046D85F136E2F2B00B8E57B /* MMMusicLibrary.h in Headers */,
+				0046D865136E2FF300B8E57B /* MMArtist.h in Headers */,
+				0046D86B136E305700B8E57B /* MMAlbum.h in Headers */,
+				0046D871136E3F8200B8E57B /* MMMediaLibrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +499,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0046D854136E249B00B8E57B /* MMContentAssembler.m in Sources */,
+				0046D855136E249B00B8E57B /* MMContent.m in Sources */,
+				0046D856136E249B00B8E57B /* MMLibrary.m in Sources */,
+				0046D857136E249B00B8E57B /* JSONKit.m in Sources */,
+				0046D862136E2F2B00B8E57B /* MMMusicLibrary.m in Sources */,
+				0046D868136E2FF300B8E57B /* MMArtist.m in Sources */,
+				0046D86E136E305700B8E57B /* MMAlbum.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +517,10 @@
 				009EE532136E1215008EEEA5 /* MMContentAssembler.m in Sources */,
 				009EE535136E1215008EEEA5 /* MMContent.m in Sources */,
 				009EE537136E1215008EEEA5 /* MMLibrary.m in Sources */,
+				0046D861136E2F2B00B8E57B /* MMMusicLibrary.m in Sources */,
+				0046D867136E2FF300B8E57B /* MMArtist.m in Sources */,
+				0046D86D136E305700B8E57B /* MMAlbum.m in Sources */,
+				0046D872136E3F8200B8E57B /* MMMediaLibrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,14 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum ContentKind
+typedef enum MMContentKind
 {
   MUSIC = 0,
   MOVIE = 1,
   TV_SHOW = 2,
   PODCAST = 3,
   ITUNES_U = 4,
-  UNKNOWN = 5
+  USER = 5,
+  UNKNOWN = 6
 }ContentKind;
 
 @interface MMContent : NSObject 
@@ -58,4 +59,6 @@ typedef enum ContentKind
 @property (nonatomic, readwrite, assign) NSInteger episodeNumber;
 @property (nonatomic, readwrite, assign) NSInteger season;
 
+- (BOOL) isArtistSet;
+- (BOOL) isAlbumSet;
 @end

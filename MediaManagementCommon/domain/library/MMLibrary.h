@@ -9,18 +9,20 @@
 #import <Foundation/Foundation.h>
 
 @class MMContent;
+@class MMMediaLibrary;
 
 @interface MMLibrary : NSObject {
 @private
   NSString *uniqueId;
   NSString *name;
   
-  NSMutableArray *collections;
+  NSMutableArray *mediaLibraries;
 }
 
 @property (nonatomic, readonly) NSString *uniqueId;
 @property (nonatomic, readwrite, retain) NSString *name;
-@property (nonatomic, readonly) NSArray *collections;
+@property (nonatomic, readonly) NSArray *mediaLibraries;
 
-- (void) updateContent: (MMContent*) content;
+- (void) addMedialibrary: (MMMediaLibrary*) mediaLibrary;
+
 @end

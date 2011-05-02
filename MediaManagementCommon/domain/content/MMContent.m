@@ -10,6 +10,7 @@
 
 @interface MMContent(private)
 - (id) init: (ContentKind) kind;
+- (BOOL) isSet: (NSString*) value;
 @end
 @implementation MMContent
 
@@ -54,5 +55,19 @@
 @synthesize episodeNumber;
 @synthesize season;
 
+#pragma mark - Business Logic
+- (BOOL) isSet: (NSString*) value
+{
+  return [[value stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]] length] > 0;
+}
+
+- (BOOL) isArtistSet
+{
+  return [self isSet: artist];
+}
+- (BOOL) isAlbumSet
+{
+  return [self isSet: album];  
+}
 
 @end
