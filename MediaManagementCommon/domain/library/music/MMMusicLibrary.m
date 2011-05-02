@@ -16,9 +16,9 @@
 @end
 @implementation MMMusicLibrary
 
-- (id)init
+- (id)initWithContentKind:(MMContentKind)kind
 {
-  self = [super init];
+  self = [super initWithContentKind:kind];
   if (self) 
   {
     artists = [[NSMutableArray alloc] initWithCapacity: 100];

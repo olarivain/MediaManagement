@@ -7,24 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MMContent.h"
 
 @class MMLibrary;
-@class MMContent;
 
-typedef enum MMPlaylistKind
-{
-  MusicPlaylist = 0,
-  MoviesPlaylist = 1,
-  TvShowsPlaylist = 2,
-  itunesUPlaylist = 3,
-  PodcastPlaylist = 4,
-  UserPlaylist = 5
-} MMPlaylistKind;
 
 @interface MMMediaLibrary : NSObject 
 {
 @private
-  MMPlaylistKind kind;
+  MMContentKind kind;
   NSString *uniqueId;
   NSString *name;
   MMLibrary *library;
@@ -32,12 +23,14 @@ typedef enum MMPlaylistKind
   NSMutableArray *content;
 }
 
-@property (readonly) MMPlaylistKind kind;
+@property (readonly) MMContentKind kind;
 @property (readonly) NSString *uniqueId;
 @property (nonatomic, readwrite, retain) NSString *name;
 @property (nonatomic, readwrite, assign) MMLibrary *library;
 @property (readonly) NSArray *content;
 
++ (id) mediaLibraryWithContentKind: (MMContentKind) kind;
++ (id) mediaLibraryWithContentKind: (MMContentKind) kind andSize: (NSUInteger) size;
 - (void) addContent: (MMContent*) content;
 - (void) removeContent: (MMContent*) content;
 

@@ -9,13 +9,41 @@
 #import "MMMediaLibraryProtected.h"
 #import "MMContent.h"
 
+@interface MMMediaLibrary()
+- (id) initWithContentKind: (MMContentKind) kind;
+@end
+
 @implementation MMMediaLibrary
 
-- (id)init
+
++ (id) mediaLibraryWithContentKind: (MMContentKind) kind
+{
+  return [MMMediaLibrary mediaLibraryWithContentKind:kind andSize:1000];
+}
+
++ (id) mediaLibraryWithContentKind: (MMContentKind) kind andSize: (NSUInteger) size
+{
+  return [[[MMMediaLibrary alloc] initWithContentKind: kind andSize: size] autorelease];
+
+}
+
+- (id) initWithContentKind: (MMContentKind) contentKind
+{
+  self = [self initWithContentKind: contentKind andSize: 1000];
+  if (self) 
+  {
+  }
+  
+  return self;
+}
+
+- (id) initWithContentKind: (MMContentKind) contentKind andSize: (NSUInteger) size
 {
   self = [super init];
-  if (self) {
-      // Initialization code here.
+  if (self) 
+  {
+    kind = contentKind;
+    content = [[NSMutableArray alloc] initWithCapacity: size];
   }
   
   return self;

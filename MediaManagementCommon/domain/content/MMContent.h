@@ -17,7 +17,7 @@ typedef enum MMContentKind
   ITUNES_U = 4,
   USER = 5,
   UNKNOWN = 6
-}ContentKind;
+} MMContentKind;
 
 @interface MMContent : NSObject 
 {
@@ -28,7 +28,7 @@ typedef enum MMContentKind
   NSString *name;
   NSString *description;
   NSString *genre;
-  ContentKind kind;
+  MMContentKind kind;
 
   // music related
   NSString *album;
@@ -42,14 +42,14 @@ typedef enum MMContentKind
 
 }
 
-+ (id) content: (ContentKind) kind;
++ (id) content: (MMContentKind) kind;
 
 @property (nonatomic, readwrite, retain) NSString *contentId;
 
 @property (nonatomic, readwrite, retain) NSString *name;
 @property (nonatomic, readwrite, retain) NSString *description;
 @property (nonatomic, readwrite, retain) NSString *genre;
-@property (nonatomic, readwrite, assign) ContentKind kind;
+@property (nonatomic, readwrite, assign) MMContentKind kind;
 
 @property (nonatomic, readwrite, retain) NSString *album;
 @property (nonatomic, readwrite, retain) NSString *artist;
