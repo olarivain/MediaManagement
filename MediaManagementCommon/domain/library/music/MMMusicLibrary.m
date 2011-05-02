@@ -15,10 +15,19 @@
 - (void) addArtist: (MMArtist*) artist;
 @end
 @implementation MMMusicLibrary
-
-- (id)initWithContentKind:(MMContentKind)kind
++ (id) mediaLibraryWithContentKind:(MMContentKind)kind
 {
-  self = [super initWithContentKind:kind];
+  return [MMMusicLibrary mediaLibraryWithContentKind: kind andSize: 2000];
+}
+
++ (id) mediaLibraryWithContentKind:(MMContentKind)kind andSize:(NSUInteger)size
+{
+  return [[[MMMusicLibrary alloc] initWithContentKind: kind andSize:size] autorelease];
+}
+
+- (id)initWithContentKind:(MMContentKind)kind andSize:(NSUInteger)size
+{
+  self = [super initWithContentKind:kind andSize: size];
   if (self) 
   {
     artists = [[NSMutableArray alloc] initWithCapacity: 100];
