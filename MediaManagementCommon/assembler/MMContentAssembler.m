@@ -8,6 +8,7 @@
 
 #import "MMContentAssembler.h"
 #import "MMContent.h"
+#import "MMMediaLibrary.h"
 
 #import "JSONKit.h"
 
@@ -97,6 +98,20 @@ static MMContentAssembler *sharedInstance;
   return dtos;
 }
 
+- (NSData*) writeLibrary: (MMMediaLibrary*) library
+{
+  NSMutableDictionary *dto = [NSMutableDictionary dictionaryWithCapacity:5];
+  [self setInDictionary: dto object:library.name forKey:@"name"];  
+  
+  NSNumber *kind = [NSNumber numberWithInt:library.kind];
+  [self setInDictionary: dto object:kind forKey:@"kind"];  
+
+  NSArray *content = [self writeContentArray: library.content];
+  [self setInDictionary: dto object:content forKey:@"content"];
+
+  return [dto JSONData];
+}
+
 - (NSData*) writeObject: (NSObject*) object
 {
   NSData *data;
@@ -125,7 +140,7 @@ static MMContentAssembler *sharedInstance;
     return nil;
   }
   
-  ContentKind kind = [kindNumber intValue];
+  MMContentKind kind = [kindNumber intValue];
   MMContent *content = [MMContent content:kind];
   
   return content;

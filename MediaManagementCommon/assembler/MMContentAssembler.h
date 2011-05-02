@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class MMContent;
+@class MMMediaLibrary;
 
 @interface MMContentAssembler : NSObject 
 {
@@ -17,6 +18,8 @@
 }
 
 + (id) sharedInstance;
+
+- (NSData*) writeLibrary: (MMMediaLibrary*) library;
 
 - (NSData*) writeObject: (NSObject*) object;
 - (NSDictionary*) writeContent: (MMContent*) content;

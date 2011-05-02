@@ -9,17 +9,17 @@
 #import "MMContent.h"
 
 @interface MMContent(private)
-- (id) init: (ContentKind) kind;
+- (id) init: (MMContentKind) kind;
 - (BOOL) isSet: (NSString*) value;
 @end
 @implementation MMContent
 
-+ (id) content: (ContentKind) kind
++ (id) content: (MMContentKind) kind
 {
   return [[[MMContent alloc] init: kind] autorelease];
 }
 
-- (id) init:(ContentKind) contentKind
+- (id) init:(MMContentKind) contentKind
 {
   self = [super init];
   if(self)

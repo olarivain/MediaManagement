@@ -13,7 +13,8 @@
 @class MMContent;
 
 @interface MMMediaLibrary()
-
+- (id) initWithContentKind: (MMContentKind) contentKind;
+- (id) initWithContentKind: (MMContentKind) contentKind andSize: (NSUInteger) size;
 - (void) contentAdded: (MMContent*) content;
 - (void) contentRemoved: (MMContent*) content;
 
