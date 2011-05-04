@@ -19,9 +19,9 @@
 
 + (id) sharedInstance;
 
-- (NSData*) writeLibrary: (MMMediaLibrary*) library;
+- (NSDictionary*) writeLibrary: (MMMediaLibrary*) library;
 
-- (NSData*) writeObject: (NSObject*) object;
+- (NSDictionary*) writeObject: (NSObject*) object;
 - (NSDictionary*) writeContent: (MMContent*) content;
 - (NSArray*) writeContentArray: (NSArray*) contentList;
 

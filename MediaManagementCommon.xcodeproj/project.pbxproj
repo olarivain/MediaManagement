@@ -23,24 +23,24 @@
 		000758F3136E46A70067644F /* MMMusicLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D85D136E2F2B00B8E57B /* MMMusicLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		000758F4136E46A70067644F /* MMLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52F136E1215008EEEA5 /* MMLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		000758F5136E46A70067644F /* MMMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D86F136E3F8100B8E57B /* MMMediaLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		000758F6136E46A70067644F /* MMMediaLibraryProtected.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D851136E23FC00B8E57B /* MMMediaLibraryProtected.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0007590C136E595F0067644F /* MMMoviesMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0007590A136E595F0067644F /* MMMoviesMediaLibrary.h */; };
+		000758F6136E46A70067644F /* MMMediaLibraryProtected.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D851136E23FC00B8E57B /* MMMediaLibraryProtected.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		0007590C136E595F0067644F /* MMMoviesMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0007590A136E595F0067644F /* MMMoviesMediaLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0007590D136E595F0067644F /* MMMoviesMediaLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0007590B136E595F0067644F /* MMMoviesMediaLibrary.m */; };
-		00075911136E5A820067644F /* MMServerMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0007590F136E5A820067644F /* MMServerMediaLibrary.h */; };
-		00075912136E5A820067644F /* MMServerMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0007590F136E5A820067644F /* MMServerMediaLibrary.h */; };
+		00075911136E5A820067644F /* MMServerMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0007590F136E5A820067644F /* MMServerMediaLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00075912136E5A820067644F /* MMServerMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0007590F136E5A820067644F /* MMServerMediaLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00075913136E5A820067644F /* MMServerMediaLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00075910136E5A820067644F /* MMServerMediaLibrary.m */; };
 		00075914136E5A820067644F /* MMServerMediaLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00075910136E5A820067644F /* MMServerMediaLibrary.m */; };
 		00075915136E5AA00067644F /* MMMoviesMediaLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0007590B136E595F0067644F /* MMMoviesMediaLibrary.m */; };
 		00323DB6132C2A96003BED87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DB5132C2A96003BED87 /* Cocoa.framework */; };
 		00323DD2132C2B21003BED87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DA0132C29A8003BED87 /* Foundation.framework */; };
 		0046D852136E23FC00B8E57B /* MMMediaLibraryProtected.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D851136E23FC00B8E57B /* MMMediaLibraryProtected.h */; };
-		0046D85F136E2F2B00B8E57B /* MMMusicLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D85D136E2F2B00B8E57B /* MMMusicLibrary.h */; };
+		0046D85F136E2F2B00B8E57B /* MMMusicLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D85D136E2F2B00B8E57B /* MMMusicLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0046D861136E2F2B00B8E57B /* MMMusicLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D85E136E2F2B00B8E57B /* MMMusicLibrary.m */; };
-		0046D865136E2FF300B8E57B /* MMArtist.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D863136E2FF300B8E57B /* MMArtist.h */; };
+		0046D865136E2FF300B8E57B /* MMArtist.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D863136E2FF300B8E57B /* MMArtist.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0046D867136E2FF300B8E57B /* MMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D864136E2FF300B8E57B /* MMArtist.m */; };
-		0046D86B136E305700B8E57B /* MMAlbum.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D869136E305600B8E57B /* MMAlbum.h */; };
+		0046D86B136E305700B8E57B /* MMAlbum.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D869136E305600B8E57B /* MMAlbum.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0046D86D136E305700B8E57B /* MMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D86A136E305600B8E57B /* MMAlbum.m */; };
-		0046D871136E3F8200B8E57B /* MMMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D86F136E3F8100B8E57B /* MMMediaLibrary.h */; };
+		0046D871136E3F8200B8E57B /* MMMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D86F136E3F8100B8E57B /* MMMediaLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0046D872136E3F8200B8E57B /* MMMediaLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D870136E3F8100B8E57B /* MMMediaLibrary.m */; };
 		009EE519136DFE33008EEEA5 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE516136DFE33008EEEA5 /* JSONKit.h */; };
 		009EE51A136DFE33008EEEA5 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE517136DFE33008EEEA5 /* JSONKit.m */; };
@@ -106,8 +106,8 @@
 		009EE52D136E1215008EEEA5 /* MMContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMContent.m; sourceTree = "<group>"; };
 		009EE52F136E1215008EEEA5 /* MMLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLibrary.h; sourceTree = "<group>"; };
 		009EE530136E1215008EEEA5 /* MMLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLibrary.m; sourceTree = "<group>"; };
-		00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-ipad.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common-ipad.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		00B3F8A9132C2CF1003A4FCD /* libmedia-management-common-x86_64.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common-x86_64.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-arm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common-arm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B3F8A9132C2CF1003A4FCD /* libmedia-management-common.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +168,8 @@
 		00323D9E132C29A8003BED87 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-ipad.a */,
-				00B3F8A9132C2CF1003A4FCD /* libmedia-management-common-x86_64.a */,
+				00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-arm.a */,
+				00B3F8A9132C2CF1003A4FCD /* libmedia-management-common.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -451,11 +451,11 @@
 				000758F0136E46A70067644F /* MMContent.h in Headers */,
 				000758F1136E46A70067644F /* MMAlbum.h in Headers */,
 				000758F2136E46A70067644F /* MMArtist.h in Headers */,
+				00075912136E5A820067644F /* MMServerMediaLibrary.h in Headers */,
 				000758F3136E46A70067644F /* MMMusicLibrary.h in Headers */,
 				000758F4136E46A70067644F /* MMLibrary.h in Headers */,
 				000758F5136E46A70067644F /* MMMediaLibrary.h in Headers */,
 				000758F6136E46A70067644F /* MMMediaLibraryProtected.h in Headers */,
-				00075912136E5A820067644F /* MMServerMediaLibrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,15 +466,15 @@
 				009EE531136E1215008EEEA5 /* MMContentAssembler.h in Headers */,
 				009EE533136E1215008EEEA5 /* MMContentCollection.h in Headers */,
 				009EE534136E1215008EEEA5 /* MMContent.h in Headers */,
-				009EE536136E1215008EEEA5 /* MMLibrary.h in Headers */,
-				009EE519136DFE33008EEEA5 /* JSONKit.h in Headers */,
-				0046D852136E23FC00B8E57B /* MMMediaLibraryProtected.h in Headers */,
 				0046D85F136E2F2B00B8E57B /* MMMusicLibrary.h in Headers */,
+				0007590C136E595F0067644F /* MMMoviesMediaLibrary.h in Headers */,
 				0046D865136E2FF300B8E57B /* MMArtist.h in Headers */,
 				0046D86B136E305700B8E57B /* MMAlbum.h in Headers */,
 				0046D871136E3F8200B8E57B /* MMMediaLibrary.h in Headers */,
-				0007590C136E595F0067644F /* MMMoviesMediaLibrary.h in Headers */,
 				00075911136E5A820067644F /* MMServerMediaLibrary.h in Headers */,
+				009EE536136E1215008EEEA5 /* MMLibrary.h in Headers */,
+				009EE519136DFE33008EEEA5 /* JSONKit.h in Headers */,
+				0046D852136E23FC00B8E57B /* MMMediaLibraryProtected.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,12 +495,12 @@
 			);
 			name = "media-management-common-x86";
 			productName = MediaManagementComm;
-			productReference = 00B3F8A9132C2CF1003A4FCD /* libmedia-management-common-x86_64.a */;
+			productReference = 00B3F8A9132C2CF1003A4FCD /* libmedia-management-common.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		00323DCE132C2B21003BED87 /* media-management-common-ipad */ = {
+		00323DCE132C2B21003BED87 /* media-management-common-arm */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-ipad" */;
+			buildConfigurationList = 00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-arm" */;
 			buildPhases = (
 				00323DCF132C2B21003BED87 /* Sources */,
 				00323DD1132C2B21003BED87 /* Frameworks */,
@@ -510,9 +510,9 @@
 			);
 			dependencies = (
 			);
-			name = "media-management-common-ipad";
+			name = "media-management-common-arm";
 			productName = MediaManagementCommon;
-			productReference = 00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-ipad.a */;
+			productReference = 00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-arm.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -535,7 +535,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00323DCE132C2B21003BED87 /* media-management-common-ipad */,
+				00323DCE132C2B21003BED87 /* media-management-common-arm */,
 				00323DB3132C2A96003BED87 /* media-management-common-x86 */,
 			);
 		};
@@ -627,7 +627,9 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "media-management-common-x86_64";
+				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
+				PRODUCT_NAME = "media-management-common";
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -650,7 +652,9 @@
 					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = "media-management-common-x86_64";
+				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
+				PRODUCT_NAME = "media-management-common";
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -668,7 +672,9 @@
 					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "media-management-common-ipad";
+				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
+				PRODUCT_NAME = "media-management-common-arm";
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -686,7 +692,9 @@
 					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "media-management-common-ipad";
+				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
+				PRODUCT_NAME = "media-management-common-arm";
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
@@ -712,7 +720,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-ipad" */ = {
+		00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-arm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00323DD6132C2B21003BED87 /* Debug */,

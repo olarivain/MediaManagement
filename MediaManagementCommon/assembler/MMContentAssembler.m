@@ -98,7 +98,7 @@ static MMContentAssembler *sharedInstance;
   return dtos;
 }
 
-- (NSData*) writeLibrary: (MMMediaLibrary*) library
+- (NSDictionary*) writeLibrary: (MMMediaLibrary*) library
 {
   NSMutableDictionary *dto = [NSMutableDictionary dictionaryWithCapacity:5];
   [self setInDictionary: dto object:library.name forKey:@"name"];  
@@ -109,7 +109,7 @@ static MMContentAssembler *sharedInstance;
   NSArray *content = [self writeContentArray: library.content];
   [self setInDictionary: dto object:content forKey:@"content"];
 
-  return [dto JSONData];
+  return dto;
 }
 
 - (NSData*) writeObject: (NSObject*) object
