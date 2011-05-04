@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		000758E4136E46710067644F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE517136DFE33008EEEA5 /* JSONKit.m */; };
 		000758E7136E46850067644F /* MMContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE527136E1215008EEEA5 /* MMContentAssembler.m */; };
 		000758E8136E46860067644F /* MMContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE52D136E1215008EEEA5 /* MMContent.m */; };
 		000758E9136E46860067644F /* MMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D86A136E305600B8E57B /* MMAlbum.m */; };
@@ -42,8 +41,6 @@
 		0046D86D136E305700B8E57B /* MMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D86A136E305600B8E57B /* MMAlbum.m */; };
 		0046D871136E3F8200B8E57B /* MMMediaLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0046D86F136E3F8100B8E57B /* MMMediaLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0046D872136E3F8200B8E57B /* MMMediaLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046D870136E3F8100B8E57B /* MMMediaLibrary.m */; };
-		009EE519136DFE33008EEEA5 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE516136DFE33008EEEA5 /* JSONKit.h */; };
-		009EE51A136DFE33008EEEA5 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE517136DFE33008EEEA5 /* JSONKit.m */; };
 		009EE531136E1215008EEEA5 /* MMContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE526136E1215008EEEA5 /* MMContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		009EE532136E1215008EEEA5 /* MMContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE527136E1215008EEEA5 /* MMContentAssembler.m */; };
 		009EE533136E1215008EEEA5 /* MMContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52A136E1215008EEEA5 /* MMContentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -61,9 +58,6 @@
 		00323DA0132C29A8003BED87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00323DA4132C29A8003BED87 /* MediaManagementCommon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaManagementCommon-Prefix.pch"; sourceTree = "<group>"; };
 		00323DB5132C2A96003BED87 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		00323DB8132C2A96003BED87 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		00323DB9132C2A96003BED87 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		00323DBA132C2A96003BED87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0046D851136E23FC00B8E57B /* MMMediaLibraryProtected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMediaLibraryProtected.h; sourceTree = "<group>"; };
 		0046D85D136E2F2B00B8E57B /* MMMusicLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMMusicLibrary.h; path = music/MMMusicLibrary.h; sourceTree = "<group>"; };
 		0046D85E136E2F2B00B8E57B /* MMMusicLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMMusicLibrary.m; path = music/MMMusicLibrary.m; sourceTree = "<group>"; };
@@ -73,32 +67,6 @@
 		0046D86A136E305600B8E57B /* MMAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMAlbum.m; path = music/MMAlbum.m; sourceTree = "<group>"; };
 		0046D86F136E3F8100B8E57B /* MMMediaLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMediaLibrary.h; sourceTree = "<group>"; };
 		0046D870136E3F8100B8E57B /* MMMediaLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMediaLibrary.m; sourceTree = "<group>"; };
-		009EE4F2136DFE33008EEEA5 /* config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config; sourceTree = "<group>"; };
-		009EE4F3136DFE33008EEEA5 /* description */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = description; sourceTree = "<group>"; };
-		009EE4F4136DFE33008EEEA5 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
-		009EE4F6136DFE33008EEEA5 /* applypatch-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "applypatch-msg.sample"; sourceTree = "<group>"; };
-		009EE4F7136DFE33008EEEA5 /* commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "commit-msg.sample"; sourceTree = "<group>"; };
-		009EE4F8136DFE33008EEEA5 /* post-commit.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "post-commit.sample"; sourceTree = "<group>"; };
-		009EE4F9136DFE33008EEEA5 /* post-receive.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "post-receive.sample"; sourceTree = "<group>"; };
-		009EE4FA136DFE33008EEEA5 /* post-update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "post-update.sample"; sourceTree = "<group>"; };
-		009EE4FB136DFE33008EEEA5 /* pre-applypatch.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-applypatch.sample"; sourceTree = "<group>"; };
-		009EE4FC136DFE33008EEEA5 /* pre-commit.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-commit.sample"; sourceTree = "<group>"; };
-		009EE4FD136DFE33008EEEA5 /* pre-rebase.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-rebase.sample"; sourceTree = "<group>"; };
-		009EE4FE136DFE33008EEEA5 /* prepare-commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg.sample"; sourceTree = "<group>"; };
-		009EE4FF136DFE33008EEEA5 /* update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = update.sample; sourceTree = "<group>"; };
-		009EE500136DFE33008EEEA5 /* index */ = {isa = PBXFileReference; lastKnownFileType = file; path = index; sourceTree = "<group>"; };
-		009EE502136DFE33008EEEA5 /* exclude */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exclude; sourceTree = "<group>"; };
-		009EE504136DFE33008EEEA5 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
-		009EE507136DFE33008EEEA5 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master; sourceTree = "<group>"; };
-		009EE50B136DFE33008EEEA5 /* pack-cd237c70f152f557423559b2608e0edf0b29f042.idx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pack-cd237c70f152f557423559b2608e0edf0b29f042.idx"; sourceTree = "<group>"; };
-		009EE50C136DFE33008EEEA5 /* pack-cd237c70f152f557423559b2608e0edf0b29f042.pack */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pack-cd237c70f152f557423559b2608e0edf0b29f042.pack"; sourceTree = "<group>"; };
-		009EE50D136DFE33008EEEA5 /* packed-refs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "packed-refs"; sourceTree = "<group>"; };
-		009EE510136DFE33008EEEA5 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master; sourceTree = "<group>"; };
-		009EE513136DFE33008EEEA5 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
-		009EE515136DFE33008EEEA5 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
-		009EE516136DFE33008EEEA5 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		009EE517136DFE33008EEEA5 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		009EE518136DFE33008EEEA5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		009EE526136E1215008EEEA5 /* MMContentAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContentAssembler.h; sourceTree = "<group>"; };
 		009EE527136E1215008EEEA5 /* MMContentAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMContentAssembler.m; sourceTree = "<group>"; };
 		009EE52A136E1215008EEEA5 /* MMContentCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContentCollection.h; sourceTree = "<group>"; };
@@ -177,10 +145,8 @@
 		00323D9F132C29A8003BED87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				009EE4EF136DFE33008EEEA5 /* JSONKit */,
 				00323DA0132C29A8003BED87 /* Foundation.framework */,
 				00323DB5132C2A96003BED87 /* Cocoa.framework */,
-				00323DB7132C2A96003BED87 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -203,16 +169,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		00323DB7132C2A96003BED87 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				00323DB8132C2A96003BED87 /* AppKit.framework */,
-				00323DB9132C2A96003BED87 /* CoreData.framework */,
-				00323DBA132C2A96003BED87 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
 		00323DD9132C2B21003BED87 /* Resources-iPad */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,160 +187,6 @@
 				0046D85E136E2F2B00B8E57B /* MMMusicLibrary.m */,
 			);
 			name = music;
-			sourceTree = "<group>";
-		};
-		009EE4EF136DFE33008EEEA5 /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				009EE4F0136DFE33008EEEA5 /* .git */,
-				009EE515136DFE33008EEEA5 /* CHANGELOG.md */,
-				009EE516136DFE33008EEEA5 /* JSONKit.h */,
-				009EE517136DFE33008EEEA5 /* JSONKit.m */,
-				009EE518136DFE33008EEEA5 /* README.md */,
-			);
-			name = JSONKit;
-			path = ../JSONKit;
-			sourceTree = "<group>";
-		};
-		009EE4F0136DFE33008EEEA5 /* .git */ = {
-			isa = PBXGroup;
-			children = (
-				009EE4F1136DFE33008EEEA5 /* branches */,
-				009EE4F2136DFE33008EEEA5 /* config */,
-				009EE4F3136DFE33008EEEA5 /* description */,
-				009EE4F4136DFE33008EEEA5 /* HEAD */,
-				009EE4F5136DFE33008EEEA5 /* hooks */,
-				009EE500136DFE33008EEEA5 /* index */,
-				009EE501136DFE33008EEEA5 /* info */,
-				009EE503136DFE33008EEEA5 /* logs */,
-				009EE508136DFE33008EEEA5 /* objects */,
-				009EE50D136DFE33008EEEA5 /* packed-refs */,
-				009EE50E136DFE33008EEEA5 /* refs */,
-			);
-			path = .git;
-			sourceTree = "<group>";
-		};
-		009EE4F1136DFE33008EEEA5 /* branches */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = branches;
-			sourceTree = "<group>";
-		};
-		009EE4F5136DFE33008EEEA5 /* hooks */ = {
-			isa = PBXGroup;
-			children = (
-				009EE4F6136DFE33008EEEA5 /* applypatch-msg.sample */,
-				009EE4F7136DFE33008EEEA5 /* commit-msg.sample */,
-				009EE4F8136DFE33008EEEA5 /* post-commit.sample */,
-				009EE4F9136DFE33008EEEA5 /* post-receive.sample */,
-				009EE4FA136DFE33008EEEA5 /* post-update.sample */,
-				009EE4FB136DFE33008EEEA5 /* pre-applypatch.sample */,
-				009EE4FC136DFE33008EEEA5 /* pre-commit.sample */,
-				009EE4FD136DFE33008EEEA5 /* pre-rebase.sample */,
-				009EE4FE136DFE33008EEEA5 /* prepare-commit-msg.sample */,
-				009EE4FF136DFE33008EEEA5 /* update.sample */,
-			);
-			path = hooks;
-			sourceTree = "<group>";
-		};
-		009EE501136DFE33008EEEA5 /* info */ = {
-			isa = PBXGroup;
-			children = (
-				009EE502136DFE33008EEEA5 /* exclude */,
-			);
-			path = info;
-			sourceTree = "<group>";
-		};
-		009EE503136DFE33008EEEA5 /* logs */ = {
-			isa = PBXGroup;
-			children = (
-				009EE504136DFE33008EEEA5 /* HEAD */,
-				009EE505136DFE33008EEEA5 /* refs */,
-			);
-			path = logs;
-			sourceTree = "<group>";
-		};
-		009EE505136DFE33008EEEA5 /* refs */ = {
-			isa = PBXGroup;
-			children = (
-				009EE506136DFE33008EEEA5 /* heads */,
-			);
-			path = refs;
-			sourceTree = "<group>";
-		};
-		009EE506136DFE33008EEEA5 /* heads */ = {
-			isa = PBXGroup;
-			children = (
-				009EE507136DFE33008EEEA5 /* master */,
-			);
-			path = heads;
-			sourceTree = "<group>";
-		};
-		009EE508136DFE33008EEEA5 /* objects */ = {
-			isa = PBXGroup;
-			children = (
-				009EE509136DFE33008EEEA5 /* info */,
-				009EE50A136DFE33008EEEA5 /* pack */,
-			);
-			path = objects;
-			sourceTree = "<group>";
-		};
-		009EE509136DFE33008EEEA5 /* info */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = info;
-			sourceTree = "<group>";
-		};
-		009EE50A136DFE33008EEEA5 /* pack */ = {
-			isa = PBXGroup;
-			children = (
-				009EE50B136DFE33008EEEA5 /* pack-cd237c70f152f557423559b2608e0edf0b29f042.idx */,
-				009EE50C136DFE33008EEEA5 /* pack-cd237c70f152f557423559b2608e0edf0b29f042.pack */,
-			);
-			path = pack;
-			sourceTree = "<group>";
-		};
-		009EE50E136DFE33008EEEA5 /* refs */ = {
-			isa = PBXGroup;
-			children = (
-				009EE50F136DFE33008EEEA5 /* heads */,
-				009EE511136DFE33008EEEA5 /* remotes */,
-				009EE514136DFE33008EEEA5 /* tags */,
-			);
-			path = refs;
-			sourceTree = "<group>";
-		};
-		009EE50F136DFE33008EEEA5 /* heads */ = {
-			isa = PBXGroup;
-			children = (
-				009EE510136DFE33008EEEA5 /* master */,
-			);
-			path = heads;
-			sourceTree = "<group>";
-		};
-		009EE511136DFE33008EEEA5 /* remotes */ = {
-			isa = PBXGroup;
-			children = (
-				009EE512136DFE33008EEEA5 /* origin */,
-			);
-			path = remotes;
-			sourceTree = "<group>";
-		};
-		009EE512136DFE33008EEEA5 /* origin */ = {
-			isa = PBXGroup;
-			children = (
-				009EE513136DFE33008EEEA5 /* HEAD */,
-			);
-			path = origin;
-			sourceTree = "<group>";
-		};
-		009EE514136DFE33008EEEA5 /* tags */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = tags;
 			sourceTree = "<group>";
 		};
 		009EE525136E1215008EEEA5 /* assembler */ = {
@@ -473,7 +275,6 @@
 				0046D871136E3F8200B8E57B /* MMMediaLibrary.h in Headers */,
 				00075911136E5A820067644F /* MMServerMediaLibrary.h in Headers */,
 				009EE536136E1215008EEEA5 /* MMLibrary.h in Headers */,
-				009EE519136DFE33008EEEA5 /* JSONKit.h in Headers */,
 				0046D852136E23FC00B8E57B /* MMMediaLibraryProtected.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,7 +355,6 @@
 				000758EB136E46860067644F /* MMMusicLibrary.m in Sources */,
 				000758EC136E46860067644F /* MMLibrary.m in Sources */,
 				000758ED136E46860067644F /* MMMediaLibrary.m in Sources */,
-				000758E4136E46710067644F /* JSONKit.m in Sources */,
 				00075914136E5A820067644F /* MMServerMediaLibrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,7 +363,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				009EE51A136DFE33008EEEA5 /* JSONKit.m in Sources */,
 				009EE532136E1215008EEEA5 /* MMContentAssembler.m in Sources */,
 				009EE535136E1215008EEEA5 /* MMContent.m in Sources */,
 				009EE537136E1215008EEEA5 /* MMLibrary.m in Sources */,

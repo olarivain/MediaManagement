@@ -10,8 +10,6 @@
 #import "MMContent.h"
 #import "MMMediaLibrary.h"
 
-#import "JSONKit.h"
-
 static MMContentAssembler *sharedInstance;
 
 @interface MMContentAssembler()
@@ -110,25 +108,6 @@ static MMContentAssembler *sharedInstance;
   [self setInDictionary: dto object:content forKey:@"content"];
 
   return dto;
-}
-
-- (NSData*) writeObject: (NSObject*) object
-{
-  NSData *data;
-  if([object isKindOfClass: [NSArray class] ])
-  {
-    NSArray *domains = (NSArray*) object;
-    NSArray *dtos = [self writeContentArray: domains];  
-    data = [dtos JSONData];
-  }
-  else if([object isKindOfClass: [MMContent class]])
-  {
-    MMContent *domain = (MMContent*) object;
-    NSDictionary *dtos = [self writeContent: domain];
-    data = [dtos JSONData];
-  }
-  
-  return data;
 }
 
 #pragma mark - DTO -> Domain methods
