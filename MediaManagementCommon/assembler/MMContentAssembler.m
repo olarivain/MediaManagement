@@ -57,26 +57,21 @@ static MMContentAssembler *sharedInstance;
 {
   NSMutableDictionary *dto = [NSMutableDictionary dictionary];
   
-  [self setInDictionary: dto object:content.contentId forKey:@"contentId"];
   
   NSNumber *kind = [NSNumber numberWithInt:content.kind];
   [self setInDictionary: dto object:kind forKey:@"kind"];
   
-  NSNumber *episodeNumber = [NSNumber numberWithInteger:content.episodeNumber];
-  [self setInDictionary: dto object:episodeNumber forKey:@"episodeNumber"];
-  
-  NSNumber *season = [NSNumber numberWithInteger:content.season];  
-  [self setInDictionary: dto object:season forKey:@"season"];
-  
-  NSNumber *trackNumber = [NSNumber numberWithInteger:content.trackNumber];
-  [self setInDictionary: dto object:trackNumber forKey:@"trackNumber"];
-  
-  [self setInDictionary: dto object:content.album forKey:@"album"];
-  [self setInDictionary: dto object:content.artist forKey:@"artist"];
-  [self setInDictionary: dto object:content.description forKey:@"description"];
-  [self setInDictionary: dto object:content.genre forKey:@"genre"];
+  [self setInDictionary: dto object:content.contentId forKey:@"contentId"];
+
   [self setInDictionary: dto object:content.name forKey:@"name"];
+  [self setInDictionary: dto object:content.genre forKey:@"genre"];
+  [self setInDictionary: dto object:content.artist forKey:@"artist"];
+  [self setInDictionary: dto object:content.album forKey:@"album"];
+  [self setInDictionary: dto object:content.trackNumber forKey:@"trackNumber"];
+  [self setInDictionary: dto object:content.description forKey:@"description"];
   [self setInDictionary: dto object:content.show forKey:@"show"];
+  [self setInDictionary: dto object:content.season forKey:@"season"];
+  [self setInDictionary: dto object:content.episodeNumber forKey:@"episodeNumber"];
   
   return dto;
 }

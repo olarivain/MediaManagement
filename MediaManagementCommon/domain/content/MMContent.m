@@ -31,13 +31,16 @@
 
 - (void) dealloc
 {
-  [contentId release];
-  [artist release];
-  [album release];
-  [genre release];
-  [name release];
-  [description release];
-  [show release];
+  self.contentId = nil;
+  self.artist = nil;
+  self.album = nil;
+  self.genre = nil;
+  self.name = nil;
+  self.description = nil;
+  self.show = nil;
+  self.season = nil;
+  self.episodeNumber = nil;
+  self.trackNumber = nil;
   [super dealloc];
 }
 

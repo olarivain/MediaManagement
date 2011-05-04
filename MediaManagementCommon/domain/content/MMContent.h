@@ -33,31 +33,32 @@ typedef enum MMContentKind
   // music related
   NSString *album;
   NSString *artist;
-  NSInteger trackNumber;
+  NSNumber *trackNumber;
   
   // tv show related
   NSString *show;
-  NSInteger episodeNumber;
-  NSInteger season;
+  NSNumber *episodeNumber;
+  NSNumber *season;
 
 }
 
 + (id) content: (MMContentKind) kind;
+
+@property (nonatomic, readwrite, assign) MMContentKind kind;
 
 @property (nonatomic, readwrite, retain) NSString *contentId;
 
 @property (nonatomic, readwrite, retain) NSString *name;
 @property (nonatomic, readwrite, retain) NSString *description;
 @property (nonatomic, readwrite, retain) NSString *genre;
-@property (nonatomic, readwrite, assign) MMContentKind kind;
 
 @property (nonatomic, readwrite, retain) NSString *album;
 @property (nonatomic, readwrite, retain) NSString *artist;
-@property (nonatomic, readwrite, assign) NSInteger trackNumber;
+@property (nonatomic, readwrite, retain) NSNumber *trackNumber;
 
 @property (nonatomic, readwrite, retain) NSString *show;
-@property (nonatomic, readwrite, assign) NSInteger episodeNumber;
-@property (nonatomic, readwrite, assign) NSInteger season;
+@property (nonatomic, readwrite, retain) NSNumber *episodeNumber;
+@property (nonatomic, readwrite, retain) NSNumber *season;
 
 - (BOOL) isArtistSet;
 - (BOOL) isAlbumSet;
