@@ -36,4 +36,23 @@
     [super dealloc];
 }
 
+- (void) contentAdded: (MMContent *) content
+{
+  // do nothing;
+}
+
+- (void) contentRemoved: (MMContent *) content
+{
+  // do nothing;
+}
+
+- (NSInteger) sectionsCount
+{
+  return  1;
+}
+
+- (NSString*) titleForSection: (NSInteger) index
+{
+  return @"";
+}
 @end

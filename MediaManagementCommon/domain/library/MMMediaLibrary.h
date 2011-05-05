@@ -33,5 +33,8 @@
 + (id) mediaLibraryWithContentKind: (MMContentKind) kind andSize: (NSUInteger) size;
 - (void) addContent: (MMContent*) content;
 - (void) removeContent: (MMContent*) content;
+// TODO this should take a param indicating whether we want artist, album etc
+- (NSInteger) sectionsCount;
+- (NSString*) titleForSection: (NSInteger) index;
 
 @end

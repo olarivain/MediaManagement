@@ -63,7 +63,7 @@
 @synthesize library;
 @synthesize content;
 
-#pragma mark - Public business methods
+#pragma mark - Content Management
 - (void) addContent:(MMContent *)added
 {
   // refuse to add content if the content's kind doesn't match ours
@@ -97,6 +97,19 @@
   // remove it and callback for subclasses
   [content removeObject: removed];
   [self contentRemoved: removed];
+}
+
+#pragma mark - Sections count
+- (NSInteger) sectionsCount
+{
+  NSLog(@"Warning, MMMediaLibrary.sectionsCount MUST be overriden");
+  return 0;
+}
+
+- (NSString*) titleForSection: (NSInteger) index
+{
+  NSLog(@"Warning, MMMediaLibrary.titleForSection: MUST be overriden");
+  return @"No Title For Section";
 }
 
 #pragma mark - "Abstract" methods

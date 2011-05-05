@@ -10,10 +10,14 @@
 #import "MMContent.h"
 #import "MMMediaLibrary.h"
 
+#import "MMMusicLibrary.h"
+#import "MMMoviesMediaLibrary.h"
+
 static MMContentAssembler *sharedInstance;
 
 @interface MMContentAssembler()
 - (void) setInDictionary: (NSMutableDictionary*) dictionary object: (id) object forKey: (id) key;
+- (MMMediaLibrary*) mediaLibraryForKind: (MMContentKind) kind andSize: (NSUInteger) count;
 @end
 
 
@@ -106,6 +110,51 @@ static MMContentAssembler *sharedInstance;
 }
 
 #pragma mark - DTO -> Domain methods
+- (MMMediaLibrary*) mediaLibraryForKind: (MMContentKind) kind andSize: (NSUInteger) count
+{
+  MMMediaLibrary *library;
+  switch (kind) {
+    case MUSIC:
+      library = [MMMusicLibrary mediaLibraryWithContentKind: kind andSize: count];
+      break;
+    case MOVIE:
+      library = [MMMoviesMediaLibrary mediaLibraryWithContentKind: kind andSize: count];
+      break;
+    case TV_SHOW:
+      break;
+    case PODCAST:
+      break;
+    case ITUNES_U:
+      break;
+    case USER:
+      break;
+    default:
+      library = nil;
+      break;
+  }
+  return library;
+}
+
+- (MMMediaLibrary*) createLibrary:(NSDictionary *)dictionary
+{
+  NSNumber *kindNumber = [dictionary objectForKey:@"kind"];
+  if(kindNumber == nil)
+  {
+    return nil;
+  }
+  
+  MMContentKind kind = [kindNumber intValue];
+  NSArray *contents = [dictionary objectForKey: @"content"];
+  MMMediaLibrary *library = [self mediaLibraryForKind: kind andSize: [contents count]];
+  for(NSDictionary *contentDictionary in contents)
+  {
+    MMContent *content = [self createContent: contentDictionary];
+    [library addContent: content];
+  }
+  
+  return library;
+}
+
 - (MMContent*) createContent: (NSDictionary*) dictionary
 {
   NSNumber *kindNumber = [dictionary objectForKey:@"kind"];
@@ -116,7 +165,15 @@ static MMContentAssembler *sharedInstance;
   
   MMContentKind kind = [kindNumber intValue];
   MMContent *content = [MMContent content:kind];
-  
+  content.contentId = [dictionary objectForKey: @"contentId"];
+  content.name = [dictionary objectForKey: @"name"];
+  content.description = [dictionary objectForKey: @"description"];
+  content.genre = [dictionary objectForKey: @"genre"];
+  content.album = [dictionary objectForKey: @"album"];
+  content.artist = [dictionary objectForKey: @"artist"];
+  content.trackNumber = [dictionary objectForKey: @"trackNumber"];
+  content.show = [dictionary objectForKey: @"show"];
+  content.episodeNumber = [dictionary objectForKey: @""];
   return content;
 }
 

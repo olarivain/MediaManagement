@@ -24,6 +24,7 @@
 - (NSDictionary*) writeContent: (MMContent*) content;
 - (NSArray*) writeContentArray: (NSArray*) contentList;
 
+- (MMMediaLibrary*) createLibrary: (NSDictionary*) dictionary;
 - (MMContent*) createContent: (NSDictionary*) dictionary;
 - (NSArray*) createContentArray: (NSArray*) dictionary;
 

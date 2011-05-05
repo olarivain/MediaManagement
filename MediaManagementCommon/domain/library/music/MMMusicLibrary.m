@@ -62,6 +62,19 @@
   [artist removeTrack: content];
 }
 
+#pragma mark - Sections count
+- (NSInteger) sectionsCount
+{
+  return  [artists count];
+}
+
+#pragma mark - Sections count
+- (NSString*) titleForSection: (NSInteger) index
+{
+  MMArtist *artist = [artists objectAtIndex: index];
+  return artist.name;
+}
+
 #pragma mark - Artist management
 - (void) addArtist: (MMArtist*) artist
 {
