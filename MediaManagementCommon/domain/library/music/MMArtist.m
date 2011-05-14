@@ -9,7 +9,7 @@
 #import "MMArtist.h"
 #import "MMAlbum.h"
 #import "MMContent.h"
-#import "MMMusicLibrary.h"
+#import "MMMusicPlaylist.h"
 
 @interface MMArtist()
 - (MMAlbum*) albumForContent: (MMContent *) content create: (BOOL) create;

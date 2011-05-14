@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MMMediaLibraryProtected.h"
+#import "MMPlaylistProtected.h"
 
 @class MMArtist;
-@interface MMMusicLibrary : MMMediaLibrary {
+@interface MMMusicPlaylist : MMPlaylist {
 @private
   NSMutableArray *artists;
   MMArtist *unknownArtist;

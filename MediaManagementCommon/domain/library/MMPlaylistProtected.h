@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MMMediaLibrary.h"
+#import "MMPlaylist.h"
 
 @class MMLibrary;
 @class MMContent;
 
-@interface MMMediaLibrary()
+@interface MMPlaylist()
 - (id) initWithContentKind: (MMContentKind) contentKind;
 - (id) initWithContentKind: (MMContentKind) contentKind andSize: (NSUInteger) size;
 - (void) contentAdded: (MMContent*) content;

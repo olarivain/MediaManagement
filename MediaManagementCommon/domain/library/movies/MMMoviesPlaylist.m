@@ -6,19 +6,25 @@
 //  Copyright 2011 kra. All rights reserved.
 //
 
-#import "MMMoviesMediaLibrary.h"
+#import "MMMoviesPlaylist.h"
 
 
-@implementation MMMoviesMediaLibrary
+@implementation MMMoviesPlaylist
 
-+ (id) mediaLibraryWithContentKind:(MMContentKind)kind
++ (id) playlist 
 {
-  return [MMMoviesMediaLibrary mediaLibraryWithContentKind: kind andSize: 2000];
+  return [MMMoviesPlaylist playlistWithKind:MOVIE andSize:500];
 }
 
-+ (id) mediaLibraryWithContentKind:(MMContentKind)kind andSize:(NSUInteger)size
++ (id) playlistWithSize:(NSUInteger)size
 {
-  return [[[MMMoviesMediaLibrary alloc] initWithContentKind: kind andSize:size] autorelease];
+  return [MMMoviesPlaylist playlistWithKind:MOVIE andSize:size];
+
+}
+
++ (id) playlistWithKind:(MMContentKind)kind andSize:(NSUInteger)size
+{
+  return [[[MMMoviesPlaylist alloc] initWithContentKind: kind andSize: size] autorelease];
 }
 
 - (id)initWithContentKind:(MMContentKind)kind andSize:(NSUInteger)size
@@ -26,6 +32,10 @@
   self = [super initWithContentKind:kind andSize: size];
   if (self) 
   {
+    if(kind != MOVIE)
+    {
+      NSLog(@"FATAL: Movie Library Must have a type of MOVIE");
+    }
   }
   
   return self;

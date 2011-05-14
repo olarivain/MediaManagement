@@ -8,16 +8,16 @@
 
 #import "MMContentAssembler.h"
 #import "MMContent.h"
-#import "MMMediaLibrary.h"
+#import "MMPlaylist.h"
 
-#import "MMMusicLibrary.h"
-#import "MMMoviesMediaLibrary.h"
+#import "MMMusicPlaylist.h"
+#import "MMMoviesPlaylist.h"
 
 static MMContentAssembler *sharedInstance;
 
 @interface MMContentAssembler()
 - (void) setInDictionary: (NSMutableDictionary*) dictionary object: (id) object forKey: (id) key;
-- (MMMediaLibrary*) mediaLibraryForKind: (MMContentKind) kind andSize: (NSUInteger) count;
+- (MMPlaylist*) mediaLibraryForKind: (MMContentKind) kind andSize: (NSUInteger) count;
 @end
 
 
@@ -95,7 +95,7 @@ static MMContentAssembler *sharedInstance;
   return dtos;
 }
 
-- (NSDictionary*) writeLibrary: (MMMediaLibrary*) library
+- (NSDictionary*) writeLibrary: (MMPlaylist*) library
 {
   NSMutableDictionary *dto = [NSMutableDictionary dictionaryWithCapacity:5];
   [self setInDictionary: dto object:library.name forKey:@"name"];  
@@ -110,15 +110,15 @@ static MMContentAssembler *sharedInstance;
 }
 
 #pragma mark - DTO -> Domain methods
-- (MMMediaLibrary*) mediaLibraryForKind: (MMContentKind) kind andSize: (NSUInteger) count
+- (MMPlaylist*) mediaLibraryForKind: (MMContentKind) kind andSize: (NSUInteger) count
 {
-  MMMediaLibrary *library;
+  MMPlaylist *library;
   switch (kind) {
     case MUSIC:
-      library = [MMMusicLibrary mediaLibraryWithContentKind: kind andSize: count];
+      library = [MMMusicPlaylist playlistWithSize: count];
       break;
     case MOVIE:
-      library = [MMMoviesMediaLibrary mediaLibraryWithContentKind: kind andSize: count];
+      library = [MMMoviesPlaylist playlistWithSize: count];
       break;
     case TV_SHOW:
       break;
@@ -135,7 +135,7 @@ static MMContentAssembler *sharedInstance;
   return library;
 }
 
-- (MMMediaLibrary*) createLibrary:(NSDictionary *)dictionary
+- (MMPlaylist*) createLibrary:(NSDictionary *)dictionary
 {
   NSNumber *kindNumber = [dictionary objectForKey:@"kind"];
   if(kindNumber == nil)
@@ -145,7 +145,7 @@ static MMContentAssembler *sharedInstance;
   
   MMContentKind kind = [kindNumber intValue];
   NSArray *contents = [dictionary objectForKey: @"content"];
-  MMMediaLibrary *library = [self mediaLibraryForKind: kind andSize: [contents count]];
+  MMPlaylist *library = [self mediaLibraryForKind: kind andSize: [contents count]];
   for(NSDictionary *contentDictionary in contents)
   {
     MMContent *content = [self createContent: contentDictionary];

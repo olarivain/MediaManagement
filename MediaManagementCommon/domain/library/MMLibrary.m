@@ -7,7 +7,7 @@
 //
 
 #import "MMLibrary.h"
-#import "MMMediaLibrary.h"
+#import "MMPlaylist.h"
 
 @implementation MMLibrary
 
@@ -37,7 +37,7 @@
 
 #pragma mark - Public business methods
 
-- (void) addMedialibrary: (MMMediaLibrary*) mediaLibrary
+- (void) addMedialibrary: (MMPlaylist*) mediaLibrary
 {
   if([mediaLibraries containsObject: mediaLibrary])
   {

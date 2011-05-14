@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class MMMusicLibrary;
+@class MMMusicPlaylist;
 @class MMAlbum;
 @class MMContent;
 
@@ -19,10 +19,10 @@
   NSString *name;
   NSString *artistId;
   MMAlbum *unknownAlbum;
-  MMMusicLibrary *library;
+  MMMusicPlaylist *library;
 }
 
-@property (nonatomic, readwrite, assign) MMMusicLibrary *library;
+@property (nonatomic, readwrite, assign) MMMusicPlaylist *library;
 @property (nonatomic, readwrite, retain) NSString *name;
 @property (readonly) NSArray *albums;
 @property (readonly) NSString *artistId;

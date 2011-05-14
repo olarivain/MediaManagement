@@ -6,25 +6,28 @@
 //  Copyright 2011 kra. All rights reserved.
 //
 
-#import "MMMediaLibraryProtected.h"
+#import "MMPlaylistProtected.h"
 #import "MMContent.h"
 
-@interface MMMediaLibrary()
+@interface MMPlaylist()
 - (id) initWithContentKind: (MMContentKind) kind;
 @end
 
-@implementation MMMediaLibrary
+@implementation MMPlaylist
 
 
-+ (id) mediaLibraryWithContentKind: (MMContentKind) kind
++( id) playlist 
 {
-  return [MMMediaLibrary mediaLibraryWithContentKind:kind andSize:1000];
+  return [MMPlaylist playlistWithKind:MUSIC andSize: 1000];
 }
 
-+ (id) mediaLibraryWithContentKind: (MMContentKind) kind andSize: (NSUInteger) size
-{
-  return [[[MMMediaLibrary alloc] initWithContentKind: kind andSize: size] autorelease];
++ (id) playlistWithSize:(NSUInteger)size {
+  return [MMPlaylist playlistWithKind:MUSIC andSize:size];
+}
 
++ (id) playlistWithKind:(MMContentKind)kind andSize: (NSUInteger) size;
+{
+  return [[MMPlaylist alloc] initWithContentKind:kind andSize:1000];
 }
 
 - (id) initWithContentKind: (MMContentKind) contentKind

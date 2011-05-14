@@ -6,23 +6,28 @@
 //  Copyright 2011 kra. All rights reserved.
 //
 
-#import "MMMusicLibrary.h"
+#import "MMMusicPlaylist.h"
 #import "MMContent.h"
 #import "MMArtist.h"
 
-@interface MMMusicLibrary()
+@interface MMMusicPlaylist()
 - (MMArtist*) artistForContent: (MMContent*) content create: (BOOL) create;
 - (void) addArtist: (MMArtist*) artist;
 @end
-@implementation MMMusicLibrary
-+ (id) mediaLibraryWithContentKind:(MMContentKind)kind
+@implementation MMMusicPlaylist
+
++(id) playlist 
 {
-  return [MMMusicLibrary mediaLibraryWithContentKind: kind andSize: 2000];
+  return [MMMusicPlaylist playlistWithKind:MUSIC andSize:2000];
 }
 
-+ (id) mediaLibraryWithContentKind:(MMContentKind)kind andSize:(NSUInteger)size
++(id) playlistWithSize:(NSUInteger)size 
 {
-  return [[[MMMusicLibrary alloc] initWithContentKind: kind andSize:size] autorelease];
+  return [MMMusicPlaylist playlistWithKind:MUSIC andSize: size];
+}
+
++ (id) playlistWithKind:(MMContentKind)kind size:(NSUInteger)size {
+  return [[[MMMusicPlaylist alloc] initWithContentKind:kind andSize:size] autorelease];
 }
 
 - (id)initWithContentKind:(MMContentKind)kind andSize:(NSUInteger)size
@@ -30,6 +35,10 @@
   self = [super initWithContentKind:kind andSize: size];
   if (self) 
   {
+    if(kind != MUSIC)
+    {
+      NSLog(@"FATAL: Music Playlist must have a kind of MUSIC");
+    }
     artists = [[NSMutableArray alloc] initWithCapacity: 100];
     unknownArtist = [[MMArtist artistWithName: @"Unknown Artist"] retain];
   }

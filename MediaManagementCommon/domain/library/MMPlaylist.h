@@ -12,7 +12,7 @@
 @class MMLibrary;
 
 
-@interface MMMediaLibrary : NSObject 
+@interface MMPlaylist : NSObject 
 {
 @private
   MMContentKind kind;
@@ -29,8 +29,9 @@
 @property (nonatomic, readwrite, assign) MMLibrary *library;
 @property (readonly) NSArray *content;
 
-+ (id) mediaLibraryWithContentKind: (MMContentKind) kind;
-+ (id) mediaLibraryWithContentKind: (MMContentKind) kind andSize: (NSUInteger) size;
++ (id) playlist;
++ (id) playlistWithSize: (NSUInteger) size;
++ (id) playlistWithKind: (MMContentKind) kind andSize: (NSUInteger) size;
 - (void) addContent: (MMContent*) content;
 - (void) removeContent: (MMContent*) content;
 // TODO this should take a param indicating whether we want artist, album etc

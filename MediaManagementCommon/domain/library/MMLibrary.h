@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class MMContent;
-@class MMMediaLibrary;
+@class MMPlaylist;
 
 @interface MMLibrary : NSObject {
 @private
@@ -23,6 +23,6 @@
 @property (nonatomic, readwrite, retain) NSString *name;
 @property (nonatomic, readonly) NSArray *mediaLibraries;
 
-- (void) addMedialibrary: (MMMediaLibrary*) mediaLibrary;
+- (void) addMedialibrary: (MMPlaylist*) mediaLibrary;
 
 @end

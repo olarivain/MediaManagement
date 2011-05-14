@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class MMContent;
-@class MMMediaLibrary;
+@class MMPlaylist;
 
 @interface MMContentAssembler : NSObject 
 {
@@ -19,12 +19,12 @@
 
 + (id) sharedInstance;
 
-- (NSDictionary*) writeLibrary: (MMMediaLibrary*) library;
+- (NSDictionary*) writeLibrary: (MMPlaylist*) library;
 
 - (NSDictionary*) writeContent: (MMContent*) content;
 - (NSArray*) writeContentArray: (NSArray*) contentList;
 
-- (MMMediaLibrary*) createLibrary: (NSDictionary*) dictionary;
+- (MMPlaylist*) createLibrary: (NSDictionary*) dictionary;
 - (MMContent*) createContent: (NSDictionary*) dictionary;
 - (NSArray*) createContentArray: (NSArray*) dictionary;
 
