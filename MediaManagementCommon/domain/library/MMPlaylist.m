@@ -136,8 +136,7 @@
   contentList.playlist = self;
   
   // now, build local cache of subcontent -> content lists map
-  #warning TODO: mmmh... will this work? check == result
-  NSValue *subContentTypeKey = [self keyForContentList: contentList];
+  NSNumber *subContentTypeKey = [self keyForContentList: contentList];
   NSMutableArray *array = [contentListBySubContentType objectForKey: subContentTypeKey];
   // create on demand
   if(array == nil)
@@ -162,14 +161,14 @@
   contentList.playlist = nil;
   
   // remove from local map
-  NSValue *subContentTypeKey = [self keyForContentList: contentList];
+  NSNumber *subContentTypeKey = [self keyForContentList: contentList];
   NSMutableArray *array = [contentListBySubContentType objectForKey: subContentTypeKey];
   [array removeObject: contentList];
 }
 
 - (NSArray*) contentListsWithSubContentType: (MMSubContentType) contentType
 {
-  NSValue *key = [self keyForSubContentType: contentType];
+  NSNumber *key = [self keyForSubContentType: contentType];
   NSArray *list = [contentListBySubContentType objectForKey:key];
   return list;
 }
