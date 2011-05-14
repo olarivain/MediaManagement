@@ -9,15 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "MMPlaylistProtected.h"
 
-@class MMArtist;
-@interface MMMusicPlaylist : MMPlaylist {
+@class MMContentList;
+@interface MMMusicPlaylist : MMPlaylist 
+{
 @private
-  NSMutableArray *artists;
-  MMArtist *unknownArtist;
+  MMContentList *unknownArtist;
+  MMContentList *unknownAlbum;
 }
-
-@property (readonly) NSArray *artists;
-
-- (void) removeArtist: (MMArtist*) artist;
 
 @end

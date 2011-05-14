@@ -8,9 +8,12 @@
 
 #import "MMPlaylistProtected.h"
 #import "MMContent.h"
+#import "MMContentList.h"
 
 @interface MMPlaylist()
 - (id) initWithContentKind: (MMContentKind) kind;
+- (NSNumber*) keyForContentList: (MMContentList*) contentList;
+- (NSNumber*) keyForSubContentType: (MMSubContentType) subContentType;
 @end
 
 @implementation MMPlaylist
@@ -46,7 +49,9 @@
   if (self) 
   {
     kind = contentKind;
+    contentLists = [[NSMutableArray alloc] initWithCapacity: size / 5];
     content = [[NSMutableArray alloc] initWithCapacity: size];
+    contentListBySubContentType = [[NSMutableDictionary alloc] initWithCapacity:5];
   }
   
   return self;
@@ -57,6 +62,8 @@
   [uniqueId release];
   [name release];
   [content release];
+  [contentLists release];
+  [contentListBySubContentType release];
   [super dealloc];
 }
 
@@ -65,6 +72,7 @@
 @synthesize name;
 @synthesize library;
 @synthesize content;
+@synthesize contentLists;
 
 #pragma mark - Content Management
 - (void) addContent:(MMContent *)added
@@ -101,6 +109,96 @@
   [content removeObject: removed];
   [self contentRemoved: removed];
 }
+
+#pragma mark - Content List management
+- (NSNumber*) keyForContentList: (MMContentList*) contentList
+{
+  return [self keyForSubContentType: contentList.subContentType];
+}
+
+- (NSNumber*) keyForSubContentType: (MMSubContentType) subContentType
+{
+  NSNumber *subContentTypeKey = [NSNumber numberWithInt: subContentType];
+  return subContentTypeKey;
+
+}
+
+- (void) addContentList: (MMContentList*) contentList
+{
+  // give up if we already have this dude.
+  if([contentLists containsObject: contentList])
+  {
+    return;
+  }
+  
+  // add new content list to global content lists list
+  [contentLists addObject: contentList];
+  contentList.playlist = self;
+  
+  // now, build local cache of subcontent -> content lists map
+  #warning TODO: mmmh... will this work? check == result
+  NSValue *subContentTypeKey = [self keyForContentList: contentList];
+  NSMutableArray *array = [contentListBySubContentType objectForKey: subContentTypeKey];
+  // create on demand
+  if(array == nil)
+  {
+    array = [NSMutableArray array];
+    [contentListBySubContentType setObject:array forKey:subContentTypeKey];
+  }
+  
+  [array addObject: contentList];
+}
+
+- (void) removeContentList: (MMContentList*) contentList
+{
+  // abort if we don't know about this guy
+  if(![contentLists containsObject: contentList])
+  {
+    return;
+  }
+  
+  // remove from content lists list.
+  [contentLists removeObject: contentList];
+  contentList.playlist = nil;
+  
+  // remove from local map
+  NSValue *subContentTypeKey = [self keyForContentList: contentList];
+  NSMutableArray *array = [contentListBySubContentType objectForKey: subContentTypeKey];
+  [array removeObject: contentList];
+}
+
+- (NSArray*) contentListsWithSubContentType: (MMSubContentType) contentType
+{
+  NSValue *key = [self keyForSubContentType: contentType];
+  NSArray *list = [contentListBySubContentType objectForKey:key];
+  return list;
+}
+
+- (MMContentList*) contentListsWithSubContentType: (MMSubContentType) contentType andName: (NSString*) listName
+{
+  for(MMContentList *contentList in [self contentListsWithSubContentType: contentType])
+  {
+    if([contentList.name caseInsensitiveCompare: listName] == NSOrderedSame)
+    {
+      return contentList;
+    }
+  }
+  return nil;
+}
+
+- (MMContentList*) contentListWithSubContentType: (MMSubContentType) subContentType name:(NSString*) contentListName create: (BOOL) create
+{
+  MMContentList *contentList = [self contentListsWithSubContentType: subContentType andName: contentListName];
+  
+  // contentL list hasn't been found, create it and add it to our list
+  if(create && contentList == nil)
+  {
+    contentList = [MMContentList contentListWithSubContentType:subContentType andName:contentListName];
+    [self addContentList: contentList];
+  }
+  return contentList;
+}
+
 
 #pragma mark - Sections count
 - (NSInteger) sectionsCount

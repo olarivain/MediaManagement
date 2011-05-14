@@ -17,5 +17,5 @@
 - (id) initWithContentKind: (MMContentKind) contentKind andSize: (NSUInteger) size;
 - (void) contentAdded: (MMContent*) content;
 - (void) contentRemoved: (MMContent*) content;
-
+- (MMContentList*) contentListWithSubContentType: (MMSubContentType) subContentType name:(NSString*) contentListName create: (BOOL) create;
 @end

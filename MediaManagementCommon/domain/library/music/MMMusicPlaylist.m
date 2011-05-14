@@ -8,11 +8,11 @@
 
 #import "MMMusicPlaylist.h"
 #import "MMContent.h"
-#import "MMArtist.h"
+#import "MMContentList.h"
 
 @interface MMMusicPlaylist()
-- (MMArtist*) artistForContent: (MMContent*) content create: (BOOL) create;
-- (void) addArtist: (MMArtist*) artist;
+- (MMContentList*) artistForContent: (MMContent*) content create: (BOOL) create;
+- (MMContentList*) albumForContent: (MMContent*) content create: (BOOL) create;
 @end
 @implementation MMMusicPlaylist
 
@@ -23,11 +23,7 @@
 
 +(id) playlistWithSize:(NSUInteger)size 
 {
-  return [MMMusicPlaylist playlistWithKind:MUSIC andSize: size];
-}
-
-+ (id) playlistWithKind:(MMContentKind)kind size:(NSUInteger)size {
-  return [[[MMMusicPlaylist alloc] initWithContentKind:kind andSize:size] autorelease];
+  return [[[MMMusicPlaylist alloc] initWithContentKind:MUSIC andSize:size] autorelease];
 }
 
 - (id)initWithContentKind:(MMContentKind)kind andSize:(NSUInteger)size
@@ -38,9 +34,12 @@
     if(kind != MUSIC)
     {
       NSLog(@"FATAL: Music Playlist must have a kind of MUSIC");
+      unknownArtist = [MMContentList contentListWithSubContentType:ARTIST andName:@"Unknown Artist"];
+      [self addContentList: unknownArtist];
+      
+      unknownAlbum = [MMContentList contentListWithSubContentType:ALBUM andName:@"Unknown Album"];
+      [self addContentList: unknownAlbum];
     }
-    artists = [[NSMutableArray alloc] initWithCapacity: 100];
-    unknownArtist = [[MMArtist artistWithName: @"Unknown Artist"] retain];
   }
   
   return self;
@@ -48,94 +47,54 @@
 
 - (void)dealloc
 {
-  [artists release];
-  [unknownArtist release];
   [super dealloc];
 }
-
-@synthesize artists;
 
 #pragma mark - MMMediaLibrary callbacks
 - (void) contentAdded:(MMContent *)content
 {
   // create artist if needed and add it to list
-  MMArtist *artist = [self artistForContent: content create: TRUE];
-  [artist addTrack: content];
-  [self addArtist: artist];
+  MMContentList *artist = [self artistForContent: content create: YES];
+  [artist addContent: content];
+  
+  MMContentList *album = [self albumForContent: content create:YES];
+  [album addContent: content];
 }
 
 - (void) contentRemoved:(MMContent *)content
 {
-  // ask artist to remove track (artist will remove itself from library if it becomes empty
-  MMArtist *artist = [self artistForContent: content create: FALSE];
-  [artist removeTrack: content];
-}
-
-#pragma mark - Sections count
-- (NSInteger) sectionsCount
-{
-  return  [artists count];
-}
-
-#pragma mark - Sections count
-- (NSString*) titleForSection: (NSInteger) index
-{
-  MMArtist *artist = [artists objectAtIndex: index];
-  return artist.name;
+  // notify artist and album that the track is getting removed
+  MMContentList *artist = [self artistForContent: content create: NO];
+  [artist removeContent: content];
+  
+  MMContentList *album = [self albumForContent: content create:NO];
+  [album removeContent: content];
 }
 
 #pragma mark - Artist management
-- (void) addArtist: (MMArtist*) artist
+- (MMContentList*) artistForContent: (MMContent*) content create: (BOOL) create
 {
-  if([artists containsObject: artist])
+  // is artist isn't set, return default unknown artist
+  if(![content isArtistSet])
   {
-    return;
+    return  unknownArtist;
   }
-  
-  [artists addObject: artist];
+
+  // otherwise go with artist that has the same name, creating it if needed
+  return [self contentListWithSubContentType: ARTIST name: content.artist create:YES];
 }
 
-- (void) removeArtist: (MMArtist*) artist
+#pragma mark - Artist management
+- (MMContentList*) albumForContent: (MMContent*) content create: (BOOL) create
 {
-  if(![artists containsObject: artist])
-  {
-    return;
-  }
-  
-  [artists removeObject: artist];
-}
-
-- (MMArtist*) artistForContent: (MMContent*) content create: (BOOL) create
-{
+  // if album isn't set, return default unknown album
   if(![content isArtistSet])
   {
     return  unknownArtist;
   }
   
-  MMArtist *contentArtist = nil;
-  // TODO: this is not good, extract this logic to another place
-  NSString *artistId = [content.artist lowercaseString];
-  
-  BOOL foundArtist = NO;  
-  // start looking for an existing album with the right id
-  for(MMArtist *artist in artists)
-  {
-    if([artist.artistId compare: artistId options: NSLiteralSearch] == NSOrderedSame)
-    {
-      foundArtist = YES;
-      contentArtist = artist;
-      break;
-    }
-  }
-  
-  // album hasn't been found, create it and add it to our list
-  if(create && !foundArtist)
-  {
-    contentArtist = [MMArtist artistWithName: content.artist];
-    [self addArtist: contentArtist];
-  }
-  return contentArtist;
+  // otherwise go with album that has the same name, creating it if needed
+  return [self contentListWithSubContentType: ALBUM name: content.album create:YES];
 }
-
 
 @end

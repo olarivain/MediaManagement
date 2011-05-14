@@ -18,13 +18,8 @@
 
 + (id) playlistWithSize:(NSUInteger)size
 {
-  return [MMMoviesPlaylist playlistWithKind:MOVIE andSize:size];
+  return [[[MMMoviesPlaylist alloc] initWithContentKind: MOVIE andSize: size] autorelease];
 
-}
-
-+ (id) playlistWithKind:(MMContentKind)kind andSize:(NSUInteger)size
-{
-  return [[[MMMoviesPlaylist alloc] initWithContentKind: kind andSize: size] autorelease];
 }
 
 - (id)initWithContentKind:(MMContentKind)kind andSize:(NSUInteger)size
@@ -56,13 +51,4 @@
   // do nothing;
 }
 
-- (NSInteger) sectionsCount
-{
-  return  1;
-}
-
-- (NSString*) titleForSection: (NSInteger) index
-{
-  return @"";
-}
 @end
