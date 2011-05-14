@@ -75,6 +75,11 @@
 @synthesize contentLists;
 
 #pragma mark - Content Management
+- (BOOL) isSystem
+{
+  return  kind != USER;
+}
+
 - (void) addContent:(MMContent *)added
 {
   // refuse to add content if the content's kind doesn't match ours
@@ -196,20 +201,6 @@
     [self addContentList: contentList];
   }
   return contentList;
-}
-
-
-#pragma mark - Sections count
-- (NSInteger) sectionsCount
-{
-  NSLog(@"Warning, MMMediaLibrary.sectionsCount MUST be overriden");
-  return 0;
-}
-
-- (NSString*) titleForSection: (NSInteger) index
-{
-  NSLog(@"Warning, MMMediaLibrary.titleForSection: MUST be overriden");
-  return @"No Title For Section";
 }
 
 #pragma mark - "Abstract" methods

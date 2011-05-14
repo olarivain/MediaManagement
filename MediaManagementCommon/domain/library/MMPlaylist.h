@@ -12,6 +12,8 @@
 @class MMLibrary;
 @class MMContentList;
 
+#ifndef SUBCONTENTTYPE
+#define SUBCONTENTTYPE
 typedef enum MMSubContentType
 {
   ARTIST = 0,
@@ -19,6 +21,7 @@ typedef enum MMSubContentType
   SERIES = 2,
   SEASON = 3
 } MMSubContentType;
+#endif
 
 @interface MMPlaylist : NSObject 
 {
@@ -52,5 +55,7 @@ typedef enum MMSubContentType
 
 - (NSArray*) contentListsWithSubContentType: (MMSubContentType) contentType;
 - (MMContentList*) contentListsWithSubContentType: (MMSubContentType) contentType andName: (NSString*) name;
+
+- (BOOL) isSystem;
 
 @end
