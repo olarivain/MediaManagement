@@ -30,7 +30,7 @@
 
 + (id) playlistWithKind:(MMContentKind)kind andSize: (NSUInteger) size;
 {
-  return [[MMPlaylist alloc] initWithContentKind:kind andSize:1000];
+  return [[[MMPlaylist alloc] initWithContentKind:kind andSize:1000] autorelease];
 }
 
 - (id) initWithContentKind: (MMContentKind) contentKind
@@ -77,7 +77,7 @@
 #pragma mark - Content Management
 - (BOOL) isSystem
 {
-  return  kind != USER;
+  return  kind != USER && kind != UNKNOWN;
 }
 
 - (void) addContent:(MMContent *)added

@@ -37,7 +37,7 @@ typedef enum MMSubContentType
 }
 
 @property (readonly) MMContentKind kind;
-@property (readonly) NSString *uniqueId;
+@property (nonatomic, readwrite, retain) NSString *uniqueId;
 @property (nonatomic, readwrite, retain) NSString *name;
 @property (nonatomic, readwrite, assign) MMLibrary *library;
 @property (readonly) NSArray *content;
