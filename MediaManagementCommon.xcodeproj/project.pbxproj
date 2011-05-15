@@ -10,7 +10,6 @@
 		000758E7136E46850067644F /* MMContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE527136E1215008EEEA5 /* MMContentAssembler.m */; };
 		000758E8136E46860067644F /* MMContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE52D136E1215008EEEA5 /* MMContent.m */; };
 		000758EE136E46A70067644F /* MMContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE526136E1215008EEEA5 /* MMContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		000758EF136E46A70067644F /* MMContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52A136E1215008EEEA5 /* MMContentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		000758F0136E46A70067644F /* MMContent.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52C136E1215008EEEA5 /* MMContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00323DB6132C2A96003BED87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DB5132C2A96003BED87 /* Cocoa.framework */; };
 		00323DD2132C2B21003BED87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DA0132C29A8003BED87 /* Foundation.framework */; };
@@ -31,7 +30,6 @@
 		007719AC137E3A84009A9ADB /* MMContentList.m in Sources */ = {isa = PBXBuildFile; fileRef = 007719A8137E3A84009A9ADB /* MMContentList.m */; };
 		009EE531136E1215008EEEA5 /* MMContentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE526136E1215008EEEA5 /* MMContentAssembler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		009EE532136E1215008EEEA5 /* MMContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE527136E1215008EEEA5 /* MMContentAssembler.m */; };
-		009EE533136E1215008EEEA5 /* MMContentCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52A136E1215008EEEA5 /* MMContentCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		009EE534136E1215008EEEA5 /* MMContent.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52C136E1215008EEEA5 /* MMContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		009EE535136E1215008EEEA5 /* MMContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE52D136E1215008EEEA5 /* MMContent.m */; };
 /* End PBXBuildFile section */
@@ -55,7 +53,6 @@
 		007719A8137E3A84009A9ADB /* MMContentList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMContentList.m; sourceTree = "<group>"; };
 		009EE526136E1215008EEEA5 /* MMContentAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContentAssembler.h; sourceTree = "<group>"; };
 		009EE527136E1215008EEEA5 /* MMContentAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMContentAssembler.m; sourceTree = "<group>"; };
-		009EE52A136E1215008EEEA5 /* MMContentCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContentCollection.h; sourceTree = "<group>"; };
 		009EE52C136E1215008EEEA5 /* MMContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContent.h; sourceTree = "<group>"; };
 		009EE52D136E1215008EEEA5 /* MMContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMContent.m; sourceTree = "<group>"; };
 		00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-arm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common-arm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,20 +201,11 @@
 		009EE528136E1215008EEEA5 /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				009EE529136E1215008EEEA5 /* collection */,
 				009EE52B136E1215008EEEA5 /* content */,
 				004BBE311380877600B9639B /* library */,
 				004BBE341380877600B9639B /* playlist */,
 			);
 			path = domain;
-			sourceTree = "<group>";
-		};
-		009EE529136E1215008EEEA5 /* collection */ = {
-			isa = PBXGroup;
-			children = (
-				009EE52A136E1215008EEEA5 /* MMContentCollection.h */,
-			);
-			path = collection;
 			sourceTree = "<group>";
 		};
 		009EE52B136E1215008EEEA5 /* content */ = {
@@ -239,7 +227,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				000758EE136E46A70067644F /* MMContentAssembler.h in Headers */,
-				000758EF136E46A70067644F /* MMContentCollection.h in Headers */,
 				000758F0136E46A70067644F /* MMContent.h in Headers */,
 				007719AA137E3A84009A9ADB /* MMContentList.h in Headers */,
 			);
@@ -250,7 +237,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				009EE531136E1215008EEEA5 /* MMContentAssembler.h in Headers */,
-				009EE533136E1215008EEEA5 /* MMContentCollection.h in Headers */,
 				009EE534136E1215008EEEA5 /* MMContent.h in Headers */,
 				007719A9137E3A84009A9ADB /* MMContentList.h in Headers */,
 				004BBE421380877600B9639B /* MMLibrary.h in Headers */,
