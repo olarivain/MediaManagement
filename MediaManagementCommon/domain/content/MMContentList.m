@@ -8,26 +8,30 @@
 
 #import "MMContentList.h"
 #import "MMContent.h"
+#import "MMPlaylist.h"
+#import "MMPlaylistContentType.h"
 
 @interface MMContentList()
 @property (nonatomic, readwrite, retain) NSString *name;
 @property (nonatomic, readwrite, retain) NSArray *content;
+@property (nonatomic, readwrite, retain) NSArray *children;
 @end
 @implementation MMContentList
 
-+ (id) contentListWithSubContentType: (MMSubContentType) contentType andName: (NSString*) name
++ (id) contentListWithSubContentType: (MMPlaylistContentType*) contentType andName: (NSString*) name
 {
   return [[[MMContentList alloc] initWithSubContentType: contentType andName: name] autorelease];
 }
 
-- (id) initWithSubContentType: (MMSubContentType) contentType andName: (NSString*) contentName
+- (id) initWithSubContentType: (MMPlaylistContentType*) type andName: (NSString*) contentName
 {
   self = [super init];
   if (self) 
   {
-    subContentType = contentType;
+    contentType = [type retain];
     self.name = contentName;
     self.content = [NSMutableArray arrayWithCapacity: 20];
+    self.children = [NSMutableArray arrayWithCapacity: 5];
   }
   
   return self;
@@ -37,29 +41,33 @@
 {
   self.name = nil;
   self.content = nil;
+  self.children = nil;
+  [contentType release];
   [super dealloc];
 }
 
-@synthesize subContentType;
+@synthesize contentType;
 @synthesize name;
 @synthesize content;
 @synthesize playlist;
+@synthesize children;
 
-- (void) addContent: (MMContent*)  newContent
+- (BOOL) addContent: (MMContent*)  newContent
 {
   if([content containsObject: newContent])
   {
-    return;
+    return NO;
   }
   
   [content addObject: newContent];
+  return YES;
 }
 
-- (void) removeContent: (MMContent*)  newContent
+- (BOOL) removeContent: (MMContent*)  newContent
 {
   if(![content containsObject: newContent])
   {
-    return;
+    return NO;
   }
   
   [content removeObject: newContent];
@@ -67,6 +75,28 @@
   {
     [playlist removeContentList: self];
   }
+  return YES;
+}
+
+- (void) addChild: (MMContentList*) child
+
+{
+  if([children containsObject: children])
+  {
+    return;
+  }
+  
+  [children addObject: child];
+}
+
+- (void) removeChild: (MMContentList*) child
+{
+  if(![children containsObject: children])
+  {
+    return;
+  }
+  
+  [children removeObject: child];
 }
 
 @end

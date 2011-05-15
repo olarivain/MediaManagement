@@ -14,6 +14,8 @@
 #import "MMMoviesPlaylist.h"
 #import "MMGenericPlaylist.h"
 
+#import "MMContentList.h"
+
 static MMContentAssembler *sharedInstance;
 
 @interface MMContentAssembler()
@@ -120,7 +122,8 @@ static MMContentAssembler *sharedInstance;
   NSString *uniqueID = library.uniqueId;
   [self setInDictionary: dto object:uniqueID forKey:@"uniqueId"];  
 
-  NSArray *content = [self writeContentArray: library.content];
+  MMContentList *defaultContentList = [library defaultContentList];
+  NSArray *content = [self writeContentArray: defaultContentList.content];
   [self setInDictionary: dto object:content forKey:@"content"];
 
   return dto;

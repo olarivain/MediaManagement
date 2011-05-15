@@ -8,14 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "MMPlaylist.h"
-
+#import "MMPlaylistContentType.h"
 @class MMLibrary;
 @class MMContent;
+
 
 @interface MMPlaylist()
 - (id) initWithContentKind: (MMContentKind) contentKind;
 - (id) initWithContentKind: (MMContentKind) contentKind andSize: (NSUInteger) size;
+- (NSArray*) initializeContentTypes;
 - (void) contentAdded: (MMContent*) content;
 - (void) contentRemoved: (MMContent*) content;
-- (MMContentList*) contentListWithSubContentType: (MMSubContentType) subContentType name:(NSString*) contentListName create: (BOOL) create;
+- (MMPlaylistContentType*) contentType: (MMSubContentType) type;
+- (MMContentList*) contentListWithSubContentType: (MMPlaylistContentType*) subContentType name:(NSString*) contentListName create: (BOOL) create;
 @end

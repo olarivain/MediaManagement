@@ -34,10 +34,12 @@
     if(kind != MUSIC)
     {
       NSLog(@"FATAL: Music Playlist must have a kind of MUSIC");
-      unknownArtist = [MMContentList contentListWithSubContentType:ARTIST andName:@"Unknown Artist"];
+      MMPlaylistContentType *artist = [self contentType: ARTIST];
+      unknownArtist = [MMContentList contentListWithSubContentType:artist andName:@"Unknown Artist"];
       [self addContentList: unknownArtist];
-      
-      unknownAlbum = [MMContentList contentListWithSubContentType:ALBUM andName:@"Unknown Album"];
+
+      MMPlaylistContentType *album = [self contentType: ARTIST];
+      unknownAlbum = [MMContentList contentListWithSubContentType:album andName:@"Unknown Album"];
       [self addContentList: unknownAlbum];
     }
   }
@@ -50,15 +52,27 @@
   [super dealloc];
 }
 
+- (NSArray*) initializeContentTypes
+{
+  MMPlaylistContentType *songs = [MMPlaylistContentType playlistContentTypeWithName:@"Songs" andType: NONE];
+  MMPlaylistContentType *artists = [MMPlaylistContentType playlistContentTypeWithName:@"Artists" andType: ARTIST];
+  MMPlaylistContentType *albums = [MMPlaylistContentType playlistContentTypeWithName:@"Albums" andType: ALBUM];
+  return [NSArray arrayWithObjects: songs, artists, albums, nil];
+}
+
 #pragma mark - MMMediaLibrary callbacks
 - (void) contentAdded:(MMContent *)content
 {
   // create artist if needed and add it to list
   MMContentList *artist = [self artistForContent: content create: YES];
-  [artist addContent: content];
+  // TODO artist don't need references to their tracks, it'll go through the album
+//  [artist addContent: content];
   
   MMContentList *album = [self albumForContent: content create:YES];
   [album addContent: content];
+  
+  // don't forget the artist has albums
+  [artist addChild: album];
 }
 
 - (void) contentRemoved:(MMContent *)content

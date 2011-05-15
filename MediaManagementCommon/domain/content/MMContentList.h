@@ -8,26 +8,33 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MMPlaylist.h"
-
+@class MMPlaylist;
+@class MMPlaylistContentType;
 @class MMContent;
 
 @interface MMContentList : NSObject {
 @private
-  NSMutableArray *content;
   NSString *name;
-  MMSubContentType subContentType;
+  MMPlaylistContentType *contentType;
+  
+  NSMutableArray *content;
+  NSMutableArray *children;
+  
   MMPlaylist *playlist;
 }
 
-+ (id) contentListWithSubContentType: (MMSubContentType) contentType andName: (NSString*) name;
-- (id) initWithSubContentType: (MMSubContentType) contentType andName: (NSString*) contentName;
++ (id) contentListWithSubContentType: (MMPlaylistContentType*) contentType andName: (NSString*) name;
+- (id) initWithSubContentType: (MMPlaylistContentType*) contentType andName: (NSString*) contentName;
 
-@property (nonatomic, readonly) MMSubContentType subContentType;
+@property (nonatomic, readonly) MMPlaylistContentType *contentType;
 @property (nonatomic, readonly, retain) NSString *name;
 @property (nonatomic, readonly, retain) NSArray *content;
+@property (nonatomic, readonly, retain) NSArray *children;
 @property (nonatomic, readwrite, assign) MMPlaylist *playlist;
 
-- (void) addContent: (MMContent*)  content;
-- (void) removeContent: (MMContent*)  content;
+- (BOOL) addContent: (MMContent*)  content;
+- (BOOL) removeContent: (MMContent*)  content;
+
+- (void) addChild: (MMContentList*) child;
+- (void) removeChild: (MMContentList*) child;
 @end

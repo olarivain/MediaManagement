@@ -41,6 +41,11 @@
     [super dealloc];
 }
 
+- (NSArray*) initializeContentTypes
+{
+  return [NSArray arrayWithObject: [MMPlaylistContentType playlistContentTypeWithName:@"Default" andType: NONE]];
+}
+
 - (void) contentAdded: (MMContent *) content
 {
   // do nothing;

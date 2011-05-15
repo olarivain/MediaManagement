@@ -7,13 +7,15 @@
 //
 
 #import "MMPlaylistProtected.h"
+#import "MMPlaylistContentType.h"
 #import "MMContent.h"
 #import "MMContentList.h"
 
 @interface MMPlaylist()
 - (id) initWithContentKind: (MMContentKind) kind;
-- (NSNumber*) keyForContentList: (MMContentList*) contentList;
-- (NSNumber*) keyForSubContentType: (MMSubContentType) subContentType;
+//- (NSNumber*) keyForContentList: (MMContentList*) contentList;
+//- (NSNumber*) keyForSubContentType: (MMSubContentType) subContentType;
+
 @end
 
 @implementation MMPlaylist
@@ -50,18 +52,19 @@
   {
     kind = contentKind;
     contentLists = [[NSMutableArray alloc] initWithCapacity: size / 5];
-    content = [[NSMutableArray alloc] initWithCapacity: size];
+    contentTypes = [[self initializeContentTypes] retain];
     contentListBySubContentType = [[NSMutableDictionary alloc] initWithCapacity:5];
   }
   
   return self;
 }
 
+
+
 - (void)dealloc
 {
   [uniqueId release];
   [name release];
-  [content release];
   [contentLists release];
   [contentListBySubContentType release];
   [super dealloc];
@@ -71,7 +74,6 @@
 @synthesize uniqueId;
 @synthesize name;
 @synthesize library;
-@synthesize content;
 @synthesize contentLists;
 
 #pragma mark - Content Management
@@ -89,44 +91,28 @@
     return;
   }
   
-  // double check for duplicates
-  if([content containsObject: added])
+  MMContentList *defaultList = [self defaultContentList];
+
+  // add object to content list and callback for subclasses
+  BOOL didAdd = [defaultList addContent: added];
+  if(didAdd)
   {
-    return;
+    [self contentAdded: added];
   }
-  
-  // eventually, we can add the object and callback for subclasses.
-  [content addObject: added];
-  [self contentAdded: added];
 }
 
 - (void) removeContent:(MMContent *) removed
 {
-  // make sure the object exists
-  if(![content containsObject: removed])
+  MMContentList *defaultList = [self defaultContentList];
+  // remove it and callback for subclasses if needed
+  BOOL didRemove = [defaultList removeContent: removed];
+  if(didRemove)
   {
-    // log the developer about this issue
-    NSLog(@"Warning, content \"%@\" is not present in media library \"%@\".", removed.name, self.name);
-    return;
+    [self contentRemoved: removed];
   }
-  
-  // remove it and callback for subclasses
-  [content removeObject: removed];
-  [self contentRemoved: removed];
 }
 
 #pragma mark - Content List management
-- (NSNumber*) keyForContentList: (MMContentList*) contentList
-{
-  return [self keyForSubContentType: contentList.subContentType];
-}
-
-- (NSNumber*) keyForSubContentType: (MMSubContentType) subContentType
-{
-  NSNumber *subContentTypeKey = [NSNumber numberWithInt: subContentType];
-  return subContentTypeKey;
-
-}
 
 - (void) addContentList: (MMContentList*) contentList
 {
@@ -141,7 +127,7 @@
   contentList.playlist = self;
   
   // now, build local cache of subcontent -> content lists map
-  NSNumber *subContentTypeKey = [self keyForContentList: contentList];
+  MMPlaylistContentType *subContentTypeKey = contentList.contentType;
   NSMutableArray *array = [contentListBySubContentType objectForKey: subContentTypeKey];
   // create on demand
   if(array == nil)
@@ -166,19 +152,18 @@
   contentList.playlist = nil;
   
   // remove from local map
-  NSNumber *subContentTypeKey = [self keyForContentList: contentList];
+  MMPlaylistContentType *subContentTypeKey = contentList.contentType;
   NSMutableArray *array = [contentListBySubContentType objectForKey: subContentTypeKey];
   [array removeObject: contentList];
 }
 
-- (NSArray*) contentListsWithSubContentType: (MMSubContentType) contentType
+- (NSArray*) contentListsWithSubContentType: (MMPlaylistContentType *) contentType
 {
-  NSNumber *key = [self keyForSubContentType: contentType];
-  NSArray *list = [contentListBySubContentType objectForKey:key];
+  NSArray *list = [contentListBySubContentType objectForKey:contentType];
   return list;
 }
 
-- (MMContentList*) contentListsWithSubContentType: (MMSubContentType) contentType andName: (NSString*) listName
+- (MMContentList*) contentListsWithSubContentType: (MMPlaylistContentType *) contentType andName: (NSString*) listName
 {
   for(MMContentList *contentList in [self contentListsWithSubContentType: contentType])
   {
@@ -190,7 +175,25 @@
   return nil;
 }
 
-- (MMContentList*) contentListWithSubContentType: (MMSubContentType) subContentType name:(NSString*) contentListName create: (BOOL) create
+- (MMPlaylistContentType*) contentType: (MMSubContentType) type
+{
+  for(MMPlaylistContentType *contentType in contentTypes)
+  {
+    if(contentType.type == type)
+    {
+      return contentType;
+    }
+  }
+  return nil;
+}
+
+- (MMContentList*) defaultContentList
+{
+  MMPlaylistContentType *contentType = [self contentType: NONE];
+  return [self contentListWithSubContentType: contentType name:@"Default" create: YES];
+}
+ 
+- (MMContentList*) contentListWithSubContentType: (MMPlaylistContentType*) subContentType name:(NSString*) contentListName create: (BOOL) create
 {
   MMContentList *contentList = [self contentListsWithSubContentType: subContentType andName: contentListName];
   
@@ -205,20 +208,25 @@
 
 - (void) clearPlaylist
 {
-  [content removeAllObjects];
   [contentListBySubContentType removeAllObjects];
   [contentLists removeAllObjects];
 }
 
 #pragma mark - "Abstract" methods
+- (NSArray*) initializeContentTypes
+{
+  @throw [NSException exceptionWithName:@"IllegalOperationException" reason:@"MMMediaLibrary.initializeContentTypes MUST be overriden." userInfo:nil];
+
+}
+
 - (void) contentAdded:(MMContent *)content
 {
-  @throw [NSException exceptionWithName:@"IllegalArgument" reason:@"MMMediaLibrary.contentAdded MUST be overriden." userInfo:nil];
+  @throw [NSException exceptionWithName:@"IllegalOperationException" reason:@"MMMediaLibrary.contentAdded: MUST be overriden." userInfo:nil];
 }
 
 - (void) contentRemoved:(MMContent *)content
 {
-    @throw [NSException exceptionWithName:@"IllegalArgument" reason:@"MMMediaLibrary.contentRemoved MUST be overriden." userInfo:nil];
+    @throw [NSException exceptionWithName:@"IllegalOperationException" reason:@"MMMediaLibrary.contentRemoved: MUST be overriden." userInfo:nil];
 }
 
 @end

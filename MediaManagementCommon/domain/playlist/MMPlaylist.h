@@ -11,14 +11,7 @@
 
 @class MMLibrary;
 @class MMContentList;
-
-typedef enum MMSubContentType
-{
-  ARTIST = 0,
-  ALBUM = 1,
-  SERIES = 2,
-  SEASON = 3
-} MMSubContentType;
+@class MMPlaylistContentType;
 
 @interface MMPlaylist : NSObject 
 {
@@ -26,10 +19,11 @@ typedef enum MMSubContentType
   MMContentKind kind;
   NSString *uniqueId;
   NSString *name;
+  
   MMLibrary *library;
   
-  NSMutableArray *content;
   NSMutableArray *contentLists;
+  NSArray *contentTypes;
   NSMutableDictionary *contentListBySubContentType;
 }
 
@@ -37,7 +31,6 @@ typedef enum MMSubContentType
 @property (nonatomic, readwrite, retain) NSString *uniqueId;
 @property (nonatomic, readwrite, retain) NSString *name;
 @property (nonatomic, readwrite, assign) MMLibrary *library;
-@property (readonly) NSArray *content;
 @property (readonly) NSArray *contentLists;
 
 + (id) playlist;
@@ -50,10 +43,11 @@ typedef enum MMSubContentType
 - (void) addContentList: (MMContentList*) contentList;
 - (void) removeContentList: (MMContentList*) contentList;
 
+- (MMContentList*) defaultContentList;
 - (void) clearPlaylist;
 
-- (NSArray*) contentListsWithSubContentType: (MMSubContentType) contentType;
-- (MMContentList*) contentListsWithSubContentType: (MMSubContentType) contentType andName: (NSString*) name;
+- (NSArray*) contentListsWithSubContentType: (MMPlaylistContentType*) contentType;
+- (MMContentList*) contentListsWithSubContentType: (MMPlaylistContentType*) contentType andName: (NSString*) name;
 
 - (BOOL) isSystem;
 
