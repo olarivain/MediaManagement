@@ -12,6 +12,7 @@
 
 #import "MMMusicPlaylist.h"
 #import "MMMoviesPlaylist.h"
+#import "MMGenericPlaylist.h"
 
 static MMContentAssembler *sharedInstance;
 
@@ -128,7 +129,7 @@ static MMContentAssembler *sharedInstance;
 #pragma mark - DTO -> Domain methods
 - (MMPlaylist*) mediaLibraryForKind: (MMContentKind) kind andSize: (NSUInteger) count
 {
-  MMPlaylist *library = nil;
+  MMPlaylist *library = [MMGenericPlaylist playlistWithKind: kind andSize:count];
   switch (kind) {
     case MUSIC:
       library = [MMMusicPlaylist playlistWithSize: count];
@@ -144,9 +145,6 @@ static MMContentAssembler *sharedInstance;
       break;
     case USER:
       break;
-    default:
-      library = nil;
-      break;
   }
   return library;
 }
@@ -161,14 +159,18 @@ static MMContentAssembler *sharedInstance;
   
   MMContentKind kind = [kindNumber intValue];
   NSArray *contents = [dictionary objectForKey: @"content"];
-  MMPlaylist *library = [self mediaLibraryForKind: kind andSize: [contents count]];
+  
+  MMPlaylist *playlist = [self mediaLibraryForKind: kind andSize: [contents count]];
+  playlist.uniqueId = [dictionary objectForKey:@"uniqueId"];
+  playlist.name = [dictionary objectForKey:@"name"];
+  
   for(NSDictionary *contentDictionary in contents)
   {
     MMContent *content = [self createContent: contentDictionary];
-    [library addContent: content];
+    [playlist addContent: content];
   }
   
-  return library;
+  return playlist;
 }
 
 - (MMContent*) createContent: (NSDictionary*) dictionary

@@ -37,7 +37,7 @@
 
 #pragma mark - Public business methods
 
-- (void) addMedialibrary: (MMPlaylist*) mediaLibrary
+- (void) addPlaylist: (MMPlaylist*) mediaLibrary
 {
   if([mediaLibraries containsObject: mediaLibrary])
   {

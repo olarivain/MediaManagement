@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MMPlaylistProtected.h"
 
-@interface MMServerPlaylist : MMPlaylist {
+@interface MMGenericPlaylist : MMPlaylist {
 @private
     
 }

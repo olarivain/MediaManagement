@@ -23,6 +23,6 @@
 @property (nonatomic, readwrite, retain) NSString *name;
 @property (nonatomic, readonly) NSArray *mediaLibraries;
 
-- (void) addMedialibrary: (MMPlaylist*) mediaLibrary;
+- (void) addPlaylist: (MMPlaylist*) mediaLibrary;
 
 @end

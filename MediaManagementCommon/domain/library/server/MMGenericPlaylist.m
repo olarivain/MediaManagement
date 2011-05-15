@@ -6,24 +6,24 @@
 //  Copyright 2011 kra. All rights reserved.
 //
 
-#import "MMServerPlaylist.h"
+#import "MMGenericPlaylist.h"
 
 
-@implementation MMServerPlaylist
+@implementation MMGenericPlaylist
 
 + (id) playlist 
 {
-  return [MMServerPlaylist playlistWithKind: MUSIC andSize:1000];
+  return [MMGenericPlaylist playlistWithKind: MUSIC andSize:1000];
 }
 
 + (id) playlistWithSize:(NSUInteger)size 
 {
-  return [MMServerPlaylist playlistWithKind: MUSIC andSize:size];
+  return [MMGenericPlaylist playlistWithKind: MUSIC andSize:size];
 }
 
 + (id) playlistWithKind:(MMContentKind)kind andSize:(NSUInteger)size
 {
-  return [[[MMServerPlaylist alloc] initWithContentKind: kind andSize: size] autorelease];
+  return [[[MMGenericPlaylist alloc] initWithContentKind: kind andSize: size] autorelease];
 }
 
 - (void)dealloc

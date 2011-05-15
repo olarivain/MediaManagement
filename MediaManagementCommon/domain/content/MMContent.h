@@ -7,9 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-// WTF? shouldn't have to do that... fix it
-#ifndef CONTENTKIND
-#define CONTENTKIND
+
 typedef enum MMContentKind
 {
   MUSIC = 0,
@@ -17,8 +15,9 @@ typedef enum MMContentKind
   TV_SHOW = 2,
   PODCAST = 3,
   ITUNES_U = 4,
-  USER = 5,
-  UNKNOWN = 6
+  BOOKS = 5,
+  USER = 6,
+  UNKNOWN = 7
 } MMContentKind;
 
 
@@ -66,4 +65,3 @@ typedef enum MMContentKind
 - (BOOL) isArtistSet;
 - (BOOL) isAlbumSet;
 @end
-#endif
