@@ -26,11 +26,6 @@
   return [[[MMServerPlaylist alloc] initWithContentKind: kind andSize: size] autorelease];
 }
 
-- (id) initWithContentKind: (MMContentKind) kind andSize:(NSUInteger)size
-{
-  return [[[MMServerPlaylist alloc] initWithContentKind: kind andSize: size] autorelease];
-}
-
 - (void)dealloc
 {
     [super dealloc];
