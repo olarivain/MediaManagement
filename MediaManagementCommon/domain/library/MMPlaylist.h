@@ -50,6 +50,8 @@ typedef enum MMSubContentType
 - (void) addContentList: (MMContentList*) contentList;
 - (void) removeContentList: (MMContentList*) contentList;
 
+- (void) clearPlaylist;
+
 - (NSArray*) contentListsWithSubContentType: (MMSubContentType) contentType;
 - (MMContentList*) contentListsWithSubContentType: (MMSubContentType) contentType andName: (NSString*) name;
 

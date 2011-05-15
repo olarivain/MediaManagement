@@ -203,6 +203,13 @@
   return contentList;
 }
 
+- (void) clearPlaylist
+{
+  [content removeAllObjects];
+  [contentListBySubContentType removeAllObjects];
+  [contentLists removeAllObjects];
+}
+
 #pragma mark - "Abstract" methods
 - (void) contentAdded:(MMContent *)content
 {
