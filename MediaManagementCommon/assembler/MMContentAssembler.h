@@ -19,12 +19,13 @@
 
 + (id) sharedInstance;
 
-- (NSDictionary*) writeLibrary: (MMPlaylist*) library;
+- (NSDictionary*) writePlaylist: (MMPlaylist*) playlist;
+- (NSArray*) writePlaylists: (NSArray*) playlists;
 
 - (NSDictionary*) writeContent: (MMContent*) content;
 - (NSArray*) writeContentArray: (NSArray*) contentList;
 
-- (MMPlaylist*) createLibrary: (NSDictionary*) dictionary;
+- (MMPlaylist*) createPlaylist: (NSDictionary*) dictionary;
 - (MMContent*) createContent: (NSDictionary*) dictionary;
 - (NSArray*) createContentArray: (NSArray*) dictionary;
 

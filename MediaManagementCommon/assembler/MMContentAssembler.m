@@ -95,13 +95,29 @@ static MMContentAssembler *sharedInstance;
   return dtos;
 }
 
-- (NSDictionary*) writeLibrary: (MMPlaylist*) library
+- (NSArray*) writePlaylists: (NSArray*) playlists
+{
+  NSMutableArray *dtos = [NSMutableArray arrayWithCapacity: [playlists count]];
+  for(MMPlaylist *playlist in playlists)
+  {
+    NSDictionary *dto = [self writePlaylist: playlist];
+    [dtos addObject: dto];
+  }
+  
+  return dtos;
+}
+
+
+- (NSDictionary*) writePlaylist: (MMPlaylist*) library
 {
   NSMutableDictionary *dto = [NSMutableDictionary dictionaryWithCapacity:5];
   [self setInDictionary: dto object:library.name forKey:@"name"];  
   
   NSNumber *kind = [NSNumber numberWithInt:library.kind];
   [self setInDictionary: dto object:kind forKey:@"kind"];  
+  
+  NSString *uniqueID = library.uniqueId;
+  [self setInDictionary: dto object:uniqueID forKey:@"uniqueID"];  
 
   NSArray *content = [self writeContentArray: library.content];
   [self setInDictionary: dto object:content forKey:@"content"];
@@ -112,7 +128,7 @@ static MMContentAssembler *sharedInstance;
 #pragma mark - DTO -> Domain methods
 - (MMPlaylist*) mediaLibraryForKind: (MMContentKind) kind andSize: (NSUInteger) count
 {
-  MMPlaylist *library;
+  MMPlaylist *library = nil;
   switch (kind) {
     case MUSIC:
       library = [MMMusicPlaylist playlistWithSize: count];
@@ -135,7 +151,7 @@ static MMContentAssembler *sharedInstance;
   return library;
 }
 
-- (MMPlaylist*) createLibrary:(NSDictionary *)dictionary
+- (MMPlaylist*) createPlaylist:(NSDictionary *)dictionary
 {
   NSNumber *kindNumber = [dictionary objectForKey:@"kind"];
   if(kindNumber == nil)
