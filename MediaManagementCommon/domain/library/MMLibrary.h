@@ -16,13 +16,14 @@
   NSString *uniqueId;
   NSString *name;
   
-  NSMutableArray *mediaLibraries;
+  NSMutableArray *playlists;
 }
 
 @property (nonatomic, readonly) NSString *uniqueId;
 @property (nonatomic, readwrite, retain) NSString *name;
-@property (nonatomic, readonly) NSArray *mediaLibraries;
+@property (nonatomic, readonly) NSArray *playlists;
 
 - (void) addPlaylist: (MMPlaylist*) mediaLibrary;
+- (void) clearPlaylists;
 
 @end

@@ -17,7 +17,7 @@
   self = [super init];
   if (self) 
   {
-    mediaLibraries = [[NSMutableArray alloc] initWithCapacity:5];
+    playlists = [[NSMutableArray alloc] initWithCapacity:5];
   }
   
   return self;
@@ -27,25 +27,34 @@
 {
   [uniqueId release];
   self.name = nil;
-  [mediaLibraries release];
+  [playlists release];
   [super dealloc];
 }
 
 @synthesize uniqueId;
 @synthesize name;
-@synthesize mediaLibraries;
+@synthesize playlists;
 
 #pragma mark - Public business methods
 
 - (void) addPlaylist: (MMPlaylist*) mediaLibrary
 {
-  if([mediaLibraries containsObject: mediaLibrary])
+  if([playlists containsObject: mediaLibrary])
   {
     return;
   }
   
-  [mediaLibraries addObject: mediaLibrary];
+  [playlists addObject: mediaLibrary];
   mediaLibrary.library = self;
+}
+
+- (void) clearPlaylists
+{
+  for (MMPlaylist *playlist in playlists)
+  {
+    playlist.library = nil;
+  }
+  [playlists removeAllObjects];
 }
 
 @end
