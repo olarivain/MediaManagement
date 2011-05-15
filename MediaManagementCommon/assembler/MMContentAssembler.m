@@ -118,7 +118,7 @@ static MMContentAssembler *sharedInstance;
   [self setInDictionary: dto object:kind forKey:@"kind"];  
   
   NSString *uniqueID = library.uniqueId;
-  [self setInDictionary: dto object:uniqueID forKey:@"uniqueID"];  
+  [self setInDictionary: dto object:uniqueID forKey:@"uniqueId"];  
 
   NSArray *content = [self writeContentArray: library.content];
   [self setInDictionary: dto object:content forKey:@"content"];
@@ -144,6 +144,8 @@ static MMContentAssembler *sharedInstance;
     case ITUNES_U:
       break;
     case USER:
+      break;
+    default:
       break;
   }
   return library;
