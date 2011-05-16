@@ -73,4 +73,19 @@
   return [self isSet: album];  
 }
 
+- (NSComparisonResult) compare: (MMContent*) other
+{
+  if(kind == MUSIC)
+  {
+    return [trackNumber compare: other.trackNumber];
+  }
+  
+  if(kind == TV_SHOW)
+  {
+    return [episodeNumber compare: other.episodeNumber];
+  }
+  
+  return [name caseInsensitiveCompare: other.name];
+}
+
 @end

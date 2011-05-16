@@ -224,6 +224,19 @@
   [contentLists removeAllObjects];
 }
 
+- (void) sortContent
+{
+  for(MMContentList *contentList in contentLists)
+  {
+    [contentList sortContent];
+  }
+  
+  for(NSMutableArray *lists in [contentListBySubContentType allValues])
+  {
+    [lists sortUsingSelector: @selector(compare:)];
+  }
+}
+
 #pragma mark - "Abstract" methods
 - (NSArray*) initializeContentTypes
 {

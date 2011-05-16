@@ -99,4 +99,15 @@
   [children removeObject: child];
 }
 
+- (void) sortContent
+{
+  [children sortUsingSelector: @selector(compare:)];
+  [content sortUsingSelector:@selector(compare:)];
+}
+
+- (NSComparisonResult) compare: (MMContentList*) other
+{
+  return [name caseInsensitiveCompare: other.name];
+}
+
 @end

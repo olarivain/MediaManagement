@@ -37,4 +37,8 @@
 
 - (void) addChild: (MMContentList*) child;
 - (void) removeChild: (MMContentList*) child;
+
+- (void) sortContent;
+
+- (NSComparisonResult) compare: (MMContentList*) other;
 @end

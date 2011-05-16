@@ -50,6 +50,8 @@
 - (NSArray*) contentListsWithSubContentType: (MMPlaylistContentType*) contentType;
 - (MMContentList*) contentListsWithSubContentType: (MMPlaylistContentType*) contentType andName: (NSString*) name;
 
+- (void) sortContent;
+
 - (BOOL) isSystem;
 
 @end
