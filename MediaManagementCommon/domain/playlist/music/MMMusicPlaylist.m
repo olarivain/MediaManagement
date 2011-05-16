@@ -95,7 +95,8 @@
   }
 
   // otherwise go with artist that has the same name, creating it if needed
-  return [self contentListWithSubContentType: ARTIST name: content.artist create:YES];
+  MMPlaylistContentType *artist = [self contentType: ARTIST];
+  return [self contentListWithSubContentType: artist name: content.artist create:YES];
 }
 
 #pragma mark - Artist management
@@ -107,8 +108,9 @@
     return  unknownArtist;
   }
   
+  MMPlaylistContentType *album = [self contentType: ALBUM];
   // otherwise go with album that has the same name, creating it if needed
-  return [self contentListWithSubContentType: ALBUM name: content.album create:YES];
+  return [self contentListWithSubContentType: album name: content.album create:YES];
 }
 
 @end

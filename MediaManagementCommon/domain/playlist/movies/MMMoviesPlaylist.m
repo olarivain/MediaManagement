@@ -43,7 +43,7 @@
 
 - (NSArray*) initializeContentTypes
 {
-  return [NSArray arrayWithObject: [MMPlaylistContentType playlistContentTypeWithName:@"Default" andType: NONE]];
+  return [NSArray arrayWithObject: [MMPlaylistContentType playlistContentTypeWithName:@"Movies" andType: NONE]];
 }
 
 - (void) contentAdded: (MMContent *) content

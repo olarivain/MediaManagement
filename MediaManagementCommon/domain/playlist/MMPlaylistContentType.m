@@ -26,6 +26,7 @@
     name = [contentName retain];
     type = contentType;
   }
+  return self;
 }
 
 - (void) dealloc

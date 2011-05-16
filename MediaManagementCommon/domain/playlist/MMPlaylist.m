@@ -13,9 +13,8 @@
 
 @interface MMPlaylist()
 - (id) initWithContentKind: (MMContentKind) kind;
-//- (NSNumber*) keyForContentList: (MMContentList*) contentList;
-//- (NSNumber*) keyForSubContentType: (MMSubContentType) subContentType;
-
+- (NSNumber*) keyForSubContentType: (MMSubContentType) subContentType;
+- (NSNumber*) keyForPlaylistContentType: (MMPlaylistContentType*) contentType;
 @end
 
 @implementation MMPlaylist
@@ -67,6 +66,7 @@
   [name release];
   [contentLists release];
   [contentListBySubContentType release];
+  [contentTypes release];
   [super dealloc];
 }
 
@@ -75,6 +75,7 @@
 @synthesize name;
 @synthesize library;
 @synthesize contentLists;
+@synthesize contentTypes;
 
 #pragma mark - Content Management
 - (BOOL) isSystem
@@ -113,6 +114,16 @@
 }
 
 #pragma mark - Content List management
+- (NSNumber*) keyForSubContentType: (MMSubContentType) subContentType
+{
+  return [NSNumber numberWithInt: subContentType];
+}
+
+
+- (NSNumber*) keyForPlaylistContentType: (MMPlaylistContentType*) contentType;
+{
+  return [self keyForSubContentType: contentType.type];
+}
 
 - (void) addContentList: (MMContentList*) contentList
 {
@@ -127,7 +138,7 @@
   contentList.playlist = self;
   
   // now, build local cache of subcontent -> content lists map
-  MMPlaylistContentType *subContentTypeKey = contentList.contentType;
+  NSNumber *subContentTypeKey = [self keyForPlaylistContentType: contentList.contentType];
   NSMutableArray *array = [contentListBySubContentType objectForKey: subContentTypeKey];
   // create on demand
   if(array == nil)
@@ -152,14 +163,15 @@
   contentList.playlist = nil;
   
   // remove from local map
-  MMPlaylistContentType *subContentTypeKey = contentList.contentType;
+  NSNumber *subContentTypeKey = [self keyForPlaylistContentType: contentList.contentType];
   NSMutableArray *array = [contentListBySubContentType objectForKey: subContentTypeKey];
   [array removeObject: contentList];
 }
 
 - (NSArray*) contentListsWithSubContentType: (MMPlaylistContentType *) contentType
 {
-  NSArray *list = [contentListBySubContentType objectForKey:contentType];
+  NSNumber *subContentTypeKey = [self keyForPlaylistContentType: contentType];
+  NSArray *list = [contentListBySubContentType objectForKey:subContentTypeKey];
   return list;
 }
 

@@ -32,6 +32,7 @@
 @property (nonatomic, readwrite, retain) NSString *name;
 @property (nonatomic, readwrite, assign) MMLibrary *library;
 @property (readonly) NSArray *contentLists;
+@property (readonly) NSArray *contentTypes;
 
 + (id) playlist;
 + (id) playlistWithSize: (NSUInteger) size;
