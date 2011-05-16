@@ -11,8 +11,11 @@
 #import "MMContentList.h"
 
 @interface MMMusicPlaylist()
+- (void) createUnknownArtistAndAlbum;
 - (MMContentList*) artistForContent: (MMContent*) content create: (BOOL) create;
 - (MMContentList*) albumForContent: (MMContent*) content create: (BOOL) create;
+@property (nonatomic, readwrite, retain) MMContentList *unkownArtist;
+@property (nonatomic, readwrite, retain) MMContentList *unkownAlbum;
 @end
 @implementation MMMusicPlaylist
 
@@ -35,22 +38,20 @@
     {
       NSLog(@"FATAL: Music Playlist must have a kind of MUSIC");
     }
-    MMPlaylistContentType *artist = [self contentType: ARTIST];
-    unknownArtist = [MMContentList contentListWithSubContentType:artist andName:@"Unknown Artist"];
-    [self addContentList: unknownArtist];
-
-    MMPlaylistContentType *album = [self contentType: ALBUM];
-    unknownAlbum = [MMContentList contentListWithSubContentType:album andName:@"Unknown Album"];
-    [self addContentList: unknownAlbum];
   }
-  
+  [self createUnknownArtistAndAlbum];
   return self;
 }
 
 - (void)dealloc
 {
+  self.unkownArtist = nil;
+  self.unkownAlbum = nil;
   [super dealloc];
 }
+
+@synthesize unkownAlbum;
+@synthesize unkownArtist;
 
 - (NSArray*) initializeContentTypes
 {
@@ -58,6 +59,23 @@
   MMPlaylistContentType *artists = [MMPlaylistContentType playlistContentTypeWithName:@"Artists" andType: ARTIST];
   MMPlaylistContentType *albums = [MMPlaylistContentType playlistContentTypeWithName:@"Albums" andType: ALBUM];
   return [NSArray arrayWithObjects: artists, albums, songs, nil];
+}
+
+- (void) createUnknownArtistAndAlbum
+{
+  MMPlaylistContentType *artist = [self contentType: ARTIST];
+  unknownArtist = [MMContentList contentListWithSubContentType:artist andName:@"Unknown Artist"];
+  [self addContentList: unknownArtist];
+  
+  MMPlaylistContentType *album = [self contentType: ALBUM];
+  unknownAlbum = [MMContentList contentListWithSubContentType:album andName:@"Unknown Album"];
+  [self addContentList: unknownAlbum];
+}
+
+- (void) clearPlaylist
+{
+  [super clearPlaylist];
+  [self createUnknownArtistAndAlbum];
 }
 
 #pragma mark - MMMediaLibrary callbacks
@@ -96,18 +114,6 @@
   // otherwise go with artist that has the same name, creating it if needed
   MMPlaylistContentType *artist = [self contentType: ARTIST];
   return [self contentListWithSubContentType: artist name: content.artist create:YES];
-}
-
-- (void) clearPlaylist
-{
-  [super clearPlaylist];
-  MMPlaylistContentType *artist = [self contentType: ARTIST];
-  unknownArtist = [MMContentList contentListWithSubContentType:artist andName:@"Unknown Artist"];
-  [self addContentList: unknownArtist];
-  
-  MMPlaylistContentType *album = [self contentType: ALBUM];
-  unknownAlbum = [MMContentList contentListWithSubContentType:album andName:@"Unknown Album"];
-  [self addContentList: unknownAlbum];
 }
 
 #pragma mark - Artist management
