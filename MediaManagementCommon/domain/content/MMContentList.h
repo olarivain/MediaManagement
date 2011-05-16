@@ -34,9 +34,11 @@
 
 - (BOOL) addContent: (MMContent*)  content;
 - (BOOL) removeContent: (MMContent*)  content;
+- (NSInteger) contentCount;
 
 - (void) addChild: (MMContentList*) child;
 - (void) removeChild: (MMContentList*) child;
+- (BOOL) hasChildren;
 
 - (void) sortContent;
 

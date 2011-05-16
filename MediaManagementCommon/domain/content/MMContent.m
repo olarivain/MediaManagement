@@ -66,11 +66,11 @@
 
 - (BOOL) isArtistSet
 {
-  return [self isSet: artist];
+  return artist == nil || [self isSet: artist];
 }
 - (BOOL) isAlbumSet
 {
-  return [self isSet: album];  
+  return album == nil || [self isSet: album];  
 }
 
 - (NSComparisonResult) compare: (MMContent*) other

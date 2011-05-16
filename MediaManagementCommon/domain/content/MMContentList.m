@@ -52,6 +52,8 @@
 @synthesize playlist;
 @synthesize children;
 
+
+#pragma mark - Content Management
 - (BOOL) addContent: (MMContent*)  newContent
 {
   if([content containsObject: newContent])
@@ -78,10 +80,38 @@
   return YES;
 }
 
-- (void) addChild: (MMContentList*) child
-
+- (NSInteger) contentCount
 {
-  if([children containsObject: children])
+  if(![self hasChildren])
+  {
+    return [content count];
+  }
+  
+  // TODO: this assumes that a ContentList has children XOR content
+  // make a decision whether this is true or not and fix the class
+  // accordingly
+  NSInteger count = 0;
+  for(MMContentList *contentList in children)
+  {
+    count += [contentList contentCount];
+  }
+  return count;
+}
+
+
+#pragma  mark - Children Management
+- (BOOL) hasChildren
+{
+  return [children count] > 0;
+}
+
+- (void) addChild: (MMContentList*) child
+{
+  if(child == nil)
+  {
+    NSLog(@"child is nil");
+  }
+  if([children containsObject: child])
   {
     return;
   }
@@ -91,7 +121,7 @@
 
 - (void) removeChild: (MMContentList*) child
 {
-  if(![children containsObject: children])
+  if(![children containsObject: child])
   {
     return;
   }
@@ -99,15 +129,16 @@
   [children removeObject: child];
 }
 
+#pragma mark - Sortings
+- (NSComparisonResult) compare: (MMContentList*) other
+{
+  return [name caseInsensitiveCompare: other.name];
+}
+
 - (void) sortContent
 {
   [children sortUsingSelector: @selector(compare:)];
   [content sortUsingSelector:@selector(compare:)];
-}
-
-- (NSComparisonResult) compare: (MMContentList*) other
-{
-  return [name caseInsensitiveCompare: other.name];
 }
 
 @end

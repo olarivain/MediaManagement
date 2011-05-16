@@ -34,14 +34,14 @@
     if(kind != MUSIC)
     {
       NSLog(@"FATAL: Music Playlist must have a kind of MUSIC");
-      MMPlaylistContentType *artist = [self contentType: ARTIST];
-      unknownArtist = [MMContentList contentListWithSubContentType:artist andName:@"Unknown Artist"];
-      [self addContentList: unknownArtist];
-
-      MMPlaylistContentType *album = [self contentType: ARTIST];
-      unknownAlbum = [MMContentList contentListWithSubContentType:album andName:@"Unknown Album"];
-      [self addContentList: unknownAlbum];
     }
+    MMPlaylistContentType *artist = [self contentType: ARTIST];
+    unknownArtist = [MMContentList contentListWithSubContentType:artist andName:@"Unknown Artist"];
+    [self addContentList: unknownArtist];
+
+    MMPlaylistContentType *album = [self contentType: ALBUM];
+    unknownAlbum = [MMContentList contentListWithSubContentType:album andName:@"Unknown Album"];
+    [self addContentList: unknownAlbum];
   }
   
   return self;
@@ -57,7 +57,7 @@
   MMPlaylistContentType *songs = [MMPlaylistContentType playlistContentTypeWithName:@"Songs" andType: NONE];
   MMPlaylistContentType *artists = [MMPlaylistContentType playlistContentTypeWithName:@"Artists" andType: ARTIST];
   MMPlaylistContentType *albums = [MMPlaylistContentType playlistContentTypeWithName:@"Albums" andType: ALBUM];
-  return [NSArray arrayWithObjects: songs, artists, albums, nil];
+  return [NSArray arrayWithObjects: artists, albums, songs, nil];
 }
 
 #pragma mark - MMMediaLibrary callbacks
@@ -65,9 +65,8 @@
 {
   // create artist if needed and add it to list
   MMContentList *artist = [self artistForContent: content create: YES];
-  // TODO artist don't need references to their tracks, it'll go through the album
-//  [artist addContent: content];
   
+  // same for album
   MMContentList *album = [self albumForContent: content create:YES];
   [album addContent: content];
   
@@ -99,13 +98,25 @@
   return [self contentListWithSubContentType: artist name: content.artist create:YES];
 }
 
+- (void) clearPlaylist
+{
+  [super clearPlaylist];
+  MMPlaylistContentType *artist = [self contentType: ARTIST];
+  unknownArtist = [MMContentList contentListWithSubContentType:artist andName:@"Unknown Artist"];
+  [self addContentList: unknownArtist];
+  
+  MMPlaylistContentType *album = [self contentType: ALBUM];
+  unknownAlbum = [MMContentList contentListWithSubContentType:album andName:@"Unknown Album"];
+  [self addContentList: unknownAlbum];
+}
+
 #pragma mark - Artist management
 - (MMContentList*) albumForContent: (MMContent*) content create: (BOOL) create
 {
   // if album isn't set, return default unknown album
-  if(![content isArtistSet])
+  if(![content isAlbumSet])
   {
-    return  unknownArtist;
+    return  unknownAlbum;
   }
   
   MMPlaylistContentType *album = [self contentType: ALBUM];

@@ -196,7 +196,7 @@ static MMContentAssembler *sharedInstance;
   content.artist = [dictionary objectForKey: @"artist"];
   content.trackNumber = [dictionary objectForKey: @"trackNumber"];
   content.show = [dictionary objectForKey: @"show"];
-  content.episodeNumber = [dictionary objectForKey: @""];
+  content.episodeNumber = [dictionary objectForKey: @"episodeNumber"];
   return content;
 }
 
