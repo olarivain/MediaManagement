@@ -113,18 +113,26 @@
   }
 }
 
+- (void) clearPlaylist
+{
+  [contentListBySubContentType removeAllObjects];
+  [contentLists removeAllObjects];
+}
+
+- (void) sortContent
+{
+  for(MMContentList *contentList in contentLists)
+  {
+    [contentList sortContent];
+  }
+  
+  for(NSMutableArray *lists in [contentListBySubContentType allValues])
+  {
+    [lists sortUsingSelector: @selector(compare:)];
+  }
+}
+
 #pragma mark - Content List management
-- (NSNumber*) keyForSubContentType: (MMSubContentType) subContentType
-{
-  return [NSNumber numberWithInt: subContentType];
-}
-
-
-- (NSNumber*) keyForPlaylistContentType: (MMPlaylistContentType*) contentType;
-{
-  return [self keyForSubContentType: contentType.type];
-}
-
 - (void) addContentList: (MMContentList*) contentList
 {
   // give up if we already have this dude.
@@ -168,6 +176,37 @@
   [array removeObject: contentList];
 }
 
+#pragma mark - Subcontent key generation
+- (MMPlaylistContentType*) contentType: (MMSubContentType) type
+{
+  for(MMPlaylistContentType *contentType in contentTypes)
+  {
+    if(contentType.type == type)
+    {
+      return contentType;
+    }
+  }
+  return nil;
+}
+
+- (NSNumber*) keyForSubContentType: (MMSubContentType) subContentType
+{
+  return [NSNumber numberWithInt: subContentType];
+}
+
+
+- (NSNumber*) keyForPlaylistContentType: (MMPlaylistContentType*) contentType;
+{
+  return [self keyForSubContentType: contentType.type];
+}
+
+#pragma mark - Various Subcontent Accessors
+- (MMContentList*) defaultContentList
+{
+  MMPlaylistContentType *contentType = [self contentType: NONE];
+  return [self contentListWithSubContentType: contentType name:@"" create: YES];
+}
+
 - (NSArray*) contentListsWithSubContentType: (MMPlaylistContentType *) contentType
 {
   NSNumber *subContentTypeKey = [self keyForPlaylistContentType: contentType];
@@ -187,24 +226,6 @@
   return nil;
 }
 
-- (MMPlaylistContentType*) contentType: (MMSubContentType) type
-{
-  for(MMPlaylistContentType *contentType in contentTypes)
-  {
-    if(contentType.type == type)
-    {
-      return contentType;
-    }
-  }
-  return nil;
-}
-
-- (MMContentList*) defaultContentList
-{
-  MMPlaylistContentType *contentType = [self contentType: NONE];
-  return [self contentListWithSubContentType: contentType name:@"Default" create: YES];
-}
- 
 - (MMContentList*) contentListWithSubContentType: (MMPlaylistContentType*) subContentType name:(NSString*) contentListName create: (BOOL) create
 {
   MMContentList *contentList = [self contentListsWithSubContentType: subContentType andName: contentListName];
@@ -216,25 +237,6 @@
     [self addContentList: contentList];
   }
   return contentList;
-}
-
-- (void) clearPlaylist
-{
-  [contentListBySubContentType removeAllObjects];
-  [contentLists removeAllObjects];
-}
-
-- (void) sortContent
-{
-  for(MMContentList *contentList in contentLists)
-  {
-    [contentList sortContent];
-  }
-  
-  for(NSMutableArray *lists in [contentListBySubContentType allValues])
-  {
-    [lists sortUsingSelector: @selector(compare:)];
-  }
 }
 
 #pragma mark - "Abstract" methods
