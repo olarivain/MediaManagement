@@ -1,0 +1,116 @@
+//
+//  MMContentGroup.m
+//  MediaManagementCommon
+//
+//  Created by Kra on 5/15/11.
+//  Copyright 2011 kra. All rights reserved.
+//
+
+#import "MMContentGroup.h"
+#import "MMContentList.h"
+
+@interface MMContentGroup()
+- (id) initWithName: (NSString*) name andType: (MMContentGroupType) type;
+@property (nonatomic, readwrite, retain) NSString *name;
+@property (nonatomic, readwrite, retain) NSArray *contentLists;
+@end
+
+@implementation MMContentGroup
+
++ (id) contentGroupWithName: (NSString*) name andType: (MMContentGroupType) type
+{
+  return [[[MMContentGroup alloc] initWithName: name andType:type] autorelease];
+}
+
+- (id) initWithName: (NSString*) groupName andType: (MMContentGroupType) groupType
+{
+  self = [super init];
+  if(self)
+  {
+    self.name = groupName;
+    type = groupType;
+    self.contentLists = [NSMutableArray arrayWithCapacity: 20];
+  }
+  return self;
+}
+
+- (void) dealloc
+{
+  self.contentLists = nil;
+  self.name = nil;
+  [super dealloc];
+}
+
+@synthesize contentLists;
+@synthesize name;
+@synthesize type;
+
+#pragma mark - Content List management
+- (BOOL) addContentList:(MMContentList *)list
+{
+  if([contentLists containsObject: list])
+  {
+    return NO;
+  }
+  
+  [contentLists addObject: list];
+  return YES;
+}
+
+- (BOOL) removeContentList: (MMContentList*) list
+{
+  if(![contentLists containsObject: list])
+  {
+    return NO;
+  }
+  
+  [contentLists removeObject: list];
+  return YES;
+}
+
+- (MMContentList*) defaultContentList
+{
+  if([contentLists count] == 1)
+  {
+    return [contentLists objectAtIndex:0];
+  }
+  
+  for(MMContentList *contentList in contentLists)
+  {
+    if(contentList.type == NONE)
+    {
+      return contentList;
+    }
+  }
+  
+  return nil;
+}
+
+- (MMContentList*) contentListWithName:(NSString *)listName
+{
+  for(MMContentList *contentList in contentLists)
+  {
+    if([contentList.name caseInsensitiveCompare: listName] == NSOrderedSame)
+    {
+      return contentList;
+    }
+  }
+  return nil;
+}
+
+- (void) clear
+{
+  [contentLists removeAllObjects];
+}
+
+#pragma mark - Sort
+- (void) sortContentLists
+{
+  [contentLists sortUsingSelector:@selector(compare:)];
+  for(MMContentList *contentList in contentLists)
+  {
+    [contentList sortContent];
+  }
+}
+
+@end

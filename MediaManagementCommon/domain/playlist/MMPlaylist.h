@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "MMContent.h"
+#import "MMContentGroup.h"
 
 @class MMLibrary;
 @class MMContentList;
-@class MMPlaylistContentType;
 
 @interface MMPlaylist : NSObject 
 {
@@ -22,17 +22,14 @@
   
   MMLibrary *library;
   
-  NSMutableArray *contentLists;
-  NSArray *contentTypes;
-  NSMutableDictionary *contentListBySubContentType;
+  NSMutableArray *contentGroups;
 }
 
 @property (readonly) MMContentKind kind;
 @property (nonatomic, readwrite, retain) NSString *uniqueId;
 @property (nonatomic, readwrite, retain) NSString *name;
 @property (nonatomic, readwrite, assign) MMLibrary *library;
-@property (readonly) NSArray *contentLists;
-@property (readonly) NSArray *contentTypes;
+@property (readonly) NSArray *contentGroups;
 
 + (id) playlist;
 + (id) playlistWithSize: (NSUInteger) size;
@@ -44,11 +41,12 @@
 - (void) addContentList: (MMContentList*) contentList;
 - (void) removeContentList: (MMContentList*) contentList;
 
+- (MMContentGroup*) defaultContentGroup;
 - (MMContentList*) defaultContentList;
-- (void) clearPlaylist;
+- (void) clear;
 
-- (NSArray*) contentListsWithSubContentType: (MMPlaylistContentType*) contentType;
-- (MMContentList*) contentListsWithSubContentType: (MMPlaylistContentType*) contentType andName: (NSString*) name;
+- (MMContentGroup*) contentGroupForType: (MMContentGroupType) type;
+- (MMContentList*) contentListsWithType: (MMContentGroupType) contentType andName: (NSString*) name;
 
 - (void) sortContent;
 

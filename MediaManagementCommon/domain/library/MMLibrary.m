@@ -48,7 +48,7 @@
   mediaLibrary.library = self;
 }
 
-- (void) clearPlaylists
+- (void) clear
 {
   for (MMPlaylist *playlist in playlists)
   {

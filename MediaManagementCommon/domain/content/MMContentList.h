@@ -7,30 +7,29 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MMContentGroup.h"
 
-@class MMPlaylist;
-@class MMPlaylistContentType;
 @class MMContent;
 
 @interface MMContentList : NSObject {
 @private
   NSString *name;
-  MMPlaylistContentType *contentType;
+  MMContentGroupType type;
   
   NSMutableArray *content;
   NSMutableArray *children;
   
-  MMPlaylist *playlist;
+  MMContentGroup *group;
 }
 
-+ (id) contentListWithSubContentType: (MMPlaylistContentType*) contentType andName: (NSString*) name;
-- (id) initWithSubContentType: (MMPlaylistContentType*) contentType andName: (NSString*) contentName;
++ (id) contentListWithType: (MMContentGroupType) contentType andName: (NSString*) name;
+- (id) initWithType: (MMContentGroupType) type andName: (NSString*) contentName;
 
-@property (nonatomic, readonly) MMPlaylistContentType *contentType;
+@property (nonatomic, readonly) MMContentGroupType type;
 @property (nonatomic, readonly, retain) NSString *name;
 @property (nonatomic, readonly, retain) NSArray *content;
 @property (nonatomic, readonly, retain) NSArray *children;
-@property (nonatomic, readwrite, assign) MMPlaylist *playlist;
+@property (nonatomic, readwrite, assign) MMContentGroup *group;
 
 - (BOOL) addContent: (MMContent*)  content;
 - (BOOL) removeContent: (MMContent*)  content;
@@ -38,6 +37,7 @@
 
 - (void) addChild: (MMContentList*) child;
 - (void) removeChild: (MMContentList*) child;
+- (NSInteger) childrenCount;
 - (BOOL) hasChildren;
 
 - (void) sortContent;

@@ -41,9 +41,9 @@
     [super dealloc];
 }
 
-- (NSArray*) initializeContentTypes
+- (NSArray*) initializeContentGroups
 {
-  return [NSArray arrayWithObject: [MMPlaylistContentType playlistContentTypeWithName:@"Movies" andType: NONE]];
+  return [NSArray arrayWithObject: [MMContentGroup contentGroupWithName: @"Movies" andType: NONE]];
 }
 
 - (void) contentAdded: (MMContent *) content

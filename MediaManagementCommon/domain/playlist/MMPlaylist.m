@@ -7,14 +7,11 @@
 //
 
 #import "MMPlaylistProtected.h"
-#import "MMPlaylistContentType.h"
 #import "MMContent.h"
 #import "MMContentList.h"
 
 @interface MMPlaylist()
 - (id) initWithContentKind: (MMContentKind) kind;
-- (NSNumber*) keyForSubContentType: (MMSubContentType) subContentType;
-- (NSNumber*) keyForPlaylistContentType: (MMPlaylistContentType*) contentType;
 @end
 
 @implementation MMPlaylist
@@ -50,9 +47,8 @@
   if (self) 
   {
     kind = contentKind;
-    contentLists = [[NSMutableArray alloc] initWithCapacity: size / 5];
-    contentTypes = [[self initializeContentTypes] retain];
-    contentListBySubContentType = [[NSMutableDictionary alloc] initWithCapacity:5];
+    contentGroups = [[self initializeContentGroups] retain];
+    [self initializeContentLists];
   }
   
   return self;
@@ -64,9 +60,7 @@
 {
   [uniqueId release];
   [name release];
-  [contentLists release];
-  [contentListBySubContentType release];
-  [contentTypes release];
+  [contentGroups release];
   [super dealloc];
 }
 
@@ -74,8 +68,7 @@
 @synthesize uniqueId;
 @synthesize name;
 @synthesize library;
-@synthesize contentLists;
-@synthesize contentTypes;
+@synthesize contentGroups;
 
 #pragma mark - Content Management
 - (BOOL) isSystem
@@ -92,8 +85,9 @@
     return;
   }
   
-  MMContentList *defaultList = [self defaultContentList];
-
+  MMContentGroup *defaultGroup = [self defaultContentGroup];
+  MMContentList *defaultList = [defaultGroup defaultContentList];
+  
   // add object to content list and callback for subclasses
   BOOL didAdd = [defaultList addContent: added];
   if(didAdd)
@@ -104,7 +98,9 @@
 
 - (void) removeContent:(MMContent *) removed
 {
-  MMContentList *defaultList = [self defaultContentList];
+  MMContentGroup *defaultGroup = [self defaultContentGroup];
+  MMContentList *defaultList = [defaultGroup defaultContentList];
+  
   // remove it and callback for subclasses if needed
   BOOL didRemove = [defaultList removeContent: removed];
   if(didRemove)
@@ -113,134 +109,92 @@
   }
 }
 
-- (void) clearPlaylist
+- (void) clear
 {
-  [contentListBySubContentType removeAllObjects];
-  [contentLists removeAllObjects];
+  for(MMContentGroup *contentGroup in contentGroups)
+  {
+    [contentGroup clear];
+  }
 }
 
 - (void) sortContent
 {
-  for(MMContentList *contentList in contentLists)
+  for(MMContentGroup *contentGroup in contentGroups)
   {
-    [contentList sortContent];
-  }
-  
-  for(NSMutableArray *lists in [contentListBySubContentType allValues])
-  {
-    [lists sortUsingSelector: @selector(compare:)];
+    [contentGroup sortContentLists];
   }
 }
 
 #pragma mark - Content List management
 - (void) addContentList: (MMContentList*) contentList
 {
-  // give up if we already have this dude.
-  if([contentLists containsObject: contentList])
-  {
-    return;
-  }
-  
-  // add new content list to global content lists list
-  [contentLists addObject: contentList];
-  contentList.playlist = self;
-  
-  // now, build local cache of subcontent -> content lists map
-  NSNumber *subContentTypeKey = [self keyForPlaylistContentType: contentList.contentType];
-  NSMutableArray *array = [contentListBySubContentType objectForKey: subContentTypeKey];
-  // create on demand
-  if(array == nil)
-  {
-    array = [NSMutableArray array];
-    [contentListBySubContentType setObject:array forKey:subContentTypeKey];
-  }
-  
-  [array addObject: contentList];
+  // find gorup for this content list
+  MMContentGroup *group = [self contentGroupForType: contentList.type];
+  // and add it there
+  [group addContentList: contentList];
 }
 
 - (void) removeContentList: (MMContentList*) contentList
 {
-  // abort if we don't know about this guy
-  if(![contentLists containsObject: contentList])
-  {
-    return;
-  }
-  
-  // remove from content lists list.
-  [contentLists removeObject: contentList];
-  contentList.playlist = nil;
-  
-  // remove from local map
-  NSNumber *subContentTypeKey = [self keyForPlaylistContentType: contentList.contentType];
-  NSMutableArray *array = [contentListBySubContentType objectForKey: subContentTypeKey];
-  [array removeObject: contentList];
+  // find gorup for this content list
+  MMContentGroup *group = [self contentGroupForType: contentList.type];
+  // and remove it from there
+  [group removeContentList: contentList];
 }
 
-#pragma mark - Subcontent key generation
-- (MMPlaylistContentType*) contentType: (MMSubContentType) type
+#pragma mark - ContentGroup accessor key generation
+- (MMContentGroup*) contentGroupForType: (MMContentGroupType) type
 {
-  for(MMPlaylistContentType *contentType in contentTypes)
+  for(MMContentGroup *contentGroup in contentGroups)
   {
-    if(contentType.type == type)
+    if(contentGroup.type == type)
     {
-      return contentType;
+      return contentGroup;
     }
   }
   return nil;
-}
-
-- (NSNumber*) keyForSubContentType: (MMSubContentType) subContentType
-{
-  return [NSNumber numberWithInt: subContentType];
-}
-
-
-- (NSNumber*) keyForPlaylistContentType: (MMPlaylistContentType*) contentType;
-{
-  return [self keyForSubContentType: contentType.type];
 }
 
 #pragma mark - Various Subcontent Accessors
+- (MMContentGroup*) defaultContentGroup
+{
+  MMContentGroup *contentGroup = [self contentGroupForType: NONE];
+  return contentGroup;
+}
+
 - (MMContentList*) defaultContentList
 {
-  MMPlaylistContentType *contentType = [self contentType: NONE];
-  return [self contentListWithSubContentType: contentType name:@"" create: YES];
+  MMContentGroup *contentGroup = [self defaultContentGroup];
+  MMContentList *contentList = [contentGroup defaultContentList];
+  return contentList;
 }
 
-- (NSArray*) contentListsWithSubContentType: (MMPlaylistContentType *) contentType
+- (MMContentList*) contentListsWithType: (MMContentGroupType) contentType andName: (NSString*) listName
 {
-  NSNumber *subContentTypeKey = [self keyForPlaylistContentType: contentType];
-  NSArray *list = [contentListBySubContentType objectForKey:subContentTypeKey];
-  return list;
+  return [self contentListWithType: contentType name: listName create: NO];
 }
 
-- (MMContentList*) contentListsWithSubContentType: (MMPlaylistContentType *) contentType andName: (NSString*) listName
+- (MMContentList*) contentListWithType: (MMContentGroupType) type name:(NSString*) listName create: (BOOL) create
 {
-  for(MMContentList *contentList in [self contentListsWithSubContentType: contentType])
-  {
-    if([contentList.name caseInsensitiveCompare: listName] == NSOrderedSame)
-    {
-      return contentList;
-    }
-  }
-  return nil;
-}
-
-- (MMContentList*) contentListWithSubContentType: (MMPlaylistContentType*) subContentType name:(NSString*) contentListName create: (BOOL) create
-{
-  MMContentList *contentList = [self contentListsWithSubContentType: subContentType andName: contentListName];
+  MMContentGroup *contentGroup = [self contentGroupForType: type];
+  MMContentList *contentList = [contentGroup contentListWithName: listName];
   
-  // contentL list hasn't been found, create it and add it to our list
-  if(create && contentList == nil)
+  if(contentList == nil && create)
   {
-    contentList = [MMContentList contentListWithSubContentType:subContentType andName:contentListName];
-    [self addContentList: contentList];
-  }
+    contentList = [MMContentList contentListWithType: type andName: listName];
+    [contentGroup addContentList: contentList];
+  } 
+  
   return contentList;
 }
 
 #pragma mark - "Abstract" methods
-- (NSArray*) initializeContentTypes
+- (void) initializeContentLists
+{
+  [self contentListWithType:NONE name:@"" create: YES];
+}
+
+- (NSArray*) initializeContentGroups
 {
   @throw [NSException exceptionWithName:@"IllegalOperationException" reason:@"MMMediaLibrary.initializeContentTypes MUST be overriden." userInfo:nil];
 

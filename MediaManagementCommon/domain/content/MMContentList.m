@@ -9,7 +9,7 @@
 #import "MMContentList.h"
 #import "MMContent.h"
 #import "MMPlaylist.h"
-#import "MMPlaylistContentType.h"
+
 
 @interface MMContentList()
 @property (nonatomic, readwrite, retain) NSString *name;
@@ -18,17 +18,17 @@
 @end
 @implementation MMContentList
 
-+ (id) contentListWithSubContentType: (MMPlaylistContentType*) contentType andName: (NSString*) name
++ (id) contentListWithType: (MMContentGroupType) type andName: (NSString*) name
 {
-  return [[[MMContentList alloc] initWithSubContentType: contentType andName: name] autorelease];
+  return [[[MMContentList alloc] initWithType: (MMContentGroupType) type andName: name] autorelease];
 }
 
-- (id) initWithSubContentType: (MMPlaylistContentType*) type andName: (NSString*) contentName
+- (id) initWithType: (MMContentGroupType) groupType andName: (NSString*) contentName
 {
   self = [super init];
   if (self) 
   {
-    contentType = [type retain];
+    type = groupType;
     self.name = contentName;
     self.content = [NSMutableArray arrayWithCapacity: 20];
     self.children = [NSMutableArray arrayWithCapacity: 5];
@@ -42,14 +42,13 @@
   self.name = nil;
   self.content = nil;
   self.children = nil;
-  [contentType release];
   [super dealloc];
 }
 
-@synthesize contentType;
+@synthesize type;
 @synthesize name;
 @synthesize content;
-@synthesize playlist;
+@synthesize group;
 @synthesize children;
 
 
@@ -75,7 +74,7 @@
   [content removeObject: newContent];
   if([content count] == 0)
   {
-    [playlist removeContentList: self];
+    [group removeContentList: self];
   }
   return YES;
 }
@@ -100,11 +99,6 @@
 
 
 #pragma  mark - Children Management
-- (BOOL) hasChildren
-{
-  return [children count] > 0;
-}
-
 - (void) addChild: (MMContentList*) child
 {
   if(child == nil)
@@ -127,6 +121,16 @@
   }
   
   [children removeObject: child];
+}
+
+- (BOOL) hasChildren
+{
+  return [children count] > 0;
+}
+
+- (NSInteger) childrenCount
+{
+  return [children count];
 }
 
 #pragma mark - Sortings

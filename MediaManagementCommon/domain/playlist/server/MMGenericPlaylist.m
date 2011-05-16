@@ -7,7 +7,7 @@
 //
 
 #import "MMGenericPlaylist.h"
-
+#import "MMContentGroup.h"
 
 @implementation MMGenericPlaylist
 
@@ -31,9 +31,14 @@
     [super dealloc];
 }
 
-- (NSArray*) initializeContentTypes
+- (NSArray*) initializeContentGroups
 {
-  return [NSArray arrayWithObject: [MMPlaylistContentType playlistContentTypeWithName:@"Default" andType: NONE]];
+  return [NSArray arrayWithObject: [MMContentGroup contentGroupWithName: @"Default" andType: NONE]];
+}
+
+- (void) initializeContentLists
+{
+  [self contentListWithType:NONE name:@"" create: YES];
 }
 
 - (void) contentAdded:(MMContent *)content

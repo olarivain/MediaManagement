@@ -12,7 +12,6 @@
 @class MMContentList;
 @interface MMMusicPlaylist : MMPlaylist 
 {
-@private
   MMContentList *unknownArtist;
   MMContentList *unknownAlbum;
 }
