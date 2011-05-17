@@ -43,6 +43,10 @@
 		009EE532136E1215008EEEA5 /* MMContentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE527136E1215008EEEA5 /* MMContentAssembler.m */; };
 		009EE534136E1215008EEEA5 /* MMContent.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52C136E1215008EEEA5 /* MMContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		009EE535136E1215008EEEA5 /* MMContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE52D136E1215008EEEA5 /* MMContent.m */; };
+		00E3FA96138233780017BDC1 /* MMArtist.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E3FA94138233780017BDC1 /* MMArtist.h */; };
+		00E3FA97138233780017BDC1 /* MMArtist.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E3FA94138233780017BDC1 /* MMArtist.h */; };
+		00E3FA98138233780017BDC1 /* MMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3FA95138233780017BDC1 /* MMArtist.m */; };
+		00E3FA99138233780017BDC1 /* MMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3FA95138233780017BDC1 /* MMArtist.m */; };
 		00FC747B1380C9BB0057747B /* MMContentGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 00FC74791380C9BB0057747B /* MMContentGroup.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		00FC747C1380C9BB0057747B /* MMContentGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FC747A1380C9BB0057747B /* MMContentGroup.m */; };
 		00FC747E1380DAB80057747B /* MMContentGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 00FC74791380C9BB0057747B /* MMContentGroup.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -72,6 +76,8 @@
 		009EE52D136E1215008EEEA5 /* MMContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMContent.m; sourceTree = "<group>"; };
 		00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-arm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common-arm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B3F8A9132C2CF1003A4FCD /* libmedia-management-common.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E3FA94138233780017BDC1 /* MMArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMArtist.h; sourceTree = "<group>"; };
+		00E3FA95138233780017BDC1 /* MMArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMArtist.m; sourceTree = "<group>"; };
 		00FC74791380C9BB0057747B /* MMContentGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContentGroup.h; sourceTree = "<group>"; };
 		00FC747A1380C9BB0057747B /* MMContentGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMContentGroup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,6 +241,8 @@
 				007719A8137E3A84009A9ADB /* MMContentList.m */,
 				00FC74791380C9BB0057747B /* MMContentGroup.h */,
 				00FC747A1380C9BB0057747B /* MMContentGroup.m */,
+				00E3FA94138233780017BDC1 /* MMArtist.h */,
+				00E3FA95138233780017BDC1 /* MMArtist.m */,
 			);
 			path = content;
 			sourceTree = "<group>";
@@ -256,6 +264,7 @@
 				007719AA137E3A84009A9ADB /* MMContentList.h in Headers */,
 				00FC747E1380DAB80057747B /* MMContentGroup.h in Headers */,
 				004BBE6613808E5700B9639B /* MMPlaylistProtected.h in Headers */,
+				00E3FA97138233780017BDC1 /* MMArtist.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +282,7 @@
 				004BBE4B1380877600B9639B /* MMGenericPlaylist.h in Headers */,
 				004BBE461380877600B9639B /* MMPlaylistProtected.h in Headers */,
 				00FC747B1380C9BB0057747B /* MMContentGroup.h in Headers */,
+				00E3FA96138233780017BDC1 /* MMArtist.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +363,7 @@
 				000758E7136E46850067644F /* MMContentAssembler.m in Sources */,
 				000758E8136E46860067644F /* MMContent.m in Sources */,
 				007719AC137E3A84009A9ADB /* MMContentList.m in Sources */,
+				00E3FA99138233780017BDC1 /* MMArtist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +380,7 @@
 				004BBE4A1380877600B9639B /* MMMusicPlaylist.m in Sources */,
 				004BBE4C1380877600B9639B /* MMGenericPlaylist.m in Sources */,
 				00FC747C1380C9BB0057747B /* MMContentGroup.m in Sources */,
+				00E3FA98138233780017BDC1 /* MMArtist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

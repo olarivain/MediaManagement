@@ -12,12 +12,12 @@
 @class MMContent;
 
 @interface MMContentList : NSObject {
+    NSMutableArray *children;
 @private
   NSString *name;
   MMContentGroupType type;
   
   NSMutableArray *content;
-  NSMutableArray *children;
   
   MMContentGroup *group;
 }

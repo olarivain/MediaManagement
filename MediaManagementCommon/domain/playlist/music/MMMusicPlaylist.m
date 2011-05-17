@@ -8,6 +8,7 @@
 
 #import "MMMusicPlaylist.h"
 #import "MMContent.h"
+#import "MMArtist.h"
 #import "MMContentList.h"
 #import "MMContentGroup.h"
 
@@ -63,7 +64,7 @@
 
 - (void) initializeContentLists
 {
-  unknownArtist = [MMContentList contentListWithType:ARTIST andName:@"Unknown Artist"];
+  unknownArtist = [MMArtist contentListWithType:ARTIST andName:@"Unknown Artist"];
   [self addContentList: unknownArtist];
   
   unknownAlbum = [MMContentList contentListWithType:ALBUM andName:@"Unknown Album"];
@@ -71,23 +72,16 @@
   [super initializeContentLists];
 }
 
-//- (void) clear
-//{
-//  [super clear];
-//}
-
 #pragma mark - MMMediaLibrary callbacks
 - (void) contentAdded:(MMContent *)content
 {
   // create artist if needed and add it to list
   MMContentList *artist = [self artistForContent: content create: YES];
+  [artist addContent: content];
   
   // same for album
   MMContentList *album = [self albumForContent: content create:YES];
   [album addContent: content];
-  
-  // don't forget the artist has albums
-  [artist addChild: album];
 }
 
 - (void) contentRemoved:(MMContent *)content
@@ -109,8 +103,18 @@
     return  unknownArtist;
   }
 
+  MMContentGroup *contentGroup = [self contentGroupForType: ARTIST];
+  MMContentList *contentList = [contentGroup contentListWithName: content.artist];
+  
+  if(contentList == nil && create)
+  {
+    contentList = [[[MMArtist alloc  ]initWithType: ARTIST andName: content.artist] autorelease];
+    [contentGroup addContentList: contentList];
+  } 
+  
+  return contentList;
   // otherwise go with artist that has the same name, creating it if needed
-  return [self contentListWithType: ARTIST name: content.artist create:YES];
+//  return [self contentListWithType: ARTIST name: content.artist create:YES];
 }
 
 #pragma mark - Artist management
