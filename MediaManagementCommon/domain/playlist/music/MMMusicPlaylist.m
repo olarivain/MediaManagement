@@ -12,7 +12,6 @@
 #import "MMContentGroup.h"
 
 @interface MMMusicPlaylist()
-- (void) createUnknownArtistAndAlbum;
 - (MMContentList*) artistForContent: (MMContent*) content create: (BOOL) create;
 - (MMContentList*) albumForContent: (MMContent*) content create: (BOOL) create;
 
@@ -41,7 +40,6 @@
       NSLog(@"FATAL: Music Playlist must have a kind of MUSIC");
     }
   }
-  [self createUnknownArtistAndAlbum];
   return self;
 }
 
@@ -55,7 +53,7 @@
 @synthesize unknownAlbum;
 @synthesize unknownArtist;
 
-- (NSArray*) initializeContentTypes
+- (NSArray*) initializeContentGroups
 {
   MMContentGroup *songs = [MMContentGroup contentGroupWithName:@"Songs" andType: NONE];
   MMContentGroup *artists = [MMContentGroup contentGroupWithName:@"Artists" andType: ARTIST];
@@ -63,20 +61,20 @@
   return [NSArray arrayWithObjects: artists, albums, songs, nil];
 }
 
-- (void) createUnknownArtistAndAlbum
+- (void) initializeContentLists
 {
   unknownArtist = [MMContentList contentListWithType:ARTIST andName:@"Unknown Artist"];
   [self addContentList: unknownArtist];
   
   unknownAlbum = [MMContentList contentListWithType:ALBUM andName:@"Unknown Album"];
   [self addContentList: unknownAlbum];
+  [super initializeContentLists];
 }
 
-- (void) clear
-{
-  [super clear];
-  [self createUnknownArtistAndAlbum];
-}
+//- (void) clear
+//{
+//  [super clear];
+//}
 
 #pragma mark - MMMediaLibrary callbacks
 - (void) contentAdded:(MMContent *)content

@@ -8,6 +8,7 @@
 
 #import "MMContentGroup.h"
 #import "MMContentList.h"
+#import "MMContent.h"
 
 @interface MMContentGroup()
 - (id) initWithName: (NSString*) name andType: (MMContentGroupType) type;
@@ -101,6 +102,46 @@
 - (void) clear
 {
   [contentLists removeAllObjects];
+}
+
+#pragma mark - Content List Count and accessors
+- (NSInteger) contentListCount
+{
+  NSInteger count = 0;
+  for(MMContentList *contentList in contentLists)
+  {
+    count += [contentList childrenCount] + 1;
+  }
+  return  count;
+}
+
+- (MMContentList*) contentListForFlatIndex: (NSInteger) index
+{
+  NSInteger counter = 0;
+  for(MMContentList *contentList in contentLists)
+  {
+    if(counter == index)
+    {
+      return contentList;
+    }
+    counter++;
+    NSArray *childrenContentLists = [contentList children];
+    for(MMContentList *childContentList in childrenContentLists)
+    {
+      if(counter == index)
+      {
+        return childContentList;
+      }
+      counter++;
+    }
+  }
+  return nil;
+}
+
+- (MMContent*) contentForSection: (NSInteger) section andRow: (NSInteger) row
+{
+  MMContentList *contentList = [self contentListForFlatIndex: section];
+  return [[contentList content] objectAtIndex: row];
 }
 
 #pragma mark - Sort

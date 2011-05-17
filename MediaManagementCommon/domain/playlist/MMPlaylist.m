@@ -115,6 +115,7 @@
   {
     [contentGroup clear];
   }
+  [self initializeContentLists];
 }
 
 - (void) sortContent

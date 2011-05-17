@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class MMContentList;
-
+@class MMContent;
 typedef enum MMContentGroupType
 {
   NONE = 0,
@@ -35,6 +35,10 @@ typedef enum MMContentGroupType
 - (BOOL) addContentList: (MMContentList*) list;
 - (BOOL) removeContentList: (MMContentList*) list;
 - (MMContentList *) contentListWithName: (NSString *) listName;
+
+- (NSInteger) contentListCount;
+- (MMContentList*) contentListForFlatIndex: (NSInteger) index;
+- (MMContent*) contentForSection: (NSInteger) section andRow: (NSInteger) row;
 
 - (void) sortContentLists;
 
