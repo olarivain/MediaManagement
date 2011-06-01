@@ -80,6 +80,7 @@ static MMContentAssembler *sharedInstance;
   [self setInDictionary: dto object:content.show forKey:@"show"];
   [self setInDictionary: dto object:content.season forKey:@"season"];
   [self setInDictionary: dto object:content.episodeNumber forKey:@"episodeNumber"];
+  [self setInDictionary: dto object: content.playlistId forKey:@"playlistId"];
   
   return dto;
 }
@@ -200,6 +201,7 @@ static MMContentAssembler *sharedInstance;
   content.show = [dictionary objectForKey: @"show"];
   content.episodeNumber = [dictionary objectForKey: @"episodeNumber"];
   content.season = [dictionary objectForKey:@"season"];
+  content.playlistId = [dictionary objectForKey: @"playlistId"];
   return content;
 }
 

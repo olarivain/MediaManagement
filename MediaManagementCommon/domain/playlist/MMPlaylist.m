@@ -92,6 +92,7 @@
   BOOL didAdd = [defaultList addContent: added];
   if(didAdd || defaultList == nil)
   {
+    added.playlistId = self.uniqueId;
     [self contentAdded: added];
   }
 }

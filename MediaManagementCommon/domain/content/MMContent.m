@@ -45,6 +45,7 @@
 }
 
 @synthesize contentId;
+@synthesize playlistId;
 @synthesize name;
 @synthesize description;
 @synthesize genre;
@@ -81,6 +82,21 @@
 - (BOOL) isSeasonSet 
 {
   return season != nil;
+}
+
+- (BOOL) isMusic
+{
+  return kind == MUSIC;
+}
+
+- (BOOL) isMovie
+{
+  return kind == MOVIE;  
+}
+
+- (BOOL) isTvShow
+{
+  return kind == TV_SHOW;
 }
 
 #pragma mark - Comparison method

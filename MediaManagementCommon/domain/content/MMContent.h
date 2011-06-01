@@ -43,6 +43,8 @@ typedef enum MMContentKind
   NSString *show;
   NSNumber *episodeNumber;
   NSNumber *season;
+  
+  NSString *playlistId;
 
 }
 
@@ -51,6 +53,7 @@ typedef enum MMContentKind
 @property (nonatomic, readwrite, assign) MMContentKind kind;
 
 @property (nonatomic, readwrite, retain) NSString *contentId;
+@property (nonatomic, readwrite, retain) NSString *playlistId;
 
 @property (nonatomic, readwrite, retain) NSString *name;
 @property (nonatomic, readwrite, retain) NSString *description;
@@ -68,4 +71,8 @@ typedef enum MMContentKind
 - (BOOL) isAlbumSet;
 - (BOOL) isShowSet;
 - (BOOL) isSeasonSet;
+
+- (BOOL) isMusic;
+- (BOOL) isMovie;
+- (BOOL) isTvShow;
 @end
