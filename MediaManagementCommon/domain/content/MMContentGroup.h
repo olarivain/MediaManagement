@@ -36,7 +36,7 @@ typedef enum MMContentGroupType
 
 @property (readonly) MMContentGroupType type;
 @property (nonatomic, readonly, retain) NSString *name;
-@property (nonatomic, readonly, retain) NSArray *contentLists;
+//@property (nonatomic, readonly, retain) NSArray *contentLists;
 
 - (MMContentList*) defaultContentList;
 - (BOOL) addContentList: (MMContentList*) list;

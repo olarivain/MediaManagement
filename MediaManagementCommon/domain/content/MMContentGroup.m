@@ -13,7 +13,7 @@
 @interface MMContentGroup()
 - (id) initWithName: (NSString*) name andType: (MMContentGroupType) type;
 @property (nonatomic, readwrite, retain) NSString *name;
-@property (nonatomic, readwrite, retain) NSArray *contentLists;
+@property (nonatomic, readwrite, retain) NSMutableArray *contentLists;
 @end
 
 @implementation MMContentGroup
@@ -37,7 +37,7 @@
 
 - (void) dealloc
 {
-  self.contentLists = nil;
+//  self.contentLists = nil;
   self.name = nil;
   [super dealloc];
 }

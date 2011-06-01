@@ -32,9 +32,9 @@
   self = [super initWithContentKind:kind andSize: size];
   if (self) 
   {
-    if(kind != MUSIC)
+    if(kind != TV_SHOW)
     {
-      NSLog(@"FATAL: Music Playlist must have a kind of MUSIC");
+      NSLog(@"FATAL: TV Show Playlist must have a kind of TV_SHOW");
     }
   }
   return self;
