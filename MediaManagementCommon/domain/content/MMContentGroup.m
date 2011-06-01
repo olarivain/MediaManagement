@@ -37,7 +37,7 @@
 
 - (void) dealloc
 {
-//  self.contentLists = nil;
+  self.contentLists = nil;
   self.name = nil;
   [super dealloc];
 }
