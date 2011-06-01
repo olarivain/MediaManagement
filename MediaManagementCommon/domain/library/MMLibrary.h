@@ -11,6 +11,8 @@
 @class MMContent;
 @class MMPlaylist;
 
+// Library is the top level root aggregate. It provides access 
+// to the iTunes library - ALL libraries, may it be user defined playlists or system libraries.
 @interface MMLibrary : NSObject {
 @private
   NSString *uniqueId;

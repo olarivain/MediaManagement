@@ -113,8 +113,6 @@
   } 
   
   return contentList;
-  // otherwise go with artist that has the same name, creating it if needed
-//  return [self contentListWithType: ARTIST name: content.artist create:YES];
 }
 
 #pragma mark - Artist management

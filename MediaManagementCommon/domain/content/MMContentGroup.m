@@ -115,6 +115,8 @@
   return  count;
 }
 
+// flattens the list of content (ie, goes through children's content if any
+// and return the content list at a given index.
 - (MMContentList*) contentListForFlatIndex: (NSInteger) index
 {
   NSInteger counter = 0;
@@ -138,6 +140,7 @@
   return nil;
 }
 
+// returns a content at index "row" in content list at index "seciton"
 - (MMContent*) contentForSection: (NSInteger) section andRow: (NSInteger) row
 {
   MMContentList *contentList = [self contentListForFlatIndex: section];

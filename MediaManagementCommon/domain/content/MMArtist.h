@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "MMContentList.h"
 
+// Represents an artist. An artist has a (unique) name and a list of albums (modeled as regular MMContentList)
+// An artist does NOT have any tracks, you'll have to go through the list of albums to retrieve actual tracks
+// from an artist.
 @interface MMArtist : MMContentList 
 {
     

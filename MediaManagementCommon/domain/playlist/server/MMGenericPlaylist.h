@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MMPlaylistProtected.h"
 
+// Very simple playlist with no logic that flattens everything, very well suited for use by the server side.
 @interface MMGenericPlaylist : MMPlaylist {
 @private
     

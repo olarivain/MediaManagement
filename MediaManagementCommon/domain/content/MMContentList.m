@@ -30,6 +30,7 @@
   {
     type = groupType;
     self.name = contentName;
+    // Default to 20 content and 5 subcontent
     self.content = [NSMutableArray arrayWithCapacity: 20];
     self.children = [NSMutableArray arrayWithCapacity: 5];
   }
@@ -55,6 +56,7 @@
 #pragma mark - Content Management
 - (BOOL) addContent: (MMContent*)  newContent
 {
+  // add content to list only if we don't have it already
   if([content containsObject: newContent])
   {
     return NO;
@@ -66,6 +68,7 @@
 
 - (BOOL) removeContent: (MMContent*)  newContent
 {
+  // remove content only if we actually have it
   if(![content containsObject: newContent])
   {
     return NO;
@@ -81,14 +84,15 @@
 
 - (NSInteger) contentCount
 {
+  // we don't have any children, return the count of content
+  // directly under us
   if(![self hasChildren])
   {
     return [content count];
   }
   
-  // TODO: this assumes that a ContentList has children XOR content
-  // make a decision whether this is true or not and fix the class
-  // accordingly
+  // otherwise, recursively call contentCount on our children 
+  // and return the sum.
   NSInteger count = 0;
   for(MMContentList *contentList in children)
   {
@@ -101,6 +105,7 @@
 #pragma  mark - Children Management
 - (void) addChild: (MMContentList*) child
 {
+  // add child only if it's non nil and we don't have it yet
   if(child == nil)
   {
     NSLog(@"child is nil");
@@ -115,6 +120,7 @@
 
 - (void) removeChild: (MMContentList*) child
 {
+  // attempt to remove child only if we're sure we have it
   if(![children containsObject: child])
   {
     return;
@@ -123,22 +129,26 @@
   [children removeObject: child];
 }
 
+// wether this content list has sub content lists
 - (BOOL) hasChildren
 {
   return [children count] > 0;
 }
 
+// complete number of content DIRECTLY under this content list
 - (NSInteger) childrenCount
 {
   return [children count];
 }
 
 #pragma mark - Sortings
+// sub content lists are sorted alphabetically
 - (NSComparisonResult) compare: (MMContentList*) other
 {
   return [name caseInsensitiveCompare: other.name];
 }
 
+// sort children and direct children.
 - (void) sortContent
 {
   [children sortUsingSelector: @selector(compare:)];

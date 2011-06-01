@@ -90,7 +90,7 @@
   
   // add object to content list and callback for subclasses
   BOOL didAdd = [defaultList addContent: added];
-  if(didAdd)
+  if(didAdd || defaultList == nil)
   {
     [self contentAdded: added];
   }

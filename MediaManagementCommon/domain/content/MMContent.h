@@ -20,7 +20,9 @@ typedef enum MMContentKind
   UNKNOWN = 7
 } MMContentKind;
 
-
+// Represents an individual content (song, movie. tv show episode etc.).
+// So far, MMContent only holds its direct attributes (name, artist name, track number etc.)
+// and does not hold a backpointer to its parent MMContentList
 @interface MMContent : NSObject 
 {
   @private
@@ -64,4 +66,6 @@ typedef enum MMContentKind
 
 - (BOOL) isArtistSet;
 - (BOOL) isAlbumSet;
+- (BOOL) isShowSet;
+- (BOOL) isSeasonSet;
 @end

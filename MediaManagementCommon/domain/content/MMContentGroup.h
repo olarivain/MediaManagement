@@ -19,6 +19,13 @@ typedef enum MMContentGroupType
   SEASON = 4
 } MMContentGroupType;
 
+
+// An MMContentGroup groups MMContentList by "kind" (artist, album, series etc.).
+// It is held by playlists, typically a playlist will have multiple content groups, one per
+// natural grouping criteria for that type of playlist (artist+album for music, tv show + seasons
+// for series), but it can also have one and only one, for example movies or books.
+// An MMContentGroup provides a default content list, which is meant as a catch all for content
+// that don't have enough meta data to be added to a specific content list (typically, UnknownArtist etc.)
 @interface MMContentGroup : NSObject {
   MMContentGroupType type;
   NSString *name;

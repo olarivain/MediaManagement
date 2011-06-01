@@ -12,6 +12,7 @@
 
 #import "MMMusicPlaylist.h"
 #import "MMMoviesPlaylist.h"
+#import "MMTVShowPlaylist.h"
 #import "MMGenericPlaylist.h"
 
 #import "MMContentList.h"
@@ -141,6 +142,7 @@ static MMContentAssembler *sharedInstance;
       library = [MMMoviesPlaylist playlistWithSize: count];
       break;
     case TV_SHOW:
+      library = [MMTVShowPlaylist playlistWithSize: count];
       break;
     case PODCAST:
       break;
@@ -197,6 +199,7 @@ static MMContentAssembler *sharedInstance;
   content.trackNumber = [dictionary objectForKey: @"trackNumber"];
   content.show = [dictionary objectForKey: @"show"];
   content.episodeNumber = [dictionary objectForKey: @"episodeNumber"];
+  content.season = [dictionary objectForKey:@"season"];
   return content;
 }
 

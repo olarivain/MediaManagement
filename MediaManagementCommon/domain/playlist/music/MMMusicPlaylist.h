@@ -10,6 +10,7 @@
 #import "MMPlaylistProtected.h"
 
 @class MMContentList;
+
 @interface MMMusicPlaylist : MMPlaylist 
 {
   MMContentList *unknownArtist;

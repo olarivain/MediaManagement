@@ -58,7 +58,7 @@
 @synthesize episodeNumber;
 @synthesize season;
 
-#pragma mark - Business Logic
+#pragma mark - Convenience accessors to determine if an attribute is set.
 - (BOOL) isSet: (NSString*) value
 {
   return [[value stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]] length] > 0;
@@ -66,15 +66,30 @@
 
 - (BOOL) isArtistSet
 {
-  return artist == nil || [self isSet: artist];
+  return artist != nil && [self isSet: artist];
 }
 - (BOOL) isAlbumSet
 {
-  return album == nil || [self isSet: album];  
+  return album != nil && [self isSet: album];  
 }
 
+- (BOOL) isShowSet 
+{
+  return show != nil && [self isSet: show];
+}
+
+- (BOOL) isSeasonSet 
+{
+  return season != nil;
+}
+
+#pragma mark - Comparison method
 - (NSComparisonResult) compare: (MMContent*) other
 {
+  // TODO: this is pretty brutal.
+  // Should sort by artist, then album, then track.
+  // Same concept for TV Shows.
+  // failback to name based sort if we don't have anything else.
   if(kind == MUSIC)
   {
     return [trackNumber compare: other.trackNumber];
