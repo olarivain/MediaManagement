@@ -36,6 +36,7 @@
     {
       NSLog(@"FATAL: TV Show Playlist must have a kind of TV_SHOW");
     }
+    
   }
   return self;
 }
@@ -50,12 +51,15 @@
 
 - (MMContentGroup*) defaultContentGroup
 {
-  return [self contentGroupForType: SERIES];
+  return nil;
 }
 
 - (NSArray*) initializeContentGroups
 {
   MMContentGroup *series = [MMContentGroup contentGroupWithName:@"Series" andType: SERIES];
+  unknownShow = [[MMTVShow alloc] initWithType: SERIES andName: @"Unknown Series"];
+  [series addContentList: unknownShow];
+  
   return [NSArray arrayWithObject: series];
 }
 

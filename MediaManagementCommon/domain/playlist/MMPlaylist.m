@@ -116,6 +116,8 @@
   {
     [contentGroup clear];
   }
+  [contentGroups release];
+  contentGroups = [[self initializeContentGroups] retain];
   [self initializeContentLists];
 }
 

@@ -81,7 +81,7 @@
 
 - (BOOL) isSeasonSet 
 {
-  return season != nil;
+  return season != nil && [season intValue] > 0;
 }
 
 - (BOOL) isMusic
