@@ -54,6 +54,8 @@
 - (NSInteger) childrenCount;
 - (BOOL) hasChildren;
 
+- (NSArray *) allContent;
+
 - (void) sortContent;
 
 - (NSComparisonResult) compare: (MMContentList*) other;

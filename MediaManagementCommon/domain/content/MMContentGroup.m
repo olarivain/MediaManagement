@@ -115,6 +115,17 @@
   return  count;
 }
 
+- (NSArray *) allContent
+{
+  NSMutableArray *content = [NSMutableArray arrayWithCapacity: [self contentListCount]];
+  for(MMContentList *list in contentLists)
+  {
+    [content addObjectsFromArray: [list allContent]];
+  }
+  
+  return content;
+}
+
 // flattens the list of content (ie, goes through children's content if any
 // and return the content list at a given index.
 - (MMContentList*) contentListForFlatIndex: (NSInteger) index

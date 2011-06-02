@@ -26,7 +26,8 @@ typedef enum MMContentGroupType
 // for series), but it can also have one and only one, for example movies or books.
 // An MMContentGroup provides a default content list, which is meant as a catch all for content
 // that don't have enough meta data to be added to a specific content list (typically, UnknownArtist etc.)
-@interface MMContentGroup : NSObject {
+@interface MMContentGroup : NSObject 
+{
   MMContentGroupType type;
   NSString *name;
   NSMutableArray *contentLists;
@@ -47,6 +48,7 @@ typedef enum MMContentGroupType
 - (MMContentList*) contentListForFlatIndex: (NSInteger) index;
 - (MMContent*) contentForSection: (NSInteger) section andRow: (NSInteger) row;
 
+- (NSArray *) allContent;
 - (void) sortContentLists;
 
 - (void) clear;

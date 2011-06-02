@@ -141,6 +141,21 @@
   return [children count];
 }
 
+- (NSArray *) allContent
+{
+  if(![self hasChildren])
+  {
+    return content;
+  }
+  
+  NSMutableArray *array = [NSMutableArray arrayWithCapacity: [self contentCount]];
+  for(MMContentList *list in children)
+  {
+    [array addObjectsFromArray: [list allContent]];
+  }
+  return array;
+}
+
 #pragma mark - Sortings
 // sub content lists are sorted alphabetically
 - (NSComparisonResult) compare: (MMContentList*) other
