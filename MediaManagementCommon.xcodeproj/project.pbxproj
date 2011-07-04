@@ -500,6 +500,7 @@
 				DSTROOT = /tmp/MediaManagementCommon.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediaManagementCommon/MediaManagementCommon-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -520,6 +521,7 @@
 				DSTROOT = /tmp/MediaManagementCommon.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediaManagementCommon/MediaManagementCommon-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
