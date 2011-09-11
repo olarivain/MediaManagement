@@ -205,6 +205,13 @@ static MMContentAssembler *sharedInstance;
   return content;
 }
 
+- (MMContent*) createContent: (NSDictionary*) dictionary withPlaylistId: (NSString *) playlistId 
+{
+  MMContent *content = [self createContent: dictionary];
+  content.playlistId = playlistId;
+  return content;
+}
+
 - (NSArray*) createContentArray: (NSArray*) dtoList
 {
   NSMutableArray *domains = [NSMutableArray arrayWithCapacity: [dtoList count]];
@@ -218,5 +225,20 @@ static MMContentAssembler *sharedInstance;
   }
   return domains;
 }
+
+- (NSArray*) createContentArray: (NSArray*) dtoList withPlaylistId: (NSString *) playlistId
+{
+  NSMutableArray *domains = [NSMutableArray arrayWithCapacity: [dtoList count]];
+  for(NSDictionary *dto in dtoList)
+  {
+    MMContent *content = [self createContent: dto withPlaylistId: playlistId];
+    if(content != nil)
+    {
+      [domains addObject: content];
+    }
+  }
+  return domains;
+}
+
 
 @end
