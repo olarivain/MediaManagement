@@ -64,10 +64,10 @@
 
 - (void) initializeContentLists
 {
-  unknownArtist = [MMArtist contentListWithType:ARTIST andName:@"Unknown Artist"];
+  self.unknownArtist = [MMArtist contentListWithType:ARTIST andName:@"Unknown Artist"];
   [self addContentList: unknownArtist];
   
-  unknownAlbum = [MMContentList contentListWithType:ALBUM andName:@"Unknown Album"];
+  self.unknownAlbum = [MMContentList contentListWithType:ALBUM andName:@"Unknown Album"];
   [self addContentList: unknownAlbum];
   [super initializeContentLists];
 }

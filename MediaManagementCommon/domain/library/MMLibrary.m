@@ -9,6 +9,11 @@
 #import "MMLibrary.h"
 #import "MMPlaylist.h"
 
+@interface MMLibrary ()
+@property (nonatomic, readwrite, retain) NSMutableArray *playlists;
+@property (nonatomic, readwrite, retain) NSString *uniqueId;
+@end
+
 @implementation MMLibrary
 
 #pragma mark - Constructor/destructors/getters
@@ -25,9 +30,9 @@
 
 - (void)dealloc
 {
-  [uniqueId release];
+  self.uniqueId = nil;
   self.name = nil;
-  [playlists release];
+  self.playlists = nil;
   [super dealloc];
 }
 

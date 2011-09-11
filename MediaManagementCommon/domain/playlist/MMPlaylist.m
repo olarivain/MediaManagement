@@ -11,6 +11,9 @@
 #import "MMContentList.h"
 
 @interface MMPlaylist()
+
+@property (nonatomic, readwrite, retain) NSArray *contentGroups;
+
 - (id) initWithContentKind: (MMContentKind) kind;
 @end
 
@@ -47,7 +50,7 @@
   if (self) 
   {
     kind = contentKind;
-    contentGroups = [[self initializeContentGroups] retain];
+    self.contentGroups = [self initializeContentGroups];
     [self initializeContentLists];
   }
   
@@ -58,9 +61,9 @@
 
 - (void)dealloc
 {
-  [uniqueId release];
-  [name release];
-  [contentGroups release];
+  self.uniqueId = nil;
+  self.name = nil;
+  self.contentGroups = nil;
   [super dealloc];
 }
 
