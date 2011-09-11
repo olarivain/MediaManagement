@@ -38,7 +38,7 @@
 
 - (void)dealloc
 {
-    [super dealloc];
+  [super dealloc];
 }
 
 - (NSArray*) initializeContentGroups

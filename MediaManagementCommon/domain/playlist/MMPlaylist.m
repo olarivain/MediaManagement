@@ -64,6 +64,8 @@
   self.uniqueId = nil;
   self.name = nil;
   self.contentGroups = nil;
+  self.library = nil;
+
   [super dealloc];
 }
 
