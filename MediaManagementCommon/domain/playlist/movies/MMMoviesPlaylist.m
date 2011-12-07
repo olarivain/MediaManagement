@@ -18,7 +18,7 @@
 
 + (id) playlistWithSize:(NSUInteger)size
 {
-  return [[[MMMoviesPlaylist alloc] initWithContentKind: MOVIE andSize: size] autorelease];
+  return [[MMMoviesPlaylist alloc] initWithContentKind: MOVIE andSize: size];
 
 }
 
@@ -36,10 +36,6 @@
   return self;
 }
 
-- (void)dealloc
-{
-  [super dealloc];
-}
 
 - (NSArray*) initializeContentGroups
 {

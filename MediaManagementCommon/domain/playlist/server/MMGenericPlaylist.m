@@ -23,13 +23,9 @@
 
 + (id) playlistWithKind:(MMContentKind)kind andSize:(NSUInteger)size
 {
-  return [[[MMGenericPlaylist alloc] initWithContentKind: kind andSize: size] autorelease];
+  return [[MMGenericPlaylist alloc] initWithContentKind: kind andSize: size];
 }
 
-- (void)dealloc
-{
-  [super dealloc];
-}
 
 - (NSArray*) initializeContentGroups
 {

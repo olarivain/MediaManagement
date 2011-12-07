@@ -10,8 +10,8 @@
 #import "MMPlaylist.h"
 
 @interface MMLibrary ()
-@property (nonatomic, readwrite, retain) NSMutableArray *playlists;
-@property (nonatomic, readwrite, retain) NSString *uniqueId;
+@property (nonatomic, readwrite, strong) NSMutableArray *playlists;
+@property (nonatomic, readwrite, strong) NSString *uniqueId;
 @end
 
 @implementation MMLibrary
@@ -28,13 +28,6 @@
   return self;
 }
 
-- (void)dealloc
-{
-  self.uniqueId = nil;
-  self.name = nil;
-  self.playlists = nil;
-  [super dealloc];
-}
 
 @synthesize uniqueId;
 @synthesize name;

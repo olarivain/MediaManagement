@@ -16,8 +16,8 @@
 - (MMContentList*) artistForContent: (MMContent*) content create: (BOOL) create;
 - (MMContentList*) albumForContent: (MMContent*) content create: (BOOL) create;
 
-@property (nonatomic, readwrite, retain) MMContentList *unknownArtist;
-@property (nonatomic, readwrite, retain) MMContentList *unknownAlbum;
+@property (nonatomic, readwrite, strong) MMContentList *unknownArtist;
+@property (nonatomic, readwrite, strong) MMContentList *unknownAlbum;
 @end
 @implementation MMMusicPlaylist
 
@@ -28,7 +28,7 @@
 
 +(id) playlistWithSize:(NSUInteger)size 
 {
-  return [[[MMMusicPlaylist alloc] initWithContentKind:MUSIC andSize:size] autorelease];
+  return [[MMMusicPlaylist alloc] initWithContentKind:MUSIC andSize:size];
 }
 
 - (id)initWithContentKind:(MMContentKind)kind andSize:(NSUInteger)size
@@ -44,12 +44,6 @@
   return self;
 }
 
-- (void)dealloc
-{
-  self.unknownArtist = nil;
-  self.unknownAlbum = nil;
-  [super dealloc];
-}
 
 @synthesize unknownAlbum;
 @synthesize unknownArtist;
@@ -108,7 +102,7 @@
   
   if(contentList == nil && create)
   {
-    contentList = [[[MMArtist alloc  ]initWithType: ARTIST andName: content.artist] autorelease];
+    contentList = [[MMArtist alloc  ]initWithType: ARTIST andName: content.artist];
     [contentGroup addContentList: contentList];
   } 
   

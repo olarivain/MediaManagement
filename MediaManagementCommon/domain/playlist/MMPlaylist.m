@@ -12,7 +12,7 @@
 
 @interface MMPlaylist()
 
-@property (nonatomic, readwrite, retain) NSArray *contentGroups;
+@property (nonatomic, readwrite, strong) NSArray *contentGroups;
 
 - (id) initWithContentKind: (MMContentKind) kind;
 @end
@@ -31,7 +31,7 @@
 
 + (id) playlistWithKind:(MMContentKind)kind andSize: (NSUInteger) size;
 {
-  return [[[MMPlaylist alloc] initWithContentKind:kind andSize:1000] autorelease];
+  return [[MMPlaylist alloc] initWithContentKind:kind andSize:1000];
 }
 
 - (id) initWithContentKind: (MMContentKind) contentKind
@@ -61,12 +61,8 @@
 
 - (void)dealloc
 {
-  self.uniqueId = nil;
-  self.name = nil;
-  self.contentGroups = nil;
   self.library = nil;
 
-  [super dealloc];
 }
 
 @synthesize kind;
@@ -121,8 +117,7 @@
   {
     [contentGroup clear];
   }
-  [contentGroups release];
-  contentGroups = [[self initializeContentGroups] retain];
+  contentGroups = [self initializeContentGroups];
   [self initializeContentLists];
 }
 
@@ -203,7 +198,7 @@
   [self contentListWithType:NONE name:@"" create: YES];
 }
 
-- (NSArray*) initializeContentGroups
+- (NSMutableArray*) initializeContentGroups
 {
   @throw [NSException exceptionWithName:@"IllegalOperationException" reason:@"MMMediaLibrary.initializeContentTypes MUST be overriden." userInfo:nil];
 

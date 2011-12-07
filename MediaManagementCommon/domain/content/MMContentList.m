@@ -12,15 +12,15 @@
 
 
 @interface MMContentList()
-@property (nonatomic, readwrite, retain) NSString *name;
-@property (nonatomic, readwrite, retain) NSArray *content;
-@property (nonatomic, readwrite, retain) NSArray *children;
+@property (nonatomic, readwrite, strong) NSString *name;
+@property (nonatomic, readwrite, strong) NSArray *content;
+@property (nonatomic, readwrite, strong) NSArray *children;
 @end
 @implementation MMContentList
 
 + (id) contentListWithType: (MMContentGroupType) type andName: (NSString*) name
 {
-  return [[[MMContentList alloc] initWithType: (MMContentGroupType) type andName: name] autorelease];
+  return [[MMContentList alloc] initWithType: (MMContentGroupType) type andName: name];
 }
 
 - (id) initWithType: (MMContentGroupType) groupType andName: (NSString*) contentName
@@ -38,13 +38,6 @@
   return self;
 }
 
-- (void)dealloc
-{
-  self.name = nil;
-  self.content = nil;
-  self.children = nil;
-  [super dealloc];
-}
 
 @synthesize type;
 @synthesize name;

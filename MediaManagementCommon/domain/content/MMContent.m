@@ -16,7 +16,7 @@
 
 + (id) content: (MMContentKind) kind
 {
-  return [[[MMContent alloc] init: kind] autorelease];
+  return [[MMContent alloc] init: kind];
 }
 
 - (id) init:(MMContentKind) contentKind
@@ -29,20 +29,6 @@
   return self;
 }
 
-- (void) dealloc
-{
-  self.contentId = nil;
-  self.artist = nil;
-  self.album = nil;
-  self.genre = nil;
-  self.name = nil;
-  self.description = nil;
-  self.show = nil;
-  self.season = nil;
-  self.episodeNumber = nil;
-  self.trackNumber = nil;
-  [super dealloc];
-}
 
 @synthesize contentId;
 @synthesize playlistId;

@@ -44,10 +44,6 @@ static MMContentAssembler *sharedInstance;
   return self;
 }
 
-- (void)dealloc
-{
-  [super dealloc];
-}
 
 #pragma mark - Convenience methods
 - (void) setInDictionary: (NSMutableDictionary*) dictionary object: (id) object forKey: (id) key

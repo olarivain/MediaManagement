@@ -12,15 +12,15 @@
 
 @interface MMContentGroup()
 - (id) initWithName: (NSString*) name andType: (MMContentGroupType) type;
-@property (nonatomic, readwrite, retain) NSString *name;
-@property (nonatomic, readwrite, retain) NSMutableArray *contentLists;
+@property (nonatomic, readwrite, strong) NSString *name;
+@property (nonatomic, readwrite, strong) NSMutableArray *contentLists;
 @end
 
 @implementation MMContentGroup
 
 + (id) contentGroupWithName: (NSString*) name andType: (MMContentGroupType) type
 {
-  return [[[MMContentGroup alloc] initWithName: name andType:type] autorelease];
+  return [[MMContentGroup alloc] initWithName: name andType:type];
 }
 
 - (id) initWithName: (NSString*) groupName andType: (MMContentGroupType) groupType
@@ -35,12 +35,6 @@
   return self;
 }
 
-- (void) dealloc
-{
-  self.contentLists = nil;
-  self.name = nil;
-  [super dealloc];
-}
 
 @synthesize contentLists;
 @synthesize name;

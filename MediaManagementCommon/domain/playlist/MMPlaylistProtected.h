@@ -16,7 +16,7 @@
 @interface MMPlaylist()
 - (id) initWithContentKind: (MMContentKind) contentKind;
 - (id) initWithContentKind: (MMContentKind) contentKind andSize: (NSUInteger) size;
-- (NSArray*) initializeContentGroups;
+- (NSMutableArray*) initializeContentGroups;
 - (void) initializeContentLists;
 
 - (void) contentAdded: (MMContent*) content;

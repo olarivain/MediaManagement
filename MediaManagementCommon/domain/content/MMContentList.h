@@ -33,17 +33,17 @@
   
   NSMutableArray *content;
   
-  MMContentGroup *group;
+  MMContentGroup *__unsafe_unretained group;
 }
 
 + (id) contentListWithType: (MMContentGroupType) contentType andName: (NSString*) name;
 - (id) initWithType: (MMContentGroupType) type andName: (NSString*) contentName;
 
 @property (nonatomic, readonly) MMContentGroupType type;
-@property (nonatomic, readonly, retain) NSString *name;
-@property (nonatomic, readonly, retain) NSArray *content;
-@property (nonatomic, readonly, retain) NSArray *children;
-@property (nonatomic, readwrite, assign) MMContentGroup *group;
+@property (nonatomic, readonly, strong) NSString *name;
+@property (nonatomic, readonly, strong) NSArray *content;
+@property (nonatomic, readonly, strong) NSArray *children;
+@property (nonatomic, readwrite, unsafe_unretained) MMContentGroup *group;
 
 - (BOOL) addContent: (MMContent*)  content;
 - (BOOL) removeContent: (MMContent*)  content;

@@ -52,20 +52,20 @@ typedef enum MMContentKind
 
 @property (nonatomic, readwrite, assign) MMContentKind kind;
 
-@property (nonatomic, readwrite, retain) NSString *contentId;
-@property (nonatomic, readwrite, retain) NSString *playlistId;
+@property (nonatomic, readwrite, strong) NSString *contentId;
+@property (nonatomic, readwrite, strong) NSString *playlistId;
 
-@property (nonatomic, readwrite, retain) NSString *name;
-@property (nonatomic, readwrite, retain) NSString *description;
-@property (nonatomic, readwrite, retain) NSString *genre;
+@property (nonatomic, readwrite, strong) NSString *name;
+@property (nonatomic, readwrite, strong) NSString *description;
+@property (nonatomic, readwrite, strong) NSString *genre;
 
-@property (nonatomic, readwrite, retain) NSString *album;
-@property (nonatomic, readwrite, retain) NSString *artist;
-@property (nonatomic, readwrite, retain) NSNumber *trackNumber;
+@property (nonatomic, readwrite, strong) NSString *album;
+@property (nonatomic, readwrite, strong) NSString *artist;
+@property (nonatomic, readwrite, strong) NSNumber *trackNumber;
 
-@property (nonatomic, readwrite, retain) NSString *show;
-@property (nonatomic, readwrite, retain) NSNumber *episodeNumber;
-@property (nonatomic, readwrite, retain) NSNumber *season;
+@property (nonatomic, readwrite, strong) NSString *show;
+@property (nonatomic, readwrite, strong) NSNumber *episodeNumber;
+@property (nonatomic, readwrite, strong) NSNumber *season;
 
 - (BOOL) isArtistSet;
 - (BOOL) isAlbumSet;

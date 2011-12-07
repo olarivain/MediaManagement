@@ -20,16 +20,16 @@
   NSString *uniqueId;
   NSString *name;
   
-  MMLibrary *library;
+  MMLibrary *__weak library;
   
   NSMutableArray *contentGroups;
 }
 
 @property (readonly) MMContentKind kind;
-@property (nonatomic, readwrite, retain) NSString *uniqueId;
-@property (nonatomic, readwrite, retain) NSString *name;
-@property (nonatomic, readwrite, assign) MMLibrary *library;
-@property (nonatomic, readonly, retain) NSArray *contentGroups;
+@property (nonatomic, readwrite, strong) NSString *uniqueId;
+@property (nonatomic, readwrite, strong) NSString *name;
+@property (nonatomic, readwrite, weak) MMLibrary *library;
+@property (nonatomic, readonly, strong) NSArray *contentGroups;
 
 + (id) playlist;
 + (id) playlistWithSize: (NSUInteger) size;

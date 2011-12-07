@@ -12,7 +12,7 @@
 @interface MMTVShowPlaylist()
 - (MMContentList*) tvShowForContent: (MMContent*) content create: (BOOL) create;
 
-@property (nonatomic, readwrite, retain) MMContentList *unknownShow;
+@property (nonatomic, readwrite, strong) MMContentList *unknownShow;
 @end
 
 @implementation MMTVShowPlaylist
@@ -24,7 +24,7 @@
 
 +(id) playlistWithSize:(NSUInteger)size 
 {
-  return [[[MMTVShowPlaylist alloc] initWithContentKind:TV_SHOW andSize:size] autorelease];
+  return [[MMTVShowPlaylist alloc] initWithContentKind:TV_SHOW andSize:size];
 }
 
 - (id)initWithContentKind:(MMContentKind)kind andSize:(NSUInteger)size
@@ -41,11 +41,6 @@
   return self;
 }
 
-- (void)dealloc
-{
-  self.unknownShow = nil;
-  [super dealloc];
-}
 
 @synthesize unknownShow;
 
@@ -92,7 +87,7 @@
   
   if(contentList == nil && create)
   {
-    contentList = [[[MMTVShow alloc] initWithType: SERIES andName: content.show] autorelease];
+    contentList = [[MMTVShow alloc] initWithType: SERIES andName: content.show];
     [contentGroup addContentList: contentList];
   } 
   

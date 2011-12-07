@@ -20,9 +20,9 @@
   NSMutableArray *playlists;
 }
 
-@property (nonatomic, readonly, retain) NSString *uniqueId;
-@property (nonatomic, readwrite, retain) NSString *name;
-@property (nonatomic, readonly, retain) NSArray *playlists;
+@property (nonatomic, readonly, strong) NSString *uniqueId;
+@property (nonatomic, readwrite, strong) NSString *name;
+@property (nonatomic, readonly, strong) NSArray *playlists;
 
 - (void) addPlaylist: (MMPlaylist*) mediaLibrary;
 
