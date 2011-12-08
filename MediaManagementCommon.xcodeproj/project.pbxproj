@@ -322,6 +322,22 @@
 		};
 /* End PBXHeadersBuildPhase section */
 
+/* Begin PBXLegacyTarget section */
+		00E0111A1490ACD500E3C4F0 /* MediaManagementCommon-Workspace */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 00E0111B1490ACD500E3C4F0 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon-Workspace" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/rake;
+			dependencies = (
+			);
+			name = "MediaManagementCommon-Workspace";
+			passBuildSettingsInEnvironment = 1;
+			productName = "MediaManagementCommon-Workspace";
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		00323DB3132C2A96003BED87 /* MediaManagement-x86 */ = {
 			isa = PBXNativeTarget;
@@ -380,6 +396,7 @@
 			targets = (
 				00323DCE132C2B21003BED87 /* MediaManagement-iPhone */,
 				00323DB3132C2A96003BED87 /* MediaManagement-x86 */,
+				00E0111A1490ACD500E3C4F0 /* MediaManagementCommon-Workspace */,
 			);
 		};
 /* End PBXProject section */
@@ -554,6 +571,52 @@
 			};
 			name = Release;
 		};
+		00E0111C1490ACD500E3C4F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		00E0111D1490ACD500E3C4F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -583,6 +646,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		00E0111B1490ACD500E3C4F0 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon-Workspace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E0111C1490ACD500E3C4F0 /* Debug */,
+				00E0111D1490ACD500E3C4F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
