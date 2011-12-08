@@ -82,12 +82,18 @@
 		009EE527136E1215008EEEA5 /* MMContentAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMContentAssembler.m; sourceTree = "<group>"; };
 		009EE52C136E1215008EEEA5 /* MMContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContent.h; sourceTree = "<group>"; };
 		009EE52D136E1215008EEEA5 /* MMContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMContent.m; sourceTree = "<group>"; };
-		00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-arm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common-arm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		00B3F8A9132C2CF1003A4FCD /* libmedia-management-common.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libmedia-management-common.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B3F8A8132C2CDF003A4FCD /* libMediaManagement-iPhone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libMediaManagement-iPhone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B3F8A9132C2CF1003A4FCD /* libMediaManagement-x86.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libMediaManagement-x86.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00DAEF5C1395A77000B94A05 /* MMTVShowPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTVShowPlaylist.h; sourceTree = "<group>"; };
 		00DAEF5D1395A77000B94A05 /* MMTVShowPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTVShowPlaylist.m; sourceTree = "<group>"; };
 		00DAEF611395AA5A00B94A05 /* MMTVShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTVShow.h; sourceTree = "<group>"; };
 		00DAEF621395AA5B00B94A05 /* MMTVShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTVShow.m; sourceTree = "<group>"; };
+		00E011061490976800E3C4F0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		00E011071490976800E3C4F0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		00E011081490976800E3C4F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		00E0110B1490976900E3C4F0 /* MediaManagement-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaManagement-Prefix.pch"; sourceTree = "<group>"; };
+		00E0110C1490976900E3C4F0 /* MediaManagement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaManagement.h; sourceTree = "<group>"; };
+		00E0110D1490976900E3C4F0 /* MediaManagement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaManagement.m; sourceTree = "<group>"; };
 		00E3FA94138233780017BDC1 /* MMArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMArtist.h; sourceTree = "<group>"; };
 		00E3FA95138233780017BDC1 /* MMArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMArtist.m; sourceTree = "<group>"; };
 		00FC74791380C9BB0057747B /* MMContentGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContentGroup.h; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 			children = (
 				00323DD9132C2B21003BED87 /* Resources-iPad */,
 				00323DA2132C29A8003BED87 /* MediaManagementCommon */,
+				00E011091490976900E3C4F0 /* MediaManagement */,
 				00323D9F132C29A8003BED87 /* Frameworks */,
 				00323D9E132C29A8003BED87 /* Products */,
 			);
@@ -127,8 +134,8 @@
 		00323D9E132C29A8003BED87 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-arm.a */,
-				00B3F8A9132C2CF1003A4FCD /* libmedia-management-common.a */,
+				00B3F8A8132C2CDF003A4FCD /* libMediaManagement-iPhone.a */,
+				00B3F8A9132C2CF1003A4FCD /* libMediaManagement-x86.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,6 +145,7 @@
 			children = (
 				00323DA0132C29A8003BED87 /* Foundation.framework */,
 				00323DB5132C2A96003BED87 /* Cocoa.framework */,
+				00E011051490976800E3C4F0 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -263,6 +271,34 @@
 			path = content;
 			sourceTree = "<group>";
 		};
+		00E011051490976800E3C4F0 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00E011061490976800E3C4F0 /* AppKit.framework */,
+				00E011071490976800E3C4F0 /* CoreData.framework */,
+				00E011081490976800E3C4F0 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		00E011091490976900E3C4F0 /* MediaManagement */ = {
+			isa = PBXGroup;
+			children = (
+				00E0110C1490976900E3C4F0 /* MediaManagement.h */,
+				00E0110D1490976900E3C4F0 /* MediaManagement.m */,
+				00E0110A1490976900E3C4F0 /* Supporting Files */,
+			);
+			path = MediaManagement;
+			sourceTree = "<group>";
+		};
+		00E0110A1490976900E3C4F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E0110B1490976900E3C4F0 /* MediaManagement-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -309,9 +345,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		00323DB3132C2A96003BED87 /* media-management-common-x86 */ = {
+		00323DB3132C2A96003BED87 /* MediaManagement-x86 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-x86" */;
+			buildConfigurationList = 00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MediaManagement-x86" */;
 			buildPhases = (
 				00323DB0132C2A96003BED87 /* Sources */,
 				00323DB1132C2A96003BED87 /* Frameworks */,
@@ -321,14 +357,14 @@
 			);
 			dependencies = (
 			);
-			name = "media-management-common-x86";
+			name = "MediaManagement-x86";
 			productName = MediaManagementComm;
-			productReference = 00B3F8A9132C2CF1003A4FCD /* libmedia-management-common.a */;
+			productReference = 00B3F8A9132C2CF1003A4FCD /* libMediaManagement-x86.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		00323DCE132C2B21003BED87 /* media-management-common-arm */ = {
+		00323DCE132C2B21003BED87 /* MediaManagement-iPhone */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-arm" */;
+			buildConfigurationList = 00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MediaManagement-iPhone" */;
 			buildPhases = (
 				00323DCF132C2B21003BED87 /* Sources */,
 				00323DD1132C2B21003BED87 /* Frameworks */,
@@ -338,9 +374,9 @@
 			);
 			dependencies = (
 			);
-			name = "media-management-common-arm";
+			name = "MediaManagement-iPhone";
 			productName = MediaManagementCommon;
-			productReference = 00B3F8A8132C2CDF003A4FCD /* libmedia-management-common-arm.a */;
+			productReference = 00B3F8A8132C2CDF003A4FCD /* libMediaManagement-iPhone.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -364,8 +400,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00323DCE132C2B21003BED87 /* media-management-common-arm */,
-				00323DB3132C2A96003BED87 /* media-management-common-x86 */,
+				00323DCE132C2B21003BED87 /* MediaManagement-iPhone */,
+				00323DB3132C2A96003BED87 /* MediaManagement-x86 */,
 			);
 		};
 /* End PBXProject section */
@@ -463,9 +499,9 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
-				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
-				PRODUCT_NAME = "media-management-common";
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
+				PRIVATE_HEADERS_FOLDER_PATH = MediaManagement;
+				PRODUCT_NAME = "MediaManagement-x86";
+				PUBLIC_HEADERS_FOLDER_PATH = MediaManagement;
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
 			};
@@ -490,9 +526,9 @@
 					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
-				PRODUCT_NAME = "media-management-common";
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
+				PRIVATE_HEADERS_FOLDER_PATH = MediaManagement;
+				PRODUCT_NAME = "MediaManagement-x86";
+				PUBLIC_HEADERS_FOLDER_PATH = MediaManagement;
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
 			};
@@ -512,9 +548,9 @@
 					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
-				PRODUCT_NAME = "media-management-common-arm";
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
+				PRIVATE_HEADERS_FOLDER_PATH = MediaManagement;
+				PRODUCT_NAME = "MediaManagement-iPhone";
+				PUBLIC_HEADERS_FOLDER_PATH = MediaManagement;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -533,9 +569,9 @@
 					"\"$(SRCROOT)/Frameworks/JSON/x86\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
-				PRODUCT_NAME = "media-management-common-arm";
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/MediaManagement;
+				PRIVATE_HEADERS_FOLDER_PATH = MediaManagement;
+				PRODUCT_NAME = "MediaManagement-iPhone";
+				PUBLIC_HEADERS_FOLDER_PATH = MediaManagement;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
@@ -552,7 +588,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-x86" */ = {
+		00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MediaManagement-x86" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00323DBF132C2A96003BED87 /* Debug */,
@@ -561,7 +597,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "media-management-common-arm" */ = {
+		00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MediaManagement-iPhone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00323DD6132C2B21003BED87 /* Debug */,
