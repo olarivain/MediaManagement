@@ -30,6 +30,7 @@
 }
 
 
+@synthesize parent;
 @synthesize contentId;
 @synthesize playlistId;
 @synthesize name;

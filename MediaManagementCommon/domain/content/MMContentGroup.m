@@ -54,7 +54,7 @@
 
 - (BOOL) removeContentList: (MMContentList*) list
 {
-  if(![contentLists containsObject: list])
+  if(![contentLists containsObject: list] || list == [self defaultContentList])
   {
     return NO;
   }

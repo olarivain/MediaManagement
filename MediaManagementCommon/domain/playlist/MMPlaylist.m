@@ -15,6 +15,7 @@
 @property (nonatomic, readwrite, strong) NSArray *contentGroups;
 
 - (id) initWithContentKind: (MMContentKind) kind;
+- (MMContentList*) contentListForContent: (MMContent *) content;
 @end
 
 @implementation MMPlaylist
@@ -77,31 +78,35 @@
   return  kind != USER && kind != UNKNOWN;
 }
 
+- (BOOL) belongsToPlaylist: (MMContent *) content {
+  // content doesn't belong here if the kind doesn't match or if it's
+  // a user content
+  return content.kind == kind && kind != USER;
+}
+
 - (void) addContent:(MMContent *)added
 {
-  // refuse to add content if the content's kind doesn't match ours
-  // OR always allow additions if we're a user plauylist
-  if(added.kind != kind || kind == USER)
-  {
+  // don't add content that doesn't belong here.
+  if(![self belongsToPlaylist: added]){
     return;
   }
   
-  MMContentGroup *defaultGroup = [self defaultContentGroup];
-  MMContentList *defaultList = [defaultGroup defaultContentList];
+  MMContentList *defaultList = [self contentListForContent: added];
   
   // add object to content list and callback for subclasses
   BOOL didAdd = [defaultList addContent: added];
   if(didAdd || defaultList == nil)
   {
     added.playlistId = self.uniqueId;
+    added.parent = self;
     [self contentAdded: added];
   }
 }
 
 - (void) removeContent:(MMContent *) removed
 {
-  MMContentGroup *defaultGroup = [self defaultContentGroup];
-  MMContentList *defaultList = [defaultGroup defaultContentList];
+  
+  MMContentList *defaultList = [self contentListForContent: removed];
   
   // remove it and callback for subclasses if needed
   BOOL didRemove = [defaultList removeContent: removed];
@@ -109,6 +114,14 @@
   {
     [self contentRemoved: removed];
   }
+}
+
+#warning maybe add this to the client side categories? not sure it makes any sense in the common lib since it's a pure client side operation
+- (void) updateContent: (MMContent *) content
+{
+  // for now, remove the bastard, and readd it
+  [self removeContent: content];
+  [self addContent: content];
 }
 
 - (void) clear
@@ -166,11 +179,16 @@
   return contentGroup;
 }
 
-- (MMContentList*) defaultContentList
+- (MMContentList*) contentListForContent: (MMContent *) content
 {
   MMContentGroup *contentGroup = [self defaultContentGroup];
   MMContentList *contentList = [contentGroup defaultContentList];
   return contentList;
+}
+
+- (MMContentList *) defaultContentList
+{
+  return [[self defaultContentGroup] defaultContentList];
 }
 
 - (MMContentList*) contentListsWithType: (MMContentGroupType) contentType andName: (NSString*) listName

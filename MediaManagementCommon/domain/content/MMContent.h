@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class MMPlaylist;
+
 typedef enum MMContentKind
 {
   MUSIC = 0,
@@ -26,6 +28,9 @@ typedef enum MMContentKind
 @interface MMContent : NSObject 
 {
   @private
+  
+  __weak MMPlaylist *parent;
+  
   NSString *contentId;
   
   // common to all content
@@ -49,6 +54,8 @@ typedef enum MMContentKind
 }
 
 + (id) content: (MMContentKind) kind;
+
+@property (nonatomic, readwrite, weak) MMPlaylist *parent;
 
 @property (nonatomic, readwrite, assign) MMContentKind kind;
 

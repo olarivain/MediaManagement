@@ -18,7 +18,7 @@
 // of Albums or Seaons, which in turn have the actual MMContent objects.
 // The purpose of this class is to provide a decently simple abstraction of the multiple grouping criteria
 // iTunes System library provide.
-// Since objective-c's sorting api sorts big time, and also because this code will mostly be running on iphone
+// Since objective-c's sorting api sucks big time, and also because this code will mostly be running on iphone
 // with somewhat limited computing resources, the sorting of the subcontent has to be explicitly called, otherwise
 // elements will be sorted in the order the content has been added to it which is pretty random.
 // Note that sorting will NOT recursively sort children MMContentList if there are any. ie, sending MMArtist the sortContent message

@@ -62,13 +62,43 @@
 - (BOOL) removeContent: (MMContent*)  newContent
 {
   // remove content only if we actually have it
-  if(![content containsObject: newContent])
+  if(![self hasChildren]) 
+  {
+    if(![content containsObject: newContent])
+    {
+      return NO;
+    }
+    
+    [content removeObject: newContent];
+    if([content count] == 0)
+    {
+      [group removeContentList: self];
+    }
+    return YES;
+  }
+  
+  BOOL removed = NO;
+  NSMutableArray *emptyChildren = [NSMutableArray arrayWithCapacity: [children count]];
+  for(MMContentList *child in children)
+  {
+    removed |= [child removeContent: newContent];
+    if([[child allContent] count] == 0)
+    {
+      [emptyChildren addObject: child];
+    }
+  }
+  
+  if(!removed)
   {
     return NO;
   }
   
-  [content removeObject: newContent];
-  if([content count] == 0)
+  for(MMContentList *emptyChild in emptyChildren)
+  {
+    [self removeChild: emptyChild];
+  }
+  
+  if([[self allContent] count] == 0)
   {
     [group removeContentList: self];
   }

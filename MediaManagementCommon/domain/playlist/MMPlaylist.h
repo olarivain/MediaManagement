@@ -37,6 +37,7 @@
 
 - (void) addContent: (MMContent*) content;
 - (void) removeContent: (MMContent*) content;
+- (void) updateContent: (MMContent *) content;
 
 - (void) addContentList: (MMContentList*) contentList;
 - (void) removeContentList: (MMContentList*) contentList;
@@ -51,5 +52,7 @@
 - (void) sortContent;
 
 - (BOOL) isSystem;
+
+- (BOOL) belongsToPlaylist: (MMContent *) content;
 
 @end

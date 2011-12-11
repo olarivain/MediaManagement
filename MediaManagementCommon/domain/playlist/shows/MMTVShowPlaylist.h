@@ -11,7 +11,8 @@
 
 @interface MMTVShowPlaylist : MMPlaylist 
 {
-  MMContentList *unknownShow;
+  __strong MMContentGroup *defaultGroup;
+  __strong MMContentList *unknownShow;
 }
 
 @end

@@ -325,11 +325,12 @@
 /* Begin PBXLegacyTarget section */
 		00E0111A1490ACD500E3C4F0 /* MediaManagementCommon-Workspace */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
+			buildArgumentsString = "clean build deploy";
 			buildConfigurationList = 00E0111B1490ACD500E3C4F0 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon-Workspace" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/rake;
+			buildWorkingDirectory = "";
 			dependencies = (
 			);
 			name = "MediaManagementCommon-Workspace";
@@ -654,6 +655,7 @@
 				00E0111D1490ACD500E3C4F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

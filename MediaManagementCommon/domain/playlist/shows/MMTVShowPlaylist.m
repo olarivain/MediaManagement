@@ -12,7 +12,6 @@
 @interface MMTVShowPlaylist()
 - (MMContentList*) tvShowForContent: (MMContent*) content create: (BOOL) create;
 
-@property (nonatomic, readwrite, strong) MMContentList *unknownShow;
 @end
 
 @implementation MMTVShowPlaylist
@@ -41,21 +40,26 @@
   return self;
 }
 
-
-@synthesize unknownShow;
-
 - (MMContentGroup*) defaultContentGroup
 {
-  return nil;
+  return defaultGroup;
 }
 
 - (NSArray*) initializeContentGroups
 {
-  MMContentGroup *series = [MMContentGroup contentGroupWithName:@"Series" andType: SERIES];
+  defaultGroup = [MMContentGroup contentGroupWithName:@"Series" andType: SERIES];
+  return [NSArray arrayWithObject: defaultGroup];
+}
+
+- (void) initializeContentLists 
+{
   unknownShow = [[MMTVShow alloc] initWithType: SERIES andName: @"Unknown Series"];
-  [series addContentList: unknownShow];
-  
-  return [NSArray arrayWithObject: series];
+  [self addContentList: unknownShow];
+}
+
+- (MMContentList*) contentListForContent: (MMContent *) content
+{
+  return [self tvShowForContent: content create:YES];
 }
 
 #pragma mark - MMMediaLibrary callbacks

@@ -3,13 +3,13 @@ require 'XCodeProduct'
 
 name = "MediaManagement"
 silenceBuilds = true
-products = [ XCodeProduct.new(name, "#{name}-iPhone", "Release", ["iphoneos", "iphonesimulator"]),
-			XCodeProduct.new(name, "#{name}-x86", "Release", ["macosx"])]
+products = [ XCodeProduct.new(name, "#{name}-iPhone", "Debug", ["iphoneos", "iphonesimulator"]),
+			XCodeProduct.new(name, "#{name}-x86", "Debug", ["macosx"])]
 			
 #			{"name" => "#{name}-iPhone", "configuration" => "Release", "sdks" => ["iphoneos", "iphonesimulator"]},
 #			{"name" => "#{name}-MacOSX", "configuration" => "Release", "sdks" => ["macosx"]}
 #			]
-builder = XCodeDeployer.new(products)
+builder = XCodeDeployer.new(products, false)
 
 task :setup do
 	builder.setup

@@ -28,4 +28,6 @@
 
 - (void) clear;
 
+- (void) updateContent: (MMContent *) content;
+
 @end
