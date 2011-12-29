@@ -16,11 +16,15 @@
 @interface MMTitleList : NSObject
 {
   __strong NSMutableArray *titles;
+  __strong NSString *name;
+  __strong NSString *titleListId;
 }
 
-+ (MMTitleList *) titleList;
++ (MMTitleList *) titleListWithId: (NSString *) titleListId;
 
 @property (nonatomic, readonly) NSArray *titles;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *titleListId;
 
 - (void) addtitle: (MMTitle *) title;
 

@@ -10,23 +10,31 @@
 
 #import "MMTitle.h"
 
+@interface MMTitleList()
+- (id) initWithId: (NSString *) aTitleListId;
+@end
+
 @implementation MMTitleList
 
-+ (MMTitleList *) titleList
++ (MMTitleList *) titleListWithId: (NSString *) titleListId
 {
-  return [[MMTitleList alloc] init];
+  return [[MMTitleList alloc] initWithId: titleListId];
 }
 
-- (id) init
+- (id) initWithId: (NSString *) aTitleListId
 {
   self = [super init];
   if(self)
   {
     titles = [NSMutableArray arrayWithCapacity: 10];
+    titleListId = aTitleListId;
+    name = [[titleListId pathComponents] lastObject];
   }
   return self;
 }
 
+@synthesize titleListId;
+@synthesize name;
 @synthesize titles;
 
 #pragma mark - Title management

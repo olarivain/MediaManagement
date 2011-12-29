@@ -26,9 +26,15 @@
   {
     index = anIndex;
     chapterCount = aChapterCount;
+#warning this will at 90000KHz, don't forget to convert!!!
     duration = aDuration;
   }
   return self;
 }
+
+@synthesize name;
+@synthesize index;
+@synthesize duration;
+@synthesize chapterCount;
 
 @end

@@ -18,6 +18,11 @@
   NSTimeInterval duration;
 }
 
+@property (nonatomic, readonly) NSInteger index;
+@property (nonatomic, readonly) NSInteger chapterCount;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSTimeInterval duration;
+
 + (MMTitle *) titleWithIndex: (NSInteger) index chapterCount: (NSInteger) chapterCount andDuration: (NSInteger) duration;
 
 @end
