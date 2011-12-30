@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		000758E8136E46860067644F /* MMContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE52D136E1215008EEEA5 /* MMContent.m */; };
 		000758F0136E46A70067644F /* MMContent.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52C136E1215008EEEA5 /* MMContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0023637514ACF9550084A054 /* MMSoundTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0023636D14ACF9550084A054 /* MMSoundTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0023637614ACF9550084A054 /* MMSoundTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0023636D14ACF9550084A054 /* MMSoundTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0023637714ACF9550084A054 /* MMSoundTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023636E14ACF9550084A054 /* MMSoundTrack.m */; };
-		0023637814ACF9550084A054 /* MMSoundTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023636E14ACF9550084A054 /* MMSoundTrack.m */; };
+		0023637514ACF9550084A054 /* MMAudioTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0023636D14ACF9550084A054 /* MMAudioTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0023637614ACF9550084A054 /* MMAudioTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0023636D14ACF9550084A054 /* MMAudioTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0023637714ACF9550084A054 /* MMAudioTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023636E14ACF9550084A054 /* MMAudioTrack.m */; };
+		0023637814ACF9550084A054 /* MMAudioTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023636E14ACF9550084A054 /* MMAudioTrack.m */; };
 		0023637914ACF9550084A054 /* MMSubtitleTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0023636F14ACF9550084A054 /* MMSubtitleTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0023637A14ACF9550084A054 /* MMSubtitleTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0023636F14ACF9550084A054 /* MMSubtitleTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0023637B14ACF9550084A054 /* MMSubtitleTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023637014ACF9550084A054 /* MMSubtitleTrack.m */; };
@@ -82,8 +82,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0023636D14ACF9550084A054 /* MMSoundTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSoundTrack.h; sourceTree = "<group>"; };
-		0023636E14ACF9550084A054 /* MMSoundTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSoundTrack.m; sourceTree = "<group>"; };
+		0023636D14ACF9550084A054 /* MMAudioTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAudioTrack.h; sourceTree = "<group>"; };
+		0023636E14ACF9550084A054 /* MMAudioTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAudioTrack.m; sourceTree = "<group>"; };
 		0023636F14ACF9550084A054 /* MMSubtitleTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSubtitleTrack.h; sourceTree = "<group>"; };
 		0023637014ACF9550084A054 /* MMSubtitleTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSubtitleTrack.m; sourceTree = "<group>"; };
 		0023637114ACF9550084A054 /* MMTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTitle.h; sourceTree = "<group>"; };
@@ -150,8 +150,8 @@
 		0023636C14ACF9550084A054 /* encoder */ = {
 			isa = PBXGroup;
 			children = (
-				0023636D14ACF9550084A054 /* MMSoundTrack.h */,
-				0023636E14ACF9550084A054 /* MMSoundTrack.m */,
+				0023636D14ACF9550084A054 /* MMAudioTrack.h */,
+				0023636E14ACF9550084A054 /* MMAudioTrack.m */,
 				0023636F14ACF9550084A054 /* MMSubtitleTrack.h */,
 				0023637014ACF9550084A054 /* MMSubtitleTrack.m */,
 				0023637114ACF9550084A054 /* MMTitle.h */,
@@ -358,7 +358,7 @@
 				004BBE6313808E4A00B9639B /* MMMusicPlaylist.h in Headers */,
 				004BBE6413808E4A00B9639B /* MMGenericPlaylist.h in Headers */,
 				004BBE6513808E4A00B9639B /* MMPlaylist.h in Headers */,
-				0023637614ACF9550084A054 /* MMSoundTrack.h in Headers */,
+				0023637614ACF9550084A054 /* MMAudioTrack.h in Headers */,
 				0023637A14ACF9550084A054 /* MMSubtitleTrack.h in Headers */,
 				00823F8B14ACFC8F00CEDDEB /* MMTitleAssembler.h in Headers */,
 				00823F8514ACFBD500CEDDEB /* MMContentAssembler.h in Headers */,
@@ -379,7 +379,7 @@
 				004BBE441380877600B9639B /* MMPlaylist.h in Headers */,
 				004BBE471380877600B9639B /* MMMoviesPlaylist.h in Headers */,
 				004BBE491380877600B9639B /* MMMusicPlaylist.h in Headers */,
-				0023637514ACF9550084A054 /* MMSoundTrack.h in Headers */,
+				0023637514ACF9550084A054 /* MMAudioTrack.h in Headers */,
 				0023637914ACF9550084A054 /* MMSubtitleTrack.h in Headers */,
 				0023637D14ACF9550084A054 /* MMTitle.h in Headers */,
 				0023638114ACF9550084A054 /* MMTitleList.h in Headers */,
@@ -399,7 +399,7 @@
 /* Begin PBXLegacyTarget section */
 		00E0111A1490ACD500E3C4F0 /* MediaManagementCommon-Workspace */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "clean build deploy";
+			buildArgumentsString = "build deploy";
 			buildConfigurationList = 00E0111B1490ACD500E3C4F0 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon-Workspace" */;
 			buildPhases = (
 			);
@@ -492,7 +492,7 @@
 				000758E8136E46860067644F /* MMContent.m in Sources */,
 				007719AC137E3A84009A9ADB /* MMContentList.m in Sources */,
 				00E3FA99138233780017BDC1 /* MMArtist.m in Sources */,
-				0023637814ACF9550084A054 /* MMSoundTrack.m in Sources */,
+				0023637814ACF9550084A054 /* MMAudioTrack.m in Sources */,
 				0023637C14ACF9550084A054 /* MMSubtitleTrack.m in Sources */,
 				0023638014ACF9550084A054 /* MMTitle.m in Sources */,
 				0023638414ACF9550084A054 /* MMTitleList.m in Sources */,
@@ -516,7 +516,7 @@
 				00E3FA98138233780017BDC1 /* MMArtist.m in Sources */,
 				00DAEF5F1395A77000B94A05 /* MMTVShowPlaylist.m in Sources */,
 				00DAEF641395AA5B00B94A05 /* MMTVShow.m in Sources */,
-				0023637714ACF9550084A054 /* MMSoundTrack.m in Sources */,
+				0023637714ACF9550084A054 /* MMAudioTrack.m in Sources */,
 				0023637B14ACF9550084A054 /* MMSubtitleTrack.m in Sources */,
 				0023637F14ACF9550084A054 /* MMTitle.m in Sources */,
 				0023638314ACF9550084A054 /* MMTitleList.m in Sources */,

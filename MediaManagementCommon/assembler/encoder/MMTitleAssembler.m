@@ -13,12 +13,16 @@
 
 #import "MMTitleList.h"
 #import "MMTitle.h"
+#import "MMAudioTrack.h"
 
 static MMTitleAssembler *sharedInstance;
 
 @interface MMTitleAssembler()
 - (NSArray *) writeTitles: (NSArray *) titles;
 - (NSDictionary *) writeTitle: (MMTitle *) title;
+
+- (NSArray *) writeAudioTracks: (NSArray *) audioTracks;
+- (NSDictionary *) writeAudioTrack: (MMAudioTrack *) audioTrack;
 @end
 
 @implementation MMTitleAssembler
@@ -104,10 +108,49 @@ static MMTitleAssembler *sharedInstance;
   // for now, just dump direct fields in there
   NSMutableDictionary *dto = [NSMutableDictionary dictionaryWithCapacity: 5];
   [dto setInteger: title.index forKey: @"index"];
-  [dto setInteger: title.chapterCount forKey: @"chapterCount"];
   [dto setInteger: title.duration forKey: @"duration"];
   [dto setObjectNilSafe: title.name forKey: @"name"];
   
+  NSArray *audioTrackDtos = [self writeAudioTracks: title.audioTracks];
+  [dto setObjectNilSafe: audioTrackDtos forKey: @"audioTracks"];
+  
+  return dto;
+}
+
+#pragma mark write audio tracks
+- (NSArray *) writeAudioTracks: (NSArray *) audioTracks
+{
+  if(audioTracks == nil)
+  {
+    return nil;
+  }
+  
+  NSMutableArray *dtos = [NSMutableArray arrayWithCapacity: [audioTracks count]];
+  for(MMAudioTrack *track in audioTracks)
+  {
+    NSDictionary *dto = [self writeAudioTrack: track];
+    if(dto == nil)
+    {
+      continue;
+    }
+    [dtos addObject: dto];
+  }
+  return dtos;
+}
+
+- (NSDictionary *) writeAudioTrack: (MMAudioTrack *) audioTrack
+{
+  if(audioTrack == nil)
+  {
+    return nil;
+  }
+  
+  NSMutableDictionary *dto = [NSMutableDictionary dictionaryWithCapacity: 5];
+  [dto setObjectNilSafe: audioTrack.language forKey: @"language"];
+  [dto setInteger: audioTrack.codec forKey: @"codec"];
+  [dto setInteger: audioTrack.channelCount forKey: @"channelCount"];
+  [dto setInteger: audioTrack.hasLFE forKey: @"lfe"];
+  [dto setInteger: audioTrack.index forKey: @"index"];
   return dto;
 }
 

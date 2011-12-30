@@ -8,21 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
+@class MMAudioTrack;
+@class MMSubtitleTrack;
+
 @interface MMTitle : NSObject
 {
   NSInteger index;
-  NSInteger chapterCount;
   __strong NSString *name;
-  __strong NSArray *soundTracks;
-  __strong NSArray *subtitleTrack;
+  __strong NSMutableArray *audioTracks;
+  __strong NSMutableArray *subtitleTracks;
   NSTimeInterval duration;
 }
 
 @property (nonatomic, readonly) NSInteger index;
-@property (nonatomic, readonly) NSInteger chapterCount;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSTimeInterval duration;
+@property (nonatomic, readonly) NSArray *audioTracks;
+@property (nonatomic, readonly) NSArray *subtitleTracks;
 
-+ (MMTitle *) titleWithIndex: (NSInteger) index chapterCount: (NSInteger) chapterCount andDuration: (NSInteger) duration;
++ (MMTitle *) titleWithIndex: (NSInteger) index andDuration: (NSInteger) duration;
+
+- (void) addAudioTrack: (MMAudioTrack *) soundtrack;
+- (void) addSubtitleTrack: (MMSubtitleTrack *) subtitleTrack;
 
 @end
