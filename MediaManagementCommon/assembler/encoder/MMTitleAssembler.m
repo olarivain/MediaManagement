@@ -13,16 +13,23 @@
 
 #import "MMTitleList.h"
 #import "MMTitle.h"
+#import "MMSubtitleTrack.h"
 #import "MMAudioTrack.h"
 
 static MMTitleAssembler *sharedInstance;
 
 @interface MMTitleAssembler()
+// write top level title objects
 - (NSArray *) writeTitles: (NSArray *) titles;
 - (NSDictionary *) writeTitle: (MMTitle *) title;
 
+// audio tracks
 - (NSArray *) writeAudioTracks: (NSArray *) audioTracks;
 - (NSDictionary *) writeAudioTrack: (MMAudioTrack *) audioTrack;
+
+// subtitle tracks
+- (NSArray *) writeSubtitleTracks: (NSArray *) subtitleTracks;
+- (NSDictionary *) writeSubtitleTrack: (MMSubtitleTrack *) subtitleTrack;
 @end
 
 @implementation MMTitleAssembler
@@ -114,6 +121,9 @@ static MMTitleAssembler *sharedInstance;
   NSArray *audioTrackDtos = [self writeAudioTracks: title.audioTracks];
   [dto setObjectNilSafe: audioTrackDtos forKey: @"audioTracks"];
   
+  NSArray *subtitleTrackDtos = [self writeSubtitleTracks: title.subtitleTracks];
+  [dto setObjectNilSafe: subtitleTrackDtos forKey: @"subtitleTracks"];
+  
   return dto;
 }
 
@@ -151,6 +161,41 @@ static MMTitleAssembler *sharedInstance;
   [dto setInteger: audioTrack.channelCount forKey: @"channelCount"];
   [dto setInteger: audioTrack.hasLFE forKey: @"lfe"];
   [dto setInteger: audioTrack.index forKey: @"index"];
+  return dto;
+}
+
+#pragma mark write subtitle tracks
+- (NSArray *) writeSubtitleTracks: (NSArray *) subtitleTracks
+{
+  if(subtitleTracks == nil)
+  {
+    return nil;
+  }
+  
+  NSMutableArray *dtos = [NSMutableArray arrayWithCapacity: [subtitleTracks count]];
+  for(MMSubtitleTrack *subtitleTrack in subtitleTracks)
+  {
+    NSDictionary *dto = [self writeSubtitleTrack: subtitleTrack];
+    if(dto == nil)
+    {
+      continue;
+    }
+    [dtos addObject: dto];
+  }
+  return dtos;
+}
+
+- (NSDictionary *) writeSubtitleTrack: (MMSubtitleTrack *) subtitleTrack
+{
+  if(subtitleTrack == nil)
+  {
+    return nil;
+  }
+  
+  NSMutableDictionary *dto = [NSMutableDictionary dictionaryWithCapacity: 4];
+  [dto setObjectNilSafe: subtitleTrack.language forKey: @"language"];
+  [dto setInteger: subtitleTrack.index forKey: @"index"];
+  [dto setInteger: subtitleTrack.type forKey: @"type"];
   return dto;
 }
 
