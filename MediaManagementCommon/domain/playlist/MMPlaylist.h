@@ -17,12 +17,12 @@
 {
 @private
   MMContentKind kind;
-  NSString *uniqueId;
-  NSString *name;
+  __strong NSString *uniqueId;
+  __strong NSString *name;
   
-  MMLibrary *__weak library;
+  __weak MMLibrary *library;
   
-  NSMutableArray *contentGroups;
+  __strong NSMutableArray *contentGroups;
 }
 
 @property (readonly) MMContentKind kind;

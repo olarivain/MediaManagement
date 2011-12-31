@@ -42,7 +42,7 @@
 
 - (void) addAudioTrack: (MMAudioTrack *) soundtrack
 {
-  if([audioTracks containsObject: soundtrack])
+  if(soundtrack == nil || [audioTracks containsObject: soundtrack])
   {
     return;
   }
@@ -52,7 +52,7 @@
 
 - (void) addSubtitleTrack: (MMSubtitleTrack *) subtitleTrack
 {
-  if([subtitleTracks containsObject: subtitleTrack])
+  if(subtitleTrack == nil || [subtitleTracks containsObject: subtitleTrack])
   {
     return;
   }

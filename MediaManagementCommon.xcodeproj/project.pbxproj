@@ -638,10 +638,7 @@
 					"$(inherited)",
 					"/usr/local/xcodeproducts/KraCommons-iPhone/LATEST/",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lKraCommons-iPhone",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = MediaManagement;
 				PRODUCT_NAME = "MediaManagement-iPhone";
 				PUBLIC_HEADERS_FOLDER_PATH = MediaManagement;
@@ -663,10 +660,7 @@
 					"$(inherited)",
 					"/usr/local/xcodeproducts/KraCommons-iPhone/LATEST/",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lKraCommons-iPhone",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = MediaManagement;
 				PRODUCT_NAME = "MediaManagement-iPhone";
 				PUBLIC_HEADERS_FOLDER_PATH = MediaManagement;

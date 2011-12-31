@@ -40,7 +40,7 @@
 #pragma mark - Title management
 - (void) addtitle:(MMTitle *)title
 {
-  if([titles containsObject: title])
+  if(title == nil || [titles containsObject: title])
   {
     return;
   }

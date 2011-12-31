@@ -12,8 +12,6 @@
 
 @interface MMPlaylist()
 
-@property (nonatomic, readwrite, strong) NSArray *contentGroups;
-
 - (id) initWithContentKind: (MMContentKind) kind;
 - (MMContentList*) contentListForContent: (MMContent *) content;
 @end
@@ -51,19 +49,11 @@
   if (self) 
   {
     kind = contentKind;
-    self.contentGroups = [self initializeContentGroups];
+    contentGroups = [self initializeContentGroups];
     [self initializeContentLists];
   }
   
   return self;
-}
-
-
-
-- (void)dealloc
-{
-  self.library = nil;
-
 }
 
 @synthesize kind;

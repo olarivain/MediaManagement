@@ -19,7 +19,8 @@
 static MMTitleAssembler *sharedInstance;
 
 @interface MMTitleAssembler()
-// write top level title objects
+// write methods
+// top level title objects
 - (NSArray *) writeTitles: (NSArray *) titles;
 - (NSDictionary *) writeTitle: (MMTitle *) title;
 
@@ -30,6 +31,16 @@ static MMTitleAssembler *sharedInstance;
 // subtitle tracks
 - (NSArray *) writeSubtitleTracks: (NSArray *) subtitleTracks;
 - (NSDictionary *) writeSubtitleTrack: (MMSubtitleTrack *) subtitleTrack;
+
+// create methods
+// top level title objects
+- (MMTitle *) createTitle: (NSDictionary *) dto;
+
+// audio tracks
+- (MMAudioTrack *) createAudioTrack: (NSDictionary *) dto;
+
+//subtitle tracks
+- (MMSubtitleTrack *) createSubtitleTrack: (NSDictionary *) dto;
 @end
 
 @implementation MMTitleAssembler
@@ -115,7 +126,7 @@ static MMTitleAssembler *sharedInstance;
   // for now, just dump direct fields in there
   NSMutableDictionary *dto = [NSMutableDictionary dictionaryWithCapacity: 5];
   [dto setInteger: title.index forKey: @"index"];
-  [dto setInteger: title.duration forKey: @"duration"];
+  [dto setDouble: title.duration forKey: @"duration"];
   [dto setObjectNilSafe: title.name forKey: @"name"];
   
   NSArray *audioTrackDtos = [self writeAudioTracks: title.audioTracks];
@@ -200,10 +211,84 @@ static MMTitleAssembler *sharedInstance;
 }
 
 #pragma mark - Creating title list (DTO -> domain)
-- (MMTitleList *) createTitleList: (NSDictionary *) titleList
+- (MMTitleList *) createTitleList: (NSDictionary *) dto
 {
-#warning implement.
-  return nil;
+  if(dto == nil)
+  {
+    return nil;
+  }
+
+  NSString *titleListId = [dto nullSafeForKey: @"id"];
+  MMTitleList *titleList = [MMTitleList titleListWithId: titleListId];
+  NSArray *titleDtos = [dto nullSafeForKey: @"titles"];
+  for(NSDictionary *titleDto in titleDtos)
+  {
+    MMTitle *title = [self createTitle: dto];
+    [titleList addtitle: title];
+  }
+  
+  return titleList;
+}
+
+- (MMTitle *) createTitle: (NSDictionary *) dto
+{
+  if(dto == nil)
+  {
+    return nil;
+  }
+  
+  // build MMTitle
+  NSInteger index = [dto integerForKey: @"index"];
+  NSTimeInterval duration = [dto doubleForKey: @"duration"];
+  MMTitle *title = [MMTitle titleWithIndex: index andDuration:duration];
+
+  // create all audio tracks and add them to hte title object
+  NSArray *audioTrackDtos = [dto nullSafeForKey: @"audioTracks"];
+  for(NSDictionary *audioTrackDto in audioTrackDtos)
+  {
+    MMAudioTrack *audioTrack = [self createAudioTrack: audioTrackDto];
+    [title addAudioTrack: audioTrack];
+  }
+  
+  // create all subtitle track objects and add them to the title object
+  NSArray *subtitleTrackDtos = [dto nullSafeForKey: @"subtitleTracks"];
+  for(NSDictionary *subtitleTrackDto in subtitleTrackDtos)
+  {
+    MMSubtitleTrack *subtitleTrack = [self createSubtitleTrack: subtitleTrackDto];
+    [title addSubtitleTrack: subtitleTrack];
+  }
+  
+  return title;
+}
+
+- (MMAudioTrack *) createAudioTrack: (NSDictionary *) dto
+{
+  if(dto == nil)
+  {
+    return nil;
+  }
+  
+  NSInteger index = [dto integerForKey: @"index"];
+  MMAudioCodec codec = (MMAudioCodec) [dto integerForKey: @"codec"];
+  NSInteger channelCount = [dto integerForKey: @"channellCount"];
+  BOOL lfe = [dto booleanForKey: @"lfe"];
+  NSString *language = [dto nullSafeForKey: @"language"];
+  MMAudioTrack *audioTrack = [MMAudioTrack audioTrackWithIndex: index codec: codec channelCount: channelCount lfe: lfe andLanguage: language];
+  return audioTrack;
+}
+
+- (MMSubtitleTrack *) createSubtitleTrack: (NSDictionary *) dto
+{
+  if(dto == nil)
+  {
+    return nil;
+  }
+  
+  NSInteger index = [dto integerForKey: @"index"];
+  NSString *language = [dto nullSafeForKey: @"language"];
+  MMSubtitleType type = (MMSubtitleType) [dto integerForKey: @"type"];
+  MMSubtitleTrack *track = [MMSubtitleTrack subtitleTrackWithIndex: index language: language andType: type];
+  return track;
 }
 
 @end
