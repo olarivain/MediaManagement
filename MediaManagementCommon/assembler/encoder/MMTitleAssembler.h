@@ -16,6 +16,8 @@
 
 - (NSArray *) writeTitleLists: (NSArray *) titleLists;
 - (NSDictionary *) writeTitleList: (MMTitleList *) titleList;
+
+- (NSArray *) createTitleLists: (NSArray *) dtos;
 - (MMTitleList *) createTitleList: (NSDictionary *) titleList;
 
 @end

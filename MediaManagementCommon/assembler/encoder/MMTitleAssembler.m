@@ -211,6 +211,26 @@ static MMTitleAssembler *sharedInstance;
 }
 
 #pragma mark - Creating title list (DTO -> domain)
+- (NSArray *) createTitleLists: (NSArray *) dtos
+{
+  if(dtos == nil)
+  {
+    return nil;
+  }
+  
+  NSMutableArray *titleLists = [NSMutableArray arrayWithCapacity: [dtos count]];
+  for(NSDictionary *dto in dtos)
+  {
+    MMTitleList *titleList = [self createTitleList: dto];
+    if(titleList == nil)
+    {
+      continue;
+    }
+    [titleLists addObject: titleList];
+  }
+  return titleLists;
+}
+
 - (MMTitleList *) createTitleList: (NSDictionary *) dto
 {
   if(dto == nil)
