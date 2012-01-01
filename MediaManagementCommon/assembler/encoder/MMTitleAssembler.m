@@ -295,7 +295,7 @@ static MMTitleAssembler *sharedInstance;
   
   NSInteger index = [dto integerForKey: @"index"];
   MMAudioCodec codec = (MMAudioCodec) [dto integerForKey: @"codec"];
-  NSInteger channelCount = [dto integerForKey: @"channellCount"];
+  NSInteger channelCount = [dto integerForKey: @"channelCount"];
   BOOL lfe = [dto booleanForKey: @"lfe"];
   NSString *language = [dto nullSafeForKey: @"language"];
   MMAudioTrack *audioTrack = [MMAudioTrack audioTrackWithIndex: index codec: codec channelCount: channelCount lfe: lfe andLanguage: language];

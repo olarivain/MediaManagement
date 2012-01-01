@@ -40,28 +40,6 @@
 @synthesize subtitleTracks;
 @synthesize audioTracks;
 
-- (NSString *) audioTracksCount
-{
-  NSInteger count = [audioTracks count];
-  if(count == 0)
-  {
-    return @"no";
-  }
-  
-  return [NSString stringWithFormat:@"%i", count];
-}
-
-- (NSString *) subtitleTracksCount
-{
-  NSInteger count = [subtitleTracks count];
-  if(count == 0)
-  {
-    return @"no";
-  }
-  
-  return [NSString stringWithFormat:@"%i", count];
-}
-
 - (void) addAudioTrack: (MMAudioTrack *) soundtrack
 {
   if(soundtrack == nil || [audioTracks containsObject: soundtrack])
