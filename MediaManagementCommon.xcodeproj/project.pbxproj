@@ -94,6 +94,7 @@
 		0023637214ACF9550084A054 /* MMTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTitle.m; sourceTree = "<group>"; };
 		0023637314ACF9550084A054 /* MMTitleList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTitleList.h; sourceTree = "<group>"; };
 		0023637414ACF9550084A054 /* MMTitleList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTitleList.m; sourceTree = "<group>"; };
+		0028483214AFD48B003F5818 /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 		00323DA0132C29A8003BED87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00323DA4132C29A8003BED87 /* MediaManagementCommon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaManagementCommon-Prefix.pch"; sourceTree = "<group>"; };
 		00323DB5132C2A96003BED87 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -177,6 +178,7 @@
 				00323DA2132C29A8003BED87 /* MediaManagementCommon */,
 				00323D9F132C29A8003BED87 /* Frameworks */,
 				00323D9E132C29A8003BED87 /* Products */,
+				0028483214AFD48B003F5818 /* Rakefile */,
 			);
 			sourceTree = "<group>";
 		};
@@ -409,7 +411,7 @@
 /* Begin PBXLegacyTarget section */
 		00E0111A1490ACD500E3C4F0 /* MediaManagementCommon-Workspace */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "build deploy";
+			buildArgumentsString = "build deploy configuration=${CONFIGURATION}";
 			buildConfigurationList = 00E0111B1490ACD500E3C4F0 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon-Workspace" */;
 			buildPhases = (
 			);

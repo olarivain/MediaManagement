@@ -231,6 +231,16 @@ static MMTitleAssembler *sharedInstance;
   return titleLists;
 }
 
+- (void) updateTitleList: (MMTitleList *) titleList withDto: (NSDictionary *) dto
+{
+  NSArray *titleDtos = [dto nullSafeForKey: @"titles"];
+  for(NSDictionary *titleDto in titleDtos)
+  {
+    MMTitle *title = [self createTitle: titleDto];
+    [titleList addtitle: title];
+  }
+}
+
 - (MMTitleList *) createTitleList: (NSDictionary *) dto
 {
   if(dto == nil)
@@ -240,12 +250,7 @@ static MMTitleAssembler *sharedInstance;
 
   NSString *titleListId = [dto nullSafeForKey: @"id"];
   MMTitleList *titleList = [MMTitleList titleListWithId: titleListId];
-  NSArray *titleDtos = [dto nullSafeForKey: @"titles"];
-  for(NSDictionary *titleDto in titleDtos)
-  {
-    MMTitle *title = [self createTitle: dto];
-    [titleList addtitle: title];
-  }
+  [self updateTitleList: titleList withDto: dto];
   
   return titleList;
 }

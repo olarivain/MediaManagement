@@ -9,17 +9,17 @@
 #import "MMTitle.h"
 
 @interface MMTitle()
-- (id) initWithIndex: (NSInteger) anIndex andDuration: (NSInteger) aDuration;
+- (id) initWithIndex: (NSInteger) anIndex andDuration: (NSTimeInterval) aDuration;
 @end
 
 @implementation MMTitle
 
-+ (MMTitle *) titleWithIndex: (NSInteger) index andDuration: (NSInteger) duration
++ (MMTitle *) titleWithIndex: (NSInteger) index andDuration: (NSTimeInterval) duration
 {
   return [[MMTitle alloc] initWithIndex: index andDuration:duration];
 }
 
-- (id) initWithIndex: (NSInteger) anIndex andDuration: (NSInteger) aDuration
+- (id) initWithIndex: (NSInteger) anIndex andDuration: (NSTimeInterval) aDuration
 {
   self = [super init];
   if(self)
@@ -29,7 +29,7 @@
     
     index = anIndex;
     // this duration is coming from libHB, which provides duration at 90KHz rather than 1 or 1000 Hz
-    duration = aDuration / 90000;
+    duration = aDuration;
   }
   return self;
 }

@@ -25,6 +25,7 @@
 @property (nonatomic, readonly) NSArray *titles;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *titleListId;
+@property (nonatomic, readonly) NSString *encodedTitleListId;
 
 - (void) addtitle: (MMTitle *) title;
 

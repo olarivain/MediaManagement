@@ -37,6 +37,11 @@
 @synthesize name;
 @synthesize titles;
 
+- (NSString *) encodedTitleListId
+{
+  return [[titleListId stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding] stringByReplacingOccurrencesOfString: @"/" withString: @"%2F"];
+}
+
 #pragma mark - Title management
 - (void) addtitle:(MMTitle *)title
 {

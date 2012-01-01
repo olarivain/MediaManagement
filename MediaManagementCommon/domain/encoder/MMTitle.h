@@ -26,7 +26,7 @@
 @property (nonatomic, readonly) NSArray *audioTracks;
 @property (nonatomic, readonly) NSArray *subtitleTracks;
 
-+ (MMTitle *) titleWithIndex: (NSInteger) index andDuration: (NSInteger) duration;
++ (MMTitle *) titleWithIndex: (NSInteger) index andDuration: (NSTimeInterval) duration;
 
 - (void) addAudioTrack: (MMAudioTrack *) soundtrack;
 - (void) addSubtitleTrack: (MMSubtitleTrack *) subtitleTrack;

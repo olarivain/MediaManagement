@@ -3,13 +3,13 @@ require 'XCodeProduct'
 
 name = "MediaManagement"
 silenceBuilds = true
-products = [ XCodeProduct.new(name, "#{name}-iPhone", "Debug", ["iphoneos", "iphonesimulator"]),
-			XCodeProduct.new(name, "#{name}-x86", "Debug", ["macosx"])]
-			
-#			{"name" => "#{name}-iPhone", "configuration" => "Release", "sdks" => ["iphoneos", "iphonesimulator"]},
-#			{"name" => "#{name}-MacOSX", "configuration" => "Release", "sdks" => ["macosx"]}
-#			]
-builder = XCodeDeployer.new(products, false)
+
+commandLineArg = ENV['configuration']
+releaseMode = commandLineArg == nil ? "Release" : commandLineArg
+products = [ XCodeProduct.new(name, "#{name}-iPhone", releaseMode, ["iphoneos", "iphonesimulator"]),
+			XCodeProduct.new(name, "#{name}-x86", releaseMode, ["macosx"])]
+      
+builder = XCodeDeployer.new(products, true)
 
 task :setup do
 	builder.setup
@@ -24,7 +24,7 @@ task :clean do
 end
 
 task :build do
-	puts "building " + name
+	puts "building " + name + " with configuration " + releaseMode
 	builder.build
 end
 
