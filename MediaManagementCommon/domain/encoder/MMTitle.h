@@ -17,6 +17,8 @@
   __strong NSString *name;
   __strong NSMutableArray *audioTracks;
   __strong NSMutableArray *subtitleTracks;
+  
+  BOOL selected;
   NSTimeInterval duration;
 }
 
@@ -25,10 +27,14 @@
 @property (nonatomic, readonly) NSTimeInterval duration;
 @property (nonatomic, readonly) NSArray *audioTracks;
 @property (nonatomic, readonly) NSArray *subtitleTracks;
+@property (nonatomic, readwrite, assign) BOOL selected;
 
 + (MMTitle *) titleWithIndex: (NSInteger) index andDuration: (NSTimeInterval) duration;
 
 - (void) addAudioTrack: (MMAudioTrack *) soundtrack;
 - (void) addSubtitleTrack: (MMSubtitleTrack *) subtitleTrack;
+
+- (void) selectAudioTrack: (MMAudioTrack *) audioTrack;
+- (void) selectSubtitleTrack: (MMSubtitleTrack *) subtitleTrack;
 
 @end

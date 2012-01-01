@@ -19,11 +19,13 @@ typedef enum MMSubtitleType
   NSInteger index;
   __strong NSString *language;
   MMSubtitleType type;
+  BOOL selected;
 }
 
 @property (nonatomic, readonly) NSInteger index;
 @property (nonatomic, readonly) NSString *language;
 @property (nonatomic, readonly) MMSubtitleType type;
+@property (nonatomic, readwrite, assign) BOOL selected;
 
 + (MMSubtitleTrack *) subtitleTrackWithIndex: (NSInteger) index language: (NSString *) language andType: (MMSubtitleType) type;
 

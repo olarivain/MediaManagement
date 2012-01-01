@@ -38,5 +38,6 @@
 @synthesize codec;
 @synthesize hasLFE;
 @synthesize language;
+@synthesize selected;
 
 @end

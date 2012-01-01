@@ -34,5 +34,6 @@
 @synthesize index;
 @synthesize language;
 @synthesize type;
+@synthesize selected;
 
 @end

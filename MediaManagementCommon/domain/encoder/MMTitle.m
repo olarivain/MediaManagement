@@ -8,6 +8,9 @@
 
 #import "MMTitle.h"
 
+#import "MMAudioTrack.h"
+#import "MMSubtitleTrack.h"
+
 @interface MMTitle()
 - (id) initWithIndex: (NSInteger) anIndex andDuration: (NSTimeInterval) aDuration;
 @end
@@ -39,7 +42,9 @@
 @synthesize duration;
 @synthesize subtitleTracks;
 @synthesize audioTracks;
+@synthesize selected;
 
+#pragma mark - adding tracks
 - (void) addAudioTrack: (MMAudioTrack *) soundtrack
 {
   if(soundtrack == nil || [audioTracks containsObject: soundtrack])
@@ -58,6 +63,47 @@
   }
   
   [subtitleTracks addObject: subtitleTrack];
+}
+
+#pragma mark - selecting tracks
+- (void) selectAudioTrack: (MMAudioTrack *) audioTrack
+{
+  // flip the switch on selected track
+  BOOL selected = !audioTrack.selected;
+  audioTrack.selected = selected;
+}
+
+- (void) selectSubtitleTrack: (MMSubtitleTrack *) subtitleTrack
+{
+  BOOL selected = !subtitleTrack.selected;
+  subtitleTrack.selected = selected;
+  
+  BOOL isClosedCaption = subtitleTrack.type == SUBTITLE_CLOSED_CAPTION;
+  
+  // CC was selected, unselect ALL vobsubs, but let other CCs selected
+  if(subtitleTrack.type == SUBTITLE_CLOSED_CAPTION)
+  {
+    for(MMSubtitleTrack *track in subtitleTracks)
+    {
+      if(track != subtitleTrack && track.type == SUBTITLE_VOBSUB)
+      {
+        track.selected = NO;
+      }
+    }
+  }
+  // otherwise, we have a vobsub, unselect all other subtitles - VOBSUB is mutually exclusive
+  else
+  {
+    for(MMSubtitleTrack *track in subtitleTracks)
+    {
+      if(track != subtitleTrack)
+      {
+        track.selected = NO;
+      }
+    }
+  }
+  
+  
 }
 
 @end
