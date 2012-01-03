@@ -66,13 +66,37 @@
 }
 
 #pragma mark - selecting tracks
+#pragma mark Audio
 - (void) selectAudioTrack: (MMAudioTrack *) audioTrack
 {
   // flip the switch on selected track
   BOOL selected = !audioTrack.selected;
   audioTrack.selected = selected;
+  
+  if(selected)
+  {
+    self.selected = YES;
+  }
+  else
+  {
+    self.selected = [[self selectedAudioTracks] count] > 0;
+  }
 }
 
+- (NSArray *) selectedAudioTracks
+{
+  NSMutableArray *selectedAudioTracks = [NSMutableArray arrayWithCapacity: [audioTracks count]];
+  for(MMAudioTrack *track in audioTracks)
+  {
+    if(track.selected)
+    {
+      [selectedAudioTracks addObject: track];
+    }
+  }
+  return selectedAudioTracks;
+}
+
+#pragma mark Subtitles
 - (void) selectSubtitleTrack: (MMSubtitleTrack *) subtitleTrack
 {
   BOOL selected = !subtitleTrack.selected;
@@ -102,8 +126,19 @@
       }
     }
   }
-  
-  
+}
+
+- (NSArray *) selectedSubtitleTracks
+{
+  NSMutableArray *selectedSubtitleTracks = [NSMutableArray arrayWithCapacity: [subtitleTracks count]];
+  for(MMSubtitleTrack *track in subtitleTracks)
+  {
+    if(track.selected)
+    {
+      [selectedSubtitleTracks addObject: track];
+    }
+  }
+  return selectedSubtitleTracks;
 }
 
 @end

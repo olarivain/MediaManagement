@@ -35,6 +35,9 @@
 - (void) addSubtitleTrack: (MMSubtitleTrack *) subtitleTrack;
 
 - (void) selectAudioTrack: (MMAudioTrack *) audioTrack;
+- (NSArray *) selectedAudioTracks;
+
 - (void) selectSubtitleTrack: (MMSubtitleTrack *) subtitleTrack;
+- (NSArray *) selectedSubtitleTracks;
 
 @end

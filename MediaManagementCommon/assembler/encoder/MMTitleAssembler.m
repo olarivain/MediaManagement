@@ -128,6 +128,7 @@ static MMTitleAssembler *sharedInstance;
   [dto setInteger: title.index forKey: @"index"];
   [dto setDouble: title.duration forKey: @"duration"];
   [dto setObjectNilSafe: title.name forKey: @"name"];
+  [dto setInteger: title.selected forKey: @"selected"];
   
   NSArray *audioTrackDtos = [self writeAudioTracks: title.audioTracks];
   [dto setObjectNilSafe: audioTrackDtos forKey: @"audioTracks"];
@@ -172,6 +173,7 @@ static MMTitleAssembler *sharedInstance;
   [dto setInteger: audioTrack.channelCount forKey: @"channelCount"];
   [dto setInteger: audioTrack.hasLFE forKey: @"lfe"];
   [dto setInteger: audioTrack.index forKey: @"index"];
+  [dto setInteger: audioTrack.selected forKey: @"selected"];
   return dto;
 }
 
@@ -207,6 +209,7 @@ static MMTitleAssembler *sharedInstance;
   [dto setObjectNilSafe: subtitleTrack.language forKey: @"language"];
   [dto setInteger: subtitleTrack.index forKey: @"index"];
   [dto setInteger: subtitleTrack.type forKey: @"type"];
+  [dto setInteger: subtitleTrack.selected forKey: @"selected"];
   return dto;
 }
 
@@ -266,6 +269,7 @@ static MMTitleAssembler *sharedInstance;
   NSInteger index = [dto integerForKey: @"index"];
   NSTimeInterval duration = [dto doubleForKey: @"duration"];
   MMTitle *title = [MMTitle titleWithIndex: index andDuration:duration];
+  title.selected = [dto booleanForKey: @"selected"];
 
   // create all audio tracks and add them to hte title object
   NSArray *audioTrackDtos = [dto nullSafeForKey: @"audioTracks"];
@@ -299,6 +303,7 @@ static MMTitleAssembler *sharedInstance;
   BOOL lfe = [dto booleanForKey: @"lfe"];
   NSString *language = [dto nullSafeForKey: @"language"];
   MMAudioTrack *audioTrack = [MMAudioTrack audioTrackWithIndex: index codec: codec channelCount: channelCount lfe: lfe andLanguage: language];
+  audioTrack.selected = [dto booleanForKey: @"selected"];
   return audioTrack;
 }
 
@@ -313,6 +318,7 @@ static MMTitleAssembler *sharedInstance;
   NSString *language = [dto nullSafeForKey: @"language"];
   MMSubtitleType type = (MMSubtitleType) [dto integerForKey: @"type"];
   MMSubtitleTrack *track = [MMSubtitleTrack subtitleTrackWithIndex: index language: language andType: type];
+  track.selected = [dto booleanForKey: @"selected"];
   return track;
 }
 

@@ -53,4 +53,18 @@
   [titles addObject: title];
 }
 
+#pragma mark - Selected titles
+- (NSArray *) selectedTitles
+{
+  NSMutableArray *selectedTitles = [NSMutableArray arrayWithCapacity: [titles count]];
+  for(MMTitle *title in titles)
+  {
+    if(title.selected)
+    {
+      [selectedTitles addObject: title];
+    }
+  }
+  return selectedTitles;
+}
+
 @end
