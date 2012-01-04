@@ -30,5 +30,6 @@
 @property (nonatomic, readonly) NSArray *selectedTitles;
 
 - (void) addtitle: (MMTitle *) title;
+- (NSInteger) indexOfTitle: (MMTitle *) title;
 
 @end

@@ -29,15 +29,18 @@
 @property (nonatomic, readonly) NSArray *subtitleTracks;
 @property (nonatomic, readwrite, assign) BOOL selected;
 
+@property (nonatomic, readonly) NSArray *selectedAudioTracks;
+@property (nonatomic, readonly) NSArray *selectedSubtitleTracks;
+
 + (MMTitle *) titleWithIndex: (NSInteger) index andDuration: (NSTimeInterval) duration;
 
 - (void) addAudioTrack: (MMAudioTrack *) soundtrack;
+- (NSInteger) indexOfAudioTrack: (MMAudioTrack *) audioTrack;
+
 - (void) addSubtitleTrack: (MMSubtitleTrack *) subtitleTrack;
+- (NSInteger) indexOfSubtitleTrack: (MMSubtitleTrack *) subtitleTrack;
 
 - (void) selectAudioTrack: (MMAudioTrack *) audioTrack;
-- (NSArray *) selectedAudioTracks;
-
 - (void) selectSubtitleTrack: (MMSubtitleTrack *) subtitleTrack;
-- (NSArray *) selectedSubtitleTracks;
 
 @end

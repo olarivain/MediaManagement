@@ -31,7 +31,6 @@
     subtitleTracks = [NSMutableArray arrayWithCapacity: 5];
     
     index = anIndex;
-    // this duration is coming from libHB, which provides duration at 90KHz rather than 1 or 1000 Hz
     duration = aDuration;
   }
   return self;
@@ -44,7 +43,8 @@
 @synthesize audioTracks;
 @synthesize selected;
 
-#pragma mark - adding tracks
+#pragma mark - track management
+#pragma mark Audio
 - (void) addAudioTrack: (MMAudioTrack *) soundtrack
 {
   if(soundtrack == nil || [audioTracks containsObject: soundtrack])
@@ -55,6 +55,12 @@
   [audioTracks addObject: soundtrack];
 }
 
+- (NSInteger) indexOfAudioTrack:(MMAudioTrack *)audioTrack
+{
+  return [audioTracks indexOfObject: audioTrack];
+}
+
+#pragma mark Subtitle
 - (void) addSubtitleTrack: (MMSubtitleTrack *) subtitleTrack
 {
   if(subtitleTrack == nil || [subtitleTracks containsObject: subtitleTrack])
@@ -63,6 +69,11 @@
   }
   
   [subtitleTracks addObject: subtitleTrack];
+}
+
+- (NSInteger) indexOfSubtitleTrack:(MMSubtitleTrack *)subtitleTrack
+{
+  return [subtitleTracks indexOfObject: subtitleTrack];
 }
 
 #pragma mark - selecting tracks

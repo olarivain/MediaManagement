@@ -53,6 +53,11 @@
   [titles addObject: title];
 }
 
+- (NSInteger) indexOfTitle: (MMTitle *) title
+{
+  return [titles indexOfObject: title];
+}
+
 #pragma mark - Selected titles
 - (NSArray *) selectedTitles
 {
@@ -65,6 +70,23 @@
     }
   }
   return selectedTitles;
+}
+
+#pragma mark - ID equality
+- (NSUInteger) hash
+{
+  return [titleListId hash];
+}
+
+- (BOOL) isEqual:(id)object
+{
+  if(![object isKindOfClass: [MMTitleList class]])
+  {
+    return NO;
+  }
+  
+  MMTitleList *other = (MMTitleList *) object;
+  return [titleListId isEqualToString: other.titleListId];
 }
 
 @end
