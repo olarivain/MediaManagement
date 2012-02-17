@@ -13,9 +13,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E0111A1490ACD500E3C4F0"
-               BuildableName = "MediaManagementCommon-Workspace"
-               BlueprintName = "MediaManagementCommon"
+               BlueprintIdentifier = "00323DCE132C2B21003BED87"
+               BuildableName = "libMediaManagement-iPhone.a"
+               BlueprintName = "MediaManagement-iPhone"
                ReferencedContainer = "container:MediaManagementCommon.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

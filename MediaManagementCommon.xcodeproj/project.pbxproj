@@ -409,17 +409,17 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXLegacyTarget section */
-		00E0111A1490ACD500E3C4F0 /* MediaManagementCommon-Workspace */ = {
+		00E0111A1490ACD500E3C4F0 /* MediaManagementCommon */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "build deploy configuration=${CONFIGURATION}";
-			buildConfigurationList = 00E0111B1490ACD500E3C4F0 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon-Workspace" */;
+			buildConfigurationList = 00E0111B1490ACD500E3C4F0 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/rake;
 			buildWorkingDirectory = "";
 			dependencies = (
 			);
-			name = "MediaManagementCommon-Workspace";
+			name = MediaManagementCommon;
 			passBuildSettingsInEnvironment = 1;
 			productName = "MediaManagementCommon-Workspace";
 		};
@@ -483,7 +483,7 @@
 			targets = (
 				00323DCE132C2B21003BED87 /* MediaManagement-iPhone */,
 				00323DB3132C2A96003BED87 /* MediaManagement-x86 */,
-				00E0111A1490ACD500E3C4F0 /* MediaManagementCommon-Workspace */,
+				00E0111A1490ACD500E3C4F0 /* MediaManagementCommon */,
 			);
 		};
 /* End PBXProject section */
@@ -758,7 +758,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00E0111B1490ACD500E3C4F0 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon-Workspace" */ = {
+		00E0111B1490ACD500E3C4F0 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E0111C1490ACD500E3C4F0 /* Debug */,
