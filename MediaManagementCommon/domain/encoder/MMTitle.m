@@ -65,7 +65,14 @@
 
 - (MMAudioTrack *) audioTrackWithIndex: (NSInteger) index
 {
-  return [audioTracks boundSafeObjectAtIndex: index];
+  for(MMAudioTrack *track in audioTracks)
+  {
+    if(track.index == index)
+    {
+      return track;
+    }
+  }
+  return nil;
 }
 
 #pragma mark Subtitle
@@ -86,7 +93,14 @@
 
 - (MMSubtitleTrack *) subtitleTrackWithIndex: (NSInteger) index
 {
-  return [subtitleTracks boundSafeObjectAtIndex: index];
+  for(MMSubtitleTrack *track in subtitleTracks)
+  {
+    if(track.index == index)
+    {
+      return track;
+    }
+  }
+  return nil;
 }
 
 #pragma mark - selecting tracks

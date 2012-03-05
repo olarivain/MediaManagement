@@ -32,11 +32,12 @@
 @property (nonatomic, readonly) NSArray *selectedTitles;
 @property (nonatomic, readwrite, assign) BOOL active;
 @property (nonatomic, readwrite, assign) BOOL encoded;
+@property (nonatomic, readonly) BOOL isCompleted;
 
 - (void) addtitle: (MMTitle *) title;
 - (NSInteger) indexOfTitle: (MMTitle *) title;
 - (MMTitle *) titleWithIndex: (NSInteger) index;
 
 - (BOOL) isCompleted;
-
+- (MMTitle *) nextTitleToEncode;
 @end

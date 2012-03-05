@@ -62,7 +62,14 @@
 
 - (MMTitle *) titleWithIndex: (NSInteger) index
 {
-  return [titles boundSafeObjectAtIndex: index];
+  for(MMTitle *title in titles)
+  {
+    if(title.index == index)
+    {
+      return title;
+    }
+  }
+  return nil;
 }
 
 - (BOOL) isCompleted
