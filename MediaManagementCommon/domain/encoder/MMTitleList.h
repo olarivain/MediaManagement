@@ -18,6 +18,8 @@
   __strong NSMutableArray *titles;
   __strong NSString *name;
   __strong NSString *titleListId;
+  BOOL active;
+  BOOL encoded;
 }
 
 + (MMTitleList *) titleListWithId: (NSString *) titleListId;
@@ -28,8 +30,13 @@
 @property (nonatomic, readonly) NSString *encodedTitleListId;
 
 @property (nonatomic, readonly) NSArray *selectedTitles;
+@property (nonatomic, readwrite, assign) BOOL active;
+@property (nonatomic, readwrite, assign) BOOL encoded;
 
 - (void) addtitle: (MMTitle *) title;
 - (NSInteger) indexOfTitle: (MMTitle *) title;
+- (MMTitle *) titleWithIndex: (NSInteger) index;
+
+- (BOOL) isCompleted;
 
 @end

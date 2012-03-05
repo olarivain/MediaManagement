@@ -6,6 +6,7 @@
 //  Copyright (c) 2011 kra. All rights reserved.
 //
 
+#import <KraCommons/NSArray+BoundSafe.h>
 #import "MMTitleList.h"
 
 #import "MMTitle.h"
@@ -36,6 +37,7 @@
 @synthesize titleListId;
 @synthesize name;
 @synthesize titles;
+@synthesize active;
 
 - (NSString *) encodedTitleListId
 {
@@ -56,6 +58,35 @@
 - (NSInteger) indexOfTitle: (MMTitle *) title
 {
   return [titles indexOfObject: title];
+}
+
+- (MMTitle *) titleWithIndex: (NSInteger) index
+{
+  return [titles boundSafeObjectAtIndex: index];
+}
+
+- (BOOL) isCompleted
+{
+  for(MMTitle *title in self.selectedTitles)
+  {
+    if (!title.completed) 
+    {
+      return NO;
+    }
+  }
+  return YES;
+}
+
+- (MMTitle *) nextTitleToEncode
+{
+  for(MMTitle *title in self.selectedTitles)
+  {
+    if(!title.completed)
+    {
+      return title;
+    }
+  }
+  return nil;
 }
 
 #pragma mark - Selected titles

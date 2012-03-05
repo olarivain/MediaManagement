@@ -6,6 +6,7 @@
 //  Copyright (c) 2011 kra. All rights reserved.
 //
 
+#import <KraCommons/NSArray+BoundSafe.h>
 #import "MMTitle.h"
 
 #import "MMAudioTrack.h"
@@ -42,6 +43,8 @@
 @synthesize subtitleTracks;
 @synthesize audioTracks;
 @synthesize selected;
+@synthesize encoding;
+@synthesize completed;
 
 #pragma mark - track management
 #pragma mark Audio
@@ -60,6 +63,11 @@
   return [audioTracks indexOfObject: audioTrack];
 }
 
+- (MMAudioTrack *) audioTrackWithIndex: (NSInteger) index
+{
+  return [audioTracks boundSafeObjectAtIndex: index];
+}
+
 #pragma mark Subtitle
 - (void) addSubtitleTrack: (MMSubtitleTrack *) subtitleTrack
 {
@@ -74,6 +82,11 @@
 - (NSInteger) indexOfSubtitleTrack:(MMSubtitleTrack *)subtitleTrack
 {
   return [subtitleTracks indexOfObject: subtitleTrack];
+}
+
+- (MMSubtitleTrack *) subtitleTrackWithIndex: (NSInteger) index
+{
+  return [subtitleTracks boundSafeObjectAtIndex: index];
 }
 
 #pragma mark - selecting tracks
