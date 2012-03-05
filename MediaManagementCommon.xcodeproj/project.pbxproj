@@ -411,7 +411,7 @@
 /* Begin PBXLegacyTarget section */
 		00E0111A1490ACD500E3C4F0 /* MediaManagementCommon */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "build deploy configuration=${CONFIGURATION}";
+			buildArgumentsString = "build install configuration=${CONFIGURATION}";
 			buildConfigurationList = 00E0111B1490ACD500E3C4F0 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon" */;
 			buildPhases = (
 			);

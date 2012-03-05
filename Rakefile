@@ -28,7 +28,7 @@ task :build do
 	builder.build
 end
 
-task :deploy do
+task :install do
 	puts "Deploying " + name
 	builder.deploy
 end
