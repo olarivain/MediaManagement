@@ -127,6 +127,7 @@ static MMTitleAssembler *sharedInstance;
   [dto setObjectNilSafe: title.name forKey: @"name"];
   [dto setInteger: title.selected forKey: @"selected"];
   [dto setInteger: title.eta forKey: @"eta"];
+  [dto setInteger: title.encoding forKey: @"encoding"];
   [dto setInteger: title.progress forKey: @"progress"];
   [dto setInteger: title.completed forKey: @"completed"];
   
@@ -272,6 +273,7 @@ static MMTitleAssembler *sharedInstance;
   title.selected = [dto booleanForKey: @"selected"];
   title.completed = [dto booleanForKey: @"completed"];
   title.eta = [dto integerForKey: @"eta"];
+  title.encoding = [dto integerForKey: @"encoding"];
   title.progress = [dto integerForKey: @"progress"];
 
   // create all audio tracks and add them to hte title object
