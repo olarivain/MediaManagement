@@ -120,7 +120,7 @@
   {
     [contentGroup clear];
   }
-  contentGroups = [self initializeContentGroups];
+
   [self initializeContentLists];
 }
 
