@@ -47,6 +47,22 @@
 @synthesize episodeNumber;
 @synthesize season;
 
+#pragma mark - synthetic getter
+- (NSString *) durationHumanReadable
+{
+  NSInteger hours = [duration integerValue] / (60 * 60);
+  NSInteger leftOver = [duration integerValue] % (60 * 60);
+  NSInteger minutes = leftOver / 60;
+  NSInteger seconds = leftOver % 60;
+  
+  if(hours == 0)
+  {
+    return [NSString stringWithFormat: @"%im%02i", minutes, seconds];
+  }
+  
+  return [NSString stringWithFormat: @"%ih%02i", hours, minutes];
+}
+
 #pragma mark - Convenience accessors to determine if an attribute is set.
 - (BOOL) isSet: (NSString*) value
 {

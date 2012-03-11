@@ -67,6 +67,7 @@ typedef enum MMContentKind
 @property (nonatomic, readwrite, strong) NSString *description;
 @property (nonatomic, readwrite, strong) NSString *genre;
 @property (nonatomic, readwrite, strong) NSNumber *duration;
+@property (nonatomic, readonly) NSString *durationHumanReadable;
 
 @property (nonatomic, readwrite, strong) NSString *album;
 @property (nonatomic, readwrite, strong) NSString *artist;
