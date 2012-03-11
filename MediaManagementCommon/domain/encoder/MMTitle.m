@@ -13,6 +13,9 @@
 #import "MMSubtitleTrack.h"
 
 @interface MMTitle()
+
+@property (nonatomic, readonly) NSString *formattedEta;
+
 - (id) initWithIndex: (NSInteger) anIndex andDuration: (NSTimeInterval) aDuration;
 @end
 
@@ -51,6 +54,36 @@
 @synthesize encoding;
 @synthesize completed;
 @synthesize targetPath;
+
+#pragma mark - Synthetic getters
+- (NSString *) formattedEta
+{
+  if(eta < 0)
+  {
+    return @"";
+  }
+  
+  NSInteger hours = eta / (60 * 60);
+  NSInteger leftOver = eta % (60 * 60);
+  NSInteger minutes = leftOver / 60;
+  NSInteger seconds = leftOver % 60;
+
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+  return [NSString stringWithFormat: @"%i:%02i:%02i", hours, minutes, seconds];
+#else
+  return [NSString stringWithFormat: @"%dl:%02dl:%02dl", hours, minutes, seconds];
+#endif
+}
+- (NSString *) formattedProgress
+{
+  // nothing to show if completed or encoding
+  if(completed || !encoding)
+  {
+    return @"";
+  }
+  
+  return [NSString stringWithFormat: @"%i% (%@)", progress, self.formattedEta];
+}
 
 #pragma mark - track management
 #pragma mark Audio

@@ -32,6 +32,7 @@
 @property (nonatomic, readonly) NSTimeInterval duration;
 @property (nonatomic, readwrite, assign) NSInteger progress;
 @property (nonatomic, readwrite, assign) NSInteger eta;
+@property (nonatomic, readonly) NSString *formattedProgress;
 @property (nonatomic, readonly) NSArray *audioTracks;
 @property (nonatomic, readonly) NSArray *subtitleTracks;
 @property (nonatomic, readwrite, strong) NSString *targetPath;
