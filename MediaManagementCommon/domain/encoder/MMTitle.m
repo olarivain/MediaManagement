@@ -74,6 +74,7 @@
   return [NSString stringWithFormat: @"%dl:%02dl:%02dl", hours, minutes, seconds];
 #endif
 }
+
 - (NSString *) formattedProgress
 {
   // nothing to show if completed or encoding
@@ -82,7 +83,17 @@
     return @"";
   }
   
-  return [NSString stringWithFormat: @"%i% (%@)", progress, self.formattedEta];
+  return [NSString stringWithFormat: @"%i%% (%@ left)", progress, self.formattedEta];
+}
+
+- (NSString *) formattedStatus
+{
+  if(!selected)
+  {
+    return @"Not selected";
+  }
+  
+  return encoding ? @"Encoding" : @"Pending";
 }
 
 #pragma mark - track management
