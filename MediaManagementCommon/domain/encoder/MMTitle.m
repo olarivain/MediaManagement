@@ -28,6 +28,9 @@
   self = [super init];
   if(self)
   {
+    eta = -1;
+    progress = 0;
+    completed = NO;
     audioTracks = [NSMutableArray arrayWithCapacity: 5];
     subtitleTracks = [NSMutableArray arrayWithCapacity: 5];
     
