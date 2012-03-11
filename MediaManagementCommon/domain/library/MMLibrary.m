@@ -11,7 +11,7 @@
 #import "MMPlaylist.h"
 
 @interface MMLibrary ()
-@property (nonatomic, readwrite, strong) NSMutableArray *playlists;
+@property (nonatomic, readwrite, strong) NSArray *playlists;
 @property (nonatomic, readwrite, strong) NSString *uniqueId;
 @end
 

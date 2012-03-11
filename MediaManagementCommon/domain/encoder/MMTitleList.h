@@ -19,7 +19,6 @@
   __strong NSString *name;
   __strong NSString *titleListId;
   BOOL active;
-  BOOL encoded;
 }
 
 + (MMTitleList *) titleListWithId: (NSString *) titleListId;
@@ -31,7 +30,6 @@
 
 @property (nonatomic, readonly) NSArray *selectedTitles;
 @property (nonatomic, readwrite, assign) BOOL active;
-@property (nonatomic, readwrite, assign) BOOL encoded;
 @property (nonatomic, readonly) BOOL isCompleted;
 
 - (void) addtitle: (MMTitle *) title;

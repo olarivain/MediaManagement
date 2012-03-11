@@ -45,6 +45,7 @@
 @synthesize selected;
 @synthesize encoding;
 @synthesize completed;
+@synthesize targetPath;
 
 #pragma mark - track management
 #pragma mark Audio
@@ -63,11 +64,11 @@
   return [audioTracks indexOfObject: audioTrack];
 }
 
-- (MMAudioTrack *) audioTrackWithIndex: (NSInteger) index
+- (MMAudioTrack *) audioTrackWithIndex: (NSInteger) anIndex
 {
   for(MMAudioTrack *track in audioTracks)
   {
-    if(track.index == index)
+    if(track.index == anIndex)
     {
       return track;
     }
@@ -91,11 +92,11 @@
   return [subtitleTracks indexOfObject: subtitleTrack];
 }
 
-- (MMSubtitleTrack *) subtitleTrackWithIndex: (NSInteger) index
+- (MMSubtitleTrack *) subtitleTrackWithIndex: (NSInteger) anIndex
 {
   for(MMSubtitleTrack *track in subtitleTracks)
   {
-    if(track.index == index)
+    if(track.index == anIndex)
     {
       return track;
     }
@@ -108,10 +109,10 @@
 - (void) selectAudioTrack: (MMAudioTrack *) audioTrack
 {
   // flip the switch on selected track
-  BOOL selected = !audioTrack.selected;
-  audioTrack.selected = selected;
+  BOOL isSelected = !audioTrack.selected;
+  audioTrack.selected = isSelected;
   
-  if(selected)
+  if(isSelected)
   {
     self.selected = YES;
   }
@@ -137,11 +138,9 @@
 #pragma mark Subtitles
 - (void) selectSubtitleTrack: (MMSubtitleTrack *) subtitleTrack
 {
-  BOOL selected = !subtitleTrack.selected;
-  subtitleTrack.selected = selected;
-  
-  BOOL isClosedCaption = subtitleTrack.type == SUBTITLE_CLOSED_CAPTION;
-  
+  BOOL isSelected = !subtitleTrack.selected;
+  subtitleTrack.selected = isSelected;
+    
   // CC was selected, unselect ALL vobsubs, but let other CCs selected
   if(subtitleTrack.type == SUBTITLE_CLOSED_CAPTION)
   {

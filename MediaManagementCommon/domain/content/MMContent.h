@@ -31,25 +31,26 @@ typedef enum MMContentKind
   
   __weak MMPlaylist *parent;
   
-  NSString *contentId;
+  __strong NSString *contentId;
   
   // common to all content
-  NSString *name;
-  NSString *description;
-  NSString *genre;
+  __strong NSString *name;
+  __strong NSString *description;
+  __strong NSString *genre;
+  __strong NSNumber *duration;
   MMContentKind kind;
 
   // music related
-  NSString *album;
-  NSString *artist;
-  NSNumber *trackNumber;
+  __strong NSString *album;
+  __strong NSString *artist;
+  __strong NSNumber *trackNumber;
   
   // tv show related
-  NSString *show;
-  NSNumber *episodeNumber;
-  NSNumber *season;
+  __strong NSString *show;
+  __strong NSNumber *episodeNumber;
+  __strong NSNumber *season;
   
-  NSString *playlistId;
+  __strong NSString *playlistId;
 
 }
 
@@ -65,6 +66,7 @@ typedef enum MMContentKind
 @property (nonatomic, readwrite, strong) NSString *name;
 @property (nonatomic, readwrite, strong) NSString *description;
 @property (nonatomic, readwrite, strong) NSString *genre;
+@property (nonatomic, readwrite, strong) NSNumber *duration;
 
 @property (nonatomic, readwrite, strong) NSString *album;
 @property (nonatomic, readwrite, strong) NSString *artist;

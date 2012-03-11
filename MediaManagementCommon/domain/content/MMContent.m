@@ -37,6 +37,7 @@
 @synthesize description;
 @synthesize genre;
 @synthesize kind;
+@synthesize duration;
 
 @synthesize album;
 @synthesize artist;

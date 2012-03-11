@@ -17,6 +17,7 @@
   __strong NSString *name;
   __strong NSMutableArray *audioTracks;
   __strong NSMutableArray *subtitleTracks;
+  __strong NSString *targetPath;
   
   BOOL selected;
   BOOL encoding;
@@ -29,6 +30,7 @@
 @property (nonatomic, readonly) NSTimeInterval duration;
 @property (nonatomic, readonly) NSArray *audioTracks;
 @property (nonatomic, readonly) NSArray *subtitleTracks;
+@property (nonatomic, readwrite, strong) NSString *targetPath;
 @property (nonatomic, readwrite, assign) BOOL selected;
 @property (nonatomic, readwrite, assign) BOOL encoding;
 @property (nonatomic, readwrite, assign) BOOL completed;
@@ -49,6 +51,5 @@
 - (void) selectAudioTrack: (MMAudioTrack *) audioTrack;
 
 - (void) selectSubtitleTrack: (MMSubtitleTrack *) subtitleTrack;
-- (void) unselectSubtitleTrack: (MMSubtitleTrack *) subtitleTrack;
 
 @end
