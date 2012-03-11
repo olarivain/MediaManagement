@@ -21,11 +21,11 @@ typedef enum MMAudioCodec
 
 @interface MMAudioTrack : NSObject
 {
+  __strong NSString *language;
   NSInteger index;
   MMAudioCodec codec;
   NSInteger channelCount;
   BOOL hasLFE;
-  __strong NSString *language;
   BOOL selected;
 }
 
@@ -36,6 +36,10 @@ typedef enum MMAudioCodec
 @property (nonatomic, readonly) NSString *language;
 @property (nonatomic, readwrite, assign) BOOL selected;
 
-+ (MMAudioTrack *) audioTrackWithIndex: (NSInteger) index codec: (MMAudioCodec) codec channelCount: (NSInteger) channelCount lfe: (BOOL) lfe andLanguage: (NSString *) language;
++ (MMAudioTrack *) audioTrackWithIndex: (NSInteger) index 
+                                 codec: (MMAudioCodec) codec 
+                          channelCount: (NSInteger) channelCount 
+                                   lfe: (BOOL) lfe 
+                           andLanguage: (NSString *) language;
 
 @end

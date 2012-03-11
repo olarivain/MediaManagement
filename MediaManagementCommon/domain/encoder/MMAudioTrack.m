@@ -9,17 +9,33 @@
 #import "MMAudioTrack.h"
 
 @interface MMAudioTrack()
-- (id) initWithIndex: (NSInteger) index codec: (MMAudioCodec) codec channelCount: (NSInteger) channelCount lfe: (BOOL) lfe andLanguage: (NSString *) language;
+- (id) initWithIndex: (NSInteger) index 
+               codec: (MMAudioCodec) codec 
+        channelCount: (NSInteger) channelCount 
+                 lfe: (BOOL) lfe 
+         andLanguage: (NSString *) language;
 @end
 
 @implementation MMAudioTrack
 
-+ (MMAudioTrack *) audioTrackWithIndex: (NSInteger) index codec: (MMAudioCodec) codec channelCount: (NSInteger) channelCount lfe: (BOOL) lfe andLanguage: (NSString *) language
++ (MMAudioTrack *) audioTrackWithIndex: (NSInteger) index 
+                                 codec: (MMAudioCodec) codec 
+                          channelCount: (NSInteger) channelCount 
+                                   lfe: (BOOL) lfe 
+                           andLanguage: (NSString *) language
 {
-  return [[MMAudioTrack alloc] initWithIndex: index codec: codec channelCount: channelCount lfe: lfe andLanguage: language];
+  return [[MMAudioTrack alloc] initWithIndex: index 
+                                       codec: codec 
+                                channelCount: channelCount 
+                                         lfe: lfe 
+                                 andLanguage: language];
 }
 
-- (id) initWithIndex: (NSInteger) anIndex codec: (MMAudioCodec) aCodec channelCount: (NSInteger) aChannelCount lfe: (BOOL) lfe andLanguage: (NSString *) aLanguage
+- (id) initWithIndex: (NSInteger) anIndex 
+               codec: (MMAudioCodec) aCodec 
+        channelCount: (NSInteger) aChannelCount 
+                 lfe: (BOOL) lfe 
+         andLanguage: (NSString *) aLanguage
 {
   self = [super init];
   if(self)
