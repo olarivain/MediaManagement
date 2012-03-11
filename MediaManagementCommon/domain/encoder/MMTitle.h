@@ -22,12 +22,16 @@
   BOOL selected;
   BOOL encoding;
   BOOL completed;
+  NSInteger progress;
+  NSInteger eta;
   NSTimeInterval duration;
 }
 
 @property (nonatomic, readonly) NSInteger index;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSTimeInterval duration;
+@property (nonatomic, readwrite, assign) NSInteger progress;
+@property (nonatomic, readwrite, assign) NSInteger eta;
 @property (nonatomic, readonly) NSArray *audioTracks;
 @property (nonatomic, readonly) NSArray *subtitleTracks;
 @property (nonatomic, readwrite, strong) NSString *targetPath;

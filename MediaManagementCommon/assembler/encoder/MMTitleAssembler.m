@@ -6,9 +6,6 @@
 //  Copyright (c) 2011 kra. All rights reserved.
 //
 
-#import <KraCommons/NSArray+BoundSafe.h>
-#import <KraCommons/NSDictionary+NilSafe.h>
-
 #import "MMTitleAssembler.h"
 
 #import "MMTitleList.h"
@@ -129,6 +126,9 @@ static MMTitleAssembler *sharedInstance;
   [dto setDouble: title.duration forKey: @"duration"];
   [dto setObjectNilSafe: title.name forKey: @"name"];
   [dto setInteger: title.selected forKey: @"selected"];
+  [dto setInteger: title.eta forKey: @"eta"];
+  [dto setInteger: title.progress forKey: @"progress"];
+  [dto setInteger: title.completed forKey: @"completed"];
   
   NSArray *audioTrackDtos = [self writeAudioTracks: title.audioTracks];
   [dto setObjectNilSafe: audioTrackDtos forKey: @"audioTracks"];
@@ -270,6 +270,9 @@ static MMTitleAssembler *sharedInstance;
   NSTimeInterval duration = [dto doubleForKey: @"duration"];
   MMTitle *title = [MMTitle titleWithIndex: index andDuration:duration];
   title.selected = [dto booleanForKey: @"selected"];
+  title.completed = [dto booleanForKey: @"completed"];
+  title.eta = [dto integerForKey: @"eta"];
+  title.progress = [dto integerForKey: @"progress"];
 
   // create all audio tracks and add them to hte title object
   NSArray *audioTrackDtos = [dto nullSafeForKey: @"audioTracks"];

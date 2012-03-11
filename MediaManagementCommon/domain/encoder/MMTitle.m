@@ -40,6 +40,8 @@
 @synthesize name;
 @synthesize index;
 @synthesize duration;
+@synthesize progress;
+@synthesize eta;
 @synthesize subtitleTracks;
 @synthesize audioTracks;
 @synthesize selected;

@@ -21,5 +21,4 @@
 - (MMTitleList *) createTitleList: (NSDictionary *) titleList;
 
 - (void) updateTitleList: (MMTitleList *) titleList withDto: (NSDictionary *) dto;
-
 @end
