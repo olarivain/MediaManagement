@@ -92,6 +92,10 @@
   {
     return @"Not selected";
   }
+  if(completed)
+  {
+    return @"Completed";
+  }
   
   return encoding ? @"Encoding" : @"Pending";
 }
