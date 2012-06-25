@@ -10,7 +10,7 @@
 			<name>MediaManagementCommon-MacOS</name>
 			<silenceXcode>true</silenceXcode>
 			<target>
-				<name>MediaManagement-x86</name>
+				<name>MediaManagementCommon-x86</name>
 				<configuration>Release</configuration>
 				<buildFolder>Release</buildFolder>
 			</target>
@@ -21,7 +21,7 @@
 			<name>MediaManagementCommon-iOS</name>
 			<silenceXcode>true</silenceXcode>
 			<target>
-				<name>MediaManagement-iOS</name>
+				<name>MediaManagementCommon-iOS</name>
 				<configuration>Release</configuration>
 				<buildFolder>Universal</buildFolder>
 			</target>

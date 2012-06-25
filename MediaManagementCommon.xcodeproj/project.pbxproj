@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		00DC021C1597E3D700F891C9 /* MediaManagement-iOS */ = {
+		00DC021C1597E3D700F891C9 /* MediaManagementCommon-iOS */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 00DC021D1597E3D700F891C9 /* Build configuration list for PBXAggregateTarget "MediaManagement-iOS" */;
+			buildConfigurationList = 00DC021D1597E3D700F891C9 /* Build configuration list for PBXAggregateTarget "MediaManagementCommon-iOS" */;
 			buildPhases = (
 				00DC02201597E3DD00F891C9 /* ShellScript */,
 			);
 			dependencies = (
 			);
-			name = "MediaManagement-iOS";
+			name = "MediaManagementCommon-iOS";
 			productName = "MediaManagementCommon-iPhone-Universal";
 		};
 /* End PBXAggregateTarget section */
@@ -425,9 +425,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		00323DB3132C2A96003BED87 /* MediaManagement-x86 */ = {
+		00323DB3132C2A96003BED87 /* MediaManagementCommon-x86 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MediaManagement-x86" */;
+			buildConfigurationList = 00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MediaManagementCommon-x86" */;
 			buildPhases = (
 				00323DB0132C2A96003BED87 /* Sources */,
 				00323DB1132C2A96003BED87 /* Frameworks */,
@@ -437,14 +437,14 @@
 			);
 			dependencies = (
 			);
-			name = "MediaManagement-x86";
+			name = "MediaManagementCommon-x86";
 			productName = MediaManagementComm;
 			productReference = 00B3F8A9132C2CF1003A4FCD /* libMediaManagement-x86.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		00323DCE132C2B21003BED87 /* MediaManagement-arm */ = {
+		00323DCE132C2B21003BED87 /* MediaManagementCommon-arm */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MediaManagement-arm" */;
+			buildConfigurationList = 00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MediaManagementCommon-arm" */;
 			buildPhases = (
 				00323DCF132C2B21003BED87 /* Sources */,
 				00323DD1132C2B21003BED87 /* Frameworks */,
@@ -454,7 +454,7 @@
 			);
 			dependencies = (
 			);
-			name = "MediaManagement-arm";
+			name = "MediaManagementCommon-arm";
 			productName = MediaManagementCommon;
 			productReference = 00B3F8A8132C2CDF003A4FCD /* libMediaManagement-iPhone.a */;
 			productType = "com.apple.product-type.library.static";
@@ -480,9 +480,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00323DCE132C2B21003BED87 /* MediaManagement-arm */,
-				00323DB3132C2A96003BED87 /* MediaManagement-x86 */,
-				00DC021C1597E3D700F891C9 /* MediaManagement-iOS */,
+				00323DCE132C2B21003BED87 /* MediaManagementCommon-arm */,
+				00323DB3132C2A96003BED87 /* MediaManagementCommon-x86 */,
+				00DC021C1597E3D700F891C9 /* MediaManagementCommon-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -723,7 +723,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MediaManagement-x86" */ = {
+		00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MediaManagementCommon-x86" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00323DBF132C2A96003BED87 /* Debug */,
@@ -732,7 +732,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MediaManagement-arm" */ = {
+		00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MediaManagementCommon-arm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00323DD6132C2B21003BED87 /* Debug */,
@@ -741,13 +741,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00DC021D1597E3D700F891C9 /* Build configuration list for PBXAggregateTarget "MediaManagement-iOS" */ = {
+		00DC021D1597E3D700F891C9 /* Build configuration list for PBXAggregateTarget "MediaManagementCommon-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00DC021E1597E3D700F891C9 /* Debug */,
 				00DC021F1597E3D700F891C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
