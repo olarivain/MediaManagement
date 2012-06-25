@@ -499,7 +499,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "xcodebuild -target MediaManagement-arm -sdk iphoneos -configuration ${CONFIGURATION} BUILD_DIR=${BUILD_DIR}\nxcodebuild -target MediaManagement-arm -sdk iphonesimulator -configuration ${CONFIGURATION} BUILD_DIR=${BUILD_DIR} -arch i386\n\nrm -rf ${BUILD_DIR}/Universal\nmkdir ${BUILD_DIR}/Universal\ncp -R ${BUILD_DIR}/${CONFIGURATION}-iphoneos/MediaManagement/ ${BUILD_DIR}/Universal/MediaManagement/\nlipo -create ${BUILD_DIR}/${CONFIGURATION}-iphoneos/libMediaManagement-iPhone.a ${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libMediaManagement-iPhone.a -output ${BUILD_DIR}/Universal/libMediaManagement-iPhone.a";
+			shellScript = "xcodebuild -target MediaManagementCommon-arm -sdk iphoneos -configuration ${CONFIGURATION} BUILD_DIR=${BUILD_DIR}\nxcodebuild -target MediaManagementCommon-arm -sdk iphonesimulator -configuration ${CONFIGURATION} BUILD_DIR=${BUILD_DIR} -arch i386\n\nrm -rf ${BUILD_DIR}/Universal\nmkdir ${BUILD_DIR}/Universal\ncp -R ${BUILD_DIR}/${CONFIGURATION}-iphoneos/MediaManagement/ ${BUILD_DIR}/Universal/MediaManagement/\nlipo -create ${BUILD_DIR}/${CONFIGURATION}-iphoneos/libMediaManagement-iPhone.a ${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libMediaManagement-iPhone.a -output ${BUILD_DIR}/Universal/libMediaManagement-iPhone.a";
 		};
 /* End PBXShellScriptBuildPhase section */
 
