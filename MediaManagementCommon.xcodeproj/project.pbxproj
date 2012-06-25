@@ -424,6 +424,23 @@
 		};
 /* End PBXHeadersBuildPhase section */
 
+/* Begin PBXLegacyTarget section */
+		00DC025A1597EED500F891C9 /* MediaManagementCommon-Install */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "build[${CONFIGURATION}] install";
+			buildConfigurationList = 00DC025B1597EED500F891C9 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon-Install" */;
+			buildPhases = (
+			);
+			buildToolPath = rake;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = "MediaManagementCommon-Install";
+			passBuildSettingsInEnvironment = 1;
+			productName = "MediaManagementCommon-Install";
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		00323DB3132C2A96003BED87 /* MediaManagementCommon-x86 */ = {
 			isa = PBXNativeTarget;
@@ -483,6 +500,7 @@
 				00323DCE132C2B21003BED87 /* MediaManagementCommon-arm */,
 				00323DB3132C2A96003BED87 /* MediaManagementCommon-x86 */,
 				00DC021C1597E3D700F891C9 /* MediaManagementCommon-iOS */,
+				00DC025A1597EED500F891C9 /* MediaManagementCommon-Install */,
 			);
 		};
 /* End PBXProject section */
@@ -711,6 +729,52 @@
 			};
 			name = Release;
 		};
+		00DC025C1597EED500F891C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		00DC025D1597EED500F891C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -749,6 +813,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		00DC025B1597EED500F891C9 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon-Install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00DC025C1597EED500F891C9 /* Debug */,
+				00DC025D1597EED500F891C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

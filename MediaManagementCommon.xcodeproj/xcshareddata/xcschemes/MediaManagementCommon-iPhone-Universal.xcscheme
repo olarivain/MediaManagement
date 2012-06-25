@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00DC021C1597E3D700F891C9"
-               BuildableName = "MediaManagement-iOS"
+               BuildableName = "MediaManagementCommon-iOS"
                BlueprintName = "MediaManagementCommon-iOS"
                ReferencedContainer = "container:MediaManagementCommon.xcodeproj">
             </BuildableReference>
