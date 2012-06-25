@@ -1,0 +1,31 @@
+<project>
+	<name>MediaManagement Common Library</name>
+	<groupId>org.kra.mediamanagement</groupId>
+	<version>1.0.10</version>
+	<scm>git</scm>
+	
+	<artifacts>
+		<artifact>
+			<artifactId>mediamanagement-common-macos</artifactId>
+			<name>MediaManagementCommon-MacOS</name>
+			<silenceXcode>true</silenceXcode>
+			<target>
+				<name>MediaManagement-x86</name>
+				<configuration>Release</configuration>
+				<buildFolder>Release</buildFolder>
+			</target>
+		</artifact>
+    
+    <artifact>
+			<artifactId>mediamanagement-common-iphone</artifactId>
+			<name>MediaManagementCommon-iOS</name>
+			<silenceXcode>true</silenceXcode>
+			<target>
+				<name>MediaManagement-iOS</name>
+				<configuration>Release</configuration>
+				<buildFolder>Universal</buildFolder>
+			</target>
+		</artifact>
+	</artifacts>
+     
+</project>
