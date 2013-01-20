@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   0. Faites ce que vous voulez, j’en ai RIEN À BRANLER. 
                  LICENSE
   }
-  s.homepage      = 'http://github.com/olarivain/MediaManagementCommon.git'
+  s.homepage      = 'http://github.com/olarivain/MediaManagement.git'
   s.summary       = 
 <<-DESC
 Yet another rest server.
@@ -35,7 +35,7 @@ DESC
 <<-DESC
 REST server, written mostly for fun.
 DESC
-  s.source        = { :git => 'https://github.com/olarivain/MediaManagementCommon.git', :tag => "v#{version}" }
+  s.source        = { :git => 'https://github.com/olarivain/MediaManagement.git', :tag => "v#{version}" }
   s.requires_arc  = true
   s.source_files  = ["MediaManagementCommon/**/*.{h,m,c,mm,cpp}"]
 
