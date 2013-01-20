@@ -25,7 +25,7 @@ def dev_pod_or_released(name, version, dev_path)
 	end
 end
 
-dev_pod_or_released("KraCommons", "0.0.1", custom_paths[:OTFoundation])
+dev_pod_or_released("KraCommons", "0.0.1", custom_paths[:KraCommons])
 puts
 
 target :MMCx86 do
