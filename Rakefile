@@ -27,7 +27,7 @@ BetaBuilder::Tasks.new do |config|
 	config.app_info_plist = "./Resources/Info.plist"
 
 	config.pod_repo = "kra"
-	config.spec_file = "MediaManagementCommon.podspec"
+	config.spec_file = "MediaManagement.podspec"
 	config.skip_clean = false
 	config.verbose = false
 	config.sdk = "macosx"
