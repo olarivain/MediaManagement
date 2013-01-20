@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		00DC021C1597E3D700F891C9 /* MediaManagementCommon-iOS */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 00DC021D1597E3D700F891C9 /* Build configuration list for PBXAggregateTarget "MediaManagementCommon-iOS" */;
-			buildPhases = (
-				00DC02201597E3DD00F891C9 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = "MediaManagementCommon-iOS";
-			productName = "MediaManagementCommon-iPhone-Universal";
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		000758E8136E46860067644F /* MMContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 009EE52D136E1215008EEEA5 /* MMContent.m */; };
 		000758F0136E46A70067644F /* MMContent.h in Headers */ = {isa = PBXBuildFile; fileRef = 009EE52C136E1215008EEEA5 /* MMContent.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +27,8 @@
 		0023638414ACF9550084A054 /* MMTitleList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023637414ACF9550084A054 /* MMTitleList.m */; };
 		00323DB6132C2A96003BED87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DB5132C2A96003BED87 /* Cocoa.framework */; };
 		00323DD2132C2B21003BED87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00323DA0132C29A8003BED87 /* Foundation.framework */; };
+		00476DB416ABDD7D00DA749B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00476DB316ABDD7D00DA749B /* libPods.a */; };
+		00476DBD16ABDF1000DA749B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00476DBC16ABDF1000DA749B /* libPods.a */; };
 		004BBE421380877600B9639B /* MMLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 004BBE321380877600B9639B /* MMLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		004BBE431380877600B9639B /* MMLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 004BBE331380877600B9639B /* MMLibrary.m */; };
 		004BBE441380877600B9639B /* MMPlaylist.h in Headers */ = {isa = PBXBuildFile; fileRef = 004BBE351380877600B9639B /* MMPlaylist.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -112,6 +100,8 @@
 		00323DA0132C29A8003BED87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00323DA4132C29A8003BED87 /* MediaManagementCommon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaManagementCommon-Prefix.pch"; sourceTree = "<group>"; };
 		00323DB5132C2A96003BED87 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		00476DB316ABDD7D00DA749B /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		00476DBC16ABDF1000DA749B /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "../../../../Library/Developer/Xcode/DerivedData/MediaManagementCommon-adnhlyxagtzjexajjomlnqkyqqpo/Build/Products/Debug/libPods.a"; sourceTree = "<group>"; };
 		004BBE321380877600B9639B /* MMLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLibrary.h; sourceTree = "<group>"; };
 		004BBE331380877600B9639B /* MMLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLibrary.m; sourceTree = "<group>"; };
 		004BBE351380877600B9639B /* MMPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPlaylist.h; sourceTree = "<group>"; };
@@ -147,6 +137,8 @@
 		00E3FA95138233780017BDC1 /* MMArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMArtist.m; sourceTree = "<group>"; };
 		00FC74791380C9BB0057747B /* MMContentGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMContentGroup.h; sourceTree = "<group>"; };
 		00FC747A1380C9BB0057747B /* MMContentGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMContentGroup.m; sourceTree = "<group>"; };
+		654DCA555B664A7388EC15D9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		8832FE9AC3C143679587431F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00476DB416ABDD7D00DA749B /* libPods.a in Frameworks */,
 				00323DB6132C2A96003BED87 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00476DBD16ABDF1000DA749B /* libPods.a in Frameworks */,
 				00323DD2132C2B21003BED87 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,12 +183,15 @@
 		00323D92132C29A8003BED87 = {
 			isa = PBXGroup;
 			children = (
+				00476DBC16ABDF1000DA749B /* libPods.a */,
+				00476DB316ABDD7D00DA749B /* libPods.a */,
 				00323DD9132C2B21003BED87 /* Resources-iPad */,
 				00323DA2132C29A8003BED87 /* MediaManagementCommon */,
 				00323D9F132C29A8003BED87 /* Frameworks */,
 				00323D9E132C29A8003BED87 /* Products */,
 				0028483214AFD48B003F5818 /* Rakefile */,
 				00DC021A1597E30F00F891C9 /* rpom.xml */,
+				654DCA555B664A7388EC15D9 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +210,7 @@
 				00323DA0132C29A8003BED87 /* Foundation.framework */,
 				00323DB5132C2A96003BED87 /* Cocoa.framework */,
 				00E011051490976800E3C4F0 /* Other Frameworks */,
+				8832FE9AC3C143679587431F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -424,27 +422,10 @@
 		};
 /* End PBXHeadersBuildPhase section */
 
-/* Begin PBXLegacyTarget section */
-		00DC025A1597EED500F891C9 /* MediaManagementCommon-Install */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "build[${CONFIGURATION}] install";
-			buildConfigurationList = 00DC025B1597EED500F891C9 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon-Install" */;
-			buildPhases = (
-			);
-			buildToolPath = rake;
-			buildWorkingDirectory = "";
-			dependencies = (
-			);
-			name = "MediaManagementCommon-Install";
-			passBuildSettingsInEnvironment = 1;
-			productName = "MediaManagementCommon-Install";
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
-		00323DB3132C2A96003BED87 /* MediaManagementCommon-x86 */ = {
+		00323DB3132C2A96003BED87 /* MMCx86 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MediaManagementCommon-x86" */;
+			buildConfigurationList = 00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MMCx86" */;
 			buildPhases = (
 				00323DB0132C2A96003BED87 /* Sources */,
 				00323DB1132C2A96003BED87 /* Frameworks */,
@@ -454,14 +435,14 @@
 			);
 			dependencies = (
 			);
-			name = "MediaManagementCommon-x86";
+			name = MMCx86;
 			productName = MediaManagementComm;
 			productReference = 00B3F8A9132C2CF1003A4FCD /* libMediaManagement-x86.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		00323DCE132C2B21003BED87 /* MediaManagementCommon-arm */ = {
+		00323DCE132C2B21003BED87 /* MMCarm */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MediaManagementCommon-arm" */;
+			buildConfigurationList = 00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MMCarm" */;
 			buildPhases = (
 				00323DCF132C2B21003BED87 /* Sources */,
 				00323DD1132C2B21003BED87 /* Frameworks */,
@@ -471,7 +452,7 @@
 			);
 			dependencies = (
 			);
-			name = "MediaManagementCommon-arm";
+			name = MMCarm;
 			productName = MediaManagementCommon;
 			productReference = 00B3F8A8132C2CDF003A4FCD /* libMediaManagement-iPhone.a */;
 			productType = "com.apple.product-type.library.static";
@@ -482,7 +463,7 @@
 		00323D94132C29A8003BED87 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = kra;
 			};
 			buildConfigurationList = 00323D97132C29A8003BED87 /* Build configuration list for PBXProject "MediaManagementCommon" */;
@@ -497,29 +478,11 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00323DCE132C2B21003BED87 /* MediaManagementCommon-arm */,
-				00323DB3132C2A96003BED87 /* MediaManagementCommon-x86 */,
-				00DC021C1597E3D700F891C9 /* MediaManagementCommon-iOS */,
-				00DC025A1597EED500F891C9 /* MediaManagementCommon-Install */,
+				00323DCE132C2B21003BED87 /* MMCarm */,
+				00323DB3132C2A96003BED87 /* MMCx86 */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		00DC02201597E3DD00F891C9 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "xcodebuild -target MediaManagementCommon-arm -sdk iphoneos -configuration ${CONFIGURATION} BUILD_DIR=${BUILD_DIR}\nxcodebuild -target MediaManagementCommon-arm -sdk iphonesimulator -configuration ${CONFIGURATION} BUILD_DIR=${BUILD_DIR} -arch i386\n\nrm -rf ${BUILD_DIR}/Universal\nmkdir ${BUILD_DIR}/Universal\ncp -R ${BUILD_DIR}/${CONFIGURATION}-iphoneos/MediaManagement/ ${BUILD_DIR}/Universal/MediaManagement/\nlipo -create ${BUILD_DIR}/${CONFIGURATION}-iphoneos/libMediaManagement-iPhone.a ${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libMediaManagement-iPhone.a -output ${BUILD_DIR}/Universal/libMediaManagement-iPhone.a";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		00323DB0132C2A96003BED87 /* Sources */ = {
@@ -577,6 +540,7 @@
 /* Begin XCBuildConfiguration section */
 		00323DA5132C29A8003BED87 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 654DCA555B664A7388EC15D9 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -584,24 +548,25 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
 		00323DA6132C29A8003BED87 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 654DCA555B664A7388EC15D9 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -609,43 +574,26 @@
 		00323DBF132C2A96003BED87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediaManagementCommon/MediaManagementCommon-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				HEADER_SEARCH_PATHS = "/usr/local/raven/KraCommons-MacOS/1.0-LATEST/";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/usr/local/xcodeproducts/KraCommons-x86/LATEST/",
-				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
-				PRIVATE_HEADERS_FOLDER_PATH = MediaManagement;
 				PRODUCT_NAME = "MediaManagement-x86";
-				PUBLIC_HEADERS_FOLDER_PATH = MediaManagement;
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
-				WARNING_LDFLAGS = (
-					"-ObjC",
-					"-lKraCommons-iPhone",
-				);
 			};
 			name = Debug;
 		};
 		00323DC0132C2A96003BED87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -653,131 +601,38 @@
 				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediaManagementCommon/MediaManagementCommon-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				HEADER_SEARCH_PATHS = "/usr/local/raven/KraCommons-MacOS/1.0-LATEST/";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/usr/local/xcodeproducts/KraCommons-x86/LATEST/",
-				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRIVATE_HEADERS_FOLDER_PATH = MediaManagement;
 				PRODUCT_NAME = "MediaManagement-x86";
-				PUBLIC_HEADERS_FOLDER_PATH = MediaManagement;
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
-				WARNING_LDFLAGS = (
-					"-ObjC",
-					"-lKraCommons-iPhone",
-				);
 			};
 			name = Release;
 		};
 		00323DD6132C2B21003BED87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				DSTROOT = /tmp/MediaManagementCommon.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediaManagementCommon/MediaManagementCommon-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = "/usr/local/raven/KraCommons-iOS/1.0-LATEST/";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/usr/local/xcodeproducts/KraCommons-iPhone/LATEST/",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/MediaManagementCommon-adnhlyxagtzjexajjomlnqkyqqpo/Build/Products/Debug\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRIVATE_HEADERS_FOLDER_PATH = MediaManagement;
 				PRODUCT_NAME = "MediaManagement-iPhone";
-				PUBLIC_HEADERS_FOLDER_PATH = MediaManagement;
-				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		00323DD7132C2B21003BED87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				DSTROOT = /tmp/MediaManagementCommon.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediaManagementCommon/MediaManagementCommon-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = "/usr/local/raven/KraCommons-iOS/1.0-LATEST/";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/usr/local/xcodeproducts/KraCommons-iPhone/LATEST/",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/MediaManagementCommon-adnhlyxagtzjexajjomlnqkyqqpo/Build/Products/Debug\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRIVATE_HEADERS_FOLDER_PATH = MediaManagement;
 				PRODUCT_NAME = "MediaManagement-iPhone";
-				PUBLIC_HEADERS_FOLDER_PATH = MediaManagement;
-				TARGETED_DEVICE_FAMILY = 2;
-			};
-			name = Release;
-		};
-		00DC021E1597E3D700F891C9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		00DC021F1597E3D700F891C9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		00DC025C1597EED500F891C9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		00DC025D1597EED500F891C9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -793,7 +648,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MediaManagementCommon-x86" */ = {
+		00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MMCx86" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00323DBF132C2A96003BED87 /* Debug */,
@@ -802,29 +657,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MediaManagementCommon-arm" */ = {
+		00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MMCarm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00323DD6132C2B21003BED87 /* Debug */,
 				00323DD7132C2B21003BED87 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		00DC021D1597E3D700F891C9 /* Build configuration list for PBXAggregateTarget "MediaManagementCommon-iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				00DC021E1597E3D700F891C9 /* Debug */,
-				00DC021F1597E3D700F891C9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		00DC025B1597EED500F891C9 /* Build configuration list for PBXLegacyTarget "MediaManagementCommon-Install" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				00DC025C1597EED500F891C9 /* Debug */,
-				00DC025D1597EED500F891C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
