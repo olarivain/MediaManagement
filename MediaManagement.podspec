@@ -1,4 +1,4 @@
-version = '0.0.13'
+version = '0.0.14'
 
 Pod::Spec.new do |s|
   s.name          = 'MediaManagement'
@@ -37,7 +37,7 @@ REST server, written mostly for fun.
 DESC
   s.source        = { :git => 'https://github.com/olarivain/MediaManagement.git', :tag => "v#{version}" }
   s.requires_arc  = true
-  s.source_files  = ["MediaManagementCommon/**/*.{h,m,c,mm,cpp}"]
+  s.source_files  = ["MediaManagement/**/*.{h,m,c,mm,cpp}"]
 
   s.dependency    'KraCommons', '~> 0.0.5'
   
