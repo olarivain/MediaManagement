@@ -129,7 +129,6 @@
 		00DAEF5D1395A77000B94A05 /* MMTVShowPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTVShowPlaylist.m; sourceTree = "<group>"; };
 		00DAEF611395AA5A00B94A05 /* MMTVShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTVShow.h; sourceTree = "<group>"; };
 		00DAEF621395AA5B00B94A05 /* MMTVShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTVShow.m; sourceTree = "<group>"; };
-		00DC021A1597E30F00F891C9 /* rpom.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = rpom.xml; sourceTree = "<group>"; };
 		00E011061490976800E3C4F0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		00E011071490976800E3C4F0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		00E011081490976800E3C4F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -183,14 +182,11 @@
 		00323D92132C29A8003BED87 = {
 			isa = PBXGroup;
 			children = (
-				00476DBC16ABDF1000DA749B /* libPods.a */,
-				00476DB316ABDD7D00DA749B /* libPods.a */,
 				00323DD9132C2B21003BED87 /* Resources-iPad */,
 				00323DA2132C29A8003BED87 /* MediaManagementCommon */,
 				00323D9F132C29A8003BED87 /* Frameworks */,
 				00323D9E132C29A8003BED87 /* Products */,
 				0028483214AFD48B003F5818 /* Rakefile */,
-				00DC021A1597E30F00F891C9 /* rpom.xml */,
 				654DCA555B664A7388EC15D9 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -207,6 +203,8 @@
 		00323D9F132C29A8003BED87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00476DBC16ABDF1000DA749B /* libPods.a */,
+				00476DB316ABDD7D00DA749B /* libPods.a */,
 				00323DA0132C29A8003BED87 /* Foundation.framework */,
 				00323DB5132C2A96003BED87 /* Cocoa.framework */,
 				00E011051490976800E3C4F0 /* Other Frameworks */,
@@ -423,9 +421,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		00323DB3132C2A96003BED87 /* MMCx86 */ = {
+		00323DB3132C2A96003BED87 /* MediaManagementx86 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MMCx86" */;
+			buildConfigurationList = 00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MediaManagementx86" */;
 			buildPhases = (
 				00323DB0132C2A96003BED87 /* Sources */,
 				00323DB1132C2A96003BED87 /* Frameworks */,
@@ -435,14 +433,14 @@
 			);
 			dependencies = (
 			);
-			name = MMCx86;
+			name = MediaManagementx86;
 			productName = MediaManagementComm;
 			productReference = 00B3F8A9132C2CF1003A4FCD /* libMediaManagement-x86.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		00323DCE132C2B21003BED87 /* MMCarm */ = {
+		00323DCE132C2B21003BED87 /* MediaManagementARM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MMCarm" */;
+			buildConfigurationList = 00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MediaManagementARM" */;
 			buildPhases = (
 				00323DCF132C2B21003BED87 /* Sources */,
 				00323DD1132C2B21003BED87 /* Frameworks */,
@@ -452,7 +450,7 @@
 			);
 			dependencies = (
 			);
-			name = MMCarm;
+			name = MediaManagementARM;
 			productName = MediaManagementCommon;
 			productReference = 00B3F8A8132C2CDF003A4FCD /* libMediaManagement-iPhone.a */;
 			productType = "com.apple.product-type.library.static";
@@ -466,7 +464,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = kra;
 			};
-			buildConfigurationList = 00323D97132C29A8003BED87 /* Build configuration list for PBXProject "MediaManagementCommon" */;
+			buildConfigurationList = 00323D97132C29A8003BED87 /* Build configuration list for PBXProject "MediaManagement" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -478,8 +476,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00323DCE132C2B21003BED87 /* MMCarm */,
-				00323DB3132C2A96003BED87 /* MMCx86 */,
+				00323DCE132C2B21003BED87 /* MediaManagementARM */,
+				00323DB3132C2A96003BED87 /* MediaManagementx86 */,
 			);
 		};
 /* End PBXProject section */
@@ -639,7 +637,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00323D97132C29A8003BED87 /* Build configuration list for PBXProject "MediaManagementCommon" */ = {
+		00323D97132C29A8003BED87 /* Build configuration list for PBXProject "MediaManagement" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00323DA5132C29A8003BED87 /* Debug */,
@@ -648,7 +646,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MMCx86" */ = {
+		00323DBE132C2A96003BED87 /* Build configuration list for PBXNativeTarget "MediaManagementx86" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00323DBF132C2A96003BED87 /* Debug */,
@@ -657,7 +655,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MMCarm" */ = {
+		00323DD5132C2B21003BED87 /* Build configuration list for PBXNativeTarget "MediaManagementARM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00323DD6132C2B21003BED87 /* Debug */,

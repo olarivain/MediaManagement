@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00323DCE132C2B21003BED87"
                BuildableName = "libMediaManagement-iPhone.a"
-               BlueprintName = "MMCarm"
-               ReferencedContainer = "container:MediaManagementCommon.xcodeproj">
+               BlueprintName = "MediaManagementARM"
+               ReferencedContainer = "container:MediaManagement.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

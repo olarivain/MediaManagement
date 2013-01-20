@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00323DB3132C2A96003BED87"
                BuildableName = "libMediaManagement-x86.a"
-               BlueprintName = "MMCx86"
-               ReferencedContainer = "container:MediaManagementCommon.xcodeproj">
+               BlueprintName = "MediaManagementx86"
+               ReferencedContainer = "container:MediaManagement.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

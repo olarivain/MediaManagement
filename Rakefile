@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'ot-ios-builder'
 
-workspace_path = "MediaManagementCommon.xcworkspace"
+workspace_path = "MediaManagement.xcworkspace"
 
 task :clean do
 	# dump temp build folder
@@ -22,7 +22,7 @@ BetaBuilder::Tasks.new do |config|
 	# basic workspace config
 	config.build_dir = :derived
 	config.workspace_path = workspace_path
-	config.scheme         = "MMCx86"
+	config.scheme         = "MediaManagementx86"
 	config.configuration = "Release" 
 	config.app_info_plist = "./Resources/Info.plist"
 
