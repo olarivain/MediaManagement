@@ -1,12 +1,12 @@
-version = '0.0.11'
+version = '0.0.12'
 
 Pod::Spec.new do |s|
   s.name          = 'MediaManagement'
   s.version       = version
 
   # support for both ios and osx
-  s.osx.platform = '10.7'
-  s.ios.platform = '5.0'
+  s.ios.deployment_target = '5.0'
+  s.osx.deployment_target = '10.7'
   
   s.author        = { 'kra Larivain' => 'olarivain@gmail.com' }
   s.license       = { :type => 'LPRAB', :text => <<-LICENSE
