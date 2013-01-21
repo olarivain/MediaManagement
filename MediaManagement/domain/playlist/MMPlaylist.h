@@ -24,7 +24,6 @@
 @property (nonatomic, readwrite, weak) MMLibrary *library;
 @property (nonatomic, readonly, strong) NSArray *contentGroups;
 @property (nonatomic, readonly, strong) NSArray *content;
-@property (nonatomic, readonly) NSArray *unwatchedContent;
 
 + (id) playlistWithKind: (MMContentKind) kind andSize: (NSUInteger) size;
 

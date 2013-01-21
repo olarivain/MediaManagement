@@ -41,14 +41,6 @@
     return self;
 }
 
-#pragma mark - synthetic getters
-- (NSArray *) unwatchedContent {
-	NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(MMContent *evaluatedObject, NSDictionary *bindings) {
-		return evaluatedObject.unplayed;
-	}];
-	return [_content filteredArrayUsingPredicate: predicate];
-}
-
 #pragma mark - Content Management
 - (BOOL) belongsToPlaylist: (MMContent *) content {
     // content doesn't belong here if the kind doesn't match or if it's
