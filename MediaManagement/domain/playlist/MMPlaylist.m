@@ -41,6 +41,14 @@
     return self;
 }
 
+#pragma mark - synthetic getters
+- (NSArray *) unwatchedContent {
+	NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(MMContent *evaluatedObject, NSDictionary *bindings) {
+		return evaluatedObject.unplayed;
+	}];
+	return [_content filteredArrayUsingPredicate: predicate];
+}
+
 #pragma mark - Content Management
 - (BOOL) belongsToPlaylist: (MMContent *) content {
     // content doesn't belong here if the kind doesn't match or if it's
@@ -105,6 +113,11 @@
 
 - (void) sortContent
 {
+	// sort the content array, simply by name
+	[_content sortUsingComparator:^NSComparisonResult(MMContent *obj1, MMContent *obj2) {
+		return [obj1.name caseInsensitiveCompare: obj2.name];
+	}];
+	// delegate to subclasses for content group sorting
     [self privateSortContent: _contentGroups];
 }
 
