@@ -32,23 +32,19 @@
 
 #pragma mark - Public business methods
 
-- (void) addPlaylist: (MMPlaylist*) mediaLibrary
+- (void) addPlaylist: (MMPlaylist*) playlist
 {
-    if([self.playlists containsObject: mediaLibrary])
+    if([self.playlists containsObject: playlist])
     {
         return;
     }
-    
-    [_playlists addObject: mediaLibrary];
-    mediaLibrary.library = self;
+
+    [_playlists addObjectNilSafe: playlist];
+    playlist.library = self;
 }
 
 - (void) clear
 {
-    for (MMPlaylist *playlist in self.playlists)
-    {
-        playlist.library = nil;
-    }
     [_playlists removeAllObjects];
 }
 

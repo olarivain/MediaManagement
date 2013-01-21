@@ -17,7 +17,6 @@
 static MMContentAssembler *sharedInstance;
 
 @interface MMContentAssembler()
-- (MMPlaylist*) mediaLibraryForKind: (MMContentKind) kind andSize: (NSUInteger) count;
 @end
 
 
@@ -25,19 +24,11 @@ static MMContentAssembler *sharedInstance;
 
 + (id) sharedInstance
 {
-    @synchronized(self){
-        if(sharedInstance == nil)
-        {
-            sharedInstance = [[MMContentAssembler alloc] init];
-        }
-    }
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[MMContentAssembler alloc] init];
+    });
     return sharedInstance;
-}
-
-- (id)init
-{
-    self = [super init];
-    return self;
 }
 
 #pragma mark - Domain -> DTO methods
@@ -57,7 +48,7 @@ static MMContentAssembler *sharedInstance;
     [dto setObjectNilSafe: content.show forKey:@"show"];
     [dto setObjectNilSafe: content.season forKey:@"season"];
     [dto setObjectNilSafe: content.episodeNumber forKey:@"episodeNumber"];
-    //  [dto setObjectNilSafe: content.parent.pla forKey:@"playlistId"];
+    [dto setObjectNilSafe: content.playlistId forKey:@"playlistId"];
     [dto setObjectNilSafe: content.duration forKey: @"duration"];
     
     return dto;
@@ -105,46 +96,6 @@ static MMContentAssembler *sharedInstance;
 }
 
 #pragma mark - DTO -> Domain methods
-- (MMPlaylist*) mediaLibraryForKind: (MMContentKind) kind andSize: (NSUInteger) count
-{
-    MMPlaylist *library = [MMGenericPlaylist playlistWithKind: kind andSize:count];
-    switch (kind) {
-        case MOVIE:
-            library = [MMMoviesPlaylist playlistWithKind: MOVIE andSize: count];
-            break;
-        case TV_SHOW:
-            library = [MMTVShowPlaylist playlistWithKind: TV_SHOW andSize: count];
-            break;
-        default:
-            break;
-    }
-    return library;
-}
-
-- (MMPlaylist*) createPlaylist:(NSDictionary *)dictionary
-{
-    NSNumber *kindNumber = [dictionary nullSafeForKey:@"kind"];
-    if(kindNumber == nil)
-    {
-        return nil;
-    }
-    
-    MMContentKind kind = [kindNumber intValue];
-    NSArray *contents = [dictionary nullSafeForKey: @"content"];
-    
-    MMPlaylist *playlist = [self mediaLibraryForKind: kind andSize: [contents count]];
-    playlist.uniqueId = [dictionary nullSafeForKey:@"uniqueId"];
-    playlist.name = [dictionary nullSafeForKey:@"name"];
-    
-    for(NSDictionary *contentDictionary in contents)
-    {
-        MMContent *content = [self createContent: contentDictionary];
-        [playlist addContent: content];
-    }
-    
-    return playlist;
-}
-
 - (MMContent*) createContent: (NSDictionary*) dictionary
 {
     NSNumber *kindNumber = [dictionary nullSafeForKey:@"kind"];
@@ -163,6 +114,7 @@ static MMContentAssembler *sharedInstance;
     content.episodeNumber = [dictionary nullSafeForKey: @"episodeNumber"];
     content.season = [dictionary nullSafeForKey:@"season"];
     content.duration = [dictionary nullSafeForKey: @"duration"];
+    content.playlistId = [dictionary nullSafeForKey: @"playlistId"];
     return content;
 }
 
