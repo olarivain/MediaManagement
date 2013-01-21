@@ -10,10 +10,6 @@
 #import "MMContent.h"
 #import "MMPlaylist.h"
 
-#import "MMMoviesPlaylist.h"
-#import "MMTVShowPlaylist.h"
-#import "MMGenericPlaylist.h"
-
 static MMContentAssembler *sharedInstance;
 
 @interface MMContentAssembler()
@@ -50,6 +46,7 @@ static MMContentAssembler *sharedInstance;
     [dto setObjectNilSafe: content.episodeNumber forKey:@"episodeNumber"];
     [dto setObjectNilSafe: content.playlistId forKey:@"playlistId"];
     [dto setObjectNilSafe: content.duration forKey: @"duration"];
+	[dto setBool: content.unplayed forKey: @"unplayed"];
     
     return dto;
 }
@@ -115,6 +112,8 @@ static MMContentAssembler *sharedInstance;
     content.season = [dictionary nullSafeForKey:@"season"];
     content.duration = [dictionary nullSafeForKey: @"duration"];
     content.playlistId = [dictionary nullSafeForKey: @"playlistId"];
+	content.unplayed = [dictionary boolForKey: @"unplayed"];
+	
     return content;
 }
 
