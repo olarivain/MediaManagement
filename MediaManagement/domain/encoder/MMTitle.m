@@ -12,223 +12,213 @@
 #import "MMAudioTrack.h"
 #import "MMSubtitleTrack.h"
 
-@interface MMTitle()
+@interface MMTitle() {
+}
+
+@property (nonatomic, assign, readwrite) NSInteger index;
+@property (nonatomic, assign, readwrite) NSTimeInterval duration;
 
 @property (nonatomic, readonly) NSString *formattedEta;
-
-- (id) initWithIndex: (NSInteger) anIndex andDuration: (NSTimeInterval) aDuration;
 @end
 
 @implementation MMTitle
 
 + (MMTitle *) titleWithIndex: (NSInteger) index andDuration: (NSTimeInterval) duration
 {
-  return [[MMTitle alloc] initWithIndex: index andDuration:duration];
+    return [[MMTitle alloc] initWithIndex: index andDuration:duration];
 }
 
 - (id) initWithIndex: (NSInteger) anIndex andDuration: (NSTimeInterval) aDuration
 {
-  self = [super init];
-  if(self)
-  {
-    eta = -1;
-    progress = 0;
-    completed = NO;
-    audioTracks = [NSMutableArray arrayWithCapacity: 5];
-    subtitleTracks = [NSMutableArray arrayWithCapacity: 5];
-    
-    index = anIndex;
-    duration = aDuration;
-  }
-  return self;
+    self = [super init];
+    if(self)
+    {
+        self.eta = -1;
+        self.progress = 0;
+        self.completed = NO;
+        _audioTracks = [NSMutableArray arrayWithCapacity: 5];
+        _subtitleTracks = [NSMutableArray arrayWithCapacity: 5];
+        
+        self.index = anIndex;
+        self.duration = aDuration;
+    }
+    return self;
 }
-
-@synthesize name;
-@synthesize index;
-@synthesize duration;
-@synthesize progress;
-@synthesize eta;
-@synthesize subtitleTracks;
-@synthesize audioTracks;
-@synthesize selected;
-@synthesize encoding;
-@synthesize completed;
-@synthesize targetPath;
 
 #pragma mark - Synthetic getters
 - (NSString *) formattedEta
 {
-  if(eta < 0)
-  {
-    return @"";
-  }
-  
-  NSInteger hours = eta / (60 * 60);
-  NSInteger leftOver = eta % (60 * 60);
-  NSInteger minutes = leftOver / 60;
-  NSInteger seconds = leftOver % 60;
-
+    if(self.eta < 0)
+    {
+        return @"";
+    }
+    
+    NSInteger hours = self.eta / (60 * 60);
+    NSInteger leftOver = self.eta % (60 * 60);
+    NSInteger minutes = leftOver / 60;
+    NSInteger seconds = leftOver % 60;
+    
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-  return [NSString stringWithFormat: @"%i:%02i:%02i", hours, minutes, seconds];
+    return [NSString stringWithFormat: @"%i:%02i:%02i", hours, minutes, seconds];
 #else
-  return [NSString stringWithFormat: @"%dl:%02dl:%02dl", hours, minutes, seconds];
+    return [NSString stringWithFormat: @"%dl:%02dl:%02dl", hours, minutes, seconds];
 #endif
 }
 
 - (NSString *) formattedProgress
 {
-  // nothing to show if completed or encoding
-  if(completed || !encoding)
-  {
-    return @"";
-  }
-  
-  return [NSString stringWithFormat: @"%i%% (%@ left)", progress, self.formattedEta];
+    // nothing to show if completed or encoding
+    if(self.completed || !self.encoding)
+    {
+        return @"";
+    }
+    
+    return [NSString stringWithFormat: @"%i%% (%@ left)", self.progress, self.formattedEta];
 }
 
 - (NSString *) formattedStatus
 {
-  if(!selected)
-  {
-    return @"Not selected";
-  }
-  if(completed)
-  {
-    return @"Completed";
-  }
-  
-  return encoding ? @"Encoding" : @"Pending";
+    if(!self.selected)
+    {
+        return @"Not selected";
+    }
+    if(self.completed)
+    {
+        return @"Completed";
+    }
+    
+    return self.encoding ? @"Encoding" : @"Pending";
 }
 
 #pragma mark - track management
 #pragma mark Audio
 - (void) addAudioTrack: (MMAudioTrack *) soundtrack
 {
-  if(soundtrack == nil || [audioTracks containsObject: soundtrack])
-  {
-    return;
-  }
-  
-  [audioTracks addObject: soundtrack];
+    if(soundtrack == nil || [self.audioTracks containsObject: soundtrack])
+    {
+        return;
+    }
+    
+    [_audioTracks addObject: soundtrack];
 }
 
 - (NSInteger) indexOfAudioTrack:(MMAudioTrack *)audioTrack
 {
-  return [audioTracks indexOfObject: audioTrack];
+    return [self.audioTracks indexOfObject: audioTrack];
 }
 
 - (MMAudioTrack *) audioTrackWithIndex: (NSInteger) anIndex
 {
-  for(MMAudioTrack *track in audioTracks)
-  {
-    if(track.index == anIndex)
+    for(MMAudioTrack *track in self.audioTracks)
     {
-      return track;
+        if(track.index == anIndex)
+        {
+            return track;
+        }
     }
-  }
-  return nil;
+    return nil;
 }
 
 #pragma mark Subtitle
 - (void) addSubtitleTrack: (MMSubtitleTrack *) subtitleTrack
 {
-  if(subtitleTrack == nil || [subtitleTracks containsObject: subtitleTrack])
-  {
-    return;
-  }
-  
-  [subtitleTracks addObject: subtitleTrack];
+    if(subtitleTrack == nil || [self.subtitleTracks containsObject: subtitleTrack])
+    {
+        return;
+    }
+    
+    [_subtitleTracks addObject: subtitleTrack];
 }
 
 - (NSInteger) indexOfSubtitleTrack:(MMSubtitleTrack *)subtitleTrack
 {
-  return [subtitleTracks indexOfObject: subtitleTrack];
+    return [_subtitleTracks indexOfObject: subtitleTrack];
 }
 
 - (MMSubtitleTrack *) subtitleTrackWithIndex: (NSInteger) anIndex
 {
-  for(MMSubtitleTrack *track in subtitleTracks)
-  {
-    if(track.index == anIndex)
+    for(MMSubtitleTrack *track in self.subtitleTracks)
     {
-      return track;
+        if(track.index == anIndex)
+        {
+            return track;
+        }
     }
-  }
-  return nil;
+    return nil;
 }
 
 #pragma mark - selecting tracks
 #pragma mark Audio
 - (void) selectAudioTrack: (MMAudioTrack *) audioTrack
 {
-  // flip the switch on selected track
-  BOOL isSelected = !audioTrack.selected;
-  audioTrack.selected = isSelected;
-  
-  if(isSelected)
-  {
-    self.selected = YES;
-  }
-  else
-  {
-    self.selected = [[self selectedAudioTracks] count] > 0;
-  }
+    // flip the switch on selected track
+    BOOL isSelected = !audioTrack.selected;
+    audioTrack.selected = isSelected;
+    
+    if(isSelected)
+    {
+        self.selected = YES;
+    }
+    else
+    {
+        self.selected = [[self selectedAudioTracks] count] > 0;
+    }
 }
 
 - (NSArray *) selectedAudioTracks
 {
-  NSMutableArray *selectedAudioTracks = [NSMutableArray arrayWithCapacity: [audioTracks count]];
-  for(MMAudioTrack *track in audioTracks)
-  {
-    if(track.selected)
+    NSMutableArray *selectedAudioTracks = [NSMutableArray arrayWithCapacity: self.audioTracks.count];
+    for(MMAudioTrack *track in self.audioTracks)
     {
-      [selectedAudioTracks addObject: track];
+        if(track.selected)
+        {
+            [selectedAudioTracks addObject: track];
+        }
     }
-  }
-  return selectedAudioTracks;
+    return selectedAudioTracks;
 }
 
 #pragma mark Subtitles
 - (void) selectSubtitleTrack: (MMSubtitleTrack *) subtitleTrack
 {
-  BOOL isSelected = !subtitleTrack.selected;
-  subtitleTrack.selected = isSelected;
+    BOOL isSelected = !subtitleTrack.selected;
+    subtitleTrack.selected = isSelected;
     
-  // CC was selected, unselect ALL vobsubs, but let other CCs selected
-  if(subtitleTrack.type == SUBTITLE_CLOSED_CAPTION)
-  {
-    for(MMSubtitleTrack *track in subtitleTracks)
+    // CC was selected, unselect ALL vobsubs, but let other CCs selected
+    if(subtitleTrack.type == SUBTITLE_CLOSED_CAPTION)
     {
-      if(track != subtitleTrack && track.type == SUBTITLE_VOBSUB)
-      {
-        track.selected = NO;
-      }
+        for(MMSubtitleTrack *track in self.subtitleTracks)
+        {
+            if(track != subtitleTrack && track.type == SUBTITLE_VOBSUB)
+            {
+                track.selected = NO;
+            }
+        }
     }
-  }
-  // otherwise, we have a vobsub, unselect all other subtitles - VOBSUB is mutually exclusive
-  else
-  {
-    for(MMSubtitleTrack *track in subtitleTracks)
+    // otherwise, we have a vobsub, unselect all other subtitles - VOBSUB is mutually exclusive
+    else
     {
-      if(track != subtitleTrack)
-      {
-        track.selected = NO;
-      }
+        for(MMSubtitleTrack *track in self.subtitleTracks)
+        {
+            if(track != subtitleTrack)
+            {
+                track.selected = NO;
+            }
+        }
     }
-  }
 }
 
 - (NSArray *) selectedSubtitleTracks
 {
-  NSMutableArray *selectedSubtitleTracks = [NSMutableArray arrayWithCapacity: [subtitleTracks count]];
-  for(MMSubtitleTrack *track in subtitleTracks)
-  {
-    if(track.selected)
+    NSMutableArray *selectedSubtitleTracks = [NSMutableArray arrayWithCapacity: self.subtitleTracks.count];
+    for(MMSubtitleTrack *track in self.subtitleTracks)
     {
-      [selectedSubtitleTracks addObject: track];
+        if(track.selected)
+        {
+            [selectedSubtitleTracks addObject: track];
+        }
     }
-  }
-  return selectedSubtitleTracks;
+    return selectedSubtitleTracks;
 }
 
 @end

@@ -11,45 +11,23 @@
 
 @implementation MMMoviesPlaylist
 
-+ (id) playlist 
-{
-  return [MMMoviesPlaylist playlistWithKind:MOVIE andSize:500];
-}
-
-+ (id) playlistWithSize:(NSUInteger)size
-{
-  return [[MMMoviesPlaylist alloc] initWithContentKind: MOVIE andSize: size];
-
-}
-
 - (id)initWithContentKind:(MMContentKind)kind andSize:(NSUInteger)size
 {
-  self = [super initWithContentKind:kind andSize: size];
-  if (self) 
-  {
-    if(kind != MOVIE)
+    self = [super initWithContentKind:kind andSize: size];
+    if (self)
     {
-      NSLog(@"FATAL: Movie Library Must have a type of MOVIE");
+        if(kind != MOVIE)
+        {
+            DDLogError(@"FATAL: Movie Library Must have a type of MOVIE");
+        }
     }
-  }
-  
-  return self;
+    
+    return self;
 }
 
-
-- (NSArray*) initializeContentGroups
-{
-  return [NSArray arrayWithObject: [MMContentGroup contentGroupWithName: @"Movies" andType: NONE]];
+- (void) privateSortContent: (NSMutableArray *) groups {
+    
 }
 
-- (void) contentAdded: (MMContent *) content
-{
-  // do nothing;
-}
-
-- (void) contentRemoved: (MMContent *) content
-{
-  // do nothing;
-}
 
 @end

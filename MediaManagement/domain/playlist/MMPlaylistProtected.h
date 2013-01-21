@@ -14,13 +14,9 @@
 @class MMContent;
 
 @interface MMPlaylist()
-- (id) initWithContentKind: (MMContentKind) contentKind;
 - (id) initWithContentKind: (MMContentKind) contentKind andSize: (NSUInteger) size;
-- (NSMutableArray*) initializeContentGroups;
-- (void) initializeContentLists;
+- (void) addContentGroup: (id<MMContentGroup>) group;
+- (void) removeContentGroup: (id<MMContentGroup>) group;
 
-- (void) contentAdded: (MMContent*) content;
-- (void) contentRemoved: (MMContent*) content;
-
-- (MMContentList*) contentListWithType: (MMContentGroupType) type name:(NSString*) listName create: (BOOL) create;
+- (void) privateSortContent: (NSMutableArray *) groups;
 @end

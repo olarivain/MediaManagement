@@ -15,10 +15,6 @@
  */
 @interface MMTitleList : NSObject
 {
-  __strong NSMutableArray *titles;
-  __strong NSString *name;
-  __strong NSString *titleListId;
-  BOOL active;
 }
 
 + (MMTitleList *) titleListWithId: (NSString *) titleListId;
@@ -27,10 +23,9 @@
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *titleListId;
 @property (nonatomic, readonly) NSString *encodedTitleListId;
-
 @property (nonatomic, readonly) NSArray *selectedTitles;
-@property (nonatomic, readwrite, assign) BOOL active;
 @property (nonatomic, readonly) BOOL isCompleted;
+@property (nonatomic, readwrite, assign) BOOL active;
 
 - (void) addtitle: (MMTitle *) title;
 - (NSInteger) indexOfTitle: (MMTitle *) title;

@@ -10,36 +10,35 @@
 
 typedef enum MMAudioCodec
 {
-  AUDIO_CODEC_AC3 = 0,
-  AUDIO_CODEC_DTS = 1,
-  AUDIO_CODEC_AAC = 2,
-  AUDIO_CODEC_MP3 = 3,
-  AUDIO_CODEC_VORBIS = 4,
-  AUDIO_CODEC_LINEAR_PCM = 5,
-  AUDIO_CODEC_UNKNOWN = 6
+    AUDIO_CODEC_AC3 = 0,
+    AUDIO_CODEC_DTS = 1,
+    AUDIO_CODEC_AAC = 2,
+    AUDIO_CODEC_MP3 = 3,
+    AUDIO_CODEC_VORBIS = 4,
+    AUDIO_CODEC_LINEAR_PCM = 5,
+    AUDIO_CODEC_UNKNOWN = 6
 } MMAudioCodec;
 
 @interface MMAudioTrack : NSObject
 {
-  __strong NSString *language;
-  NSInteger index;
-  MMAudioCodec codec;
-  NSInteger channelCount;
-  BOOL hasLFE;
-  BOOL selected;
+    NSInteger _index;
+    MMAudioCodec _codec;
+    NSInteger _channelCount;
+    BOOL _hasLFE;
+    __strong NSString *_language;
 }
 
 @property (nonatomic, readonly) NSInteger index;
 @property (nonatomic, readonly) MMAudioCodec codec;
 @property (nonatomic, readonly) NSInteger channelCount;
 @property (nonatomic, readonly) BOOL hasLFE;
-@property (nonatomic, readonly) NSString *language;
+@property (nonatomic, readonly, strong) NSString *language;
 @property (nonatomic, readwrite, assign) BOOL selected;
 
-+ (MMAudioTrack *) audioTrackWithIndex: (NSInteger) index 
-                                 codec: (MMAudioCodec) codec 
-                          channelCount: (NSInteger) channelCount 
-                                   lfe: (BOOL) lfe 
++ (MMAudioTrack *) audioTrackWithIndex: (NSInteger) index
+                                 codec: (MMAudioCodec) codec
+                          channelCount: (NSInteger) channelCount
+                                   lfe: (BOOL) lfe
                            andLanguage: (NSString *) language;
 
 @end

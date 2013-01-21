@@ -7,95 +7,64 @@
 //
 
 #import "MMTVShowPlaylist.h"
+
 #import "MMTVShow.h"
 
-@interface MMTVShowPlaylist()
-- (MMContentList*) tvShowForContent: (MMContent*) content create: (BOOL) create;
-
+@interface MMTVShowPlaylist() {
+}
+@property (nonatomic, strong, readwrite) MMTVShow *unknownShow;
 @end
 
 @implementation MMTVShowPlaylist
 
-+(id) playlist 
-{
-  return [MMTVShowPlaylist playlistWithKind:TV_SHOW andSize:75];
-}
-
-+(id) playlistWithSize:(NSUInteger)size 
-{
-  return [[MMTVShowPlaylist alloc] initWithContentKind:TV_SHOW andSize:size];
-}
 
 - (id)initWithContentKind:(MMContentKind)kind andSize:(NSUInteger)size
 {
-  self = [super initWithContentKind:kind andSize: size];
-  if (self) 
-  {
-    if(kind != TV_SHOW)
+    self = [super initWithContentKind:kind andSize: size];
+    if (self)
     {
-      NSLog(@"FATAL: TV Show Playlist must have a kind of TV_SHOW");
+        if(kind != TV_SHOW)
+        {
+            DDLogError(@"FATAL: TV Show Playlist must have a kind of TV_SHOW");
+        }
+        _unknownShow = [MMTVShow tvShowWithName: nil];
+        [self addContentGroup: _unknownShow];
+    }
+    return self;
+}
+
+- (void) privateSortContent: (NSMutableArray *) groups {
+    [groups sortUsingComparator:^NSComparisonResult(MMTVShow *obj1, MMTVShow *obj2) {
+        if(obj1.name == nil) {
+            return NSOrderedDescending;
+        }
+        
+        if(obj2.name == nil) {
+            return NSOrderedAscending;
+        }
+        
+        return [obj1.name caseInsensitiveCompare: obj2.name];
+    }];
+    
+    for(MMTVShow *show in groups) {
+        [show sortContent];
+    }
+}
+
+- (id<MMContentGroup>) contentGroupForContent: (MMContent *) content
+{
+    if(content.name == nil) {
+        return self.unknownShow;
     }
     
-  }
-  return self;
-}
-
-- (MMContentGroup*) defaultContentGroup
-{
-  return defaultGroup;
-}
-
-- (NSArray*) initializeContentGroups
-{
-  defaultGroup = [MMContentGroup contentGroupWithName:@"Series" andType: SERIES];
-  return [NSArray arrayWithObject: defaultGroup];
-}
-
-- (void) initializeContentLists 
-{
-  unknownShow = [[MMTVShow alloc] initWithType: SERIES andName: @"Unknown Series"];
-  [self addContentList: unknownShow];
-}
-
-- (MMContentList*) contentListForContent: (MMContent *) content
-{
-  return [self tvShowForContent: content create:YES];
-}
-
-#pragma mark - MMMediaLibrary callbacks
-- (void) contentAdded:(MMContent *)content
-{
-  // create artist if needed and add it to list
-  MMContentList *tvShow = [self tvShowForContent: content create: YES];
-  [tvShow addContent: content];
-}
-
-- (void) contentRemoved:(MMContent *)content
-{
-  // notify artist and album that the track is getting removed
-  MMContentList *tvShow = [self tvShowForContent: content create: NO];
-  [tvShow removeContent: content];
-}
-
-#pragma mark - TV Show management
-- (MMContentList*) tvShowForContent: (MMContent*) content create: (BOOL) create
-{
-  // is artist isn't set, return default unknown artist
-  if(![content isShowSet])
-  {
-    return  unknownShow;
-  }
-  
-  MMContentGroup *contentGroup = [self contentGroupForType: SERIES];
-  MMContentList *contentList = [contentGroup contentListWithName: content.show];
-  
-  if(contentList == nil && create)
-  {
-    contentList = [[MMTVShow alloc] initWithType: SERIES andName: content.show];
-    [contentGroup addContentList: contentList];
-  } 
-  
-  return contentList;
+    for(MMTVShow *show in self.contentGroups) {
+        
+        if([show.name caseInsensitiveCompare: content.name] == NSOrderedSame) {
+            return show;
+        }
+    }
+    
+    return [MMTVShow tvShowWithName: content.name];
 }
 
 @end

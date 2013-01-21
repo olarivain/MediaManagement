@@ -9,10 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "MMPlaylistProtected.h"
 
-@interface MMTVShowPlaylist : MMPlaylist 
+@interface MMTVShowPlaylist : MMPlaylist
 {
-  __strong MMContentGroup *defaultGroup;
-  __strong MMContentList *unknownShow;
 }
 
 @end

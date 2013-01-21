@@ -12,7 +12,6 @@
 
 // Movies Playlist. Similar to generic playlist as it doesn't do much, yet still specific to Movies.
 @interface MMMoviesPlaylist : MMPlaylist {
-@private
     
 }
 

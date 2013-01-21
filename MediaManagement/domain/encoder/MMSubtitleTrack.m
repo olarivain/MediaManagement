@@ -9,39 +9,34 @@
 #import "MMSubtitleTrack.h"
 
 @interface MMSubtitleTrack()
-- (id) initWithIndex: (NSInteger) index 
-            language: (NSString *) language 
-             andType: (MMSubtitleType) type;
+@property (nonatomic, assign, readwrite) NSInteger index;
+@property (nonatomic, strong, readwrite) NSString *language;
+@property (nonatomic, assign, readwrite) MMSubtitleType type;
 @end
 
 @implementation MMSubtitleTrack
 
-+ (MMSubtitleTrack *) subtitleTrackWithIndex: (NSInteger) index 
-                                    language: (NSString *) language 
++ (MMSubtitleTrack *) subtitleTrackWithIndex: (NSInteger) index
+                                    language: (NSString *) language
                                      andType: (MMSubtitleType) type
 {
-  return [[MMSubtitleTrack alloc] initWithIndex: index 
-                                       language: language 
-                                        andType: type];
+    return [[MMSubtitleTrack alloc] initWithIndex: index
+                                         language: language
+                                          andType: type];
 }
 
-- (id) initWithIndex: (NSInteger) anIndex 
-            language: (NSString *) aLanguage 
+- (id) initWithIndex: (NSInteger) anIndex
+            language: (NSString *) aLanguage
              andType: (MMSubtitleType) aType
 {
-  self = [super init];
-  if(self)
-  {
-    language = aLanguage;
-    index = anIndex;
-    type = aType;
-  }
-  return self;
+    self = [super init];
+    if(self)
+    {
+        self.language = aLanguage;
+        self.index = anIndex;
+        self.type = aType;
+    }
+    return self;
 }
-
-@synthesize index;
-@synthesize language;
-@synthesize type;
-@synthesize selected;
 
 @end
