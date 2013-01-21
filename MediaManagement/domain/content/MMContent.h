@@ -40,6 +40,7 @@ typedef enum MMContentKind
 @property (nonatomic, readwrite, strong) NSString *genre;
 @property (nonatomic, readwrite, strong) NSNumber *duration;
 @property (nonatomic, readonly) NSString *durationHumanReadable;
+@property (nonatomic, readwrite, assign) BOOL unplayed;
 
 @property (nonatomic, readwrite, strong) NSString *show;
 @property (nonatomic, readwrite, strong) NSNumber *episodeNumber;
