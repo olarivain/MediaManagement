@@ -33,6 +33,7 @@ typedef enum MMContentKind
 @property (nonatomic, readwrite, weak) id<MMContentGroup> group;
 
 @property (nonatomic, readwrite, assign) MMContentKind kind;
+@property (nonatomic, readonly) NSString *kindHumanReadable;
 
 @property (nonatomic, readwrite, strong) NSString *contentId;
 @property (nonatomic, readwrite, strong) NSString *name;

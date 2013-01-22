@@ -44,6 +44,19 @@
     return [NSString stringWithFormat: @"%ih%02i", hours, minutes];
 }
 
+- (NSString *) kindHumanReadable {
+	switch (self.kind) {
+		case MOVIE:
+			return @"Movie";
+		case TV_SHOW:
+			return @"TV Show";
+		default:
+			break;
+	}
+	
+	return @"Unknown";
+}
+
 #pragma mark - Convenience accessors to determine if an attribute is set.
 - (BOOL) isSet: (NSString*) value
 {
