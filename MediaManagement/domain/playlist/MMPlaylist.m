@@ -62,6 +62,7 @@
     if(didAdd || group == nil)
     {
         added.parent = self;
+		added.playlistId = self.uniqueId;
         [_content addObjectNilSafe: added];
     }
 }

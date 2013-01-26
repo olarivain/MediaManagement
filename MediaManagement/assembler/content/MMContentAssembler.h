@@ -28,7 +28,5 @@
 - (MMContent*) createContent: (NSDictionary*) dictionary;
 - (NSArray*) createContentArray: (NSArray*) dictionary;
 
-- (MMContent*) createContent: (NSDictionary*) dictionary withPlaylistId: (NSString *) playlistId;
-- (NSArray*) createContentArray: (NSArray*) dictionary withPlaylistId: (NSString *) playlistId;
 
 @end

@@ -15,7 +15,7 @@ typedef enum MMContentKind
 {
     MOVIE = 0,
     TV_SHOW = 1,
-    UNKNOWN = 3
+    UNKNOWN = -1
 } MMContentKind;
 
 // Represents an individual content (movie or tv show episode etc.).
