@@ -97,4 +97,13 @@
     return [self.name caseInsensitiveCompare: other.name];
 }
 
+- (BOOL) isEqual:(id)object {
+	if(![object isKindOfClass: MMContent.class]) {
+		return NO;
+	}
+	
+	MMContent *other = (MMContent *) other;
+	return [other.contentId isEqualToString: self.contentId];
+}
+
 @end
