@@ -9,6 +9,7 @@
 #import "MMLibrary.h"
 
 #import "MMPlaylist.h"
+#import "MMContent.h"
 
 @interface MMLibrary () {
     __strong NSMutableArray *_playlists;
@@ -41,6 +42,14 @@
 
     [_playlists addObjectNilSafe: playlist];
     playlist.library = self;
+}
+
+- (void) addContent: (MMContent *) content {
+	for(MMPlaylist *playlist in self.playlists) {
+		if([playlist belongsToPlaylist: content]) {
+			[playlist addContent: content];
+		}
+	}
 }
 
 - (void) clear

@@ -10,6 +10,7 @@
 #import "MMContent.h"
 
 #import "MMContentGroup.h"
+#import "MMLibrary.h"
 
 @interface MMPlaylist()
 {
@@ -63,6 +64,7 @@
     {
         added.parent = self;
 		added.playlistId = self.uniqueId;
+		added.parent = self;
         [_content addObjectNilSafe: added];
     }
 }
@@ -74,9 +76,10 @@
     
     // remove it and callback for subclasses if needed
     BOOL didRemove = [defaultList removeContent: removed];
-    if(didRemove)
+    if(didRemove || defaultList == nil)
     {
         [_content removeObject: removed];
+		removed.parent = nil;
     }
 }
 
@@ -84,7 +87,7 @@
 {
     // for now, remove the bastard, and readd it
     [self removeContent: content];
-    [self addContent: content];
+    [self.library addContent: content];
 }
 
 #pragma mark - content groups

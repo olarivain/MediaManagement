@@ -21,6 +21,7 @@
 @property (nonatomic, readonly, strong) NSArray *playlists;
 
 - (void) addPlaylist: (MMPlaylist*) mediaLibrary;
+- (void) addContent: (MMContent *) content;
 
 - (void) clear;
 
