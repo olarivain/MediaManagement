@@ -58,17 +58,10 @@
 }
 
 - (void) updateContent:(MMContent *)content {
-    // content didn't move to another playlist, just tell the parent
-    // that the content has been updated, should do the trick
-    if([content.parent belongsToPlaylist: content]) {
-        [content.parent updateContent: content];
-        return;
-    }
-    
-    // content did move to another playlist, so start by remove content
-    // from here first.
-    [content.parent removeContent: content];
-    
+	// remove the element and add it again. it's somewhat brutal, but it works
+	for(MMPlaylist *playlist in self.playlists) {
+		[playlist removeContent: content];
+	}
     // now, find the playlist to which it belongs, and add it.
     // add it to the first one that claims the content belongs to it,
     // the object design should make this a valid assumption.

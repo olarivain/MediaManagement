@@ -28,9 +28,9 @@ typedef enum MMContentKind
 
 + (id) content: (MMContentKind) kind;
 
-@property (nonatomic, readwrite, weak) MMPlaylist *parent;
+//@property (nonatomic, readwrite, weak) MMPlaylist *parent;
+//@property (nonatomic, readwrite, weak) id<MMContentGroup> group;
 @property (nonatomic, readwrite, strong) NSString *playlistId;
-@property (nonatomic, readwrite, weak) id<MMContentGroup> group;
 
 @property (nonatomic, readwrite, assign) MMContentKind kind;
 @property (nonatomic, readonly) NSString *kindHumanReadable;
@@ -52,5 +52,7 @@ typedef enum MMContentKind
 
 - (BOOL) isMovie;
 - (BOOL) isTvShow;
+
+- (MMContent *) deepCopy;
 
 @end

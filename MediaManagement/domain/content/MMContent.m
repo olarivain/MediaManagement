@@ -28,6 +28,22 @@
     return self;
 }
 
+- (MMContent *) deepCopy {
+	MMContent *copy = [MMContent content: self.kind];
+	copy.playlistId = self.playlistId;
+	copy.name = self.name;
+	copy.contentId = self.contentId;
+	copy.description = self.description;
+	copy.genre = self.genre;
+	copy.duration = self.duration;
+	copy.unplayed = self.unplayed;
+	copy.show = self.show;
+	copy.episodeNumber = self.episodeNumber;
+	copy.season = self.season;
+	
+	return copy;
+}
+
 #pragma mark - synthetic getter
 - (NSString *) durationHumanReadable
 {
@@ -102,7 +118,7 @@
 		return NO;
 	}
 	
-	MMContent *other = (MMContent *) other;
+	MMContent *other = (MMContent *) object;
 	return [other.contentId isEqualToString: self.contentId];
 }
 

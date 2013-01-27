@@ -62,9 +62,7 @@
     BOOL didAdd = [group addContent: added];
     if(didAdd || group == nil)
     {
-        added.parent = self;
 		added.playlistId = self.uniqueId;
-		added.parent = self;
         [_content addObjectNilSafe: added];
     }
 }
@@ -79,7 +77,6 @@
     if(didRemove || defaultList == nil)
     {
         [_content removeObject: removed];
-		removed.parent = nil;
     }
 }
 
