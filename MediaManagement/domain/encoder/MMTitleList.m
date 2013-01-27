@@ -34,6 +34,7 @@
     {
         _titles = [NSMutableArray arrayWithCapacity: 10];
         self.titleListId = aTitleListId;
+		_selectedTitles = [NSMutableArray arrayWithCapacity: 5];
         self.name = [self.titleListId lastPathComponent];
     }
     return self;

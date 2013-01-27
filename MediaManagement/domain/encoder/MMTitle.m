@@ -65,9 +65,9 @@
     NSInteger seconds = leftOver % 60;
     
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-    return [NSString stringWithFormat: @"%i:%02i:%02i", hours, minutes, seconds];
+    return [NSString stringWithFormat: @"%02i:%02i:%02i", hours, minutes, seconds];
 #else
-    return [NSString stringWithFormat: @"%dl:%02dl:%02dl", hours, minutes, seconds];
+    return [NSString stringWithFormat: @"%02dl:%02dl:%02dl", hours, minutes, seconds];
 #endif
 
 	
