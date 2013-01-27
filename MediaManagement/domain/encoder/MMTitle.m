@@ -18,7 +18,6 @@
 @property (nonatomic, assign, readwrite) NSInteger index;
 @property (nonatomic, assign, readwrite) NSTimeInterval duration;
 
-@property (nonatomic, readonly) NSString *formattedEta;
 @end
 
 @implementation MMTitle

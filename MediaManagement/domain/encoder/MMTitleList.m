@@ -45,6 +45,28 @@
 }
 
 #pragma mark - Title management
+- (MMTitle *) activeTitle {
+	for(MMTitle *title in self.titles) {
+		if(title.encoding) {
+			return title;
+		}
+	}
+	
+	return nil;
+}
+
+- (NSInteger) selectedCount {
+	return self.selectedTitles.count;
+}
+
+- (NSInteger) completedCount {
+	NSInteger count = 0;
+	for(MMTitle *title in self.titles) {
+		count += title.selected && title.completed;
+	}
+	return count;
+}
+
 - (void) addtitle:(MMTitle *)title
 {
     if(title == nil || [self.titles containsObject: title])

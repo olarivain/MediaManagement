@@ -39,6 +39,7 @@
 
 @property (nonatomic, readonly) NSString *formattedProgress;
 @property (nonatomic, readonly) NSString *formattedStatus;
+@property (nonatomic, readonly) NSString *formattedEta;
 
 + (MMTitle *) titleWithIndex: (NSInteger) index
                  andDuration: (NSTimeInterval) duration;

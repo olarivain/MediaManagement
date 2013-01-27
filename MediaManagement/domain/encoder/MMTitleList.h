@@ -27,6 +27,10 @@
 @property (nonatomic, readonly) BOOL isCompleted;
 @property (nonatomic, readwrite, assign) BOOL active;
 
+@property (nonatomic, readonly) MMTitle *activeTitle;
+@property (nonatomic, readonly) NSInteger selectedCount;
+@property (nonatomic, readonly) NSInteger completedCount;
+
 - (void) addtitle: (MMTitle *) title;
 - (NSInteger) indexOfTitle: (MMTitle *) title;
 - (MMTitle *) titleWithIndex: (NSInteger) index;
