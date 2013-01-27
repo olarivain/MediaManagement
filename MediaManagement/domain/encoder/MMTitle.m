@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic, assign, readwrite) NSInteger index;
-@property (nonatomic, assign, readwrite) NSTimeInterval duration;
+@property (nonatomic, assign, readwrite) NSInteger duration;
 
 @end
 
@@ -47,13 +47,20 @@
 #pragma mark - Synthetic getters
 - (NSString *) formattedEta
 {
-    if(self.eta < 0)
-    {
-        return @"";
-    }
-    
-    NSInteger hours = self.eta / (60 * 60);
-    NSInteger leftOver = self.eta % (60 * 60);
+    return [self formatTimeInterval: self.eta];
+}
+
+- (NSString *) formatedDuration {
+	return [self formatTimeInterval: self.duration];
+}
+
+- (NSString *) formatTimeInterval: (NSInteger) interval {
+	if(interval < 0) {
+		return @"";
+	}
+	
+	NSInteger hours = interval / (60 * 60);
+    NSInteger leftOver = interval % (60 * 60);
     NSInteger minutes = leftOver / 60;
     NSInteger seconds = leftOver % 60;
     
@@ -62,31 +69,8 @@
 #else
     return [NSString stringWithFormat: @"%dl:%02dl:%02dl", hours, minutes, seconds];
 #endif
-}
 
-- (NSString *) formattedProgress
-{
-    // nothing to show if completed or encoding
-    if(self.completed || !self.encoding)
-    {
-        return @"";
-    }
-    
-    return [NSString stringWithFormat: @"%i%% (%@ left)", self.progress, self.formattedEta];
-}
-
-- (NSString *) formattedStatus
-{
-    if(!self.selected)
-    {
-        return @"Not selected";
-    }
-    if(self.completed)
-    {
-        return @"Completed";
-    }
-    
-    return self.encoding ? @"Encoding" : @"Pending";
+	
 }
 
 #pragma mark - track management

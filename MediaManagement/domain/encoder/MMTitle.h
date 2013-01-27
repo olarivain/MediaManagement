@@ -14,16 +14,14 @@
 @interface MMTitle : NSObject
 {
     NSInteger _index;
-    NSTimeInterval _duration;
-    
-    NSString *_formattedEta;
+    NSInteger _duration;
     
     __strong NSMutableArray *_audioTracks;
     __strong NSMutableArray *_subtitleTracks;
 }
 
 @property (nonatomic, assign, readonly) NSInteger index;
-@property (nonatomic, assign, readonly) NSTimeInterval duration;
+@property (nonatomic, assign, readonly) NSInteger duration;
 @property (nonatomic, readwrite, assign) NSInteger progress;
 @property (nonatomic, readwrite, assign) NSInteger eta;
 
@@ -37,9 +35,8 @@
 @property (nonatomic, readonly) NSArray *selectedAudioTracks;
 @property (nonatomic, readonly) NSArray *selectedSubtitleTracks;
 
-@property (nonatomic, readonly) NSString *formattedProgress;
-@property (nonatomic, readonly) NSString *formattedStatus;
 @property (nonatomic, readonly) NSString *formattedEta;
+@property (nonatomic, readonly) NSString *formatedDuration;
 
 + (MMTitle *) titleWithIndex: (NSInteger) index
                  andDuration: (NSTimeInterval) duration;
