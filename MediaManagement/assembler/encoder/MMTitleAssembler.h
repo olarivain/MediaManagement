@@ -14,6 +14,9 @@
 
 + (MMTitleAssembler *) sharedInstance;
 
+- (NSArray *) createTitleListIDs: (NSDictionary *) dtos;
+- (NSDictionary *) writeTitleListIDs: (NSArray *) titleLists;
+
 - (NSArray *) writeTitleLists: (NSArray *) titleLists;
 - (NSDictionary *) writeTitleList: (MMTitleList *) titleList;
 

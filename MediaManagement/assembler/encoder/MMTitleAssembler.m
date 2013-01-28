@@ -42,6 +42,27 @@ static MMTitleAssembler *sharedInstance;
     return sharedInstance;
 }
 
+#pragma mark - getting a list of resource IDs out
+- (NSArray *) createTitleListIDs:(NSDictionary *)dto
+{
+	NSArray *dtos = [dto nullSafeForKey: @"titleListIds"];
+	NSMutableArray *titleListIds = [NSMutableArray arrayWithCapacity: dtos.count];
+	for(NSDictionary *titleId in dtos) {
+		[titleListIds addObjectNilSafe: titleId];
+	}
+	
+	return titleListIds;
+}
+
+- (NSDictionary *) writeTitleListIDs: (NSArray *) titleLists {
+	NSMutableArray *titleListIds = [NSMutableArray arrayWithCapacity: titleLists.count];
+	for(MMTitleList *titleList in titleLists) {
+		[titleListIds addObjectNilSafe: titleList.titleListId];
+	}
+	
+	return [NSDictionary dictionaryWithObjectsAndKeys: titleListIds, @"titleListIds", nil];
+}
+
 #pragma mark - Writing title list (domain -> DTO)
 - (NSArray *) writeTitleLists: (NSArray *) titleLists
 {
